@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+<link rel="stylesheet" href="css/common.css">
+<title>브릿지 펀딩</title>
 </head>
-<body>
-<h1>
-	Hello world!  
-</h1>
 
+<body>
+<h1>Hello world!</h1>
+<a href="/bridge/main">메인이동</a>
 <p>
 	- 패키지<br/>
 	kr.goott.bridge.파일명<br/>
