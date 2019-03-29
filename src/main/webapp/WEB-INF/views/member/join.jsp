@@ -6,6 +6,7 @@
 <title>회원가입</title>
 <!-- 커스텀 CSS -->
 <link href="<%=request.getContextPath()%>/css/join.css" rel="stylesheet"/>
+<link href="<%=request.getContextPath()%>/css/common.css" rel="stylesheet" />
 <!-- join.js -->
 <script src="<%=request.getContextPath() %>/js/join.js"></script>
 </head>

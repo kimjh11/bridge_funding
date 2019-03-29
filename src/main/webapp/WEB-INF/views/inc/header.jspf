@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<header>
+	<div class="wrap">
+		<button class="info-toggle txt-none">회사정보</button>
+		<div class="top-logo">
+			<span>우리는 모든 창작활동을 응원합니다</span>
+			<h1>BRIDGE</h1>
+		</div>
+		<nav class="top-menubar">
+			<ul>
+				<li><a href="">리워드 홈</a></li>
+				<li><a href="">카테고리</a></li>
+				<li><a href="">오픈예정</a></li>
+				<li><a href="">기부와후원</a></li>
+				<li><a href="">안내서</a></li>
+			</ul>
+		</nav>
+		<div class="top-login">
+			<button class="search-toggle txt-none">검색</button>
+			<ul>
+				<li><a href="">로그인</a></li>
+				<li><a href="">회원가입</a></li>
+				<li class="log-ok"><a href="">알림</a></li>
+				<li class="log-ok"><a href="">마이페이지</a></li>
+				<li class="log-ok"><a href="">로그아웃</a></li>
+				<li class="log-ok funding-open-btn"><a href="">내 펀딩 오픈하기</a></li>
+			</ul>
+		</div>
+	</div>
+</header>
