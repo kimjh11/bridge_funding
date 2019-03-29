@@ -36,6 +36,8 @@
 	   </div>
 	</body> -->
 </p>
-
+<p>
+	<a href="/bridge/deTailPage">상세페이지로 이동</a>
+</p>
 </body>
 </html>
