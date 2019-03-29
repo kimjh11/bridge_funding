@@ -1,0 +1,58 @@
+
+.wrap{
+	width:80%; 
+	margin: 0 auto;
+	margin-top: 115px;
+}
+
+.jointext{
+	width: 345px;
+    height: 40px;
+	border-radius: 5px 5px 5px 5px;	
+}
+
+.joinbtn{
+	width: 345px;
+	height: 40px;
+	border-radius: 5px 5px 5px 5px;	
+	margin-left: 150px;
+}
+
+.joindiv{
+	margin-bottom: 25px;
+}
+
+#joinh1{
+	margin-left: 152px; 
+	margin-bottom: 35px;
+}
+
+#textdiv{
+	margin-left: 155px;
+    margin-top: 5px;
+}
+
+#userEmail{
+	margin-left: 101px;	
+}
+
+#userName{
+	margin-left: 115px;
+}
+
+#userPWd{
+	margin-left: 82px;
+}
+
+#userPwdChk{
+	margin-left: 45px;
+}
+
+#okNumber{
+	width: 345px;
+    height: 40px;
+	border-radius: 5px 5px 5px 5px;	
+	margin-left: 150px;
+    margin-bottom: 10px;
+}
+

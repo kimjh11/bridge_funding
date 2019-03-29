@@ -9,6 +9,8 @@
 	Hello world!  
 </h1>
 
+<h2><a href="/bridge/join">임시 확인(회원가입 페이지)</a></h2>
+	
 <p>
 	- 패키지<br/>
 	kr.goott.bridge.파일명<br/>
