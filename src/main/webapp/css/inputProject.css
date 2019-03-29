@@ -1,0 +1,22 @@
+@charset "UTF-8";
+#proBody{
+	width:60%;
+	border:1px solid gray;
+	margin:50px auto;
+	overflow: hidden;
+	}
+#proBody div{
+	float:left
+}
+#proLeft{
+	width:20%;height:500px;
+	background:yellow
+}
+#proRight{
+	width:20%;height:500px;
+	background:green
+}
+#proMid{
+	height:500px;
+	width:60%
+}

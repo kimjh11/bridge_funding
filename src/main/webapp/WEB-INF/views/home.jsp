@@ -36,6 +36,6 @@
 	   </div>
 	</body> -->
 </p>
-
+<a href="/bridge/inputProject">프로젝트 작성</a>
 </body>
 </html>

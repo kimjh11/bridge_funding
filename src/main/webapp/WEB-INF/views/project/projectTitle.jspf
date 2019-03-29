@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<style>
+	#proTitle{width:60%;margin:0 auto}
+	#proCategory{width:100%;margin:30px auto;overflow: hidden;}
+	#proCategory div{float:left;width:24.8%;text-align:center;}
+	#proCategory div a{width:100%;height:50px;line-height:50px;
+						text-decoration:none}
+	#proCat1,#proCat2,#proCat3{border-left:1px solid gray;
+		border-top:1px solid gray ;
+		border-bottom:1px solid gray
+	}
+	#proCat4{border:1px solid gray}
+	
+</style>
+<div id="proTitle">
+	<h1 style="font-size:2em;">내 펀딩 오픈하기</h1>
+	<div id="proCategory">
+		<div id="proCat1" ><a href="">프로젝트등록</a></div>
+		<div id="proCat2" ><a href="">스토리등록</a></div>
+		<div id="proCat3" ><a href="">상품등록</a></div>
+		<div id="proCat4" ><a href="">검토요청</a></div>
+	</div>
+</div>
