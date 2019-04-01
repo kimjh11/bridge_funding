@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+.home-wrap{
+    position: relative;
+}
+.home-wrap .background{
+    position: absolute;
+     width: 48%;
+}
+#guide-back{
+    border-right: 80px solid transparent;
+    left: 0;
+    z-index: 1;
+}
+#reward-back{
+    right: 0;
+    border-left: 80px solid transparent;
+}
+#reward-back a{
+    text-shadow: 1px 1px 1px gray;
+}
+.background a{
+    position: absolute;
+    z-index: 10;
+    left: 40%;
+    font-size: 30pt;
+    color:#fff;
+}
+.background a span{
+    font-size:10pt;
+    font-family: nanumR;
+}
+.background a img{
+    top: 14px;
+    display: block;
+    width: 75px;
+    position: absolute;
+    left: -40%;
+}
+#reward-back a img{
+    width:60px;
+}
+
+
