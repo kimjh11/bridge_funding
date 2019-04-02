@@ -10,8 +10,10 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
-		
 		return "home";
 	}
-	
+	@RequestMapping("/reward" )
+	public String reward() {
+		return "list/reward";
+	}
 }
