@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+#title{font-size:2.5em;
+	   color:red}
+.title{font-size:2em}
+#back{margin-top:3%}
+#back ul{margin:2% 0}
+#back li{font-size:1.5em}

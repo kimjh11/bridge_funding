@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="/css/common.css">
 <title>브릿지 펀딩</title>
 </head>
 
