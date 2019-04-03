@@ -53,17 +53,31 @@ header .top-menubar, header #top-etc {
 .guide-content article{
 	padding: 0 5%;
 }
+.guide-content article > *{
+	padding-bottom: 30px;
+	font-size: 12.5pt;
+}
 .guide-content article img{
 	width:80%;
 	margin: 0 auto;
 	display: block;
-	padding-bottom: 45px;
+	padding: 45px 0;
 }
 .guide-content article p{
-	font-size: 12.5pt;
 	font-family: nanumR;
 	font-weight: bold;
-	padding-bottom: 30px;
 }
-.guide-content article > *{
+.guide-content article .underline{
+	font-size:14pt;
+	margin-bottom:7px;
+	border-bottom:1px solid black;
+	display:inline-block;
+}
+.guide-content article .caution{
+	color:red;
+}
+.guide-content article .highlight{
+	background-color: #35EFAC;
+}
+
 	
