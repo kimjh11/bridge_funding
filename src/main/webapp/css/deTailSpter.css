@@ -1,0 +1,31 @@
+@charset "EUC-KR";
+	
+	
+	#title{
+	       font-size:1.5em;
+	       margin-bottom:5%
+	}
+	.OneSpter{
+			  border-bottom:1px solid  lightgray;
+			  width:90%;
+			  height:110px;
+			  margin-bottom:0px;
+	}
+	.Img{
+		 width:80px;
+		 float:left;
+		 margin-left:10%; 
+		 padding-top:2%;
+		 margin-right:5%
+		 
+	}
+	.Img img{
+			 width:100%;
+		 	 border-radius:60px;
+	}	
+	.Time{
+		  
+	}
+	.Spter{
+		   padding-top:5%
+	}
