@@ -3,13 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <script type="text/javascript" src="/bridge/js/deTailSlider.js"></script>
 		<div id="thumbnail"> <!-- 타이틀로 걸어 놓은 이미지나 동영상 -->
-			<div id="btns">	
-				<img src="/bridge/img/abocado.gif"/>
-			</div>
+			<iframe width="80%" height="400px" src="https://www.youtube.com/embed/Jt0N1kLZWUQ">	</iframe>
 		</div>
 		<div id="company"> <!-- 프로젝트를 발행한 회사정보 -->
 				<div id="comimg">
-					<p>회사정보</p>
+					<p>회사정보</p> 
 					<img src="/bridge/img/abocado.gif"/>				
 				</div>
 			<div id="comTitle">

@@ -32,10 +32,8 @@
 	</div>
 
 	<div id="left" class="marginleft">
-				<div id="thumbnail"> <!-- 타이틀로 걸어 놓은 이미지나 동영상 -->
-			<div id="btns">	
-				<img src="/bridge/img/abocado.gif"/>
-			</div>
+		<div id="thumbnail"> <!-- 타이틀로 걸어 놓은 이미지나 동영상 -->
+			<iframe width="80%" height="400px" src="https://www.youtube.com/embed/Jt0N1kLZWUQ">	</iframe>
 		</div>
 		<div id="company"> <!-- 프로젝트를 발행한 회사정보 -->
 				<div id="comimg">
