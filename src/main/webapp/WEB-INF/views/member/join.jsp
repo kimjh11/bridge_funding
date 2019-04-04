@@ -7,41 +7,57 @@
 <!-- 커스텀 CSS -->
 <link href="<%=request.getContextPath()%>/css/join.css" rel="stylesheet"/>
 <link href="<%=request.getContextPath()%>/css/common.css" rel="stylesheet" />
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- join.js -->
 <script src="<%=request.getContextPath() %>/js/join.js"></script>
 </head>
 <body>
 	<div class="wrap">
-		<h1 id="joinh1">회원가입</h1>
-		<form method="post" action="${pageContext.request.contextPath}/member/mailSending">
-			<div class="joindiv">
-				이메일  <input type="text" id="userEmail" name="userEmail" class="jointext" placeholder="ex)aaaa@naver.com"/> 		
-				<div id="textdiv">
-					위 이메일로 인증번호가 발송됩니다. 
+		<div id="join-center">
+			<h1 id="join-h1">회원가입</h1>
+			
+			<!-- =================이메일 인증======================== -->
+			<form method="post" action="/bridge/insertMember" id="frm">
+				<div class="join-div">
+					이메일  <input type="text" id="user-email" name="userMail" class="join-text" placeholder="ex)aaaa@naver.com"/> 		
+					<div id="text-div"> 위 이메일로 인증번호가 발송됩니다. </div>
+					<label id="warning-id"></label>
 				</div>
-				<label id="warningid"></label>
-			</div>
-			<div>
-				<input type="hidden" id="okNumber" placeholder="인증번호"/>
-			</div>
-			<div class="joindiv">
-				<input type="button" value="인증하기" id="emailOk" class="joinbtn"/>
-			</div>
-		</form>
-		<form method="post" action="">	
-			<div class="joindiv">
-				이름  <input type="text" id="userName" name="userName"  class="jointext" placeholder="ex)홍길동" disabled/>
-			</div>
-			<div class="joindiv">
-				비밀번호  <input type="password" id="userPwd" name="userPwd"  class="jointext" disabled/>
-			</div>
-			<div class="joindiv">
-				비밀번호 확인  <input type="password" id="userPwdChk" name="userPwdChk"  class="jointext" disabled/>
-			</div>
-			<div class="joindiv">
-				<input type="button" value="가입하기" class="joinbtn"/>
-			</div>
-		</form>
+				<div>
+					<!-- 작성한 인증번호 비교 -->
+					<input type="hidden" id="ok-number" placeholder="인증번호를 입력해 주세요 :)" />
+				</div>
+				<!-- 인증번호 요청 버튼 -->
+				<div class="join-div">
+					<input type="button" value="인증번호 요청" id="email-Ok" class="join-btn"/>
+				</div>
+				<!-- 인증확인 버튼 -->
+				<div class="join-div">
+					<input type="hidden" value="인증번호 확인" id="joinStart" class="join-btn" />
+				</div>
+				<label id="email-ok-label"></label>
+			
+			<!-- =================이메일 인증======================== -->
+			
+			<!-- ===================이름, 비밀번호======================  -->
+			
+				<div class="join-div">
+					이름  <input type="text" id="user-name" name="userName"  class="join-text" placeholder="ex)홍길동" disabled/>
+				</div>
+				<div class="join-div">
+					비밀번호  <input type="password" id="user-pwd" name="userPwd"  class="join-text" disabled/>
+				</div>
+				<div class="join-div">
+					비밀번호 확인  <input type="password" id="user-pwdchk" name="userPwdChk"  class="join-text" disabled/>
+				</div>
+				<div class="join-div">
+					<input type="submit" value="가입하기" class="join-btn"/>
+				</div>
+			</form>
+			<!-- ===================이름, 비밀번호======================  -->
+			
+		</div>
 	</div>
 </body>
 </html>

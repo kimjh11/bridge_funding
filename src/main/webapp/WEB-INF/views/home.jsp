@@ -3,20 +3,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/common.css">
 <title>브릿지 펀딩</title>
+<!-- 커스텀 CSS -->
+<link rel="stylesheet" href="css/common.css">
 </head>
-
-
-
 
 <body>
 
-<h1>Hello world!</h1>
-
 <h2><a href="/bridge/join">임시 확인(회원가입 페이지)</a></h2>
+<h2><a href="/bridge/searchIdPwd">임시 확인(아이디/비밀번호 페이지)</a></h2>
 
-<a href="/bridge/main">메인이동</a>
+<a href="/bridge/main">메인이동</a>                                                                                                                                 
 
 <p>
 	- 패키지<br/>
