@@ -1,34 +1,52 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<!-- 커스텀 CSS -->
-<link href="<%=request.getContextPath()%>/css/login.css" rel="stylesheet"/>
-<!-- jQuery -->
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="styleSheet" href="<%=request.getContextPath() %>/css/common.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- login.js -->
-<script src="<%=request.getContextPath() %>/js/login.js"></script>
-
+<script src="<%=request.getContextPath() %>/js/common.js"></script>
 <header>
 	<div class="wrap">
-		<button class="info-toggle txt-none">회사정보</button>
+		<!-- 이용안내 -->
+		<div class="top-guide">
+			<button class="guide-toggle" title="사이트 이용안내">
+				<span class="toggle-bar txt-none">사이트이용안내</span>
+			</button>
+			<div class="guide-wrap">
+				<ul class="guide-menu">
+					<li><input type="button" value="리워드 펀딩이란" name="reward-info"></li>
+					<li><input type="button" value="펀딩과 쇼핑의 차이" name="funding-diff"></li>
+					<li><input type="button" value="서포터즈란" name="supporter-intro"></li>
+					<li><input type="button" value="프로젝트 참여하기(서포터즈)" name="surpporter-guide"></li>
+					<li><input type="button" value="프로젝트 개설하기(메이커)" name="maker-guide"></li>
+					<li><input type="button" value="주문/결제/배송관련" name="order-payment"></li>
+					<li><input type="button" value="교환/반품/AS관련" name="after-service"></li>
+				</ul>
+				<div class="guide-content"></div>
+			</div>
+		</div>
+		<!-- 회사로고 -->
 		<div class="top-logo">
 			<span>우리는 모든 창작활동을 응원합니다</span>
-			<h1><a href="<%=request.getContextPath()%>/">BRIDGE</a></h1>
+			<h1><a href="<%=request.getContextPath()%>/" title="첫페이지로 이동">BRIDGE</a></h1>
 		</div>
+		<!-- 상단메뉴 -->
 		<nav class="top-menubar">
 			<ul>
 				<li><a href="<%=request.getContextPath()%>/reward">리워드 홈</a></li>
-				<li><a href="">카테고리</a></li>
+				<li><a href="<%=request.getContextPath()%>/category">카테고리</a></li>
 				<li><a href="<%=request.getContextPath()%>/commingsoon">오픈예정</a></li>
 				<li><a href="<%=request.getContextPath()%>/donation">기부와후원</a></li>
-				<li><a href="<%=request.getContextPath()%>/guide">안내서</a></li>
+				<li><a href="<%=request.getContextPath()%>/">미정</a></li>
 			</ul>
 		</nav>
-		<div class="top-login">
-			<button class="search-toggle txt-none">검색</button>
-			<ul>
-				<li><a id="login">로그인</a></li>
-				<li><a href="/bridge/join">회원가입</a></li>
+		<!-- 로그인/로그아웃/내정보 -->
+		<div id="top-etc">
+			<ul class="top-login">
+				<li><a href="">로그인</a></li>
+				<li><a href="">회원가입</a></li>
 				<li class="log-ok"><a href="">알림</a></li>
 				<li class="log-ok"><a href="">마이페이지</a></li>
 				<li class="log-ok"><a href="">로그아웃</a></li>
@@ -39,6 +57,7 @@
 				<input type="text" name="serach" placeholder="프로젝트명 검색하기"/>
 			</form>
 		</div>
+
 		
 		<!-- 로그인 페이지 Div -->
 		<div id="login-div" hidden="hidden">
@@ -55,5 +74,9 @@
 		</div>
 		<!-- 로그인 페이지 Div -->
 		
+
+		<!-- 스크롤 컨트롤러 -->
+		<button class="top-controller">맨위로</button>
+
 	</div>
 </header>
