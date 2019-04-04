@@ -1,7 +1,7 @@
 @charset "UTF-8";
 #proBody{
 	width:60%;
-	border:1px solid gray;
+	/* border:1px solid gray; */
 	margin:50px auto;
 	overflow: hidden;
 	}
@@ -9,14 +9,121 @@
 	float:left
 }
 #proLeft{
-	width:20%;height:500px;
-	background:yellow
+	width:20%;
+	
 }
 #proRight{
-	width:20%;height:500px;
-	background:green
+	width:20%;
+	
 }
 #proMid{
-	height:500px;
+	
 	width:60%
 }
+#proTitle li{
+	font-size:2em;
+	text-align:left;
+}
+#proRight li{
+	font-size:1.6em;
+	text-align:left;
+	margin-left:30px;
+	margin-bottom:60px;
+	color:#000066;
+}
+.ex{font-size:0.8em;color:#4dffc3}
+.ex2{font-size:1.5em;color:gray}
+.ex3{font-size:0.8em;color:gray}
+.inputData{
+	width:100%;
+	/* height:50px; */
+	/* border:1px solid #ccc; */
+	/* background:#eee; */
+	text-align:center;
+	margin-bottom:35px;
+	/* box-shadow:0px 1px 5px lightgray; */
+}
+#selectOpt1{}
+.row1,.row2,.row3,.row4,
+.row5,.row6,.row7,.row8,.row9,
+.row10,.row11,.row12{
+	height:70px;margin-bottom:35px;color:#000066
+}
+.row2,.row6{height:250px}
+#proLeft li{margin-top:0px}
+
+.saveNext{
+	width:100%;
+	height:60px;
+	background:#000066;
+	color:white;
+	text-align:center;
+	border-top:1px solid #666;
+	border-left:1px solid #666;
+	border-right:1px solid #666;
+}
+.saveNext a{
+	font-size:2em;
+	line-height:60px;
+	color:white;
+}
+
+#proCat1{background:#000066}
+#proCat1 a{color:white}
+.data{
+	/* border-radius:5px 5px 5px 5px; */
+	width:80%;
+	height:50%;
+	margin-top:15px;
+	border-left:none;
+	border-top:none;
+	border-right:none;
+	border-bottom:2px solid #e8e8e8;
+}
+
+.inputImg label {
+	width:75%;
+	height:10%;
+  	display: inline-block;
+  	font-size:1.5em;
+  	color: #fff;
+  	
+  	
+  	vertical-align: middle;
+  	background-color: #e8e8e8;
+ 	cursor: pointer;
+  	
+  	
+  	-webkit-transition: background-color 0.2s;
+  	transition: background-color 0.2s;
+}
+
+.inputImg label:hover {
+  background-color: #4dffc3;
+}
+
+.inputImg label:active {
+  background-color: #24f7a3;
+}
+
+.inputImg input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+#loadImg,#loadImg2{
+	width:75%;
+	height:90%;
+}
+
+
+
+
+
+
+

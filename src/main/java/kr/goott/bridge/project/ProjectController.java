@@ -17,7 +17,7 @@ public class ProjectController {
 	SqlSession sqlSession;
 	
 	@RequestMapping("/inputProject")
-	public ModelAndView list() {
+	public ModelAndView inputProjectList() {
 		
 		ModelAndView mav = new ModelAndView();
 		
@@ -25,5 +25,18 @@ public class ProjectController {
 		
 		return mav;
 	}
-	
+	@RequestMapping("/inputStory")
+	public ModelAndView inputStoryList() {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.setViewName("project/inputStory");
+		
+		return mav;
+	}
+	@RequestMapping("/inputItem")
+	public ModelAndView inputItemList() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("project/inputItem");
+		return mav;
+	}
 }
