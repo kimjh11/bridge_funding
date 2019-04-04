@@ -17,11 +17,26 @@ $(function(){
 				$("#ok-number").attr('type','text');
 				$("#joinStart").attr('type','button');
 				$("#email-Ok").attr('type','hidden');
+				
+				//////////////////유효성 검사//////////////////////////
+				//이메일 
+				var emailVal = $("#user-email").val();	
+				var emailcheck = /^(\w+\.)*\w+@(\w+\.)+[A-Za-z]+$/;
+				
+				if(emailVal.match(emailcheck) == null){
+			    	$("#warning-id").text("이메일 형식이 옳바르지 않습니다 :)");
+			    	$("#ok-number").attr('type','hidden');
+					$("#joinStart").attr('type','hidden');
+					$("#email-Ok").attr('type','button');
+					
+			    	return false;
+			    }
+				//////////////////유효성 검사//////////////////////////
 			},
 			error : function(error){
 				$("#warning-id").html("인증번호 전송 ERROR :(");
 			}
-		});		
+		});	
 	});
 	
 	//인증번호 확인
@@ -52,30 +67,20 @@ $(function(){
 		});	
 	});
 	
-	/*//이메일 유효성 검사
-	$("#email-ok").on("click",function(){
-		//이메일 
-		var emailVal = $("#user-email").val();	
-		var emailcheck = /^(\w+\.)*\w+@(\w+\.)+[A-Za-z]+$/;
-		
-		if(emailVal.match(emailcheck) == null){
-	    	$("#warning-id").text("이메일 형식이 옳바르지 않습니다 :)");
-	    	return false;
-	    }else if(emailVal.equals("") && emailVal == null){
-			$("#warning-id").text("이메일을 입력해 주세요:)");
-			return false;
-		}
-	});
-	
 	//이메일 입력시 경고글  없어지게
 	$("#user-email").on("keydown",function(){
-		("#warning-id").text("");
+		$("#warning-id").text("");
 	});
 	
-	//인증 버튼 클릭하면 인증번호 쓰는 부분 나오게
-	("#email-Ok").on("click",function(){
-		//인증 번호를 가져올때 보이게 하기
+	//가입하기 유효성 검사
+	$(".join-btn").click(function(){
+		alert("aaaa");
+		var joinText = $(".join-text").val();
+		var oknumber =$("#ok-number").val();
 		
-	});*/
-	
+		if(joinText == null || oknumber == null){
+			$("#warning-id").html("모든 값을 입력해주세요 :(");
+		}
+		
+	});
 });

@@ -28,7 +28,7 @@
 			<button class="search-toggle txt-none">검색</button>
 			<ul>
 				<li><a id="login">로그인</a></li>
-				<li><a href="">회원가입</a></li>
+				<li><a href="/bridge/join">회원가입</a></li>
 				<li class="log-ok"><a href="">알림</a></li>
 				<li class="log-ok"><a href="">마이페이지</a></li>
 				<li class="log-ok"><a href="">로그아웃</a></li>

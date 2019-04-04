@@ -30,6 +30,7 @@
 #warning-id, #email-ok-label{
 	margin-left: 128px;
     font-size: 1.2em;
+    color: red;
 }
 
 #join-h1{

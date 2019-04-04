@@ -47,17 +47,8 @@ public class MemberController {
 	//회원가입 하기
 	@RequestMapping(value="/insertMember", method=RequestMethod.POST)
 	public ModelAndView insertMember(MemberVO vo, HttpServletRequest request) {
-		
-		
-		
 		HttpSession  session = request.getSession(); 
 		vo.setMailChk((String)session.getAttribute("key"));
-		
-		
-		System.out.println(vo.getUserMail());
-		System.out.println(vo.getUserName());
-		System.out.println(vo.getUserPwd());
-		System.out.println(vo.getMailChk());
 		
 		MemberDaoInterface dao = sqlSession.getMapper(MemberDaoInterface.class);
 		int cnt = dao.insertRecord(vo);
