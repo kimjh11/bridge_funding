@@ -16,7 +16,7 @@
 <body>
 <div class="home-wrap">
 	<div class="background" id="guide-back">
-		<a href="<%=request.getContextPath()%>/guide">
+		<a href="<%=request.getContextPath()%>/guideHome">
 			<img alt="브릿지 이용안내" src="<%=request.getContextPath()%>/img/home/home-br-icon-wh.png"/>
 			<h2>브릿지 이용안내</h2>
 			<span>처음 방문한 고객님을 위한 브릿지 펀딩 이용 안내</span>
