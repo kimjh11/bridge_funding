@@ -12,8 +12,4 @@ public class HomeController {
 	public String home() {
 		return "home";
 	}
-	@RequestMapping("/reward" )
-	public String reward() {
-		return "list/reward";
-	}
 }
