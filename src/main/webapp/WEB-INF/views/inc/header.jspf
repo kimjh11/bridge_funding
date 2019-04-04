@@ -13,18 +13,17 @@
 		<button class="info-toggle txt-none">회사정보</button>
 		<div class="top-logo">
 			<span>우리는 모든 창작활동을 응원합니다</span>
-			<h1>BRIDGE</h1>
+			<h1><a href="<%=request.getContextPath()%>/">BRIDGE</a></h1>
 		</div>
 		<nav class="top-menubar">
 			<ul>
-				<li><a href="">리워드 홈</a></li>
+				<li><a href="<%=request.getContextPath()%>/reward">리워드 홈</a></li>
 				<li><a href="">카테고리</a></li>
-				<li><a href="">오픈예정</a></li>
-				<li><a href="">기부와후원</a></li>
-				<li><a href="">안내서</a></li>
+				<li><a href="<%=request.getContextPath()%>/commingsoon">오픈예정</a></li>
+				<li><a href="<%=request.getContextPath()%>/donation">기부와후원</a></li>
+				<li><a href="<%=request.getContextPath()%>/guide">안내서</a></li>
 			</ul>
 		</nav>
-		
 		<div class="top-login">
 			<button class="search-toggle txt-none">검색</button>
 			<ul>
@@ -35,6 +34,10 @@
 				<li class="log-ok"><a href="">로그아웃</a></li>
 				<li class="log-ok funding-open-btn"><a href="">내 펀딩 오픈하기</a></li>
 			</ul>
+			<form class="top-search">
+				<input type="button" class="search-toggle txt-none" value="검색">
+				<input type="text" name="serach" placeholder="프로젝트명 검색하기"/>
+			</form>
 		</div>
 		
 		<!-- 로그인 페이지 Div -->
