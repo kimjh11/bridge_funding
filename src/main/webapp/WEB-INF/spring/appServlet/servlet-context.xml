@@ -20,6 +20,7 @@
 	<resources mapping="/ckeditor/**" location="/ckeditor/" />
 	<resources mapping="/ckfinder/**" location="/ckfinder/" />
 	<resources mapping="/ckstorage/**" location="/ckstorage/" />
+	<resources mapping="/txt/**" location="/txt/" />
 	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

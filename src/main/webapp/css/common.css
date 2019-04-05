@@ -17,7 +17,7 @@
 	src: url(font/NanumBarunpenR.TTF) format('truetype');
 }
 
-/* reset */
+/* default */
 body{
 	font-family: yaReg, yaBold, nanumR, nanumB, gulim, Arial, sans-serif;
 	font-weight:normal;
@@ -55,7 +55,7 @@ a:hover{
 	text-decoration: none;
 }
 
-/*����*/
+/* frequent */
 button{
 	border:none;
 	color:#555;
@@ -76,11 +76,11 @@ input[type=button]:hover{
 	margin-left:2px;
 }
 .won::after{
-	content:"��";
+	content:"원";
 	margin-left:2px;
 }
 .cnt-txt::after{
-	content:"��";
+	content:"개";
 	margin-left:2px;
 }
 .del-line{
@@ -96,7 +96,7 @@ input:focus, button:focus{
 }
 
 
-/* 헤더 */
+/* header */
 header{
 	border-bottom:1px solid #ddd;
 }

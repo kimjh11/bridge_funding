@@ -23,6 +23,6 @@
 		<div id="proCat1" ><a href="/bridge/inputProject" style="font-size:2em;">1.프로젝트등록</a></div>
 		<div id="proCat2" ><a href="/bridge/inputStory" style="font-size:2em">2.스토리등록</a></div>
 		<div id="proCat3" ><a href="/bridge/inputItem" style="font-size:2em">3.상품등록</a></div>
-		<div id="proCat4" ><a href="" style="font-size:2em">4.검토요청</a></div>
+		<div id="proCat4" ><a href="/bridge/inputProOk" style="font-size:2em">4.검토요청</a></div>
 	</div>
 </div>

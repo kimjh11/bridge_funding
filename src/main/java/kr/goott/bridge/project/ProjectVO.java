@@ -6,6 +6,7 @@ public class ProjectVO {
 	private int proNum;
 	private String proCode;
 	private String proName;
+	private String cateName;
 	private String proImg;
 	private int proGoal;
 	private int proNow;
@@ -67,6 +68,14 @@ public class ProjectVO {
 
 	public void setProName(String proName) {
 		this.proName = proName;
+	}
+
+	public String getCateName() {
+		return cateName;
+	}
+
+	public void setCateName(String cateName) {
+		this.cateName = cateName;
 	}
 
 	public String getProImg() {
@@ -228,6 +237,5 @@ public class ProjectVO {
 	public void setProCheck(String proCheck) {
 		this.proCheck = proCheck;
 	}
-
 
 }

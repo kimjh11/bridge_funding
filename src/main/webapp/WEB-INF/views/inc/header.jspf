@@ -23,7 +23,7 @@
 				<li class="log-ok"><a href="">알림</a></li>
 				<li class="log-ok"><a href="">마이페이지</a></li>
 				<li class="log-ok"><a href="">로그아웃</a></li>
-				<li class="log-ok funding-open-btn"><a href="">내 펀딩 오픈하기</a></li>
+				<li class="log-ok funding-open-btn"><a href="/bridge/inputProject">내 펀딩 오픈하기</a></li>
 			</ul>
 			<form class="top-search">
 				<input type="button" class="search-toggle txt-none" value="검색">
