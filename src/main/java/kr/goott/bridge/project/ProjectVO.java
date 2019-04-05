@@ -6,6 +6,7 @@ public class ProjectVO {
 	private int proNum;
 	private String proCode;
 	private String proName;
+	private String cateName;
 	private String proImg;
 	private int proGoal;
 	private int proNow;
@@ -14,9 +15,9 @@ public class ProjectVO {
 	private String proWait;
 	private String proOpen;
 	private String proEnd;
-	private String compName;
-	private String compNum;
-	private String compImg;
+	private String comName;
+	private String comNum;
+	private String comImg;
 	private String comTel;
 	private String comEmail;
 	private String comSite;
@@ -67,6 +68,14 @@ public class ProjectVO {
 
 	public void setProName(String proName) {
 		this.proName = proName;
+	}
+
+	public String getCateName() {
+		return cateName;
+	}
+
+	public void setCateName(String cateName) {
+		this.cateName = cateName;
 	}
 
 	public String getProImg() {
@@ -133,28 +142,28 @@ public class ProjectVO {
 		this.proEnd = proEnd;
 	}
 
-	public String getCompName() {
-		return compName;
+	public String getComName() {
+		return comName;
 	}
 
-	public void setCompName(String compName) {
-		this.compName = compName;
+	public void setComName(String comName) {
+		this.comName = comName;
 	}
 
-	public String getCompNum() {
-		return compNum;
+	public String getComNum() {
+		return comNum;
 	}
 
-	public void setCompNum(String compNum) {
-		this.compNum = compNum;
+	public void setComNum(String comNum) {
+		this.comNum = comNum;
 	}
 
-	public String getCompImg() {
-		return compImg;
+	public String getComImg() {
+		return comImg;
 	}
 
-	public void setCompImg(String compImg) {
-		this.compImg = compImg;
+	public void setComImg(String comImg) {
+		this.comImg = comImg;
 	}
 
 	public String getComTel() {
@@ -228,6 +237,5 @@ public class ProjectVO {
 	public void setProCheck(String proCheck) {
 		this.proCheck = proCheck;
 	}
-
 
 }
