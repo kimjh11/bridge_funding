@@ -1,19 +1,20 @@
 $(function(){
 	/* 검색버튼 클릭이벤트 */
 	$('.search-toggle').click(function(){
-		var searchTxt = $('.top-search input[type="text"]').val();
+		var searchTxt = $('.project-search input[type="text"]').val();
+		console.log($(this).siblings('input'));
 		if(searchTxt==null || searchTxt==''){
 			//검색어없이 검색버튼 클릭시 창 숨기기
-			if($('.top-search input[type="text"]').css('display')=='block'){
-				$('.top-search input[type="text"]').css('display','none');
-				$('.top-search').removeClass('show');
+			if($(this).siblings('input[type="text"]').css('display')=='block'){
+				$(this).siblings('input[type="text"]').css('display','none');
+				$(this).parent().removeClass('show');
 			}else{
 				//검색창 보이기
-				$('.top-search input[type="text"]').css('display','block');
-				$('.top-search').addClass('show');
+				$(this).siblings('input[type="text"]').css('display','block');
+				$(this).parent().addClass('show');
 			}
 		}else{//검색어가 있을경우
-			$('.top-search').submit();
+			$(this).parent().submit();
 		}
 	});
 	
@@ -42,7 +43,7 @@ $(function(){
 	});
 	
 	//클릭한 파일 불러오기
-	$('input[type="button"]').click(function(){
+	$('.guide-menu input[type="button"]').click(function(){
 		var filename = $(this).attr('name');
 		getContent(filename);
 	});
