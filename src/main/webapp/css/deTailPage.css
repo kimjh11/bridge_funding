@@ -98,6 +98,9 @@
 	#line{
 		  line-height: 30px;
 		  }
+	#line span{
+			   font-size:0.8em;
+	}
 	#detail{font-size: 2em;}
 	#goal{
 		  background:lightgeay;

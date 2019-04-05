@@ -44,6 +44,7 @@
 			<beans:list>
 				<!-- classpath 쓰는곳 -->
 				<!-- <beans:value>classpath:kr/goott/web/board/mapper/*.xml</beans:value> -->
+				<beans:value>classpath:kr/goott/bridge/project/mapper/*.xml</beans:value>
 				
 			</beans:list>
 		</beans:property>

@@ -18,13 +18,13 @@
 </div>
 	<div id="topTap"> <!-- 맨위 타이틀 div -->
 		<ruby>	
-			<span>우리아이 창의력 뿜뿜! 직접조립하고 리모콘으로 조종하는 블록로봇</span>
-			<rt>카테코리</rt>
+			<span>${vo.proName }</span>
+			<rt></rt>
 		</ruby>	
 		<table id="tap"> <!-- 나중에 ajax를 이용한 탭 만들기 -->
 			<tr>
-				<td data-tab="deTailOpen" class="selectTap taps">스토리</td>
-				<td data-tab="deTailGuide" class="taps">펀딩안내</td>
+				<td data-tab="deTailOpen?cateCode=${vo.cateCode}&proCode=${vo.proCode}" class="selectTap taps">스토리</td>
+				<td data-tab="deTailGuide?cateCode=${vo.cateCode}&proCode=${vo.proCode}" class="taps">펀딩안내</td>
 				<td data-tab="deTailReply" class="taps">댓글</td>
 				<td data-tab="deTailSpter" class="taps">서포터</td>
 			</tr>
@@ -33,23 +33,24 @@
 
 	<div id="left" class="marginleft">
 		<div id="thumbnail"> <!-- 타이틀로 걸어 놓은 이미지나 동영상 -->
-			<iframe width="80%" height="400px" src="https://www.youtube.com/embed/Jt0N1kLZWUQ">	</iframe>
+			${vo.proTitle }
 		</div>
 		<div id="company"> <!-- 프로젝트를 발행한 회사정보 -->
 				<div id="comimg">
 					<p>회사정보</p>
-					<img src="/bridge/img/abocado.gif"/>				
+					${vo.comImg }
 				</div>
 			<div id="comTitle">
 				<div id="line"> 
-					(주)아보카도<br/>
-					아보카도는 무슨맛이 날까??	
+				${vo.comName}<br/>
+				<span>이메일 : ${vo.comEmail}</span><br/>
+				<span>전화번호 : ${vo.comTel }</span><br/>
+				
 				</div>
 			</div> 
 		</div>
 		<div id="deTail">
-			여기서부터 상세 설명 <br/>
-			이미지도 들어가고 영상도 들어가고 블라블라
+			${vo.proContent}
 		</div>
 	</div>
 	<div id="right" class="marginright">
