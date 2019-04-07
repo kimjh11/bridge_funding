@@ -19,7 +19,7 @@ public class MemberVO {
 	private String userRegdate;
 	private String mailChk;
 	private String logStatus; //로그인 여부
-	
+	 
 	//생성자
 	public MemberVO() {
 		

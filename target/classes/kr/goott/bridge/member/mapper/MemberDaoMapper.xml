@@ -17,4 +17,4 @@
 	<update id="updatePwd" parameterType="String">
 		update member set userPwd = #{userPwd} where userMail = #{userMail}
 	</update>
-</mapper>
+</mapper> 

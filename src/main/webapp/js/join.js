@@ -11,7 +11,7 @@ $(function(){
 			url: uri,
 			//
 			data : param,
-			//
+			// 
 			success : function(result){
 				//인증번호가 있으면 인증번호 입력창/ 인증확인 보이고, 인증요청 없어지게.
 				$("#ok-number").attr('type','text');

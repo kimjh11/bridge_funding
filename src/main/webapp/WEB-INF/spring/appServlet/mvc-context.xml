@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
-	<!-- 로그인 여부에 따라  interceptor 처리하기
+	<!-- 로그인 여부에 따라  interceptor 처리하기 
 		 어떤 컨트롤러 매핑 주소에서 인터셉터가 발생하는지 등록하는 곳이다.	
 	-->
 	<mvc:interceptors>

@@ -13,8 +13,8 @@ $(function(){
 		}else{
 			return true;
 		}
-		return false;
-	});
+		return false; 
+	}); 
 	/* 아이디 입력시 경고글 없어지게 하는 부분 */
 	$("#login-user-mail").on("keydown",function(){
 		$("#login-warning").text("");

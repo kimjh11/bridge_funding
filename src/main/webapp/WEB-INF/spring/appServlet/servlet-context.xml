@@ -58,7 +58,7 @@
 		<beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>
 	</beans:bean>
 	
-	<!-- 메일 인증 start 
+	<!-- 메일 인증 start  
 		username에  <google 계정>
 		password에  <google 비밀번호>
 		google 계정 로그인한 후 -> 보안 -> 보안 수준이 낮은 앱 액세스 허용으로 변경하기. 

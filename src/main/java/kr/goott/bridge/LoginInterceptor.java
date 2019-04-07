@@ -38,6 +38,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	//컨트롤러 실행 후 호출
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, 
 			Exception ex) throws Exception {
-			
+			 
 	}
 }

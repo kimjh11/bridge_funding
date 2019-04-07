@@ -158,6 +158,6 @@ public class MemberController {
 		}else {
 			mav.setViewName("redirect:searchIdPwd");
 		}
-		return mav;
+		return mav; 
 	}
 }

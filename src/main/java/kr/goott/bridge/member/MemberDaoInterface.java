@@ -10,6 +10,6 @@ public interface MemberDaoInterface {
 	//아이디 찾기
 	public MemberVO idSearch(String userMail);
 	
-	//새 비밀번호 변경
+	//새 비밀번호 변경 
 	public int updatePwd(MemberVO vo);
 }

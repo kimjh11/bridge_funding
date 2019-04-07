@@ -125,6 +125,6 @@ public class MailSendService {
 			resultCnt = "success";
 		}
 				
-		return resultCnt;
+		return resultCnt; 
 	}
 }

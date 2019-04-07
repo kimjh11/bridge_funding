@@ -4,4 +4,4 @@
 <script>
 	alert("로그인 후 이용 가능합니다 :)");
 	location.href="/"; //메인으로
-</script>
+</script>  

@@ -13,7 +13,7 @@
 <script src="<%=request.getContextPath() %>/js/idpwdSearch.js"></script>
 </head>
 <body>
-	<div class="wrap">
+	<div class="wrap"> 
 		<div class="idpwd-center">
 			<div class="idpwd-center">
 				<!-- 아이디 찾기 -->

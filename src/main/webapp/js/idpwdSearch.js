@@ -14,7 +14,7 @@ $(function(){
 		$("#id-title-div").css('background','#021044').css('color','white');
 		$("#pwd-title-div").css('background','rgba(2, 16, 68, 0)').css('color','black');
 	});
-	
+	 
 	
 	//이메일 인증번호 전송
 	$("#id-btn-sending").click(function(){
