@@ -5,8 +5,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="styleSheet" href="<%=request.getContextPath() %>/css/common.css"/>
+<link rel="styleSheet" href="<%=request.getContextPath() %>/css/login.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="<%=request.getContextPath() %>/js/common.js"></script>
+<script src="<%=request.getContextPath() %>/js/login.js"></script>
 <header>
 	<div class="wrap">
 		<!-- 이용안내 -->
@@ -45,12 +47,21 @@
 		<!-- 로그인/로그아웃/내정보 -->
 		<div id="top-etc">
 			<ul class="top-login">
-				<li><a href="">로그인</a></li>
-				<li><a href="">회원가입</a></li>
-				<li class="log-ok"><a href="">알림</a></li>
-				<li class="log-ok"><a href="">마이페이지</a></li>
-				<li class="log-ok"><a href="">로그아웃</a></li>
-				<li class="log-ok funding-open-btn"><a href="">내 펀딩 오픈하기</a></li>
+				
+				<!-- 로그인 전 -->
+				<c:if test="${logStatus =='N' || logStatus == null}">
+					<li><a id="login">로그인</a></li>
+					<li><a href="/bridge/join">회원가입</a></li>
+				</c:if>
+				
+				<!-- 로그인 후 -->
+				<c:if test="${logStatus == 'Y' }">
+					<li>${userName }</li>
+					<li ><a href="">알림</a></li>
+					<li ><a href="">마이페이지</a></li>
+					<li ><a href="/bridge/logout">로그아웃</a></li>
+					<li class="funding-open-btn"><a href="">내 펀딩 오픈하기</a></li>
+				</c:if>
 			</ul>
 			<form class="top-search">
 				<input type="button" class="search-toggle txt-none" value="검색">
@@ -62,14 +73,15 @@
 		<!-- 로그인 페이지 Div -->
 		<div id="login-div" hidden="hidden">
 			<h2 id="login-h2">로그인</h2>
-			<form>
+			<form method="post" action="/bridge/loginOk">
 				<input type="text" id="login-user-mail" name="userMail" placeholder="이메일 아이디 ex)aaaa@naver.com"/>
-				<input type="password" id="login-user-pwd" name="userPwd" placeholder="비밀번호 (영문,숫자,특수 8자이상)"/>
+				<input type="password" id="login-user-pwd" name="userPwd" placeholder="비밀번호 "/>
+				<label id="login-warning"></label>
 				<input type="submit" value="로그인" id="login-btn"/>
 			</form>
 			<div id="login-text">
-				아직 계정이 없나요? <a href="#"> BRIDGE 가입하기 </a><br/>
-				아이디 찾기 | 비밀번호 찾기<br/>
+				아직 계정이 없나요? <a href="/bridge/join"> BRIDGE 가입하기 </a><br/>
+				<a href="/bridge/searchIdPwd">아이디 찾기 | 비밀번호 찾기</a><br/>
 			</div>
 		</div>
 		<!-- 로그인 페이지 Div -->

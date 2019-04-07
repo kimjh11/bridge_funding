@@ -34,7 +34,7 @@
 	<!-- DataSource 객체 생성 -->
 	<beans:bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></beans:property>
-		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></beans:property>
+		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"></beans:property>
 		<beans:property name="username" value="bridge"></beans:property>
 		<beans:property name="password" value="1234"></beans:property>
 	</beans:bean>
@@ -58,12 +58,16 @@
 		<beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>
 	</beans:bean>
 	
-	<!-- 회원가입 메일 인증 start -->
+	<!-- 메일 인증 start 
+		username에  <google 계정>
+		password에  <google 비밀번호>
+		google 계정 로그인한 후 -> 보안 -> 보안 수준이 낮은 앱 액세스 허용으로 변경하기. 
+	-->
 	<beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<beans:property name="host" value="smtp.gmail.com"/>
 		<beans:property name="port" value="587"/>
-		<beans:property name="username" value="kimjunho1130@gmail.com"/>
-		<beans:property name="password" value="48921130"/>
+		<beans:property name="username" value="junhogg007@gmail.com"/>
+		<beans:property name="password" value="8950*qwer"/>
 		<beans:property name="defaultEncoding" value="UTF-8"/>
 		<beans:property name="javaMailProperties">
 			<beans:props>
@@ -74,5 +78,5 @@
 			</beans:props>
 		</beans:property>
 	</beans:bean>
-	<!-- 회원가입 메일 인증 end -->
+	<!-- 메일 인증 end -->
 </beans:beans>

@@ -52,7 +52,7 @@
 					비밀번호 확인  <input type="password" id="user-pwdchk" name="userPwdChk"  class="join-text" disabled/>
 				</div>
 				<div class="join-div">
-					<input type="submit" value="가입하기" class="join-btn"/>
+					<input type="submit" value="가입하기" id="join" class="join-btn"/>
 				</div>
 			</form>
 			<!-- ===================이름, 비밀번호======================  -->

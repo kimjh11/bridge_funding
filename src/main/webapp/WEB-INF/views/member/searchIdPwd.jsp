@@ -27,7 +27,14 @@
 					<!-- 아이디 찾기 -->
 					<div id="id-div">
 						<div id="id-text">
-							<form>
+							<form method="post" action="/bridge/idSearch">
+								<c:if test="${vo.userMail != null}" >
+									<p id="id-search">
+										<span id="id-search-color">${vo.userMail }</span><br/>									
+										회원으로 등록된 이메일 아이디입니다.
+										해당 이메일로 로그인하고 브릿지를 이용하세요!
+									</p>
+								</c:if>
 								이메일 <input type="text" id="user-mail" name="userMail" placeholder="ex)aaaa@naver.com"/>
 								<input type="submit" value="확인" id="id-btn"/>
 							</form>
@@ -37,17 +44,22 @@
 					<!-- 비밀번호 찾기 -->
 					<div id="pwd-div" hidden="hidden">
 						<div id="pwd-text">
-							<form>
-								이메일 <input type="text" id="user-mail" name="userMail" placeholder="ex)aaaa@naver.com"/>
+							<form method="post" action="/bridge/newPwd" id="frm">
+								이메일 <input type="text" id="user-mail-pwd" name="userMail" placeholder="ex)aaaa@naver.com"/>
 								<div id="text-div">
 									위 이메일로 인증번호가 발송됩니다. 
 								</div>
-								<input type="submit" value="확인" id="id-btn"/>
-							</form>
-							<form>
-								인증번호 <input type="password" id="ok-pwd"/><br/>
-								비밀번호 <input type="password" id="user-pwd" name="userPwd"/><br/>
-								비밀번호 확인 <input type="password" id="user-pwdchk" name="userPwd"/>
+								<label id="warning"></label>
+								<!-- 작성한 인증번호 비교 -->
+								<input type="hidden" id="ok-number" placeholder="인증번호를 입력해 주세요 :)" /><br/>
+								
+								<!-- 인증번호 요청 버튼 -->
+								<input type="button" value="인증번호 요청" id="id-btn-sending"/><br/>
+								<!-- 인증확인 버튼 -->
+								<input type="hidden" value="확인" id="joinStart"/><br/>
+								
+								새 비밀번호 <input type="password" id="user-pwd" name="userPwd" disabled/><br/>
+								새 비밀번호 확인 <input type="password" id="user-pwdchk" disabled/>
 								<input type="submit" value="비밀번호 변경" id="pwd-btn"/>
 							</form>
 						</div>

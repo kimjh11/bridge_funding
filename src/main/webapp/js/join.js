@@ -72,15 +72,25 @@ $(function(){
 		$("#warning-id").text("");
 	});
 	
-	//가입하기 유효성 검사
-	$(".join-btn").click(function(){
-		alert("aaaa");
-		var joinText = $(".join-text").val();
-		var oknumber =$("#ok-number").val();
+	//가입하기 모든 값 입력시 넘어가게, 비밀번호 확인 검사
+	$("#join").click(function(){
+		var name = $("#user-name").val();
+		var pwd = $("#user-pwd").val();
+		var pwdChk = $("#user-pwdchk").val();
+		var okNumber = $("#ok-number").val();
 		
-		if(joinText == null || oknumber == null){
+		if(name == "" || pwd == "" || pwdChk == ""){
 			$("#warning-id").html("모든 값을 입력해주세요 :(");
+			return false;
+		}else if(okNumber == ""){
+			$("#warning-id").html("모든 값을 입력해주세요 :(");
+			return false;
 		}
+		//비밀번호 확인하기
+	    if(pwd != pwdChk){
+	    	$("#warning-id").text("비밀번호가 일치하지 않습니다.");	
+	    	return false;
+	    }
 		
 	});
 });

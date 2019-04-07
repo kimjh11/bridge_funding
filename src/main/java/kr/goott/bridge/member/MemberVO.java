@@ -18,12 +18,12 @@ public class MemberVO {
 	private String addrdetail;
 	private String userRegdate;
 	private String mailChk;
+	private String logStatus; //로그인 여부
 	
 	//생성자
 	public MemberVO() {
 		
 	}
-	
 	
 	//getter/setter
 	public int getUserNum() {
@@ -161,5 +161,13 @@ public class MemberVO {
 	public void setMailChk(String mailChk) {
 		this.mailChk = mailChk;
 	}
-	
+
+	//로그인 여부
+	public String getLogStatus() {
+		return logStatus;
+	}
+
+	public void setLogStatus(String logStatus) {
+		this.logStatus = logStatus;
+	}
 }

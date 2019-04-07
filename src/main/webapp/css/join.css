@@ -6,10 +6,11 @@
 }
 
 .join-text{
-	width: 345px;
+	width: 62%;
     height: 40px;
 	border-radius: 5px 5px 5px 5px;	
 	border: 1px solid gray;
+	padding-left: 5px;
 }
 
 .join-btn{
@@ -48,30 +49,32 @@
 
 #user-email{
 	margin-left: 85px;
-	padding: 10px;
+	padding-left: 5px;
 }
 
 #user-name{
 	margin-left: 100px;
-	padding: 10px;
+	padding-left: 5px;
 }
 
 #user-pwd{
 	margin-left: 79px;
+	padding-left: 5px;
 }
 
 #user-pwdchk{
 	margin-left: 53px;
+	padding-left: 5px;
 }
 
 #ok-number{
-	width: 345px;
+	width: 62%;
     height: 40px;
 	border-radius: 5px 5px 5px 5px;
 	border: 1px solid;	
 	margin-left: 125px;
     margin-bottom: 10px;
-    padding: 10px;
+    padding-left: 5px;
 }
 
 #join-center{
