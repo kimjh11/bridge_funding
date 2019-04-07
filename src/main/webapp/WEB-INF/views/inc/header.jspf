@@ -41,13 +41,12 @@
 				<li><a href="<%=request.getContextPath()%>/category">카테고리</a></li>
 				<li><a href="<%=request.getContextPath()%>/commingsoon">오픈예정</a></li>
 				<li><a href="<%=request.getContextPath()%>/donation">기부와후원</a></li>
-				<li><a href="<%=request.getContextPath()%>/">미정</a></li>
 			</ul>
 		</nav>
 		<!-- 로그인/로그아웃/내정보 -->
 		<div id="top-etc">
 			<ul class="top-login">
-				
+
 				<!-- 로그인 전 -->
 				<c:if test="${logStatus =='N' || logStatus == null}">
 					<li><a id="login">로그인</a></li>
@@ -63,7 +62,7 @@
 					<li class="funding-open-btn"><a href="">내 펀딩 오픈하기</a></li>
 				</c:if>
 			</ul>
-			<form class="top-search">
+			<form class="project-search">
 				<input type="button" class="search-toggle txt-none" value="검색">
 				<input type="text" name="serach" placeholder="프로젝트명 검색하기"/>
 			</form>

@@ -1,0 +1,200 @@
+@charset "UTF-8";
+/* bx-slider setting */
+.reward-wrap .bx-wrapper{
+	box-shadow: inherit;
+	border: none;
+	background: none;
+	margin-bottom: 0;
+}
+.reward-wrap .bx-controls-direction{
+	display: none;
+}
+.reward-wrap .bx-wrapper .bx-pager{
+	padding-top: 0;
+	bottom: 7px;
+}
+.reward-wrap .bx-wrapper .bx-pager.bx-default-pager a{
+	width: 90px;
+	border-radius: 2px;
+	margin: 0 3px;
+}
+.reward-wrap .bx-wrapper .bx-pager.bx-default-pager a{
+	background: #6666668a;
+}
+.reward-wrap .bx-wrapper .bx-pager.bx-default-pager a.active{
+	background: #EFD435;
+}
+
+/* banner */
+.top-banner .main-banner img{
+	width: 100%;
+}
+.top-banner .main-banner .txt{
+	position: absolute;
+	width: 100%;
+	bottom: 50px;
+}
+.top-banner .main-banner .txt > *{
+	margin-left:10%;
+	font-family: nanumB;
+	color: #fff;
+}
+.top-banner .main-banner .banner-title{
+	font-size: 25pt;
+}
+.top-banner .main-banner .banner-sub-title{
+	font-size: 15pt;
+}
+
+/* category */
+.cate-nav{
+	width: 70%;
+	margin: 0 auto;
+}
+.cate-nav ul{
+	width: 70%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.cate-nav ul li a{
+	display: inline-block;
+	width: 100%;
+	line-height: 55px;
+	background: pink;
+	text-align: center;
+	border-radius: 8px;
+	font-size: 15pt;
+}
+.cate-nav ul li:first-child {
+	margin-left: 0;
+}
+
+/* list */
+.list-wrap .list-header {
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+	position: relative;
+	width: 70%;
+	margin: 0 auto;
+	padding: 5px 10px;
+}
+.list-wrap .list-header span {
+	color: #666;
+	float: left;
+	font-size: 20pt;
+}
+.list-wrap .list-header form {
+	position: absolute;
+	right: 135px;
+	top: 12px;
+}
+.list-wrap .list-header select {
+	float: right;
+	width: 120px;
+	height: 25px;
+	margin-top: 5px;
+	border-radius: 3px;
+	font-family: nanumB;
+	font-size: 10pt;
+	padding-left: 6px;
+	color: #666;
+	/* 화살표 변경 */
+	-webkit-appearance: none; /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+    background: url('../img/reward/arrow-down.png') no-repeat 95% 50%; /* 화살표 모양의 이미지 */
+    background-size: 10%;
+}
+/* IE 10, 11의 네이티브 화살표 숨기기 */
+.list-wrap .list-header select::-ms-expand { 
+	display: none;
+} 
+.list-wrap .list-header select option{
+	padding: 2px;
+	min-height: 1.5em;
+}
+.list-content ul li{
+	float: left;
+	font-size: 0;
+}
+.project-view{
+	padding-top: 15px;
+	width: 70%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.project-view > li{
+	position: relative;
+	width: 32%;
+	margin-left: 2%;
+	margin-bottom: 5%;
+}
+.project-view > li:nth-child(3n+1){
+	margin-left:0;
+}
+.project-view > li .cate-txt{
+	position: absolute;
+	right: 0;
+	padding: 3px 5px;
+	font-size: 10pt;
+	font-family: nanumB;
+	background: rgba(255, 254, 254, 0.56);/* 노랑 */
+	color: #888;
+}
+.project-view > li img{
+	width:100%;
+}
+.project-view > li h4{
+	background-color: #0210442b;
+	font-size:15pt;
+	padding: 5px 8px;
+	height: 50px;
+	overflow: hidden;
+	color: #404040;
+}
+.project-view .like-btn{
+	background-color: pink;
+	width: 30px;
+	height: 30px;
+	font-size: 0;
+	position: absolute;
+	top: 30px;
+	right: 10px;
+}
+.detail-info{
+	overflow: hidden;
+	border:1px solid #ddd;
+}
+.detail-info li{
+	border-left: 1px solid #ddd;
+	height: 50px;
+}
+.detail-info li:first-child{
+	border-left:none;
+}
+.detail-info li > *{
+	display: block;
+	text-align: center;
+}
+.detail-info li.col1,
+.detail-info li.col3{
+	width: 22%;
+}
+.detail-info li.col2{
+	width: 55%;
+}
+.detail-info li span{
+	font-size: 12pt;
+}
+.detail-info li strong{
+	font-size: 15pt;
+	color: #92D1E0;
+}
+
+.reward-wrap > *{
+	margin-bottom: 50px;
+}
+
+
+
+
