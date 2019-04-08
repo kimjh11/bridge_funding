@@ -19,11 +19,11 @@
 		   text-align:center;
 		   float:left;
 		   }
+	#topback img{
+				 width:100%;
+				 margin-top:-50%
+	}
 	#topback{
-			background-image: url("/bridge/img/abocado.gif");
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
 			filter:blur(5px);
 			height:100px
 			}

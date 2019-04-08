@@ -9,4 +9,8 @@
 	<select id="deTailAs" resultType="String">
 		select proRefund from project where cateCode=#{cateCode} and proCode=#{proCode}
 	</select>
+	<select id="replyOpen" resultType="kr.goott.bridge.deTailPage.ReplyVO">
+		select userMail, userImg, replyContent, to_char(replyDate,'YYYY-MM-DD HH:MM') replyDate 
+		from reply where proCode=#{proCode} order by replyNo desc 
+	</select>
 </mapper>

@@ -14,18 +14,18 @@
 <body>
 <div class="wrap">
 <div id="border">
-	<div id="topback"></div>
+	<div id="topback">${vo.proImg }</div>
 </div>
 	<div id="topTap"> <!-- 맨위 타이틀 div -->
 		<ruby>	
 			<span>${vo.proName }</span>
-			<rt></rt>
+			<rt>${vo.cateName }</rt>
 		</ruby>	
 		<table id="tap"> <!-- 나중에 ajax를 이용한 탭 만들기 -->
 			<tr>
 				<td data-tab="deTailOpen?cateCode=${vo.cateCode}&proCode=${vo.proCode}" class="selectTap taps">스토리</td>
 				<td data-tab="deTailGuide?cateCode=${vo.cateCode}&proCode=${vo.proCode}" class="taps">펀딩안내</td>
-				<td data-tab="deTailReply" class="taps">댓글</td>
+				<td data-tab="deTailReply?cateCode=${vo.cateCode}&proCode=${vo.proCode}" class="taps">댓글</td>
 				<td data-tab="deTailSpter" class="taps">서포터</td>
 			</tr>
 		</table>

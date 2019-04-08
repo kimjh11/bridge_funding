@@ -48,8 +48,14 @@ public class DeTailPageController {
 		return mav;
 	}
 	@RequestMapping("/deTailReply")
-	public String deTailReply() {
-		return "ajax/deTailReply";
+	public ModelAndView deTailReply(ProjectVO vo) {
+		ProjectDAOInterface dao = sqlSession.getMapper(ProjectDAOInterface.class);
+		List<ReplyVO> list = dao.replyOpen(vo.getCateCode(), vo.getProCode());
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("count",list.size());
+		mav.addObject("list", list);
+		mav.setViewName("ajax/deTailReply");
+		return mav;
 	}
 	@RequestMapping("/deTailAtm")
 	public String deTailAtm() {

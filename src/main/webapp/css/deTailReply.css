@@ -27,3 +27,21 @@
 					  font-size:1em;
 					  margin-bottom:3%
 					  }
+	.oneReply{
+			  border-bottom:1px solid lightgray;
+			  width:800px;
+			  height:100px;
+			  
+	}
+	.userImg img{
+				  width:80px;
+				  border-radius:50px;
+	}
+	.userImg{
+			 float:left;
+			 margin:10px 3%;
+	}
+	.userImg{
+			 witdh:100px;
+	
+	}
