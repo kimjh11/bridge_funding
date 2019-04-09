@@ -46,7 +46,6 @@
 		<!-- 로그인/로그아웃/내정보 -->
 		<div id="top-etc">
 			<ul class="top-login">
-
 				<!-- 로그인 전 -->
 				<c:if test="${logStatus =='N' || logStatus == null}">
 					<li><a id="login">로그인</a></li>

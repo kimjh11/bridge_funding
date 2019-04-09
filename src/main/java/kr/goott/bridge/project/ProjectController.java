@@ -39,4 +39,10 @@ public class ProjectController {
 		mav.setViewName("project/inputItem");
 		return mav;
 	}
+	@RequestMapping("/inputProOk")
+	public ModelAndView inputProOkList() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("project/inputProOk");
+		return mav;
+	}
 }

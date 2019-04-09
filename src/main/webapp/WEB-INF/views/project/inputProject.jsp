@@ -20,7 +20,7 @@
 		<div id="proBody">
 			<div id="proLeft">
 				<ul id="proTitle">
-					<li class="row1">카테고리</li>
+					<li class="row1">카테고리<br/><span class="ex3">프로젝트가 노출될 카테고리를 선택해 주세요.</span></li>
 					<li class="row2">
 						대표이미지<br/>
 						<span class="ex3">메인에 노출되는 썸네일 이미지</span><br/><br/>
@@ -49,21 +49,22 @@
 				</ul>
 			</div>
 			<div id="proMid">		
-					<form>				
+					<form action="" id="frm" method="post"h>				
 						<div class="inputData row1" id="selectOpt1">
 							<!-- 카테고리선택 -->
-							<select class="data">
-								<option value="">카테고리 선택</option>
-								<option value="">영화</option>
-								<option value="">공연</option>
-								<option value="">게임</option>
-								<option value="">아이템</option>
+							<select name="cateCode" id="cateName" class="data">
+								<option>카테고리 선택</option>
+								<%-- <c:forEach var="" items=""> --%>
+									<option value="mv">{vo.cateName}</option>
+								<%-- </c:forEach> --%>
 							</select>
 						</div>
 						
 						<div class="inputData row2 inputImg" id="selectImg1">
 							<!-- 대표이미지 -->
+							
 							<img id="loadImg" src="${pageContext.request.contextPath }/img/inputImg.png" /><br/>
+						  	
 						  	<label for="proImg">업로드</label>
 						  	<input type="file" name="proImg" id="proImg"/>
 						</div>
@@ -86,28 +87,30 @@
 
 						<div class="inputData row3">
 							<!-- 프로젝트명 -->
-							<input type="text" class="data"/>
+							<input type="text" name="proName" class="data" placeholder="ex)&nbsp;&nbsp;봄!! 필수 아이템 핵 인싸가 되는 갓템~"/>
 						</div>
 						
 						<div class="inputData row4">
 							<!-- 목표금액 -->
-							<input type="text" class="data"/><span class="ex2">원</span>
+							<input type="text" name="proGoal" class="data" placeholder="ex)&nbsp;&nbsp;150000"/><span class="ex2">원</span>
 						</div>
 						
 						<div class="inputData row5">
 							<!-- 기간 -->
-							<select class="data">
-								<option value="">프로젝트 기간 선택</option>
-								<option value="">15일</option>
-								<option value="">1개월</option>
-								<option value="">3개월</option>
-								<option value="">6개월</option>
+							<select name="proDate" id="proDate" class="data">
+								<option>프로젝트 기간 선택</option>
+								<option value="15">15일</option>
+								<option value="1">1개월</option>
+								<option value="3">3개월</option>
+								<option value="6">6개월</option>
 							</select>
 						</div>
 						
 						<div class="inputData row6 inputImg" id="selectImg2" >
 							<!-- 회사이미지 -->
+							
 							<img id="loadImg2" src="${pageContext.request.contextPath }/img/inputImg.png" /><br/>
+						  	
 						  	<label for="comImg">업로드</label>
 						  	<input type="file" name="comImg" id="comImg"/>
 						</div>
@@ -130,34 +133,40 @@
 						
 						<div class="inputData row7">
 							<!-- 사업자명 -->
-							<input type="text" class="data"/>
+							<input type="text" name="comName" class="data" placeholder="ex)&nbsp;&nbsp;(주)BRIDGE"/>
 						</div>
 						<div class="inputData row8">
 							<!-- 사업자번호 -->
-							<input type="text" class="data"/>
+							<input type="text" name="comNum" class="data" placeholder="ex)&nbsp;&nbsp;0000-00000-0000-000"/>
 						</div>
 						<div class="inputData row9">
 							<!-- 계좌번호 -->
-							<input type="text" class="data"/>
+							<input type="text" name="account" class="data" placeholder="ex)&nbsp;&nbsp;0000-00000-0000-000"/>
 						</div>
 						<div class="inputData row10">
 							<!-- 연락처 -->
-							<input type="text" class="data"/>
+							<input type="text" name="comTel" class="data" placeholder="ex)&nbsp;&nbsp;010-0000-0000"/>
 						</div>
 						<div class="inputData row11">
 							<!-- 이메일 -->
-							<input type="text" class="data"/>
+							<input type="text" name="comEmail" class="data" placeholder="ex)&nbsp;&nbsp;0000@naver.com"/>
 						</div>
 						<div class="inputData row12">
 							<!-- 홈페이지 -->
-							<input type="text" class="data"/>
+							<input type="text" name="comSite" class="data" placeholder="ex)&nbsp;&nbsp;https://www.Bridge.com"/>
 						</div>
 						<!-- 저장하기 and 다음단계로 -->
-						<div class="saveNext"><a href="#">저장하기</a></div>
-						<div class="saveNext" style="border-bottom:1px solid #666"><a href="#">다음단계로 ></a></div>
+						<div class="saveNext"><a href="#" onclick="document.getElementById('frm').submit();">저장하기</a></div>
+						<div class="saveNext" style="border-bottom:1px solid #666"><a href="/bridge/inputStory">다음단계로 ></a></div>
 			
 				</form>	
 			</div>
+			
+			<script>
+				
+			
+			</script>
+			
 			<div id="proRight">
 				<ul>
 					<li>
