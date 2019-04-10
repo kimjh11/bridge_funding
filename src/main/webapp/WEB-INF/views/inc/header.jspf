@@ -36,11 +36,11 @@
 		</div>
 		<!-- 상단메뉴 -->
 		<nav class="top-menubar">
-			<ul>
-				<li><a href="<%=request.getContextPath()%>/reward">리워드 홈</a></li>
-				<li><a href="<%=request.getContextPath()%>/category">카테고리</a></li>
-				<li><a href="<%=request.getContextPath()%>/commingsoon">오픈예정</a></li>
-				<li><a href="<%=request.getContextPath()%>/donation">기부와후원</a></li>
+			<ul> <!-- 배너/카테고리/정렬여부 값 전달 -->
+				<li><a href="<%=request.getContextPath()%>/list?menuIndex=1&banner=open&cate=open&sorting=open">리워드 홈</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?menuIndex=2&banner=&cate=open&sorting=open">카테고리</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?menuIndex=3&banner=open&cate=&sorting=">오픈예정</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?menuIndex=4&banner=open&cate=&sorting=open">기부와후원</a></li>
 			</ul>
 		</nav>
 		<!-- 로그인/로그아웃/내정보 -->
@@ -58,7 +58,7 @@
 					<li ><a href="">알림</a></li>
 					<li ><a href="">마이페이지</a></li>
 					<li ><a href="/bridge/logout">로그아웃</a></li>
-					<li class="funding-open-btn"><a href="">내 펀딩 오픈하기</a></li>
+					<li class="funding-open-btn"><a href="<%=request.getContextPath()%>/inputProject">내 펀딩 오픈하기</a></li>
 				</c:if>
 			</ul>
 			<form class="project-search">

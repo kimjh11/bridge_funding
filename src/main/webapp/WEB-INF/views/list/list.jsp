@@ -10,7 +10,8 @@
 </head>
 <body>
 <div class="reward-wrap">
-	<!-- 상단배너  -->
+	<!-- Top Banner Start  -->
+	<c:if test="${bannerOpen=='open' }">
 	<div class="top-banner">
 		<!-- 인기아이템/마감임박아이템/앵콜아이템/추천아이템 , 주제별 리스트페이지 이동 -->
 		<ul class="main-banner banner-slider">
@@ -38,6 +39,9 @@
 			<a href=""></a>
 		</div>
 	</div>
+	</c:if>
+	<!-- Top Banner End -->
+	<!-- Category Nav Start -->
 	<nav class="cate-nav">
 		<ul>
 			<li><a href="">카테고리1</a></li>

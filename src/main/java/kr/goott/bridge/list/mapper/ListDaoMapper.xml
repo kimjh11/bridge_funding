@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.goott.bridge.list.ListDaoInterface">
+	<!-- <select id="bannerSelect" parameterType="int" resultType="kr.goott.bridge.list.BannerVO">
+		
+	</select>
+	<select id="categorySelect" resultType="kr.goott.bridge.list.CategoryVO">
+	
+	</select>
+	<select id="rewardHomeList" resultType="kr.goott.bridge.list.ListVO">
+		select cateCode, cateName, proCode, proName, proImg, comName, proGoal, proNow, proEnd, likeCount from project
+	</select> -->
+</mapper>
+	<!-- <inse"insertRecord" parameterType="kr.goott.bridge.member.MemberVO">
+		insert into member(userNum, userMail, userPwd, userName, userRegdate)
+		values (memberSq.nextVal, #{userMail}, #{userPwd}, #{userName}, sysdate)
+	</insert>
+	<select id="loginCheck" resultType="kr.goott.bridge.member.MemberVO">
+		select userImg , userName from member
+		where userMail = #{userMail} and userPwd = #{userPwd}
+	</select> -->
