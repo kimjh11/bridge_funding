@@ -174,6 +174,7 @@
 		<!-- 크리에이터  -->
 		
 		<!-- 좋아요 리스트 확인 -->
+		<div id="like-wrap">
 			<div id="like-list-div" hidden="hidden">
 				<div id="like-card-x">&Chi;</div>
 				<hr/>
@@ -183,6 +184,7 @@
 					<hr/>
 				</c:forEach>
 			</div>
+		</div>
 		<!-- 좋아요 리스트 확인 -->
 		
 		<!-- 펀딩 리스트 확인 -->

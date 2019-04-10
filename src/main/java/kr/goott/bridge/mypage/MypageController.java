@@ -19,5 +19,5 @@ public class MypageController {
 		
 		return "mypage/mypage";
 	}
-	
+	 
 }

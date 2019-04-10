@@ -72,11 +72,11 @@ width:16px;height:16px;background:#f1ef79;}
 
 #mypage-su{
 	float: left;
-    font-size: 3em;
+    font-size: 2em;
     border: 1px solid black;
     border-radius: 15px 15px 0px 0px;
     padding-left: 50px;
-    width: 150px;
+    width: 105px;
     background: #021044;
     color: white;
     cursor: pointer;
@@ -84,18 +84,18 @@ width:16px;height:16px;background:#f1ef79;}
 
 #mypage-cr{
 	float: left;
-    font-size: 3em;
+    font-size: 2em;
     margin-left: 15px;
     border: 1px solid black;
     border-radius: 15px 15px 0px 0px;
-    padding-left: 50px;
-    width: 150px;
+    padding-left: 40px;
+    width: 115px;
     cursor: pointer;
 }
 
 #mypage-reward{
 	float: left;
-    font-size: 2.5em;
+    font-size: 1.5em;
     margin-left: 45px;
     text-decoration: underline;
     color: #92D1E0;
@@ -103,7 +103,7 @@ width:16px;height:16px;background:#f1ef79;}
 }
 
 #mypage-like{
-	font-size: 2.5em;
+	font-size: 1.5em;
     margin-left: 240px;
     cursor: pointer;
 }
@@ -323,14 +323,13 @@ table.cr-list-table th:nth-child(5){
     font-size: 1.5em;
 }
 
-#funding-wrap{
+#like-wrap,#funding-wrap{
 	background: #808080bd;
 	z-index: 5;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
-
 
 /* 간편결제 등록 div */
 .card-div{

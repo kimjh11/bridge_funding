@@ -52,12 +52,13 @@ $(function(){
 	//좋아요 리스트
 	$("#cr-list-like").click(function(){
 		$("#like-list-div").css('display','block');
-		$("body").css('background','gray').css('z-index','100');
+		$("#like-wrap").css('width',$(window).width()+'px').css('height',$(window).height()+'px');
+		$("body").css('height',$(window).height()+'px');
 	});
 	//좋아요 리스트 x버튼 클릭시 
 	$("#like-card-x").click(function(){
 		$("#like-list-div").hide();
-		$("body").css("background","rgba(255, 254, 254, 0)");
+		$("#like-wrap").css('display','none');
 	});
 	
 	//펀딩 리스트
@@ -69,6 +70,6 @@ $(function(){
 	//펀딩 리스트 x버튼 클릭시 
 	$("#funding-card-x").click(function(){
 		$("#funding-list-div").hide();
-		$("#funding-wrap").css('background','rgba(255, 254, 254, 0)');
+		$("#funding-wrap").css('display','none');
 	});
 });

@@ -1,10 +1,12 @@
+@charset "UTF-8";
+
 .wrap{
 	width:80%; 
 	margin: 0 auto;
 	margin-top: 115px;
 }
 
-.profile-text{
+.profile-text{ 
 	width: 62%;
     height: 40px;
 	border-radius: 5px 5px 5px 5px;	

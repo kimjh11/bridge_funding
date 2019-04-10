@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <html>
-<head>
+<head> 
 <title>프로필</title>
 <!-- 커스텀 CSS -->
 <link href="<%=request.getContextPath()%>/css/profile.css" rel="stylesheet"/>

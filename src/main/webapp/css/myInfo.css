@@ -1,10 +1,12 @@
+@charset "UTF-8";
+
 .mypageli{
 	float: none;
 	font-size: 1.3em;
 	margin-left: 40px;
 }
 
-.mypage-h3{
+.mypage-h3{ 
 	font-size: 1.5em;
 	margin-left: 20px;
 }

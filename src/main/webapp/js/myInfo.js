@@ -5,4 +5,4 @@ $(function(){
 		$("#mypage-Div").toggle();
 	});
 	
-});
+}); 
