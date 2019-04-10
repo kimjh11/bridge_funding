@@ -20,7 +20,7 @@
 	
 	width:60%
 }
-#proTitle li{
+#proTitle2 li{
 	font-size:2em;
 	text-align:left;
 }
@@ -32,6 +32,7 @@
 	color:#000066;
 }
 .ex{font-size:0.7em;color:#4dffc3}
+.ex2{font-size:0.8em;color:gray}
 .inputData{
 	width:100%;
 	height:50px;
@@ -45,9 +46,10 @@
 .row1,.row2,.row3{
 	height:70px;margin-bottom:35px;color:#000066
 }
-.row2{height:800px;}
+.row1{height:425px}
+.row2{height:770px;margin-bottom:0}
 .row3{height:250px}
-#proLeft li{margin-top:20px}
+#proLeft li{margin-top:10px}
 
 .saveNext{
 	width:100%;
@@ -70,7 +72,19 @@
 #proCat2{background:#000066}
 #proCat2 a{color:white}
 
-#proRefund{width:100%;height:100%; box-shadow:1px 1px 10px lightgray}
+#proRefund{width:100%;height:100%; border:none;box-shadow:1px 1px 5px 3px lightgray}
+#proTitle{width:80%;height:20%;border:none;border-bottom:2px solid #e8e8e8}
+#titleBtn{width:20%;height:20%;border:none;background:#e8e8e8;border-radius:100px;font-size:1.5em}
+#titleBtn:hover{background:#4dffc3}
+
+input{font-size:1.5em}
+
+
+
+
+
+
+
 
 
 

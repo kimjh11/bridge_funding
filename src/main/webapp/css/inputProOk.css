@@ -23,6 +23,7 @@
 #proTitle li{
 	font-size:2em;
 	text-align:left;
+	margin-top:10px
 }
 #proRight li{
 	font-size:1.6em;
@@ -32,24 +33,26 @@
 	color:#000066;
 }
 .ex{font-size:0.7em;color:#4dffc3}
-.ex2{font-size:1.5em}
+.ex2{font-size:1.8em;color:gray}
 .ex3{font-size:0.9em;color:gray}
 .inputData{
 	width:100%;
 	height:50px;
 	border:1px solid #ccc;
 	/* background:#eee; */
-	text-align:center;
+	text-align:left;
 	margin-bottom:35px;
 	box-shadow:0px 1px 5px lightgray;
 }
 #selectOpt1{}
+
+
 .row1,.row2{
-	height:70px;margin-bottom:35px;color:#000066
+	height:70px;color:#000066;margin-top:35px
 }
-.row1{height:570px}
-.row2{height:170px}
-#proLeft li{margin-top:20px}
+.row1{height:200px}
+.row2{height:130px}
+
 #saveDiv{width:100%;height:120px}
 
 .saveNext{
@@ -72,39 +75,29 @@
 #proCat1 a{color:#666}
 #proCat2{background:white}
 #proCat2 a{color:#666}
-#proCat3{background:#000066}
-#proCat3 a{color:white}
+#proCat3{background:white}
+#proCat3 a{color:#666}
+#proCat4{background:#000066}
+#proCat4 a{color:white}
 
-.row{width:100%;height:50px;margin-bottom:10px}
-.li2{height:200px}
-.row1_1,.row2_1,.row3_1,.row4_1,.row5_1,.row6_1{width:20%;height:100%;font-size:1.8em} 
-.row1_2,.row2_2,.row3_2,.row4_2,.row5_2,.row6_2{width:80%;height:100%}
+.row{width:100%;height:400px;margin-bottom:10px}
 
-.data{width:70%;height:40px;border:none;border-bottom:2px solid #ccc;background:none}
-#itemContent{width:80%;height:100%;background:none;border:2px solid #ccc}
-
-.itemSave{border:none;background:none}
-.itemSave a{color:gray}
-.itemSave a:hover{color:#4dffc3}
-.data2{width:40%}
-
-.tableDiv{
-	width:100%;
-	height:170px;
-	border:1px solid #bbb;
-	box-shadow:1px 1px 5px #ccc;	
-}
-table{width:100%;height:100%}
-thead{width:100%;border-bottom:1px solid gray}
-tbody{width:100%}
-tr{width:100%;}
-.td1{width:10%}
-.td2{width:10%}
-.td3{width:30%}
-.td4{width:20%}
-.td5{width:15%}
-.td6{width:10%}
-.td7{width:5%}
+.row1_1,.row2_1{
+	width:80%;
+	height:50%;
+	margin: 10px 50px 0px;
+} 
+.row1_1{height:30%}
+.row2_1{margin-top:0px}
 
 input{font-size:1.5em}
+
+
+
+
+
+
+
+
+
 

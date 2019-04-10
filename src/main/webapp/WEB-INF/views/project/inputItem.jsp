@@ -16,34 +16,78 @@
 		<div id="proBody">
 			<div id="proLeft">
 				<ul id="proTitle">
-					<li class="row1">금액</li>
-					<li class="row2">리워드명</li>
-					<li class="row3">상세설명</li>
-					<li class="row4">세부옵션</li>
-					<li class="row5">배송료</li>
-					<li class="row6">제한수량</li>
-					<li class="row7">발송시작일</li>
+					<li class="row1">리워드(상품)등록<br/><span class="ex3">리워드(상품)정보 입력후 임시저장 버튼을 클릭해야 입력한 정보가 저장 됩니다.</span></li>
+					<li class="row2">등록상품 미리보기<br/><span class="ex3">입력한 리워드(상품)정보 입니다. 삭제버튼 클릭시 저장한 정보가 지워집니다.</span></li>
 				</ul>
 			</div>
-			<div id="proMid">		
-					<form>				
-						<div class="inputData row1">
-							<!-- 리워드가격 -->
-							<input type="text"/>원
-						</div>
-						<div class="inputData row2">
-							<!-- 리워드 명 -->
-							<input type="text"/>
-						</div>	
-						<div class="inputData row3">
-							<!-- 리워드설명 -->
-							<input type="text"/>
-						</div>
-						
+			<div id="proMid">	
+				<form>				
+					<div class="row1 inputData">
+						<ul style="margin-top:10px">
+							<li class="row" >
+								<div class="row1_1">리워드명</div>
+								<div class="row1_2">
+									<input type="text" class="data" placeholder="ex)&nbsp;&nbsp;슈퍼얼리버드 로봇키즈"/>
+								</div>
+							</li>
+							<li class="row li2">
+								<div class="row2_1">상세설명</div>
+								<div class="row2_2">
+									<textarea style="resize:none" name="itemContent" id="itemContent"  placeholder="제공하는 리워드가 무엇인지 간략하게 써주세요.
+									ex) 1.구성품(백팩+레인커버+파우치)
+									ex) 2.트래블 백팩 2개"></textarea>
+								</div>
+							</li>
+							<li class="row">
+								<div class="row3_1">세부옵션</div>
+								<div class="row3_2"><input type="text" class="data" placeholder="ex)&nbsp;&nbsp;색상:빨강/주황/노랑"/></div>
+							</li>
+							<li class="row">
+								<div class="row4_1">상품 순위</div>
+								<div class="row4_2"><input type="text" class="data data2" placeholder="ex)&nbsp;&nbsp;1"/></div>
+							</li>
+							<li class="row">
+								<div class="row5_1">금액</div>
+								<div class="row5_2"><input type="text" class="data data2" placeholder="ex)&nbsp;&nbsp;26500"/><span class="ex2">원</span></div>
+							</li>
+							<li class="row">
+								<div class="row6_1">제한수량</div>
+								<div class="row6_2"><input type="text" class="data data2" placeholder="ex)&nbsp;&nbsp;300"/><span class="ex2">개</span></div>
+							</li>
+							<div class="saveNext itemSave"><a href="#">상품 임시저장</a></div>
+						</ul>
+					</div>
+					<div class="tableDiv row2">
+						<table>
+							<thead>
+								<tr>
+									<td class="td1">상품순위</td>
+									<td class="td2">상품명</td>
+									<td class="td3">상세설명</td>
+									<td class="td4">세부옵션</td>
+									<td class="td5">상품금액</td>
+									<td class="td6">제한수량</td>
+									<td class="td7">삭제</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="td1"></td>
+									<td class="td2"></td>
+									<td class="td3"></td>
+									<td class="td4"></td>
+									<td class="td5"></td>
+									<td class="td6"></td>
+									<td class="td7"><a href="#"></a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="inputData" id="saveDiv">
 						<!-- 저장하기 and 다음단계로 -->
 						<div class="saveNext"><a href="#">저장하기</a></div>
 						<div class="saveNext" style="border-bottom:1px solid #666"><a href="#">다음단계로 ></a></div>
-			
+					</div>
 				</form>	
 			</div>
 			<div id="proRight">
