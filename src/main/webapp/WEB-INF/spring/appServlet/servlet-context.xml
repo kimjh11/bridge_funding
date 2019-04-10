@@ -34,7 +34,7 @@
 	<!-- DataSource 객체 생성 -->
 	<beans:bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></beans:property>
-		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"></beans:property>
+		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></beans:property>
 		<beans:property name="username" value="bridge"></beans:property>
 		<beans:property name="password" value="1234"></beans:property>
 	</beans:bean>
