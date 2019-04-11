@@ -327,6 +327,7 @@ header #top-etc{
 	border-bottom: 1px solid #666;
 	padding: 0 5px;
 	height: 23px;
+	width:85%;
 }
 .project-search .search-toggle{
 	width: 15px;

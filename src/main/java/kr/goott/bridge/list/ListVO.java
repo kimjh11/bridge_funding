@@ -2,23 +2,23 @@ package kr.goott.bridge.list;
 
 public class ListVO {
 	//상품관련(proVO참조)
-	String cateCode; //카데고리 코드
-	String cateName; //카테고리명
-	String proCode; //프로젝트 넘버 
-	String proName; //프로젝트명
-	String proImg; //썸네일
-	String comName; //판매자명
-	int proGoal; //목표펀딩액
-	int proNow; //현재펀딩액
-	String proEnd; //마감일
-	int likeCount; //좋아요수
+	private String cateCode; //카데고리 코드
+	private String cateName; //카테고리명
+	private String proCode; //프로젝트 넘버 
+	private String proName; //프로젝트명
+	private String proImg; //썸네일
+	private String comName; //판매자명
+	private int proGoal; //목표펀딩액
+	private int proNow; //현재펀딩액
+	private String proEnd; //마감일
+	private int likeCount; //좋아요수
 	
 	//상품관련(listVO생성)
 	String likeClick = "N"; //좋아요 클릭여부
-	int goalPercent; //달성률
-	int remainingDay; //남은일자
+	int remainingDay = 0; //남은일자
 	
-	public ListVO() {}
+	public ListVO() {
+	}
 	
 	public String toString() {
 		String txt = "cateCode = " + getCateCode();
@@ -32,6 +32,7 @@ public class ListVO {
 			   txt += "proEnd = " + getProEnd();
 			   txt += "likeCount = " + getLikeCount();
 			   txt += "likeClick = " + getLikeClick();
+			   txt += "remainingDay = " + getRemainingDay();
 		return txt;
 	}
 
@@ -125,14 +126,6 @@ public class ListVO {
 		this.likeClick = likeClick;
 	}
 
-	public void getGoalPercent() {
-		setGoalPercent();
-	}
-
-	public void setGoalPercent() {
-		int result = (int)((float)getProNow()/getProGoal()*100);
-		this.goalPercent = result;
-	}
 
 	public int getRemainingDay() {
 		return remainingDay;

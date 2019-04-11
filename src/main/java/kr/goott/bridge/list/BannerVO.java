@@ -2,9 +2,9 @@ package kr.goott.bridge.list;
 
 public class BannerVO {	
 	//배너
-	String bannerImg;
-	String bannerTitle;
-	String bannerSubTitle;
+	private String bannerImg;
+	private String bannerTitle;
+	private String bannerSubTitle;
 	
 	public BannerVO() {}
 	

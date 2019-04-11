@@ -60,8 +60,8 @@ $(function(){
 	
 	//스크롤 이벤트 
 	$(window).scroll(function(){
-		console.log($(this).scrollTop());
-		console.log($(document).height());
+		//console.log($(this).scrollTop());
+		//console.log($(document).height());
 		if($(this).scrollTop()>=900){
 			$('header .top-controller').addClass('show');
 		}else{
