@@ -26,7 +26,7 @@
 				<td data-tab="deTailOpen?cateCode=${vo.cateCode}&proCode=${vo.proCode}" class="selectTap taps">스토리</td>
 				<td data-tab="deTailGuide?cateCode=${vo.cateCode}&proCode=${vo.proCode}" class="taps">펀딩안내</td>
 				<td data-tab="deTailReply?cateCode=${vo.cateCode}&proCode=${vo.proCode}" class="taps">댓글</td>
-				<td data-tab="deTailSpter" class="taps">서포터</td>
+				<td data-tab="deTailSpter?cateCode=${vo.cateCode}&proCode=${vo.proCode}" class="taps">서포터</td>
 			</tr>
 		</table>
 	</div>
@@ -67,24 +67,24 @@
 					</li>
 				</ul>
 		</div>
-		<div id="optionStr" class="topMargin">
-			<span>리워드 선택</span>
-			<hr/>
-			<div class="option">
-				<div class="left">펀딩금액</div>
-				<div class="right">???,???원</div>
-				<div id="text">슈퍼얼리버드 더 와이즈 로봇키즈<br/>
-					더와이즈로봇키즈 1세트<br/>
-					(구성품:로봇교구세트1세트+워크북12권+보호자용 지도서 1권)
+		<c:forEach var="item" items="${list}">
+			<div id="optionStr" class="topMargin">
+				<span>리워드 선택</span>
+				<hr/>
+				<div class="option">
+					<div class="left">펀딩금액</div>
+					<div class="right">${item.itemPrice}원</div>
+					<div id="text">${item.itemName}<br/>
+						${item.itemContent}<br/>
+						${item.itemOption}
+					</div>
+					<div class="left">발송 시작일</div>
+					<div class="right">2019.05월 말(20~말일)예정</div>
+					<div class="left">제한수량 / 현재수량</div>
+					<div class="right">${item.limitCnt } / ${item.stateCnt }</div>
 				</div>
-				<div class="left">배송비</div>
-				<div class="right">???,???원</div>
-				<div class="left">발송 시작일</div>
-				<div class="right">2019.05월 말(20~말일)예정</div>
-				<div class="left">제한수량 / 현재수량</div>
-				<div class="right">?? / ??</div>
 			</div>
-		</div>
+		</c:forEach>	
 	</div>
 </div>
 </body>

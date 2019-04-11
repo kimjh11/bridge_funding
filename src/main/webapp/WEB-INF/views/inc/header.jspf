@@ -46,15 +46,6 @@
 		<!-- 로그인/로그아웃/내정보 -->
 		<div id="top-etc">
 			<ul class="top-login">
-<<<<<<< HEAD
-				<li><a href="">로그인</a></li>
-				<li><a href="">회원가입</a></li>
-				<li class="log-ok"><a href="">알림</a></li>
-				<li class="log-ok"><a href="">마이페이지</a></li>
-				<li class="log-ok"><a href="">로그아웃</a></li>
-				<li class="log-ok funding-open-btn"><a href="/bridge/inputProject">내 펀딩 오픈하기</a></li>
-=======
-
 				<!-- 로그인 전 -->
 				<c:if test="${logStatus =='N' || logStatus == null}">
 					<li><a id="login">로그인</a></li>
@@ -69,7 +60,6 @@
 					<li ><a href="/bridge/logout">로그아웃</a></li>
 					<li class="funding-open-btn"><a href="">내 펀딩 오픈하기</a></li>
 				</c:if>
->>>>>>> refs/remotes/origin/join
 			</ul>
 			<form class="project-search">
 				<input type="button" class="search-toggle txt-none" value="검색">

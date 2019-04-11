@@ -1,13 +1,19 @@
 package kr.goott.bridge.deTailPage;
 
 public class ReplyVO {
-	String userMail;
-	String userImg;
-	String proCode;
-	int replyNo;
-	String replyContent;
-	String userip;
-	String replyDate;
+	private String userMail;
+	private String userName;
+	private String userImg;
+	private String proCode;
+	private String proOpen;
+	private String proEnd;
+	private String proDate;
+	private String CateCode;
+	private int replyNo;
+	private String replyContent;
+	private String userIp;
+	private String replyDate;
+	
 	public String getUserMail() {
 		return userMail;
 	}
@@ -38,17 +44,47 @@ public class ReplyVO {
 	public void setReplyContent(String replyContent) {
 		this.replyContent = replyContent;
 	}
-	public String getUserip() {
-		return userip;
+	public String getUserIp() {
+		return userIp;
 	}
-	public void setUserip(String userip) {
-		this.userip = userip;
+	public void setUserIp(String userIp) {
+		this.userIp = userIp;
 	}
 	public String getReplyDate() {
 		return replyDate;
 	}
 	public void setReplyDate(String replyDate) {
 		this.replyDate = replyDate;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getProOpen() {
+		return proOpen;
+	}
+	public void setProOpen(String proOpen) {
+		this.proOpen = proOpen;
+	}
+	public String getProEnd() {
+		return proEnd;
+	}
+	public void setProEnd(String proEnd) {
+		this.proEnd = proEnd;
+	}
+	public String getProDate() {
+		return proDate;
+	}
+	public void setProDate(String proDate) {
+		this.proDate = proDate;
+	}
+	public String getCateCode() {
+		return CateCode;
+	}
+	public void setCateCode(String cateCode) {
+		CateCode = cateCode;
 	}
 	
 	
