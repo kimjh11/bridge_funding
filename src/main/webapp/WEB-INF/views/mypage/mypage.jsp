@@ -18,7 +18,7 @@
 				<h2 id="mypage">마이페이지</h2>
 			</div>
 			<div id="button">
-				<a href="/bridge/profileForm"><button id="mypage-profile-edit">프로필 편집</button></a>
+				<a href="/bridge/profileFormUpdate?userMail=${userMail}"><button id="mypage-profile-edit">프로필 편집</button></a>
 				<button id="mypage-card-ok">간편결제등록</button>
 			</div>	
 			
@@ -66,7 +66,8 @@
 		
 		<div id="mypage-center">	
 			<!-- 이미지 -->
-			<div id="mypage-img"></div>
+			<img id="mypage-img" src="/bridge/upload/${img}" onerror="this.src='<%=request.getContextPath() %>/img/profile/user.png'"/>
+			<!-- <div id="mypage-img"></div> -->
 			<div id="mypage-username">${userName} 님</div> 	
 		</div>
 		<div id="mypage-tab">
@@ -179,7 +180,8 @@
 				<div id="like-card-x">&Chi;</div>
 				<hr/>
 				<c:forEach var="vo" begin="1" end="4">
-					<div id="like-list"></div>
+					<!-- 이미지 -->
+					<img id="like-list" src="/bridge/upload/${img}" onerror="this.src='<%=request.getContextPath() %>/img/profile/user.png'"/>
 					<div id="like-text">김준호님이 좋아요를 눌렀습니다.</div>
 					<hr/>
 				</c:forEach>
@@ -193,7 +195,8 @@
 					<div id="funding-card-x">&Chi;</div>
 					<hr/>
 					<c:forEach var="vo" begin="1" end="4">
-						<div id="funding-list"></div>
+						<!-- 이미지 -->
+						<img id="funding-list" src="/bridge/upload/${img}" onerror="this.src='<%=request.getContextPath() %>/img/profile/user.png'"/>
 						<div id="funding-text">김준호님이 펀딩하였습니다.</div>
 						<hr/>
 					</c:forEach>

@@ -64,7 +64,7 @@
 					<li ><a href="/bridge/mypageForm">마이페이지</a></li>
 					<li ><a href="/bridge/logout">로그아웃</a></li>
 					<!-- 이미지 -->
-					<li id="header-img">  </li>
+					<img id="header-img" src="/bridge/upload/${img}" onerror="this.src='<%=request.getContextPath() %>/img/profile/user.png'"/>
 					<li class="funding-open-btn"><a href="">내 펀딩 오픈하기</a></li>
 				</c:if>
 			</ul>
