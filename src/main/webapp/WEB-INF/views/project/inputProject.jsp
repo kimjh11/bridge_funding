@@ -69,7 +69,7 @@
 							<img id="loadImg" src="${pageContext.request.contextPath }/ckstorage/${vo.proImg}" /><br/>
 						  	
 						  	<label for="proImg">업로드</label>
-						  	<input type="file" name="proImg" id="proImg" value="${vo.proImg}" />
+						  	<input type="file" name="proImg" id="proImg" value="${pageContext.request.contextPath }/ckstorage/${vo.proImg}" />
 						</div>
 						
 						<script>
@@ -167,7 +167,7 @@
 							var proName = document.getElementById('proName').value;
 							var proGoal = document.getElementById('proGoal').value;
 							var proDate = document.getElementById('proDate').value;
-							
+							alert(document.getElementById('proImg')+"\n"+document.getElementById('comImg').value);
 							if(cateCode != null &&  proImg != null && comImg != null && proName != null && proGoal != null && proImg != "" && proGoal != "" && comImg != ""){
 								document.getElementById('frm').submit();
 							}else{

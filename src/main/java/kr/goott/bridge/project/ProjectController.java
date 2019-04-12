@@ -44,7 +44,7 @@ public class ProjectController {
 		mav.addObject("vo",vo2);
 		mav.addObject("userMail",vo.getUserMail());
 		mav.setViewName("project/inputProject");
-
+		dao.delPro3();
 		return mav;
 	}
 ////////// 프로젝트 저장하기  ///////////////////////////////////////////

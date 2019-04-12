@@ -80,7 +80,6 @@
 	border-right:none;
 	border-bottom:2px solid #e8e8e8;
 }
-/* 
 .inputImg label {
 	width:75%;
 	height:10%;
@@ -115,7 +114,7 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-} */
+}
 #loadImg,#loadImg2{
 	width:75%;
 	height:90%;
