@@ -47,8 +47,13 @@
 				<li><a href="<%=request.getContextPath()%>/category">카테고리</a></li>
 				<li><a href="<%=request.getContextPath()%>/commingsoon">오픈예정</a></li>
 				<li><a href="<%=request.getContextPath()%>/donation">기부와후원</a></li>
+				<li><a href="<%=request.getContextPath()%>/">미정</a></li>
 			</ul>
+
 		</nav>
+
+		</nav>
+
 		<!-- 로그인/로그아웃/내정보 -->
 		<div id="top-etc">
 			<ul class="top-login">
@@ -65,7 +70,7 @@
 					<li ><a href="/bridge/logout">로그아웃</a></li>
 					<!-- 이미지 -->
 					<img id="header-img" src="/bridge/upload/${img}" onerror="this.src='<%=request.getContextPath() %>/img/profile/user.png'"/>
-					<li class="funding-open-btn"><a href="">내 펀딩 오픈하기</a></li>
+					<li class="funding-open-btn"><a href="/bridge/inputProject?userMail=${userMail}">내 펀딩 오픈하기</a></li>
 				</c:if>
 			</ul>
 			<form class="project-search">
@@ -123,6 +128,5 @@
 
 		<!-- 스크롤 컨트롤러 -->
 		<button class="top-controller">맨위로</button>
- 
 	</div>
 </header>

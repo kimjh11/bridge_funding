@@ -17,13 +17,12 @@
 	<resources mapping="/img/**" location="/img/" />
 	<resources mapping="/js/**" location="/js/" />
 	<resources mapping="/video/**" location="/video/" />
+	<resources mapping="/txt/**" location="/txt/" />
 	<resources mapping="/ckeditor/**" location="/ckeditor/" />
 	<resources mapping="/ckfinder/**" location="/ckfinder/" />
 	<resources mapping="/ckstorage/**" location="/ckstorage/" />
-	<resources mapping="/txt/**" location="/txt/" />
 	<resources mapping="/upload/**" location="/upload/" />
 
-	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
@@ -49,6 +48,7 @@
 		<beans:property name="mapperLocations">
 			<beans:list>
 				<!-- classpath 쓰는곳 -->
+				<beans:value>classpath:kr/goott/bridge/project/mapper/*.xml</beans:value>
 				<!-- <beans:value>classpath:kr/goott/web/board/mapper/*.xml</beans:value> -->
 				<beans:value>classpath:kr/goott/bridge/member/mapper/*.xml</beans:value>
 				<beans:value>classpath:kr/goott/bridge/mypage/mapper/*.xml</beans:value>

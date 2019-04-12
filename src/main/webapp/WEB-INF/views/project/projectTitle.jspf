@@ -20,9 +20,9 @@
 <div id="proNav">
 	<h1 style="font-size:3.5em;">내 펀딩 오픈하기</h1>
 	<div id="proCategory">
-		<div id="proCat1" ><a href="/bridge/inputProject" style="font-size:2em;">1.프로젝트등록</a></div>
-		<div id="proCat2" ><a href="/bridge/inputStory" style="font-size:2em">2.스토리등록</a></div>
-		<div id="proCat3" ><a href="/bridge/inputItem" style="font-size:2em">3.상품등록</a></div>
-		<div id="proCat4" ><a href="/bridge/inputProOk" style="font-size:2em">4.검토요청</a></div>
+		<div id="proCat1" ><a href="/bridge/inputProject2?userMail=${userMail }&proCode=${vo.proCode}&=${vo.proNum}" style="font-size:2em;">1.프로젝트등록</a></div>
+		<div id="proCat2" ><a href="/bridge/inputStory?userMail=${userMail }&proCode=${vo.proCode}&=${vo.proNum}" style="font-size:2em">2.스토리등록</a></div>
+		<div id="proCat3" ><a href="/bridge/inputItem?userMail=${userMail }&proCode=${vo.proCode}&=${vo.proNum}" style="font-size:2em">3.상품등록</a></div>
+		<div id="proCat4" ><a href="/bridge/inputProOk?userMail=${userMail }&proCode=${vo.proCode}&=${vo.proNum}" style="font-size:2em">4.검토요청</a></div>
 	</div>
 </div>
