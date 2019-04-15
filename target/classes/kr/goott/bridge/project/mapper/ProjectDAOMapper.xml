@@ -1,1 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.goott.bridge.project.ProjectDAOInterface">
+	<select id="selectCate" resultType="kr.goott.bridge.project.ProjectVO">
+		select * from category
+	</select>
+	<select id="selectItem" resultType="kr.goott.bridge.project.ItemVO">
+		select * from Item2 where userMail = #{param1} and proCode = #{param2}
+	</select>
+	<insert id="inPro" parameterType="kr.goott.bridge.project.ProjectVO">
+		insert into project3 (proNum,proCode,userMail,cateCode)
+		values (project2_sq.nextVal,project2_sq.currVal||'/'||#{userMail}||'/'||'none'||'/'||to_char(sysdate,'MMDDHH'),#{userMail},'none')
+	</insert>
+	<insert id="changePro" parameterType="kr.goott.bridge.project.ProjectVO">
+		insert into project2 (proNum,proCode,userMail,cateCode) 
+		select proNum,proCode,userMail,cateCode from project3
+	</insert>
+	<select id="selectPro" resultType="kr.goott.bridge.project.ProjectVO">
+		select * from project3 where userMail = #{param1}
+	</select>
+	<select id="selectPro2" resultType="kr.goott.bridge.project.ProjectVO">
+		select * from project2 where userMail = #{param1} and proCode = #{param2}
+	</select>
+	<select id="selectPro3" resultType="kr.goott.bridge.project.ProjectVO">
+		select * from project2 where userMail = #{param1} and proNum = #{param2}
+	</select>
+	<update id="savePro">
+		update project2 set cateCode = #{cateCode},proCode = #{userMail}||'/'||#{cateCode}||'/'||to_char(sysdate,'MMDDHH'),
+		proImg = #{proImg}, proName = #{proName}, proGoal = #{proGoal}, proDate = #{proDate},
+		comImg = #{comImg}, comName = #{comName}, comNum = #{comNum}, account = #{account},
+		comTel = #{comTel}, comEmail = #{comEmail}, comSite = #{comSite}
+		where userMail = #{userMail} and proCode = #{proCode} and proNum = #{proNum}
+	</update>
+	<update id="saveStory">
+		update project2 set proTitle = #{proTitle}, proContent = #{proContent}, proRefund = #{proRefund}
+		where userMail = #{userMail} and proCode = #{proCode}
+	</update>
+	<insert id="saveItem">
+		insert into item2 (proCode,userMail,itemNum,itemRank,itemName,itemContent,itemPrice,itemOption,
+		limitCnt) 
+		values (#{proCode},#{userMail},item2_sq.nextVal,#{itemRank},#{itemName},#{itemContent},#{itemPrice},#{itemOption},
+		#{limitCnt}) 
+	</insert>
+	<delete id="delItem">
+		delete from item2 where userMail = #{userMail} and proCode = #{proCode} and itemRank = #{itemRank}
+	</delete>
+	<update id="saveProOk">
+		update project2 set proWait = #{proWait}
+		where userMail = #{userMail} and proCode = #{proCode}
+	</update>
+	<delete id="delPro3">
+		delete from project3
+	</delete>
+</mapper>

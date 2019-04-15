@@ -49,6 +49,7 @@
 				<li><a href="<%=request.getContextPath()%>/list?page=기부와후원&cate=&sort=Y">기부와후원</a></li>
 			</ul>
 		</nav>
+
 		<!-- 로그인/로그아웃/내정보 -->
 		<div id="top-etc">
 			<ul class="top-login">
@@ -73,7 +74,6 @@
 			</form>
 		</div>
 
-		
 		<!-- 로그인 페이지 Div -->
 		<div id="login-div" hidden="hidden">
 			<h2 id="login-h2">로그인</h2>
@@ -93,6 +93,5 @@
 
 		<!-- 스크롤 컨트롤러 -->
 		<button class="top-controller">맨위로</button>
-
 	</div>
 </header>
