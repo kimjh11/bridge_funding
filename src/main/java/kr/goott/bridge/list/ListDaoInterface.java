@@ -7,7 +7,7 @@ import kr.goott.bridge.project.CategoryVO;
 public interface ListDaoInterface {
 	//배너
 	//public List<BannerVO> bannerSelect(int menuIndex);
-	public List<BannerVO> bannerSelect(String page);
+	public List<BannerVO> bannerSelect(String pageName);
 	
 	//카테고리 배너 리스트
 	public List<CategoryVO> categorySelect();
@@ -26,4 +26,8 @@ public interface ListDaoInterface {
 	public ListVO searchSelect(String searchKeyWord);
 	//목록 정렬(좋아요/펀딩액)
 	public ListVO sortingSelect(String sortKeyWord);
+	
+	
+	//어드민 배너 등록
+	public int bannerInsert(BannerVO vo);
 }

@@ -5,6 +5,7 @@ public class BannerVO {
 	private String bannerImg;
 	private String bannerTitle;
 	private String bannerSubTitle;
+	private String pageName;
 	
 	public BannerVO() {}
 	
@@ -12,7 +13,7 @@ public class BannerVO {
 		String txt = "bannerImg = " + getBannerImg();
 			   txt += "bannerTitle = " + getBannerTitle();
 		       txt += "bannerSubTitle = " + getBannerSubTitle();
-		       
+		       txt += "pageName = " + getPageName();
 		return txt;
 	}
 
@@ -39,5 +40,14 @@ public class BannerVO {
 	public void setBannerSubTitle(String bannerSubTitle) {
 		this.bannerSubTitle = bannerSubTitle;
 	}
+
+	public String getPageName() {
+		return pageName;
+	}
+
+	public void setPageName(String pageName) {
+		this.pageName = pageName;
+	}
+	
 
 }

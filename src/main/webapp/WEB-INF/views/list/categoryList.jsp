@@ -8,7 +8,7 @@
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/list.js"></script>
 </head>
-<body>
+<body> 
 <div class="reward-wrap cate-page-wrap">
 	<!-- Category Nav Start -->
 	<nav class="cate-nav">

@@ -82,4 +82,10 @@
 		</beans:property>
 	</beans:bean>
 	<!-- 메일 인증 end -->
+	
+	<!-- jdbcTemplate 객체생성 -->
+	<beans:bean name="template" class="org.springframework.jdbc.core.JdbcTemplate">
+		<beans:property name="dataSource" ref="dataSource"></beans:property>
+	</beans:bean>
+	
 </beans:beans>

@@ -16,9 +16,9 @@
 		<!-- 인기아이템/마감임박아이템/앵콜아이템/추천아이템 , 주제별 리스트페이지 이동 -->
 		<ul class="main-banner banner-slider">
 		<c:forEach var="vo" items="${bannerList }">
-			<li>
+			<li> 
 				<a href="">
-					<img src="<%=request.getContextPath()%>/img/reward/bannerImg01.jpg" alt="${bannerImg }" title="${vo.bannerImg }"/>
+					<img src="<%=request.getContextPath()%>/upload/${vo.bannerImg}" alt="배너이미지"/>
 				</a>
 				<div class="txt">
 					<p class="banner-title">${vo.bannerTitle }</p>

@@ -8,7 +8,7 @@
 		select bannerTitle, bannerSubTitle, bannerImg from banner where menuIndex = #{param1} order by bannerNum
 	</select> -->
 	<select id="bannerSelect" parameterType="String" resultType="kr.goott.bridge.list.BannerVO">
-		select bannerTitle, bannerSubTitle, bannerImg from banner where page = #{param1} order by bannerNum
+		select bannerTitle, bannerSubTitle, bannerImg from banner where pageName = #{param1} order by bannerNum
 	</select>
 	<select id="categorySelect" resultType="kr.goott.bridge.project.CategoryVO">
 		select cateCode, cateName, cateImg from category order by cateRank
@@ -39,6 +39,10 @@
 		select cateCode, cateName, proCode, proName, proImg, comName, proGoal, proNow, proEnd, likeCount from project 
 		where proCheck = 'Y' and cateName = #{cateName} order by proOpen 
 	</select>
+	<insert id="bannerInsert" parameterType="kr.goott.bridge.list.BannerVO">
+		insert into banner (bannerNum, bannerTitle, bannerSubTitle, bannerImg, pageName) 
+		values(bannerSq.nextVal, #{bannerTitle}, #{bannerSubTitle}, #{bannerImg}, #{pageName})
+	</insert>
 </mapper>
 	<!-- <inse"insertRecord" parameterType="kr.goott.bridge.member.MemberVO">
 		insert into member(userNum, userMail, userPwd, userName, userRegdate)

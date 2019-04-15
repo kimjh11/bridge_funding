@@ -36,17 +36,22 @@
 			</div>
 		</div>
 		<!-- 회사로고 -->
-		<div class="top-logo">
+		<%-- <div class="top-logo">
 			<span>우리는 모든 창작활동을 응원합니다</span>
-			<h1><a href="<%=request.getContextPath()%>/" title="첫페이지로 이동">BRIDGE</a></h1>
-		</div>
+			<h1><a href="<%=request.getContextPath()%>/" title="첫페이지로 이동">ADMIN</a></h1>
+		</div> --%>
 		<!-- 상단메뉴 -->
 		<nav class="top-menubar">
 			<ul> <!-- 배너/카테고리/정렬여부 값 전달 -->
-				<li><a href="<%=request.getContextPath()%>/list?page=리워드홈&cate=Y&sort=Y">리워드홈</a></li>
-				<li><a href="<%=request.getContextPath()%>/category?cateName=">카테고리</a></li>
-				<li><a href="<%=request.getContextPath()%>/list?page=오픈예정&cate=&sort=">오픈예정</a></li>
-				<li><a href="<%=request.getContextPath()%>/list?page=기부와후원&cate=&sort=Y">기부와후원</a></li>
+				<%--
+				<li><a href="<%=request.getContextPath()%>/list?menuIndex=1&banner=open&cate=open&sorting=open">리워드 홈</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?menuIndex=2&banner=&cate=open&sorting=open">카테고리</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?menuIndex=3&banner=open&cate=&sorting=">오픈예정</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?menuIndex=4&banner=open&cate=&sorting=open">기부와후원</a></li> 
+				--%>
+				<li><a href="<%=request.getContextPath()%>/list?page=리워드홈&cate=Y&sort=Y">리스트승인</a></li>
+				<li><a href="<%=request.getContextPath()%>/category?cateName=">배너등록</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?page=오픈예정&cate=&sort=">카테고리등록</a></li>
 			</ul>
 		</nav>
 
