@@ -60,4 +60,26 @@
 	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>
 	</beans:bean>
+	
+	<!-- 메일 인증 start  
+		username에  <google 계정>
+		password에  <google 비밀번호>
+		google 계정 로그인한 후 -> 보안 -> 보안 수준이 낮은 앱 액세스 허용으로 변경하기. 
+	-->
+	<beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<beans:property name="host" value="smtp.gmail.com"/>
+		<beans:property name="port" value="587"/>
+		<beans:property name="username" value="junhogg007@gmail.com"/>
+		<beans:property name="password" value="8950*qwer"/>
+		<beans:property name="defaultEncoding" value="UTF-8"/>
+		<beans:property name="javaMailProperties">
+			<beans:props>
+				<beans:prop key="mail.transport.protocol">smtp</beans:prop>
+				<beans:prop key="mail.smtp.auth">true</beans:prop>
+				<beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
+				<beans:prop key="mail.debug">true</beans:prop>
+			</beans:props>
+		</beans:property>
+	</beans:bean>
+	<!-- 메일 인증 end -->
 </beans:beans>
