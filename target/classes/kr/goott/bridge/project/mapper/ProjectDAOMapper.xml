@@ -3,32 +3,5 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.goott.bridge.project.ProjectDAOInterface">
-	<select id="selectRecord"  resultType="kr.goott.bridge.project.ProjectVO">
-		select * from project where cateCode=#{cateCode} and proCode=#{proCode}
-	</select>
-	<select id="selectDate" resultType="kr.goott.bridge.project.ProjectVO">
-		select to_char(proOpen, 'YYYY-MM-DD') proOpen, to_char(proEnd, 'YYYY-MM-DD') proEnd, proDate ,proCode, cateCode
-		from project where cateCode=#{cateCode} and proCode=#{proCode}
-	</select>
-	<select id="deTailAs" resultType="String">
-		select proRefund from project where cateCode=#{cateCode} and proCode=#{proCode}
-	</select>
-	<select id="replyOpen" resultType="kr.goott.bridge.deTailPage.ReplyVO">
-		select userMail, userImg, replyContent, to_char(replyDate,'YYYY-MM-DD HH:MM') replyDate, proCode
-		from reply where proCode=#{proCode} order by replyNo desc 
-	</select>
-	<insert id="replyWrite" parameterType="kr.goott.bridge.deTailPage.ReplyVO">
-		insert into reply(userMail, userImg, proCode, replyNo, replyContent, userIp, replyDate) 
-		values(#{userMail}, #{userImg}, #{proCode}, replySq.nextVal, #{replyContent}, #{userIp}, sysdate)
-	</insert>
-	<select id="itemList" resultType="kr.goott.bridge.project.ItemVO">
-		select * from item where proCode=#{proCode}
-	</select>
-	<select id="selectSpt" resultType="kr.goott.bridge.deTailPage.SptVO">
-		select member.userImg userImg, proCode, pay.userMail userMail, totalPrice, to_char(payDate,'YY-MM-DD HH:MI') payDate 
-		from member,pay where proCode = #{proCode} and member.userMail=pay.userMail
-	</select>
-	<select id="selectStatus" resultType="kr.goott.bridge.project.ProjectVO">
-		select TRUNC(proEnd-sysdate) remainingDay, TRUNC((proNow/proGoal)*100) proGoalRate, proNow from project where proCode=#{proCode}
-	</select>
+
 </mapper>

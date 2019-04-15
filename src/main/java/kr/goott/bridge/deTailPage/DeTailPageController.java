@@ -17,7 +17,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.goott.bridge.project.ItemVO;
-import kr.goott.bridge.project.ProjectDAOInterface;
 import kr.goott.bridge.project.ProjectVO;
 
 @Controller
@@ -27,7 +26,7 @@ public class DeTailPageController {
 	
 	@RequestMapping("/deTailPage")
 	public ModelAndView deTailPage(ProjectVO vo, HttpServletRequest request) {
-		ProjectDAOInterface dao = sqlSession.getMapper(ProjectDAOInterface.class);
+		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);
 		HttpSession sion = request.getSession();
 		sion.setAttribute("proCode", vo.getProCode());
 		vo = dao.selectRecord(vo.getCateCode(), vo.getProCode());
@@ -44,7 +43,7 @@ public class DeTailPageController {
 	}
 	@RequestMapping("/deTailGuide")
 	public ModelAndView deTailGuide(ProjectVO vo) {
-		ProjectDAOInterface dao = sqlSession.getMapper(ProjectDAOInterface.class);
+		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);
 		String refund = dao.deTailAs(vo.getCateCode(), vo.getProCode());
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("refund", refund);
@@ -53,7 +52,7 @@ public class DeTailPageController {
 	}
 	@RequestMapping("/deTailOpen")
 	public ModelAndView deTailOpen(ProjectVO vo) {
-		ProjectDAOInterface dao = sqlSession.getMapper(ProjectDAOInterface.class);	
+		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);	
 		vo = dao.selectRecord(vo.getCateCode(), vo.getProCode());
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("vo", vo);
@@ -63,7 +62,7 @@ public class DeTailPageController {
 	}
 	@RequestMapping("/deTailReply")
 	public ModelAndView deTailReply(ProjectVO vo, HttpServletRequest request) {
-		ProjectDAOInterface dao = sqlSession.getMapper(ProjectDAOInterface.class);
+		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);
 		List<ReplyVO> list = dao.replyOpen(vo.getCateCode(), vo.getProCode());
 		vo = dao.selectDate(vo.getCateCode(), vo.getProCode());
 		ModelAndView mav = new ModelAndView();
@@ -88,22 +87,29 @@ public class DeTailPageController {
 	}
 	@RequestMapping("/deTailAtm")
 	public ModelAndView deTailAtm(HttpServletRequest req, ProjectVO vo) {
-		ProjectDAOInterface dao = sqlSession.getMapper(ProjectDAOInterface.class);
+		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);
 		HttpSession sion = req.getSession();
-		
 		vo = dao.selectStatus((String)sion.getAttribute("proCode"));
-		
+		String cnt = dao.payCount((String)sion.getAttribute("proCode"));
+		String userMail = (String)sion.getAttribute("userMail");
+		System.out.println("usermail = "+sion.getAttribute("userMail"));
+		String chk = "";
+		if(userMail != null && !(userMail.equals(""))) {
+			chk = dao.likeSelect((String)sion.getAttribute("proCode"), (String)sion.getAttribute("userMail"));
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("vo",vo);
+		mav.addObject("cnt", cnt);
+		mav.addObject("chk", chk);
+		
 		mav.setViewName("ajax/deTailAtm");
 		return mav;
 	}
 	@RequestMapping("/deTailSpter")
 	public ModelAndView deTailSpter(HttpServletRequest req, ProjectVO vo) {
-		ProjectDAOInterface dao = sqlSession.getMapper(ProjectDAOInterface.class);
+		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);
 		List<SptVO> list = dao.selectSpt(vo.getProCode());
 		ModelAndView mav = new ModelAndView();
-		System.out.println(list);
 		mav.addObject("list" , list);
 		mav.addObject("cnt",list.size());
 		mav.setViewName("ajax/deTailSpter");
@@ -111,10 +117,9 @@ public class DeTailPageController {
 		return mav;
 	}
 	@RequestMapping(value="/replyWrite", method= RequestMethod.POST)
-	@ResponseBody
 	public ModelAndView replyWrite(HttpServletRequest request, ReplyVO rvo) {
 		rvo.setUserIp(request.getRemoteAddr());
-		ProjectDAOInterface dao = sqlSession.getMapper(ProjectDAOInterface.class);
+		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);
 		int cnt = dao.replyWrite(rvo);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("proCode", rvo.getProCode());
@@ -125,4 +130,38 @@ public class DeTailPageController {
 		
 		return mav;
 	}
+	
+	@RequestMapping("/likeUp")
+	public ModelAndView likeUp(HttpServletRequest req, ProjectVO vo) {
+		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);
+		HttpSession sion = req.getSession();
+		String proCode = (String)sion.getAttribute("proCode");
+		String userMail = (String)sion.getAttribute("userMail");
+		dao.likeUp(proCode);
+		System.out.println(sion.getAttribute("proCode"));
+		System.out.println("logStatus = "+sion.getAttribute("userMail"));
+		dao.likeInsert(proCode,userMail);
+		
+	
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("logStatus", sion.getAttribute("logStatus"));
+		mav.setViewName("ajax/deTailAtm");
+		
+		return mav;
+	}
+	
+	@RequestMapping("/likeDown")
+	public String likeDown(HttpServletRequest req) {
+		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);
+		HttpSession sion = req.getSession();
+		dao.likeDown((String)sion.getAttribute("proCode"));
+		dao.likeDelete((String)sion.getAttribute("proCode") , (String)sion.getAttribute("userMail"));
+		
+		return "ajax/deTailAtm";
+	}
+	@RequestMapping("/payment")
+	public String payment() {
+		return "payment/payment";
+	}
+
 }

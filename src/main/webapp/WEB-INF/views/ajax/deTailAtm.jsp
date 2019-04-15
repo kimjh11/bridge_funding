@@ -15,13 +15,18 @@
 				${vo.proNow}원 펀딩
 			</p>
 			<p>
-				??명의 서포터
+				${cnt}명의 서포터
 			</p>
+			<input type="hidden" id="logStatus" value="${logStatus}"/>
+			<input type="hidden" id="chk" value="${chk }"/>
 			<div id="big">
-				<input type="button" value="펀딩하기"/>
+				<div id="punding">펀딩하기</div>
 			</div>
 			<div id="likes">
-				<input type="button" value="좋아요"/>
-				<input type="button" value="문의하기"/>
+				<div class="btns" id="like"><img src="/bridge/img/detail/unlike.png" id="bin"/> 
+											<img src="/bridge/img/detail/like.png" id="full"/>											
+											<div>${vo.likeCount}</div>
+				</div>
+				<div class="btns" id="ask">문의하기</div>
 			</div>
 			

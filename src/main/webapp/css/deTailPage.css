@@ -107,7 +107,7 @@ cursor: pointer;
 	}
 	#detail{font-size: 2em;}
 	#goal{
-		  background:lightgeay;
+		  background:#eee;
 		  }
 	#firstblk p{line-height: 48px;}
 	#firstblk input[type=button]{
@@ -131,9 +131,15 @@ cursor: pointer;
 			border:1px solid lightgray;
 			border-radius:10px;
 			padding:3%}
-	.option:hover{background:#d6fcf9}
-	.topMargin{margin-top:10%}
-	#optionStr span{font-size:2em}
+	.option:hover{
+				  background:#d6fcf9
+				  }
+	.topMargin{
+			   margin-top:10%
+			   }
+	#optionStr span{
+					font-size:2em
+					}
 	.left{
 		  float:left;
 		  font-size: 1.5em;
@@ -143,5 +149,45 @@ cursor: pointer;
 			text-align:right;
 			font-size: 1.3em;
 			}
-	#text{text-align:left;font-size: 1.5em;}
+	#text{
+		  text-align:left;font-size: 1.5em;
+		  }
+	#punding{
+			 width:65%;
+			 margin-left:20%;
+			 background:#92D1E0;
+			 color:white;
+			 line-height:1.8;
+			 height:43px;
+			 cursor:pointer;
+			 }
+	#like{
+		  width:30%;
+		  float:left;
+		  margin-left:20%;
+		  border:1px solid lightgray;
+		  cursor:pointer;
+		  }
+	#like img{
+			  width:30px;
+			  margin-top:5px;
+			  margin-left:20px;
+			  }
+	#like div{
+			float:right;
+			line-height:1.8;
+			margin-right:35px;
+			}
+	#full{
+		  display:none;
+		  }		  
+	#ask{
+		 width:30%;
+		 float:left;
+		 margin-left:4.5%;;
+		 border:1px solid lightgray;
+		 height:43px;
+		 line-height:1.8;
+		 cursor:pointer;
+		 }
 	
