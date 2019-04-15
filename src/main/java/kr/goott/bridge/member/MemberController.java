@@ -83,6 +83,7 @@ public class MemberController {
 			System.out.println("userMail = "+ session.getAttribute("userImg"));
 			session.setAttribute("userName", vo2.getUserName()); //이름
 			session.setAttribute("logStatus", vo2.getLogStatus()); //로그인 여부
+			session.setAttribute("img", vo2.getUserImg() );
 			
 			mav.setViewName("redirect:/");
 		}else {

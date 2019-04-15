@@ -353,7 +353,7 @@ header .top-login li.log-ok{
 header .top-login li.funding-open-btn{
 	position: absolute;
 	top: 30px;
-	right: 30px;
+	right: 70px;/* 준호 수정한 부분 */
 	border: 1px solid #ddd;
 	padding: 3px 10px;
 	margin-left: 0;

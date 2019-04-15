@@ -165,20 +165,23 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 		<!-- 이메일 인증 end -->
-
-		<!-- 파일업로드 프레임워크 -->
+		
+		<!-- fileUpload 프레임워크 -->
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
 		    <groupId>commons-io</groupId>
 		    <artifactId>commons-io</artifactId>
 		    <version>2.6</version>
 		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
 		<dependency>
 		    <groupId>commons-fileupload</groupId>
 		    <artifactId>commons-fileupload</artifactId>
 		    <version>1.4</version>
 		</dependency>
-		<!-- 파일업로드 프레임워크 end -->    
+		<!-- fileUpload 프레임워크 -->
+		
 	</dependencies>
     <build>
         <plugins>

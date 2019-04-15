@@ -23,7 +23,7 @@ public class MailSendService {
 	private SqlSessionTemplate sqlSession;
 	private MemberDaoInterface memberDao;
 	
-	//ÀÌ¸ŞÀÏ ³­¼ö ¸¸µå´Â ¸Ş¼­µå
+	//ì´ë©”ì¼ ë‚œìˆ˜ ë§Œë“œëŠ” ë©”ì„œë“œ
 	private String init() {
 		Random ran = new Random();
 		StringBuffer sb = new StringBuffer();
@@ -43,7 +43,7 @@ public class MailSendService {
 		return sb.toString();
 	}
 	
-	//³­¼ö¸¦ ÀÌ¿ëÇÑ Å° »ı¼º
+	//ë‚œìˆ˜ë¥¼ ì´ìš©í•œ í‚¤ ìƒì„±
 	private boolean lowerCheck;
 	private int size;
 	
@@ -53,31 +53,31 @@ public class MailSendService {
 		return init();
 	}
 	
-	//È¸¿ø°¡ÀÔ ¹ß¼Û ÀÌ¸ŞÀÏ(ÀÎÁõÅ° ¹ß¼Û)
+	//íšŒì›ê°•ë¹„ ë°œì†¡ ì´ë©”ì¼ (ì¸ì¦í‚¤ ë°œì†¡)
 	public String mailSendWithUserKey(String userMail,HttpServletRequest request) {
 		String key = getKey(false, 20);
 		memberDao = sqlSession.getMapper(MemberDaoInterface.class);
 		
 		MimeMessage mail = mailSender.createMimeMessage();
-		String htmlStr="<h2>¾È³çÇÏ¼¼¿ä. Bridge Funding ÀÔ´Ï´Ù.</h2><br/>"
-					+"<p>ÀÎÁõÅ°¸¦ ÀÔ·ÂÇÑ ÈÄ ÀÎÁõ È®ÀÎÀ» ÇØÁÖ¼¼¿ä :)</p><br/>"
-					+"<p>ÀÎÁõÅ° : "+key+"</P>"; 		
+		String htmlStr="<h2>ì•ˆë…•í•˜ì„¸ìš”. Bridge Funding ì…ë‹ˆë‹¤.</h2><br/>"
+					+"<p>ì¸ì¦í‚¤ë¥¼ ì…ë ¥í•œ í›„ ì¸ì¦ í™•ì¸ì„ í•´ì£¼ì„¸ìš”:)</p><br/>"
+					+"<p>ì¸ì¦í‚¤ : "+key+"</P>"; 		
 		try {
-			mail.setSubject("[º»ÀÎÀÎÁõ] MS: Bridge Funding ÀÎÁõ ¸ŞÀÏÀÔ´Ï´Ù.","UTF-8");
+			mail.setSubject("[ë³¸ì¸ì¸ì¦] MS: Bridge Funding ì¸ì¦ ë©”ì¼ì…ë‹ˆë‹¤.","UTF-8");
 			mail.setText(htmlStr,"UTF-8","html");
 			mail.addRecipient(RecipientType.TO, new InternetAddress(userMail));
 			mailSender.send(mail);
 			
 			HttpSession session = request.getSession();
-			session.setAttribute("key", key);// key ¼¼¼Ï¿¡ ÀúÀåµÊ
+			session.setAttribute("key", key);// key ì„¸ì…˜ì— ì €ì¥ë¨
 			
 		}catch (Exception e) {
-			System.out.println("¹ß¼Û ÀÌ¸ŞÀÏ ¿¡·¯"+e.getMessage());
+			System.out.println("ë°œì†¡ ì´ë©”ì¼ ì—ëŸ¬"+e.getMessage());
 		}
 		return key;
 	}
 	
-	//ÀÌ¸ŞÀÏ ÀÎÁõ È®ÀÎ 
+	//ì´ë©”ì¼ ì¸ì¦ í™•ì¸ 
 	public String userJoinOk(String key, HttpServletRequest request) {
 			String resultCnt = "fail";
 			
@@ -91,31 +91,31 @@ public class MailSendService {
 	}
 	
 	////////////////////////////////////////////////////////////////////////////////////////
-	//»õ ºñ¹Ğ¹øÈ£ º¯°æ ¹ß¼Û ÀÌ¸ŞÀÏ(ÀÎÁõÅ° ¹ß¼Û)
+	//ìƒˆ ë¹„ë°€ë²ˆí˜¸ ë³€ê²½ ë°œì†¡ ì´ë©”ì¼ (ì¸ì¦í‚¤ ë°œì†¡)
 	public String mailSendChangePwd(String userMail,HttpServletRequest request) {
 		String key = getKey(false, 20);
 		memberDao = sqlSession.getMapper(MemberDaoInterface.class);
 			
 		MimeMessage mail = mailSender.createMimeMessage();
-		String htmlStr="<h2>¾È³çÇÏ¼¼¿ä. Bridge Funding ÀÔ´Ï´Ù.</h2><br/>"
-						+"<p>ÀÎÁõÅ°¸¦ ÀÔ·ÂÇÑ ÈÄ ºñ¹Ğ¹øÈ£¸¦ º¯°æ ÇØÁÖ¼¼¿ä :)</p><br/>"
-						+"<p>ÀÎÁõÅ° : "+key+"</P>"; 		
+		String htmlStr="<h2>ì•ˆë…•í•˜ì„¸ìš”. Bridge Funding ì…ë‹ˆë‹¤.</h2><br/>"
+						+"<p>ì¸ì¦í‚¤ë¥¼ ì…ë ¥í•œ í›„ ë¹„ë°€ë²ˆí˜¸ë¥¼ ë³€ê²½í•´ ì£¼ì„¸ìš” :)</p><br/>"
+						+"<p>ì¸ì¦í‚¤ : "+key+"</P>"; 		
 		try {
-			mail.setSubject("[º»ÀÎÀÎÁõ] MS: Bridge Funding ºñ¹Ğ¹øÈ£ º¯°æ ÀÎÁõ ¸ŞÀÏÀÔ´Ï´Ù.","UTF-8");
+			mail.setSubject("[ë³¸ì¸ì¸ì¦] MS: Bridge Funding ë¹„ë°€ë²ˆí˜¸ ë³€ê²½ ì¸ì¦ ë©”ì¼ì…ë‹ˆë‹¤.","UTF-8");
 			mail.setText(htmlStr,"UTF-8","html");
 			mail.addRecipient(RecipientType.TO, new InternetAddress(userMail));
 			mailSender.send(mail);
 				
 			HttpSession session = request.getSession();
-			session.setAttribute("key", key);// key ¼¼¼Ï¿¡ ÀúÀåµÊ
+			session.setAttribute("key", key);// key ì„¸ì…˜ì— ì €ì¥ë¨
 				
 		}catch (Exception e) {
-			System.out.println("¹ß¼Û ÀÌ¸ŞÀÏ ¿¡·¯"+e.getMessage());
+			System.out.println("ìƒˆ ë¹„ë°€ë²ˆí˜¸ ë°œì†¡ ì´ë©”ì¼ ì—ëŸ¬"+e.getMessage());
 		}
 		return key;
 	}
 	
-	//ÀÌ¸ŞÀÏ ÀÎÁõ È®ÀÎ (»õºñ¹Ğ¹øÈ£)
+	//ì´ë©”ì¼ ì¸ì¦ í™•ì¸(ìƒˆ ë¹„ë°€ë²ˆí˜¸)
 	public String newPwdOk(String key, HttpServletRequest request) {
 		String resultCnt = "fail";
 		
