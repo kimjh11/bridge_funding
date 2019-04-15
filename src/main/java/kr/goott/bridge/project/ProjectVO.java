@@ -27,6 +27,8 @@ public class ProjectVO {
 	private String proRefund;
 	private int likeCount;
 	private String proCheck;
+	private int remainingDay;
+	private int proGoalRate;
 	
 	public ProjectVO() {}
 
@@ -238,5 +240,20 @@ public class ProjectVO {
 		this.proCheck = proCheck;
 	}
 
+	public int getRemainingDay() {
+		return remainingDay;
+	}
+
+	public void setRemainingDay(int remainingDay) {
+		this.remainingDay = remainingDay;
+	}
+
+	public int getProGoalRate() {
+		return proGoalRate;
+	}
+
+	public void setProGoalRate(int proGoalRate) {
+		this.proGoalRate = proGoalRate;
+	}
 
 }

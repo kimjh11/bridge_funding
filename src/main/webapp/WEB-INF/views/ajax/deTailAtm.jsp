@@ -1,17 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-	<p> 
-				??일 남음 
+<script type="text/javascript" src="/bridge/js/deTailAtm.js"></script>	
+			<p> 
+				${vo.remainingDay}일 남음 
 			</p>
 			<div id="goal">
 				<div id="ok"></div>
 			</div>
 			<p>
-				??달성
+				<span id="goalRate">${vo.proGoalRate}</span>% 달성
 			</p>
 			<p>
-				??원 펀딩
+				${vo.proNow}원 펀딩
 			</p>
 			<p>
 				??명의 서포터

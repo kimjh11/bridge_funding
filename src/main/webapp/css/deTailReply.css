@@ -17,13 +17,32 @@
 			  resize:none;
 			  font-size:1.3em;
 			  }
-	input[type=submit]{width:18%;
+	input[type=submit]{
+					  width: 16%;
 					  background:#92D1E0;
-					  height:100px;
+					  height: 120px;
 					  border:none;
 					  margin-left:1%;
 					  color:white;
 					  border-radius:10px;
 					  font-size:1em;
-					  margin-bottom:3%
+					  margin-bottom:3%;
 					  }
+	.oneReply{
+			  border-bottom:1px solid lightgray;
+			  width:800px;
+			  height:100px;
+			  
+	}
+	.userImg img{
+				  width:80px;
+				  border-radius:50px;
+	}
+	.userImg{
+			 float:left;
+			 margin:10px 3%;
+	}
+	.userImg{
+			 witdh:100px;
+	
+	}
