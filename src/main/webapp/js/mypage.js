@@ -2,7 +2,7 @@ $(function(){
 	//간편결제 버튼 클릭시 
 	$("#mypage-card-ok").click(function(){
 		$("#card-submit").toggle();
-	});
+	}); 
 	//간편결제 x버튼 클릭시
 	$("#card-x").click(function(){
 		$("#card-submit").hide();

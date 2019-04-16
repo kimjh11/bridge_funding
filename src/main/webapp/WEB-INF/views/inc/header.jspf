@@ -15,7 +15,7 @@
 <script src="<%=request.getContextPath() %>/js/login.js"></script>
 <!-- 상단 마이페이지 -->
 <script src="<%=request.getContextPath() %>/js/myInfo.js"></script>
-<header>
+<header> 
 	<div class="wrap">
 		<!-- 이용안내 -->
 		<div class="top-guide">

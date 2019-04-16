@@ -3,7 +3,7 @@ package kr.goott.bridge.mypage;
 import java.util.ArrayList;
 import kr.goott.bridge.member.MemberVO;
 import kr.goott.bridge.project.ProjectVO;
-
+ 
 public interface MypageDaoInterface {
 	
 	//프로필 (이미지, 전화번호, 생년월일, 주소) 등록

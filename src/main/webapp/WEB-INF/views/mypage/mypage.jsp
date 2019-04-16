@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="wrap">
-			<div>
+			<div> 
 				<h2 id="mypage">마이페이지</h2>
 			</div>
 			<!-- 프로필 편집, 간편결제등록 버튼 -->

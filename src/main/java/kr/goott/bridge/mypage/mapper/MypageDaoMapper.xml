@@ -57,4 +57,4 @@
 	on m.userMail = p.userMail
 	where p.proCode = #{param1, jdbcType=VARCHAR}
 	</select>
-</mapper>
+</mapper> 
