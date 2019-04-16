@@ -375,3 +375,23 @@ header .top-controller.show{
 	transition: 1s ease all;
 }
 
+
+/*////////// admin-header //////////*/
+header .admin-header-wrap {
+	background-color:#021044;
+}
+header .admin-header-wrap .top-logo span,
+header .admin-header-wrap .top-logo h1 a,
+header .admin-header-wrap .top-menubar li a{
+	color:#fff;
+}
+header .admin-header-wrap .top-menubar li:hover a{
+	color:#2f407e;
+}
+
+
+
+
+
+
+
