@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+.wrap {
+	font-family: 'nanumR';
+}
+.wrap > * {
+	margin: 3%;
+}
+.wrap h3 {
+	font-size: 20pt;
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+}
+.wrap .admin-content {
+	margin: 10px;
+	font-size: 15px;
+}
+.wrap .admin-content .bold {
+	font-weight: bold;
+}
+.admin-content form ul li {
+	height: 30px;
+	line-height: 30px;
+	margin-top: 5px;
+}
+.admin-content form ul li:first-child {
+	margin-top: 0;
+}
+.admin-content form ul li span {
+	display: inline-block;
+	width: 10%;
+}
+.admin-content form ul li select {
+	height: 25px;
+	width: 150px;
+	font-family: 'nanumR';
+}
+.admin-content form ul li input[type="text"] {
+	width: 85%;
+	height: 20px;
+	padding: 0 5px;
+}
+.admin-content form ul li input[type="file"] {
+	border: none;
+	border-radius: 3px;
+	font-family: 'nanumR';
+}
+.admin-content form ul li input[type="submit"] {
+	width: 200px;
+	margin: 15px auto 0;
+	display: block;
+	height: 32px;
+	border: none;
+	border-radius: 3px;
+}
+.list-head, 
+.list-content {
+	overflow: hidden;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	border-bottom :1px solid #ddd;
+}
+.list-head li, 
+.list-content li {
+	float: left;
+	text-align: center;
+	padding-left: 1%;
+}
+.list-head li:first-child,
+.list-content li:first-child{
+	padding-left: 0;
+}
+.list-head li {
+	font-size: 13pt;
+}
+.admin-content ul li.col1 {
+	width: 5%;
+}
+.admin-content ul li.col2 {
+	width: 10%;
+}
+.admin-content ul li.col3 {
+	width: 32%;
+}
+
+
+
+

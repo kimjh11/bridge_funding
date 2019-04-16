@@ -295,7 +295,11 @@ header .top-menubar{
 	position: absolute;
 }
 header .top-menubar ul li{
+<<<<<<< HEAD
 	width: 20%;
+=======
+	width: 25%;
+>>>>>>> refs/remotes/origin/listPage
 	font-size: 18pt;
 	text-align: center;
 	line-height: 70px;
@@ -327,6 +331,7 @@ header #top-etc{
 	border-bottom: 1px solid #666;
 	padding: 0 5px;
 	height: 23px;
+	width:85%;
 }
 .project-search .search-toggle{
 	width: 15px;
@@ -373,4 +378,24 @@ header .top-controller.show{
 	right: 50px;
 	transition: 1s ease all;
 }
+
+
+/*////////// admin-header //////////*/
+header .admin-header-wrap {
+	background-color:#021044;
+}
+header .admin-header-wrap .top-logo span,
+header .admin-header-wrap .top-logo h1 a,
+header .admin-header-wrap .top-menubar li a{
+	color:#fff;
+}
+header .admin-header-wrap .top-menubar li:hover a{
+	color:#2f407e;
+}
+
+
+
+
+
+
 

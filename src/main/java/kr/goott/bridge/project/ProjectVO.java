@@ -239,6 +239,7 @@ public class ProjectVO {
 	public void setProCheck(String proCheck) {
 		this.proCheck = proCheck;
 	}
+
 	public int getRemainingDay() {
 		return remainingDay;
 	}

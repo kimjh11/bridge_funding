@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/inputItem.css"/>
 </head>
 <body>
-		
+		 
 		<%@include file="projectTitle.jspf"%>
 		<div id="proBody">
 			<div id="proLeft">

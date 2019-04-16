@@ -1,5 +1,6 @@
 package kr.goott.bridge.deTailPage;
 
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +18,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.goott.bridge.project.ItemVO;
+import kr.goott.bridge.project.ProjectDAOInterface;
 import kr.goott.bridge.project.ProjectVO;
 
 @Controller

@@ -24,7 +24,9 @@
 .reward-wrap .bx-wrapper .bx-pager.bx-default-pager a.active{
 	background: #EFD435;
 }
-
+.cate-page-wrap{
+	margin-top: 50px;
+}
 /* banner */
 .top-banner .main-banner img{
 	width: 100%;
@@ -83,11 +85,7 @@
 	float: left;
 	font-size: 20pt;
 }
-.list-wrap .list-header form {
-	position: absolute;
-	right: 135px;
-	top: 12px;
-}
+.list-wrap .list-header form {padding: 8px 5px 0 0;}
 .list-wrap .list-header select {
 	float: right;
 	width: 120px;
