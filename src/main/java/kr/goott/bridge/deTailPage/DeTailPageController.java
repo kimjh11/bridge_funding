@@ -92,7 +92,7 @@ public class DeTailPageController {
 		vo = dao.selectStatus((String)sion.getAttribute("proCode"));
 		String cnt = dao.payCount((String)sion.getAttribute("proCode"));
 		String userMail = (String)sion.getAttribute("userMail");
-		System.out.println("usermail = "+sion.getAttribute("userMail"));
+		System.out.println("usermail = "+sion.getAttribute("proCode"));
 		String chk = "";
 		if(userMail != null && !(userMail.equals(""))) {
 			chk = dao.likeSelect((String)sion.getAttribute("proCode"), (String)sion.getAttribute("userMail"));
@@ -100,6 +100,7 @@ public class DeTailPageController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("vo",vo);
 		mav.addObject("cnt", cnt);
+		mav.addObject("proCode",(String)sion.getAttribute("proCode"));
 		mav.addObject("chk", chk);
 		
 		mav.setViewName("ajax/deTailAtm");

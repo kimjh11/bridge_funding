@@ -98,6 +98,10 @@ $(function(){
 		})
 	}
 	$("#punding").click(function(){
-		location.href="/bridge/payment";
+		if($("#logStatus").val() == "Y"){
+			location.href="/bridge/payment?proCode="+$("#proCode").val();		
+		}else{
+			alert("로그인 후 가능합니다.");
+		}		
 	})
 })
