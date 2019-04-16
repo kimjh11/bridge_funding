@@ -10,9 +10,9 @@ public class ProjectVO {
 	private String proImg;
 	private int proGoal;
 	private int proNow;
-	private String proDate;
+	private int proDate;
 	private String proOk;
-	private String proWait;
+	private int proWait;
 	private String proOpen;
 	private String proEnd;
 	private String comName;
@@ -104,11 +104,11 @@ public class ProjectVO {
 		this.proNow = proNow;
 	}
 
-	public String getProDate() {
+	public int getProDate() {
 		return proDate;
 	}
 
-	public void setProDate(String proDate) {
+	public void setProDate(int proDate) {
 		this.proDate = proDate;
 	}
 
@@ -120,11 +120,11 @@ public class ProjectVO {
 		this.proOk = proOk;
 	}
 
-	public String getProWait() {
+	public int getProWait() {
 		return proWait;
 	}
 
-	public void setProWait(String proWait) {
+	public void setProWait(int proWait) {
 		this.proWait = proWait;
 	}
 
@@ -255,6 +255,4 @@ public class ProjectVO {
 	public void setProGoalRate(int proGoalRate) {
 		this.proGoalRate = proGoalRate;
 	}
-
-	
 }

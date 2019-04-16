@@ -1,5 +1,5 @@
 package kr.goott.bridge.member;
-
+ 
 public class MemberVO {
 	private int userNum;
 	private String userMail;
@@ -9,9 +9,11 @@ public class MemberVO {
 	private String userTel;
 	private String cardName;
 	private String cardNum;
+	private String[] cardNumarr;//
 	private String cardDate;
 	private String cardPwd;
 	private String birth;
+	private String[] birtharr;//
 	private String zipcode;
 	private String addrSearch;
 	private String addr;
@@ -88,6 +90,7 @@ public class MemberVO {
 
 	public void setCardNum(String cardNum) {
 		this.cardNum = cardNum;
+		cardNumarr= cardNum.split("-");
 	}
 
 	public String getCardDate() {
@@ -112,6 +115,7 @@ public class MemberVO {
 
 	public void setBirth(String birth) {
 		this.birth = birth;
+		birtharr= birth.split("/");
 	}
 
 	public String getZipcode() {
@@ -170,4 +174,24 @@ public class MemberVO {
 	public void setLogStatus(String logStatus) {
 		this.logStatus = logStatus;
 	}
+
+	//생년월일 배열
+	public String[] getBirtharr() {
+		return birtharr;
+	}
+
+	public void setBirtharr(String[] birtharr) {
+		this.birtharr = birtharr;
+	}
+	
+	//카드번호 배열
+	public String[] getCardNumarr() {
+		return cardNumarr;
+	}
+
+	public void setCardNumarr(String[] cardNumarr) {
+		this.cardNumarr = cardNumarr;
+	}
+	
+	
 }

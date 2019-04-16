@@ -1,5 +1,5 @@
 package kr.goott.bridge.member;
-
+ 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -83,6 +83,8 @@ public class MemberController {
 			System.out.println("userMail = "+ session.getAttribute("userImg"));
 			session.setAttribute("userName", vo2.getUserName()); //이름
 			session.setAttribute("logStatus", vo2.getLogStatus()); //로그인 여부
+			session.setAttribute("img", vo2.getUserImg() );
+			session.setAttribute("cardName", vo2.getCardName());//카드이름
 			
 			mav.setViewName("redirect:/");
 		}else {

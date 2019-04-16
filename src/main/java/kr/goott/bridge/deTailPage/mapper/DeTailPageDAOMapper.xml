@@ -47,6 +47,6 @@
 		delete from likeyou where useremail=#{userMail}
 	</delete>
 	<select id="likeSelect" resultType="String">
-		select userEmail from likeyou where userEmail=#{userMail} and proCode=#{proCode}
+		select userMail from likeyou where userMail=#{userMail} and proCode=#{proCode}
 	</select>
 </mapper>

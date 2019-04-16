@@ -8,7 +8,7 @@
 		values (memberSq.nextVal, #{userMail}, #{userPwd}, #{userName}, sysdate)
 	</insert>
 	<select id="loginCheck" resultType="kr.goott.bridge.member.MemberVO">
-		select userImg , userName, userMail from member
+		select userImg , userName, userMail, cardName from member
 		where userMail = #{userMail} and userPwd = #{userPwd}
 	</select>
 	<select id="idSearch" resultType="kr.goott.bridge.member.MemberVO">
@@ -17,4 +17,4 @@
 	<update id="updatePwd" parameterType="String">
 		update member set userPwd = #{userPwd} where userMail = #{userMail}
 	</update>
-</mapper> 
+</mapper>  
