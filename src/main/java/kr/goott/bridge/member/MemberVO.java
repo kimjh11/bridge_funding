@@ -9,6 +9,7 @@ public class MemberVO {
 	private String userTel;
 	private String cardName;
 	private String cardNum;
+	private String[] cardNumarr;//
 	private String cardDate;
 	private String cardPwd;
 	private String birth;
@@ -89,6 +90,7 @@ public class MemberVO {
 
 	public void setCardNum(String cardNum) {
 		this.cardNum = cardNum;
+		cardNumarr= cardNum.split("-");
 	}
 
 	public String getCardDate() {
@@ -181,4 +183,15 @@ public class MemberVO {
 	public void setBirtharr(String[] birtharr) {
 		this.birtharr = birtharr;
 	}
+	
+	//카드번호 배열
+	public String[] getCardNumarr() {
+		return cardNumarr;
+	}
+
+	public void setCardNumarr(String[] cardNumarr) {
+		this.cardNumarr = cardNumarr;
+	}
+	
+	
 }

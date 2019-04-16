@@ -55,7 +55,7 @@ width:16px;height:16px;background:#f1ef79;}
     color: white;
 }
 
-#mypage-card-ok{
+#mypage-card-ok,#mypage-card-delete{
 	width: 100px;
     height: 38px;
     border-radius: 5px 5px 5px 5px;
@@ -120,9 +120,9 @@ width:16px;height:16px;background:#f1ef79;}
 
 .project-view{
 	padding-top: 15px;
-	width: 100%;
-	/* margin: 0 auto; */
+	width: 25%;
 	overflow: hidden;
+	float: left;
 }
 
 .project-view > li{
@@ -134,8 +134,9 @@ width:16px;height:16px;background:#f1ef79;}
 
 .project-view > li:nth-child(n+1){
 	margin-left:0;
-	width: 20%;
-	padding-left: 4%;
+	width: 80%;
+	/* padding-left: 4%; */
+	padding-left: 0%;
 }
 
 .project-view > li .cate-txt{
@@ -162,13 +163,13 @@ width:16px;height:16px;background:#f1ef79;}
 }
 
 .project-view .like-btn{
-	background-color: pink;
-	width: 30px;
-	height: 30px;
-	font-size: 0;
-	position: absolute;
-	top: 30px;
-	right: 10px;
+	/*background-color: pink; */
+    /* width: 30px; */
+    /* height: 30px; */
+    font-size: 0;
+    position: absolute;
+    /* top: 30px; */
+    right: 10px;
 }
 
 .detail-info{
@@ -241,13 +242,24 @@ table.cr-list-table th:nth-child(5){
 }
 
 #cr-list{
-	width: 100%;
+	/* width: 100%;
     margin-bottom: 15px;
     margin-top: 25px;
-    margin-left: 52px;
+    margin-left: 52px; */
+    width: 80%;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-left: 150px;
 }
 
-#cr-list-img{
+#cr-list-waiting{
+	width: 69%;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-left: 168px;
+}
+
+.cr-list-img{
 	width: 130px;
     height: 100px;
     border: 1px solid gray;
@@ -255,36 +267,65 @@ table.cr-list-table th:nth-child(5){
    
 }
 
-#cr-list-cat{
+.cr-list-cat{
 	margin-top: -90px;
     margin-bottom: 5px;
 }
 
-#cr-list-last{
+.cr-list-last{
 	margin-top: 10px;
     font-size: 0.9em;
     margin-right: 100px;
 }
 
-#cr-list-goal{
+.cr-list-goal{
     font-size: 0.7em;
     margin-right: 65px;
     margin-bottom: 5px;
 }
 
-#cr-list-pro{
+.cr-list-goal-waiting{
+	font-size: 1.5em;
+    margin-right: 0px;
+    margin-top: 30px;
+}
+
+.cr-list-pro{
 	margin-top: 5px;
     margin-right: 60px;
     margin-bottom: 5px;
 }
 
-#cr-list-like, #cr-list-funding{
+.cr-list-pro-waiting{
+	margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+}
+
+.cr-list-like, .cr-list-funding{
 	margin-top: 25px;
 	cursor: pointer;
 }
 
+/* 승인 대기중 /진행중  */
+#mypage-starting{
+	float: left;
+    font-size: 1.5em;
+    margin-left: 45px;
+    text-decoration: underline;
+    color: #92D1E0;
+    cursor: pointer;
+}
+
+#mypage-waiting{
+	font-size: 1.5em;
+    margin-left: 185px;
+    cursor: pointer;
+}
+
+
 /* 좋아요 리스트 확인  / 펀딩 리스트 확인  */
-#like-list-div,#funding-list-div{
+.like-list-div,.funding-list-div{
     border: 1px solid gray;
     border-radius: 5px 5px 5px 5px;
     width: 30%;
@@ -296,7 +337,7 @@ table.cr-list-table th:nth-child(5){
     overflow: scroll;
 }
 
-#like-card-x,#funding-card-x{
+.like-card-x,.funding-card-x{
 	font-size: 1.5em;
 	margin-left: 1%;
 	margin-top: 1%;
@@ -304,7 +345,7 @@ table.cr-list-table th:nth-child(5){
 	cursor: pointer;
 }
 
-#like-list,#funding-list{
+.like-list,.funding-list{
 	border: 1px solid gray;
 	width: 60px;
 	height: 60px;
@@ -314,7 +355,7 @@ table.cr-list-table th:nth-child(5){
     margin-top: 10px;
 }
 
-#like-text,#funding-text{
+.like-text,.funding-text{
 	margin-top: 36px;
     margin-bottom: 40px;
     margin-left: 100px;
@@ -327,6 +368,7 @@ table.cr-list-table th:nth-child(5){
 	position: absolute;
 	top: 0;
 	left: 0;
+	display: none;
 }
 
 /* 간편결제 등록 div */

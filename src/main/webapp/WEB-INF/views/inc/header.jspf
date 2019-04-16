@@ -47,13 +47,8 @@
 				<li><a href="<%=request.getContextPath()%>/category">카테고리</a></li>
 				<li><a href="<%=request.getContextPath()%>/commingsoon">오픈예정</a></li>
 				<li><a href="<%=request.getContextPath()%>/donation">기부와후원</a></li>
-				<li><a href="<%=request.getContextPath()%>/">미정</a></li>
 			</ul>
-
 		</nav>
-
-		</nav>
-
 		<!-- 로그인/로그아웃/내정보 -->
 		<div id="top-etc">
 			<ul class="top-login">
@@ -120,7 +115,7 @@
 				<hr class="mypage-hr"/>
 				<ul>
 					<li class="mypageli">1:1문의</li>
-					<li class="mypageli"><a href="/bridge/profileForm">프로필설정</a></li>
+					<li class="mypageli"><a href="/bridge/profileFormUpdate?userMail=${userMail}">프로필설정</a></li>
 				</ul>
 			</div>
 		</c:if>

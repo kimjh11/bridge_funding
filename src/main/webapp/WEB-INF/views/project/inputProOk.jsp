@@ -58,8 +58,7 @@
 						<!-- 저장하기 and 다음단계로 -->
 						<script>
 						function check(){
-							var agree = document.getEleme
-							ntById('agree').checked;
+							var agree = document.getElementById('agree').checked;
 							alert(agree);
 							if(agree == true){
 								

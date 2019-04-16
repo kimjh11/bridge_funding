@@ -83,6 +83,7 @@ public class MemberController {
 			session.setAttribute("userName", vo2.getUserName()); //이름
 			session.setAttribute("logStatus", vo2.getLogStatus()); //로그인 여부
 			session.setAttribute("img", vo2.getUserImg() );
+			session.setAttribute("cardName", vo2.getCardName());//카드이름
 			
 			mav.setViewName("redirect:/");
 		}else {
