@@ -3,7 +3,7 @@ $(function(){
 	$("#mypage-card-ok").click(function(){
 		$("#card-submit").toggle();
 	}); 
-	//간편결제 x버튼 클릭시
+	//간편결제 x버튼 클릭시 
 	$("#card-x").click(function(){
 		$("#card-submit").hide();
 	})
@@ -290,8 +290,8 @@ function likeList(){
 			success:function(result){
 				var $result = $(result);
 				var txt = "<div class='like-list-div'>";
-				$result.each(function(idx,data){
 					txt += "<div class='like-card-x'><a href='javascript:closeX()'>&Chi;</a></div>";
+				$result.each(function(idx,data){
 					txt += "<hr/>";
 					txt += "<img class='like-list' src='/bridge/upload/"+data.userImg+"'/>";
 					txt += "<div class='like-text'>"+data.userName+"님이 좋아요를 눌렀습니다.</div>";
@@ -330,8 +330,8 @@ function fundingList(){
 		success:function(result){
 			var $result = $(result);
 			var txt = "<div class='funding-list-div'>";
-			$result.each(function(idx,data){
 				txt += "<div class='funding-card-x'><a href='javascript:closeX2()'>&Chi;</a></div>";
+			$result.each(function(idx,data){
 				txt += "<hr/>";
 				txt += "<img class='funding-list' src='/bridge/upload/"+data.userImg+"'/>";
 				txt += "<div class='funding-text'>"+data.userName+"님이 펀딩하였습니다.</div>";
