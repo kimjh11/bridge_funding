@@ -1,0 +1,84 @@
+
+.wrap{
+	width:80%; 
+	margin: 0 auto;
+	margin-top: 115px;
+}
+
+.join-text{
+	width: 62%;
+    height: 40px;
+	border-radius: 5px 5px 5px 5px;	
+	border: 1px solid gray;
+	padding-left: 5px;
+} 
+
+.join-btn{
+	width: 345px;
+	height: 40px;
+	border-radius: 5px 5px 5px 5px;	
+	margin-left: 125px;
+    border: 1px solid;
+    background: #021044;
+    color: white;
+}
+
+.join-div{
+	margin-bottom: 25px;
+	font-size: 1.5em;
+}
+
+#warning-id, #email-ok-label{
+	margin-left: 128px;
+    font-size: 1.2em;
+    color: red;
+}
+
+#join-h1{
+	margin-left: 130px; 
+	margin-bottom: 35px;
+	font-size: 4em;
+}
+
+#text-div{
+	margin-left: 127px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1.3em;
+}
+
+#user-email{
+	margin-left: 85px;
+	padding-left: 5px;
+}
+
+#user-name{
+	margin-left: 100px;
+	padding-left: 5px;
+}
+
+#user-pwd{
+	margin-left: 79px;
+	padding-left: 5px;
+}
+
+#user-pwdchk{
+	margin-left: 53px;
+	padding-left: 5px;
+}
+
+#ok-number{
+	width: 62%;
+    height: 40px;
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid;	
+	margin-left: 125px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+#join-center{
+	margin: 0 auto;
+	width: 45%;
+}
+

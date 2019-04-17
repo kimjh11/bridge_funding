@@ -4,6 +4,7 @@
 <head>
 <title>브릿지 펀딩</title>
 <link rel="stylesheet" href="css/home.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/home.js"></script>
 </head>
 <body>
@@ -25,3 +26,5 @@
 </div>
 </body>
 </html>
+
+

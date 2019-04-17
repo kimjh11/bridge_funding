@@ -47,6 +47,7 @@ public class ProjectController {
 		mav.setViewName("project/inputProject");
 		dao.delPro3();
 		}
+
 		return mav;
 	}
 ////////// 프로젝트 저장하기  ///////////////////////////////////////////

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+	#main{
+		  border:1px solid;
+		  
+	}
+	.leftSide{
+			  float:left;
+	}
+	.rightSide{
+			   float:right;
+	}

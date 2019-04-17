@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.goott.bridge.list.ListDaoInterface">
+	<!-- menuindex로 배너 select
+	<select id="bannerSelect" parameterType="int" resultType="kr.goott.bridge.list.BannerVO">
+		select bannerTitle, bannerSubTitle, bannerImg from banner where menuIndex = #{param1} order by bannerNum
+	</select> -->
+	<select id="bannerSelect" parameterType="String" resultType="kr.goott.bridge.list.BannerVO">
+		select bannerTitle, bannerSubTitle, bannerImg from banner where pageName = #{param1} order by bannerNum
+	</select>
+	<select id="categorySelect" resultType="kr.goott.bridge.project.CategoryVO">
+		select cateCode, cateName, cateImg from category order by cateRank
+	</select>
+	<!-- 리워드홈/카테고리홈 -->
+	<select id="rewardHomeList" resultType="kr.goott.bridge.list.ListVO">
+		select cateCode, cateName, proCode, proName, proImg, comName, proGoal, proNow, proEnd, likeCount from project 
+		where proCheck = 'Y' and cateName NOT IN('기부/후원') 
+		order by proOpen
+		<!-- select cateCode, cateName, proCode, proName, proImg, comName, proGoal, proNow, proEnd, likeCount from project 
+		where proCheck = 'Y' and proOpen <![CDATA[<]]> sysdate and proEnd <![CDATA[>]]> sysdate and cateName NOT IN('기부/후원') 
+		order by proOpen  -->
+	</select>
+	<!-- 오픈예정 -->
+	<select id="commingSoonList" resultType="kr.goott.bridge.list.ListVO">
+		select cateCode, cateName, proCode, proName, proImg, comName, proGoal, proNow, proEnd, likeCount from project 
+		where proCheck = 'Y' and proOpen <![CDATA[>]]> sysdate and proEnd <![CDATA[>]]> sysdate and cateName NOT IN('기부/후원') 
+		order by proOk
+	</select>
+	<!-- 기부와후원 -->
+	<select id="donationList" resultType="kr.goott.bridge.list.ListVO">
+		select cateCode, cateName, proCode, proName, proImg, comName, proGoal, proNow, proEnd, likeCount from project 
+		where proCheck = 'Y' and proOpen <![CDATA[<]]> sysdate and proEnd <![CDATA[>]]> sysdate and cateName = '기부/후원'  
+		order by proOpen
+	</select>
+	<!-- 선택한 카테고리 리스트 -->
+	<select id="cateNameList" parameterType="String" resultType="kr.goott.bridge.list.ListVO">
+		select cateCode, cateName, proCode, proName, proImg, comName, proGoal, proNow, proEnd, likeCount from project 
+		where proCheck = 'Y' and cateName = #{cateName} order by proOpen 
+	</select>
+	<insert id="bannerInsert" parameterType="kr.goott.bridge.list.BannerVO">
+		insert into banner (bannerNum, bannerTitle, bannerSubTitle, bannerImg, pageName) 
+		values(bannerSq.nextVal, #{bannerTitle}, #{bannerSubTitle}, #{bannerImg}, #{pageName})
+	</insert>
+</mapper>
+	<!-- <inse"insertRecord" parameterType="kr.goott.bridge.member.MemberVO">
+		insert into member(userNum, userMail, userPwd, userName, userRegdate)
+		values (memberSq.nextVal, #{userMail}, #{userPwd}, #{userName}, sysdate)
+	</insert>
+	<select id="loginCheck" resultType="kr.goott.bridge.member.MemberVO">
+		select userImg , userName from member
+		where userMail = #{userMail} and userPwd = #{userPwd}
+	</select> -->

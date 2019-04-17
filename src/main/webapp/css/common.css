@@ -295,7 +295,11 @@ header .top-menubar{
 	position: absolute;
 }
 header .top-menubar ul li{
+<<<<<<< HEAD
 	width: 20%;
+=======
+	width: 25%;
+>>>>>>> refs/remotes/origin/listPage
 	font-size: 18pt;
 	text-align: center;
 	line-height: 70px;
@@ -310,24 +314,26 @@ header #top-etc{
 	top: 5px;
 	right: 5%;
 }
-header .top-search{
+.project-search{
 	width:20px;
 	float: right;
 }
-header .top-search.show{
-	width:210px;
-}
-header .top-search input{
+
+.project-search input{
 	float:left;
 }
-header .top-search input[type="text"]{
+.project-search.show{
+	width:210px;
+}
+.project-search input[type="text"]{
 	display:none;
 	border: none;
 	border-bottom: 1px solid #666;
 	padding: 0 5px;
 	height: 23px;
+	width:85%;
 }
-header .top-search .search-toggle{
+.project-search .search-toggle{
 	width: 15px;
 	height: 15px;
 	background: url('../img/common/search-btn-gray.png') no-repeat 0 0;
@@ -351,7 +357,7 @@ header .top-login li.log-ok{
 header .top-login li.funding-open-btn{
 	position: absolute;
 	top: 30px;
-	right: 30px;
+	right: 70px;/* 준호 수정한 부분 */
 	border: 1px solid #ddd;
 	padding: 3px 10px;
 	margin-left: 0;
@@ -372,4 +378,24 @@ header .top-controller.show{
 	right: 50px;
 	transition: 1s ease all;
 }
+
+
+/*////////// admin-header //////////*/
+header .admin-header-wrap {
+	background-color:#021044;
+}
+header .admin-header-wrap .top-logo span,
+header .admin-header-wrap .top-logo h1 a,
+header .admin-header-wrap .top-menubar li a{
+	color:#fff;
+}
+header .admin-header-wrap .top-menubar li:hover a{
+	color:#2f407e;
+}
+
+
+
+
+
+
 

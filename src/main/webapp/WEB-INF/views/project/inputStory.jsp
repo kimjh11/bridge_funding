@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Bridge</title>
-
+ 
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/common.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/inputStory.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
