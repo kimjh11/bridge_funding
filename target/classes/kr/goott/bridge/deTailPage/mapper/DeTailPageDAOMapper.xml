@@ -6,12 +6,18 @@
 	<select id="selectRecord"  resultType="kr.goott.bridge.project.ProjectVO">
 		select * from project where cateCode=#{cateCode} and proCode=#{proCode}
 	</select>
+	<select id="selectRecord2"  resultType="kr.goott.bridge.project.ProjectVO">
+		select * from project2 where cateCode=#{cateCode} and proCode=#{proCode}
+	</select>
 	<select id="selectDate" resultType="kr.goott.bridge.project.ProjectVO">
 		select to_char(proOpen, 'YYYY-MM-DD') proOpen, to_char(proEnd, 'YYYY-MM-DD') proEnd, proDate ,proCode, cateCode
 		from project where cateCode=#{cateCode} and proCode=#{proCode}
 	</select>
 	<select id="deTailAs" resultType="String">
 		select proRefund from project where cateCode=#{cateCode} and proCode=#{proCode}
+	</select>
+	<select id="deTailAs2" resultType="String">
+		select proRefund from project2 where cateCode=#{cateCode} and proCode=#{proCode}
 	</select>
 	<select id="replyOpen" resultType="kr.goott.bridge.deTailPage.ReplyVO">
 		select userMail, userImg, replyContent, to_char(replyDate,'YYYY-MM-DD HH:MM') replyDate, proCode

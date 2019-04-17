@@ -336,5 +336,27 @@ public class ProjectController {
 		mav.setViewName("redirect:inputItem");
 		return mav;
 	}
+	@RequestMapping("/preview")
+	public ModelAndView preview(ProjectVO vo,ItemVO vo2) {
+		ModelAndView mav = new ModelAndView();
+		ProjectDAOInterface dao = sqlSession.getMapper(ProjectDAOInterface.class);
+		
+		System.out.println("미리보기 ======================================");
+		System.out.println("메일:"+vo.getUserMail());
+		System.out.println("프로젝트코드:"+vo.getProCode());
+		System.out.println("프로젝트번호:"+vo.getProNum());
+		
+		mav.addObject("vo",dao.selectPro4(vo.getProCode()));
+		mav.setViewName("deTail/previewPage");
+		return mav;
+	}
+	@RequestMapping("/previewBack")
+	public ModelAndView previewBack() {
+		ModelAndView mav = new ModelAndView();
+		ProjectDAOInterface dao = sqlSession.getMapper(ProjectDAOInterface.class);
+		
+		mav.setViewName("deTail/previewBack");
+		return mav;
+	}
 	
 }

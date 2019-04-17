@@ -52,6 +52,16 @@ public class DeTailPageController {
 		mav.setViewName("ajax/deTailGuide");
 		return mav;
 	}
+	@RequestMapping("/previewGuide")
+	public ModelAndView deTailGuide2(ProjectVO vo) {
+		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);
+		String refund = dao.deTailAs2(vo.getCateCode(), vo.getProCode());
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("refund", refund);
+		mav.setViewName("ajax/previewGuide");
+		return mav;
+	}
+	
 	@RequestMapping("/deTailOpen")
 	public ModelAndView deTailOpen(ProjectVO vo) {
 		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);	
@@ -59,6 +69,16 @@ public class DeTailPageController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("vo", vo);
 		mav.setViewName("ajax/deTailOpen");
+		
+		return mav;
+	}
+	@RequestMapping("/previewOpen")
+	public ModelAndView deTailOpen2(ProjectVO vo) {
+		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);	
+		vo = dao.selectRecord2(vo.getCateCode(), vo.getProCode());
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("vo", vo);
+		mav.setViewName("ajax/previewOpen");
 		
 		return mav;
 	}

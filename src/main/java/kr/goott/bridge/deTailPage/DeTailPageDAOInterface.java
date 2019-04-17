@@ -13,12 +13,15 @@ public interface DeTailPageDAOInterface {
 	
 	//프로젝트 선택
 	public ProjectVO selectRecord(@Param("cateCode") String cateCode, @Param("proCode") String proCode);
+	public ProjectVO selectRecord2(@Param("cateCode") String cateCode, @Param("proCode") String proCode);
 
 	//프로젝트 날짜
 	public ProjectVO selectDate(@Param("cateCode") String cateCode, @Param("proCode") String proCode);
 
 	//프로젝트 AS/문의사항 선택
 	public String deTailAs(@Param("cateCode") String cateCode, @Param("proCode") String proCode);
+	//프로젝트 AS/문의사항 선택
+	public String deTailAs2(@Param("cateCode") String cateCode, @Param("proCode") String proCode);
 	
 	//댓글 꺼내기
 	public List<ReplyVO> replyOpen(@Param("cateCode") String cateCode, @Param("proCode") String proCode);

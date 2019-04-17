@@ -118,5 +118,10 @@
 				</ul>
 			</div> -->
 		</div>
+		<div id="preview">
+			<a href="/bridge/preview?proCode=${vo.proCode }">미리보기</a><br/>
+			입력한 정보를 미리보기를 통하여 보실수 있습니다.<br/>
+			입력한 정보를 저장후에 미리보기를 눌러주세요.
+		</div>
 </body>
 </html>
