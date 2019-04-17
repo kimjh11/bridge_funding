@@ -66,10 +66,10 @@
 						<div class="inputData row2 inputImg" id="selectImg1">
 							<!-- 대표이미지 -->
 							
-							<img id="loadImg" src="${pageContext.request.contextPath }/ckstorage/${vo.proImg}" /><br/>
+							<img id="loadImg" src="${pageContext.request.contextPath }/ckstorage/${vo.proImg}" onerror="this.src='${pageContext.request.contextPath }/img/inputImg.png'"/><br/>
 						  	
 						  	<label for="proImg">업로드</label>
-						  	<input type="file" name="proImg" id="proImg" value="${vo.proImg}" />
+						  	<input type="file" name="proImg" id="proImg" value="${pageContext.request.contextPath }/ckstorage/${vo.proImg}" />
 						</div>
 						
 						<script>
@@ -112,7 +112,7 @@
 						<div class="inputData row6 inputImg" id="selectImg2" >
 							<!-- 회사이미지 -->
 							
-							<img id="loadImg2" src="${pageContext.request.contextPath }/ckstorage/${vo.comImg}" /><br/>
+							<img id="loadImg2" src="${pageContext.request.contextPath }/ckstorage/${vo.comImg}" onerror="this.src='${pageContext.request.contextPath }/img/inputImg.png'" /><br/>
 						  	
 						  	<label for="comImg">업로드</label>
 						  	<input type="file" name="comImg" id="comImg" value="${vo.comImg}"/>
@@ -167,7 +167,7 @@
 							var proName = document.getElementById('proName').value;
 							var proGoal = document.getElementById('proGoal').value;
 							var proDate = document.getElementById('proDate').value;
-							
+							alert(document.getElementById('proImg')+"\n"+document.getElementById('comImg').value);
 							if(cateCode != null &&  proImg != null && comImg != null && proName != null && proGoal != null && proImg != "" && proGoal != "" && comImg != ""){
 								document.getElementById('frm').submit();
 							}else{
@@ -176,18 +176,12 @@
 							
 						}
 						</script>
-						<div class="saveNext"><a href="javascript:check();">저장하기</a></div>
-						<div class="saveNext" style="border-bottom:1px solid #666"><a href="/bridge/inputStory">다음단계로 ></a></div>
-						
+						<div class="saveNext"><a href="javascript:check();">저장하기</a></div>		
 				</form>	
 			</div>
 			
-			<script>
-				
 			
-			</script>
-			
-			<div id="proRight">
+			<!-- <div id="proRight">
 				<ul>
 					<li>
 						
@@ -208,7 +202,12 @@
 						<span class="ex">입력하신 정보를 저장하기 누르지 않고 다음으로 넘어가면 정보가 저장되지 않습니다.</span>
 					</li>
 				</ul>
-			</div>
+			</div> -->
+		</div>
+		<div id="preview">
+			<a href="">미리보기</a><br/>
+			입력한 정보를 미리보기를 통하여 보실수 있습니다.<br/>
+			입력한 정보를 저장후에 미리보기를 눌러주세요.
 		</div>
 </body>
 </html>

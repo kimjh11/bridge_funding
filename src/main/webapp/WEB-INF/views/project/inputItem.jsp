@@ -91,11 +91,11 @@
 					<div class="inputData" id="saveDiv">
 						<!-- 저장하기 and 다음단계로 -->
 						<div class="saveNext"><a href="#">저장하기</a></div>
-						<div class="saveNext" style="border-bottom:1px solid #666"><a href="#">다음단계로 ></a></div>
+						
 					</div>
 				
 			</div>
-			<div id="proRight">
+			<!-- <div id="proRight">
 				<ul>
 					<li>
 						
@@ -116,7 +116,7 @@
 						<span class="ex">입력하신 정보를 저장하기 누르지 않고 다음으로 넘어가면 정보가 저장되지 않습니다.</span>
 					</li>
 				</ul>
-			</div>
+			</div> -->
 		</div>
 </body>
 </html>

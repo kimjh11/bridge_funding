@@ -15,7 +15,7 @@
 	</insert>
 	<insert id="changePro" parameterType="kr.goott.bridge.project.ProjectVO">
 		insert into project2 (proNum,proCode,userMail,cateCode) 
-		select proNum,proCode,userMail,cateCode from project3;
+		select proNum,proCode,userMail,cateCode from project3
 	</insert>
 	<select id="selectPro" resultType="kr.goott.bridge.project.ProjectVO">
 		select * from project3 where userMail = #{param1}
@@ -40,7 +40,7 @@
 	<insert id="saveItem">
 		insert into item2 (proCode,userMail,itemNum,itemRank,itemName,itemContent,itemPrice,itemOption,
 		limitCnt) 
-		values (#{proCode},#{userMail},1,#{itemRank},#{itemName},#{itemContent},#{itemPrice},#{itemOption},
+		values (#{proCode},#{userMail},item2_sq.nextVal,#{itemRank},#{itemName},#{itemContent},#{itemPrice},#{itemOption},
 		#{limitCnt}) 
 	</insert>
 	<delete id="delItem">

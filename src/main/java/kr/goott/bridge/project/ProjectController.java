@@ -38,13 +38,15 @@ public class ProjectController {
 		System.out.println("메일:"+vo2.getUserMail());
 		System.out.println("프로젝트코드:"+vo2.getProCode());
 		System.out.println("프로젝트번호:"+vo2.getProNum());
+		if(cnt>0) {
 		dao.changePro(vo2);	
 		
 		mav.addObject("list",list);
 		mav.addObject("vo",vo2);
 		mav.addObject("userMail",vo.getUserMail());
 		mav.setViewName("project/inputProject");
-
+		dao.delPro3();
+		}
 		return mav;
 	}
 ////////// 프로젝트 저장하기  ///////////////////////////////////////////

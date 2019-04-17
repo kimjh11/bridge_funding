@@ -58,9 +58,7 @@
 						<!-- 저장하기 and 다음단계로 -->
 						<script>
 						function check(){
-							var agree = document.getEleme
-							ntById('agree').checked;
-							alert(agree);
+							var agree = document.getElementById('agree').checked;
 							if(agree == true){
 								
 							}else{
@@ -74,7 +72,7 @@
 					</div>
 				</form>	
 			</div>
-			<div id="proRight">
+			<!-- <div id="proRight">
 				<ul>
 					<li>
 						
@@ -95,7 +93,7 @@
 						<span class="ex">입력하신 정보를 저장하기 누르지 않고 다음으로 넘어가면 정보가 저장되지 않습니다.</span>
 					</li>
 				</ul>
-			</div>
+			</div> -->
 		</div>
 </body>
 </html>
