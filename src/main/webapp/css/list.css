@@ -30,6 +30,7 @@
 /* banner */
 .top-banner .main-banner img{
 	width: 100%;
+	max-height: 350px;
 }
 .top-banner .main-banner .txt{
 	position: absolute;

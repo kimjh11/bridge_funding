@@ -2,10 +2,14 @@ package kr.goott.bridge.list;
 
 public class BannerVO {	
 	//배너
-	private String bannerImg;
-	private String bannerTitle;
-	private String bannerSubTitle;
-	private String pageName;
+	private int bannerNum;//배너일련번호
+	private String bannerImg;//배너이미지
+	private String bannerTitle;//배너타이틀
+	private String bannerSubTitle;//배너 설명
+	private String pageName;//해당페이지이름
+	private String bannerOpen;//오픈여부 초기값:'N'
+	private String bannerLink;//링크
+	private String bannerRegDate;//등록일
 	
 	public BannerVO() {}
 	
@@ -14,7 +18,18 @@ public class BannerVO {
 			   txt += "bannerTitle = " + getBannerTitle();
 		       txt += "bannerSubTitle = " + getBannerSubTitle();
 		       txt += "pageName = " + getPageName();
+		       txt += "bannerOpen = " + getBannerOpen();
+		       txt += "bannerRegDate = " + getBannerRegDate();	  
 		return txt;
+	}
+
+	
+	public int getBannerNum() {
+		return bannerNum;
+	}
+
+	public void setBannerNum(int bannerNum) {
+		this.bannerNum = bannerNum;
 	}
 
 	public String getBannerImg() {
@@ -48,6 +63,31 @@ public class BannerVO {
 	public void setPageName(String pageName) {
 		this.pageName = pageName;
 	}
+
+	public String getBannerOpen() {
+		return bannerOpen;
+	}
+
+	public void setBannerOpen(String bannerOpen) {
+		this.bannerOpen = bannerOpen;
+	}
+
+	public String getBannerLink() {
+		return bannerLink;
+	}
+
+	public void setBannerLink(String bannerLink) {
+		this.bannerLink = bannerLink;
+	}
+
+	public String getBannerRegDate() {
+		return bannerRegDate;
+	}
+
+	public void setBannerRegDate(String bannerRegDate) {
+		this.bannerRegDate = bannerRegDate;
+	}
+	
 	
 
 }

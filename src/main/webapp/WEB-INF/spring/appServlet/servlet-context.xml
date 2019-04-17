@@ -53,6 +53,7 @@
 				<beans:value>classpath:kr/goott/bridge/list/mapper/*.xml</beans:value>
 				<beans:value>classpath:kr/goott/bridge/project/mapper/*.xml</beans:value>
 				<beans:value>classpath:kr/goott/bridge/mypage/mapper/*.xml</beans:value>
+				<beans:value>classpath:kr/goott/bridge/admin/mapper/*.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>

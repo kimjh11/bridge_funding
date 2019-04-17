@@ -26,8 +26,4 @@ public interface ListDaoInterface {
 	public ListVO searchSelect(String searchKeyWord);
 	//목록 정렬(좋아요/펀딩액)
 	public ListVO sortingSelect(String sortKeyWord);
-	
-	
-	//어드민 배너 등록
-	public int bannerInsert(BannerVO vo);
 }

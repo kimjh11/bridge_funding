@@ -1,21 +1,19 @@
 package kr.goott.bridge.list;
 
 public class ListVO {
-	//상품관련(proVO참조)
-	private String cateCode; //카데고리 코드
-	private String cateName; //카테고리명
-	private String proCode; //프로젝트 넘버 
-	private String proName; //프로젝트명
-	private String proImg; //썸네일
-	private String comName; //판매자명
-	private int proGoal; //목표펀딩액
-	private int proNow; //현재펀딩액
-	private String proEnd; //마감일
-	private int likeCount; //좋아요수
+	private String cateCode; 
+	private String cateName; 
+	private String proCode; 
+	private String proName; 
+	private String proImg; 
+	private String comName; 
+	private int proGoal; 
+	private int proNow; 
+	private String proEnd; 
+	private int likeCount;
 	
-	//상품관련(listVO생성)
-	String likeClick = "N"; //좋아요 클릭여부
-	int remainingDay = 0; //남은일자
+	String likeClick = "N"; 
+	int remainingDay = 0;
 	
 	public ListVO() {
 	}

@@ -12,7 +12,7 @@
 	border-bottom: 1px solid #ddd;
 }
 .wrap .admin-content {
-	margin: 10px;
+	margin: 10px; 	
 	font-size: 15px;
 }
 .wrap .admin-content .bold {
@@ -45,7 +45,8 @@
 	border-radius: 3px;
 	font-family: 'nanumR';
 }
-.admin-content form ul li input[type="submit"] {
+.admin-content input[type="submit"],
+.admin-content input[type="button"] {
 	width: 200px;
 	margin: 15px auto 0;
 	display: block;
@@ -81,6 +82,19 @@
 }
 .admin-content ul li.col3 {
 	width: 32%;
+}
+
+/*///// 카테고리 페이지 //////*/
+.wrap .admin-content.category .bold{
+	width: 25%;
+}
+.admin-content.category form ul li input[type="text"]{
+	width: 70%;
+}
+form ul li select.rank-select,
+form ul li select.open-select{
+	width:100%;
+	max-width:55px;
 }
 
 
