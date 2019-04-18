@@ -43,10 +43,10 @@
 		<!-- 상단메뉴 -->
 		<nav class="top-menubar">
 			<ul> <!-- 배너/카테고리/정렬여부 값 전달 -->
-				<li><a href="<%=request.getContextPath()%>/list?page=리워드홈&cate=Y&sort=Y">리워드홈</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?pageName=리워드홈&cate=Y&sort=Y">리워드홈</a></li>
 				<li><a href="<%=request.getContextPath()%>/category?cateName=">카테고리</a></li>
-				<li><a href="<%=request.getContextPath()%>/list?page=오픈예정&cate=&sort=">오픈예정</a></li>
-				<li><a href="<%=request.getContextPath()%>/list?page=기부와후원&cate=&sort=Y">기부와후원</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?pageName=오픈예정&cate=&sort=">오픈예정</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?pageName=기부와후원&cate=&sort=Y">기부와후원</a></li>
 			</ul>
 		</nav>
 		<!-- 로그인/로그아웃/내정보 -->

@@ -8,10 +8,10 @@
 		select bannerTitle, bannerSubTitle, bannerImg from banner where menuIndex = #{param1} order by bannerNum
 	</select> -->
 	<select id="bannerSelect" parameterType="String" resultType="kr.goott.bridge.list.BannerVO">
-		select bannerTitle, bannerSubTitle, bannerImg from banner where pageName = #{param1} order by bannerNum
+		select bannerTitle, bannerSubTitle, bannerImg, bannerLink from banner where pageName = #{pageName} and bannerOpen = 'Y' order by bannerNum
 	</select>
 	<select id="categorySelect" resultType="kr.goott.bridge.project.CategoryVO">
-		select cateCode, cateName, cateImg from category order by cateRank
+		select cateCode, cateName, cateImg from category where cateOpen = 'Y' order by cateRank
 	</select>
 	<!-- 리워드홈/카테고리홈 -->
 	<select id="rewardHomeList" resultType="kr.goott.bridge.list.ListVO">
@@ -39,10 +39,6 @@
 		select cateCode, cateName, proCode, proName, proImg, comName, proGoal, proNow, proEnd, likeCount from project 
 		where proCheck = 'Y' and cateName = #{cateName} order by proOpen 
 	</select>
-	<insert id="bannerInsert" parameterType="kr.goott.bridge.list.BannerVO">
-		insert into banner (bannerNum, bannerTitle, bannerSubTitle, bannerImg, pageName) 
-		values(bannerSq.nextVal, #{bannerTitle}, #{bannerSubTitle}, #{bannerImg}, #{pageName})
-	</insert>
 </mapper>
 	<!-- <inse"insertRecord" parameterType="kr.goott.bridge.member.MemberVO">
 		insert into member(userNum, userMail, userPwd, userName, userRegdate)

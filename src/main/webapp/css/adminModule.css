@@ -12,7 +12,7 @@
 	border-bottom: 1px solid #ddd;
 }
 .wrap .admin-content {
-	margin: 10px;
+	margin: 10px; 	
 	font-size: 15px;
 }
 .wrap .admin-content .bold {
@@ -35,17 +35,19 @@
 	width: 150px;
 	font-family: 'nanumR';
 }
-.admin-content form ul li input[type="text"] {
+form ul li input[type="text"] {
 	width: 85%;
 	height: 20px;
 	padding: 0 5px;
 }
-.admin-content form ul li input[type="file"] {
+form ul li input[type="file"] {
 	border: none;
 	border-radius: 3px;
 	font-family: 'nanumR';
 }
-.admin-content form ul li input[type="submit"] {
+.admin-content input[type="submit"],
+.admin-content input[type="button"],
+.admin-content input[type="reset"] {
 	width: 200px;
 	margin: 15px auto 0;
 	display: block;
@@ -73,6 +75,12 @@
 .list-head li {
 	font-size: 13pt;
 }
+.list-content li input[type="button"]{
+	width:100%;
+	margin: 0;
+	padding: 0;
+	height: inherit;
+}
 .admin-content ul li.col1 {
 	width: 5%;
 }
@@ -81,6 +89,80 @@
 }
 .admin-content ul li.col3 {
 	width: 32%;
+}
+/*///// 배너 페이지 - 수정폼 //// */
+.list-content.update{
+	display: none;
+    position: fixed;
+    left: calc( 50% - 25% ); 
+    top: calc( 50% - 175px );
+    width: 50%; 
+    height: 350px; 
+    background: #fff;
+    z-index: 11;
+    padding: 10px;
+}
+.modal-backgroud{
+	display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,.3);
+    z-index: 10;
+}
+.list-content.update ul{
+	margin: 10px;
+}
+.list-content.update ul li{
+	float:none;
+	width: 100%;
+	padding: 0;
+}
+.list-content.update ul li span{
+	width:20%;
+	text-align: left;
+	min-width: 75px;
+}
+.list-content.update ul li input{
+	display: inline-block;
+	width:70%;
+}
+.list-content.update ul li select{
+	width:73%;
+	padding: 0 5px;
+}
+.list-content.update .btn-div{
+	width: fit-content;
+	margin: 0 auto;
+}
+.list-content.update .btn-div input{
+	display: inline-block;
+}
+input[readonly]{
+	border:none;
+}
+/* .modal-close::after {
+	content: '';
+	width: 20px;
+	height: 20px;
+	border:1px solid red;
+	position:absolute;
+	top: 25px;
+	right: 20px;
+} */
+
+/*///// 카테고리 페이지 //////*/
+.wrap .admin-content.category .bold{
+	width: 25%;
+}
+.admin-content.category form ul li input[type="text"]{
+	width: 70%;
+}
+form ul li select.rank-select,
+form ul li select.open-select{
+	width:100%;
+	max-width:55px;
 }
 
 

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.goott.bridge.admin.AdminDaoInterface">
+	<select id="bannerSelectAll" resultType="kr.goott.bridge.list.BannerVO">
+		select bannerNum, bannerTitle, bannerSubTitle, bannerImg, pageName, bannerOpen, 
+		to_char(bannerRegDate, 'YYYY-MM-dd') bannerRegDate, bannerLink from banner order by bannerNum desc
+	</select>
+	<select id="bannerSelect" resultType="kr.goott.bridge.list.BannerVO">
+		select bannerNum, bannerTitle, bannerSubTitle, bannerImg, pageName, bannerOpen, 
+		to_char(bannerRegDate, 'YYYY-MM-dd') bannerRegDate, bannerLink from banner where bannerNum = #{bannerNum}
+	</select>
+	<insert id="bannerInsert" parameterType="kr.goott.bridge.list.BannerVO">
+		insert into banner (bannerNum, bannerTitle, bannerSubTitle, bannerImg, pageName, bannerOpen, bannerRegDate, bannerLink) 
+		values(bannerSq.nextVal, #{bannerTitle}, #{bannerSubTitle}, #{bannerImg}, #{pageName}, 'N', sysdate, #{bannerLink})
+	</insert>
+	<update id="bannerOpenToggle">
+		update banner set bannerOpen = case when bannerOpen = 'N' then 'Y' when bannerOpen = 'Y' then 'N' end where bannerNum = #{itemNum}
+	</update>
+	<delete id="bannerDelete" parameterType="int">
+		delete from banner where bannerNum = #{itemNum}
+	</delete>
+	<update id="bannerUpdate" parameterType="kr.goott.bridge.list.BannerVO">
+		update banner set bannerTitle = #{bannerTitle}, bannerSubTitle = #{bannerSubTitle}, bannerImg = #{bannerImg}, bannerLink = #{bannerLink} 
+		where bannerNum = #{bannerNum}
+	</update>
+	<select id="cateSelectAll" resultType="kr.goott.bridge.project.CategoryVO">
+		select cateCode, cateNum, cateImg, cateName, cateRank, cateOpen from category order by cateNum desc
+	</select>
+	<insert id="cateInsert" parameterType="kr.goott.bridge.project.CategoryVO">
+		insert into category (cateCode, cateNum, cateImg, cateName, cateRank, cateOpen) 
+		values(#{cateCode}, categorySq.nextVal, #{cateImg}, #{cateName}, 0, 'N')
+	</insert>
+	<update id="cateOpenToggle">
+		update category set cateOpen = case when cateOpen = 'N' then 'Y' when cateOpen = 'Y' then 'N' end where cateNum = #{itemNum}
+	</update>
+	<delete id="cateDelete" parameterType="int">
+		delete from category where cateNum = #{itemNum}
+	</delete>
+	
+</mapper>

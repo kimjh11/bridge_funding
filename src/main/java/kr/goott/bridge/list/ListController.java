@@ -21,7 +21,7 @@ public class ListController {
 	
 	@RequestMapping(value="/list")
 	public ModelAndView listPage(HttpServletRequest req,
-								@RequestParam("page") String page,
+								@RequestParam("pageName") String pageName,
 								@RequestParam("cate") String cate,
 								@RequestParam("sort") String sort)
 	{
@@ -29,20 +29,20 @@ public class ListController {
 		
 		List<ListVO> itemList = null;//프로젝트 목록
 		
-		if(page.equals("리워드홈")) {
+		if(pageName.equals("리워드홈")) {
 			//리워드홈 (승인여부:Y, 시작일<오늘날짜, 마감일>오늘날짜, 카테고리중'기부/후원'제외, 시작일순정렬)
 			itemList = dao.rewardHomeList();
-		}else if(page.equals("오픈예정")) {
+		}else if(pageName.equals("오픈예정")) {
 			//오픈예정 (승인여부:Y, 시작일>오늘날짜, 마감일>오늘날짜, 카테고리중'기부/후원'제외, 승인일순정렬)
 			itemList = dao.commingSoonList();
-		}else if(page.equals("기부와후원")){
+		}else if(pageName.equals("기부와후원")){
 			//기부후원  (승인여부:Y, 시작일<오늘날짜, 마감일>오늘날짜, 카테고리중'기부/후원'만, 시작일순정렬)
 			itemList = dao.donationList();
 		}
 
 		ModelAndView mav = new ModelAndView();
 		//리스트
-		mav.addObject("bannerList", dao.bannerSelect(page));
+		mav.addObject("bannerList", dao.bannerSelect(pageName));
 		mav.addObject("cateList", dao.categorySelect());
 		mav.addObject("itemList", itemList);
 		//오픈여부

@@ -6,6 +6,8 @@ public class CategoryVO {
 	private String cateImg;
 	private String cateName;
 	private int cateRank;
+	private String cateOpen;
+	
 	public CategoryVO() {}
 	public String getCateCode() {
 		return cateCode;
@@ -36,6 +38,12 @@ public class CategoryVO {
 	}
 	public void setCateRank(int cateRank) {
 		this.cateRank = cateRank;
+	}
+	public String getCateOpen() {
+		return cateOpen;
+	}
+	public void setCateOpen(String cateOpen) {
+		this.cateOpen = cateOpen;
 	}
 
 	

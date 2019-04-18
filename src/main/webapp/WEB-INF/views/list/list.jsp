@@ -11,14 +11,13 @@
 <body>
 <div class="reward-wrap">
 	<!-- Top Banner Start  -->
-	<c:if test="${bannerList!=null }">
 	<div class="top-banner">
 		<!-- 인기아이템/마감임박아이템/앵콜아이템/추천아이템 , 주제별 리스트페이지 이동 -->
 		<ul class="main-banner banner-slider">
 		<c:forEach var="vo" items="${bannerList }">
 			<li> 
-				<a href="">
-					<img src="<%=request.getContextPath()%>/upload/${vo.bannerImg}" alt="배너이미지"/>
+				<a href="" title="${vo.bannerLink }">
+					<img src="<%=request.getContextPath()%>/img/banner/${vo.bannerImg}" alt="배너이미지"/>
 				</a>
 				<div class="txt">
 					<p class="banner-title">${vo.bannerTitle }</p>
@@ -32,23 +31,18 @@
 			<a href="<%=request.getContextPath()%>/list?page=오픈예정&cate=">오픈예정 프로젝트 보러가기</a>
 		</div>
 	</div>
-	</c:if>
 	<!-- Top Banner End -->
 	
 	<!-- Category Nav Start -->
-	<c:if test="${cate=='Y' }">
 	<nav class="cate-nav">
 		<ul>
 		<c:forEach var="vo1" items="${cateList }">
-			<li>
-				<a href="<%=request.getContextPath()%>/category?cateName=${vo1.cateName }">${vo1.cateName }</a>
-				<input type="hidden" name="cateImg" value="${vo1.cateImg }">
-				<input type="hidden" name="cateCode" value="${vo1.cateCode }">
-			</li>
+		<li>
+			<a href="./category?page=${vo1.cateCode }" style="background:url('./img/category/${vo1.cateImg}')">${vo1.cateName }</a>
+		</li>
 		</c:forEach>
 		</ul>
 	</nav>
-	</c:if>
 	
 	<div class="list-wrap">
 		<div class="list-header">
