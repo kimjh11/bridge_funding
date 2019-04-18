@@ -23,7 +23,6 @@
 							<option value="오픈예정">오픈예정</option>
 							<option value="기부와후원">기부와후원</option>
 						</select>
-						<!-- <input type="hidden" name="pageName" /> -->
 					</li>
 					<li>
 						<span class="bold">배너 타이틀</span>
@@ -51,8 +50,9 @@
 	<div class="admin-list-wrap">
 		<h3>배너 목록</h3>
 		<div class="admin-content">
+			<!-- 배너목록 헤더 -->
 			<ul class="list-head bold">
-				<li class="col1">코드</li>
+				<li class="col1">NO</li>
 				<li class="col2">페이지명</li>
 				<li class="col3">배너 타이틀</li>
 				<li class="col3">배너 링크</li>
@@ -60,29 +60,118 @@
 				<li class="col1">수정</li>
 				<li class="col1">삭제</li>
 			</ul>
-			<c:forEach var="vo" items="${bannerList }">
-			<form>
-			<ul class="list-content">
-				<li class="col1">${vo.bannerNum }</li>
-				<li class="col2">${vo.pageName }</li>
-				<li class="col3">${vo.bannerTitle }</li>
-				<c:if test="${vo.bannerLink==null || vo.bannerLink=='' }">
-					<li class="col3">링크없음</li>
-				</c:if>
-				<c:if test="${vo.bannerLink!=null && vo.bannerLink!='' }">
-					<li class="col3">${vo.bannerLink }</li>
-				</c:if>
-				<li class="col1"><span class="open-toggle">${vo.bannerOpen }</span></li>
-				<li class="col1"><a href=>수정</a></li>
-				<li class="col1"><a href=>삭제</a></li>
-			</ul>
-			</form>
+			<c:forEach var="vo" items="${bannerList }" varStatus="status">
+			<div>
+				<!-- 배너목록 내용 -->
+				<ul class="list-content">
+					<li class="col1">${vo.bannerNum }</li>
+					<li class="col2">${vo.pageName }</li>
+					<li class="col3">${vo.bannerTitle }</li>
+					<c:if test="${vo.bannerLink==null || vo.bannerLink=='' }">
+						<li class="col3">링크없음</li>
+					</c:if>
+					<c:if test="${vo.bannerLink!=null && vo.bannerLink!='' }">
+						<li class="col3">${vo.bannerLink }</li>
+					</c:if>
+					<li class="col1 open-toggle" value="${vo.bannerNum }">${vo.bannerOpen }</li>
+					<li class="col1"><button class="update-modal-open">수정</button></li>
+					<li class="col1"><button class="banner-del-btn">삭제</button></li>
+				</ul>
+				<!-- 수정폼 -->
+				<form class="list-content update" method="post" action="./bannerUpdate">
+					<h3>수정하기</h3>
+					<ul>
+						<li class="">
+							<span>NO</span>
+							<input type="text" name="bannerNum" value="${vo.bannerNum }" readonly/>
+						</li>
+						<li class="">
+							<span>페이지명</span>
+							<input type="text" name="pageName" value="${vo.pageName }" readonly/>
+						</li>
+						<li class="">
+							<span>배너 타이틀</span>
+							<input type="text" name="bannerTitle" placeholder="${vo.bannerTitle }"/>
+						</li>
+						<li class="">
+							<span>배너  설명</span>
+							<input type="text" name="bannerSubTitle" placeholder="${vo.bannerSubTitle }"/>
+						</li>
+						<li class="">
+							<span>배너  이미지</span>
+							<input type="file" name="bannerImg" value="${vo.bannerImg }"/>
+						</li>
+						<li class="">
+							<span>배너 링크</span>
+							<c:if test="${vo.bannerLink==null || vo.bannerLink=='' }">
+								<input type="text" name="bannerLink" placeholder="링크없음"/>
+							</c:if>
+							<c:if test="${vo.bannerLink!=null && vo.bannerLink!='' }">
+								<input type="text" name="bannerLink" placeholder="${vo.bannerLink }"/>
+							</c:if>
+						</li>
+					</ul>
+					<div class="btn-div">
+						<input type="submit" value="확인"/>
+						<input class="modal-close" type="reset" value="취소">
+					</div>
+				</form>
+			</div>
 			</c:forEach>
+			<div class="modal-backgroud"></div>
 		</div>
 	</div>
 </div>
 <script>
 $(function(){
+	//수정폼 열기/닫기
+	$(".update-modal-open,.modal-close").click(function () {
+		//$(".list-content.update,.modal-backgroud").toggle();
+	});
+	//수정폼열기
+	$(".update-modal-open").click(function () {
+		var form = $(this).parent().parent().siblings('form');
+		$(form).css('display','block');
+		$(".modal-backgroud").toggle();
+	});
+	//수정취소
+	$(".modal-close").click(function () {
+		var form = $(this).parent().parent().css('display','none');
+		$(".modal-backgroud").toggle();
+	});
+	//수정확인 눌렀을때
+	$('.list-content.update').submit(function(){
+		var li = $(this).children().children();
+		//하나라도 값이 없을경우 false
+		if($(li).children('input[name="bannerTitle"]').val()=="" 
+			&& $(li).children('input[name="bannerSubTitle"]').val()==""
+			&& $(li).children('input[name="bannerLink"]').val()==""){
+			alert('변경사항이 없을 경우 취소를 눌러주세요');
+			return false;
+		}
+	});
+	
+	//삭제버튼 클릭시
+	$('.banner-del-btn').click(function(){
+		if(confirm('배너 정보를 삭제하시겠습니까?')){
+			const bannerNum = $(this).parent().siblings().eq(0).text();
+			const params = 'page=banner&itemNum='+bannerNum;
+			console.log(params);
+			$.ajax({
+				type : 'get',
+				url : '/bridge/adminDeleteData',
+				data : params,
+				contentType : 'application/json; charset=utf-8',
+				success : function(){
+					alert('삭제가 완료되었습니다.');
+					location.reload();
+				},
+				error : function(error){
+					alert(error.responseText);
+				}
+			});
+		}
+	});
 	//등록하기 버튼 클릭시 값 체크
 	$('#bannerSubmitFrm').submit(function(){
 		var selectIdx = $('select option').index($('select option:selected'));
@@ -109,16 +198,14 @@ $(function(){
 	$('.open-toggle').click(function(){
 		const open = $(this);
 		if(confirm('상태를 변경하시겠습니까?')){
-			const num = $(this).parent().siblings().eq(0).text();		
+			const num = $(this).val();		
 			const params = 'itemNum='+num+'&table=banner';
-			console.log(params);
 			$.ajax({
 				type : 'get',
 				url : '/bridge/openToggle',
 				data : params,
 				contentType : 'application/json; charset=utf-8',
 				success : function(result){
-					console.log(open);
 					if(result=='ok'){
 						if(open.text()=='N'){
 							open.text('Y');

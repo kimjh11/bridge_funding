@@ -14,12 +14,14 @@ public class BannerVO {
 	public BannerVO() {}
 	
 	public String toString() {
-		String txt = "bannerImg = " + getBannerImg();
-			   txt += "bannerTitle = " + getBannerTitle();
-		       txt += "bannerSubTitle = " + getBannerSubTitle();
-		       txt += "pageName = " + getPageName();
-		       txt += "bannerOpen = " + getBannerOpen();
-		       txt += "bannerRegDate = " + getBannerRegDate();	  
+		String txt =  "bannerNum = " + getBannerNum();
+			   txt += "\nbannerImg = " + getBannerImg();
+			   txt += "\nbannerTitle = " + getBannerTitle();
+		       txt += "\nbannerSubTitle = " + getBannerSubTitle();
+		       txt += "\npageName = " + getPageName();
+		       txt += "\nbannerOpen = " + getBannerOpen();
+		       txt += "\nbannerRegDate = " + getBannerRegDate();	  
+		       txt += "\nbannerLink = " + getBannerLink();	  
 		return txt;
 	}
 

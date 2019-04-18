@@ -6,15 +6,18 @@ import kr.goott.bridge.list.BannerVO;
 import kr.goott.bridge.project.CategoryVO;
 
 public interface AdminDaoInterface {
-	//배너 리스트
-	public List<BannerVO> bannerSelectAll();
-	//배너 등록
-	public int bannerInsert(BannerVO vo);
-	//공개여부 설정
-	public int bannerOpenToggle(int bannerNum);
-	public int cateOpenToggle(int itemNum);
-	//카테고리 리스트
-	public List<CategoryVO> cateSelectAll();
-	//카테고리 등록
-	public void cateInsert(CategoryVO vo);
+	//배너
+	public List<BannerVO> bannerSelectAll();//전체선택
+	public BannerVO bannerSelect(int bannerNum);//레코드 한개선택
+	public int bannerInsert(BannerVO vo);//등록
+	public int bannerOpenToggle(int bannerNum);//오픈여부
+	public int bannerDelete(int itemNum);//삭제
+	public void bannerUpdate(BannerVO vo);//수정
+
+	//카테고리
+	public List<CategoryVO> cateSelectAll();//전체선택
+	public void cateInsert(CategoryVO vo);//등록
+	public int cateOpenToggle(int itemNum);//오픈여부
+	public int cateDelete(int itemNum);//삭제
+	
 }

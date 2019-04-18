@@ -40,6 +40,8 @@ public class AdminController {
 		return "/admin/main";
 	}
 	
+	///////////////////////////// 배너 관리 //////////////////////////////////////
+	
 	//배너관리 페이지
 	@RequestMapping(value="/adminBanner")
 	public ModelAndView adminBanner() {
@@ -57,45 +59,85 @@ public class AdminController {
 	public ModelAndView bannerUpload(HttpServletRequest req, BannerVO vo,
 									@RequestParam("bannerImgFile") MultipartFile bannerImgFile) {
 		ModelAndView mav = new ModelAndView();
-		AdminDaoInterface dao = sqlSession.getMapper(AdminDaoInterface.class);
-		
 		//파일이 저장될 절대경로
 		folder = req.getSession().getServletContext().getRealPath("/img/banner");
 	
-		String newFileName = null;
-		String originName = bannerImgFile.getOriginalFilename();
+		//파일업로드 + 업로드된 파일명세팅
+		vo.setBannerImg(fileUpload(bannerImgFile, folder));
 		
-		if(originName != null && !originName.equals("")) {
-			//서버에 동일한 파일유무 확인 후 업로드
-			File file = new File(folder, originName);
-			if(file.exists()) {//동일한 파일이 있을경우
-				int cnt=1;
-				while(true) {
-					int dot = originName.lastIndexOf(".");//마지막.위치
-					String preFile = originName.substring(0, dot);//파일명
-					String extFile = originName.substring(dot+1);//확장자
-					File newFile = new File(folder, preFile+"_"+cnt+"."+extFile);
-					if(!newFile.exists()) {
-						newFileName = newFile.getName();
-						break;
-					}
-					cnt++;
-				}
-			}else {//동일한 파일이 없을경우
-				newFileName = originName;
-			}
-			//업로드
-			try {
-				bannerImgFile.transferTo(new File(folder, newFileName));
-			}catch(Exception e) {
-				System.out.println("배너 이미지 파일등록 에러"+e.getMessage());
-			}
-		}
-		vo.setBannerImg(newFileName);
+		//데이터 추가
+		AdminDaoInterface dao = sqlSession.getMapper(AdminDaoInterface.class);
 		dao.bannerInsert(vo);
+		
 		mav.setViewName("redirect:adminBanner");
 		return mav;
 	}
+	
+	//배너 수정
+	@RequestMapping(value="/bannerUpdate", method=RequestMethod.POST)
+	public ModelAndView bannerUpdate(BannerVO vo) {
+		AdminDaoInterface dao = sqlSession.getMapper(AdminDaoInterface.class);
+		
+		BannerVO originVO = dao.bannerSelect(vo.getBannerNum());
+		
+		if(vo.getBannerImg()==null || vo.getBannerImg().equals("")) {
+			vo.setBannerImg(originVO.getBannerImg());
+		}if(vo.getBannerTitle()==null || vo.getBannerTitle().equals("")) {
+			vo.setBannerTitle(originVO.getBannerTitle());
+		}if(vo.getBannerSubTitle()==null || vo.getBannerSubTitle().equals("")) {
+			vo.setBannerSubTitle(originVO.getBannerSubTitle());
+		}if(vo.getBannerTitle()==null || vo.getBannerTitle().equals("")) {
+			vo.setBannerTitle(originVO.getBannerTitle());
+		}if(vo.getBannerLink()==null || vo.getBannerLink().equals("")) {
+			vo.setBannerLink(originVO.getBannerLink());
+		}
+		System.out.println(vo.toString());
+		dao.bannerUpdate(vo);
+		
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("redirect:adminBanner");
+
+		return mav;
+	}
+
+	/////////////////////////// 카테고리 ////////////////////////////////
+	
+	//카테고리 관리페이지
+	@RequestMapping(value="/adminCategory")
+	public ModelAndView adminCategory() {
+		ModelAndView mav = new ModelAndView();
+		AdminDaoInterface dao = sqlSession.getMapper(AdminDaoInterface.class);
+		
+		mav.addObject("cateList", dao.cateSelectAll());
+		mav.setViewName("/admin/category");
+		
+		return mav;
+	}
+	
+	//카테고리 등록
+	@RequestMapping(value="/cateSubmit", method=RequestMethod.POST)
+	public ModelAndView cateUpdate(HttpServletRequest req, CategoryVO vo,
+									@RequestParam("cateImgFile") MultipartFile cateImgFile) {
+		//이미지파일이 저장될 절대경로
+		folder = req.getSession().getServletContext().getRealPath("/img/category");
+		//파일업로드 + 업로드된 파일명세팅
+		vo.setCateImg(fileUpload(cateImgFile, folder));
+		
+		//데이터 추가
+		AdminDaoInterface dao = sqlSession.getMapper(AdminDaoInterface.class);
+		dao.cateInsert(vo);
+		
+		//카테고리 관리페이지 이동
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("redirect:adminCategory");
+		
+		return mav;
+	}
+	
+	
+	
+	//////////////////////// 공통 사용 /////////////////////////////////////
 	
 	//파일중복확인 후 추가
 	public String fileUpload(MultipartFile fileName, String folder) {
@@ -136,8 +178,8 @@ public class AdminController {
 	@ResponseBody
 	public String openToggle(String itemNum, String table) {
 		AdminDaoInterface dao = sqlSession.getMapper(AdminDaoInterface.class);
-		System.out.println(table);
-		System.out.println(itemNum);
+		//System.out.println(table);
+		//System.out.println(itemNum);
 		
 		int cnt=0;
 		
@@ -154,36 +196,23 @@ public class AdminController {
 		}
 	}
 	
-	//카테고리 관리페이지
-	@RequestMapping(value="/adminCategory")
-	public ModelAndView adminCategory() {
-		ModelAndView mav = new ModelAndView();
+	//데이터 삭제
+	@RequestMapping(value="/adminDeleteData", method=RequestMethod.GET)
+	@ResponseBody
+	public void delData(@RequestParam("page") String page, @RequestParam("itemNum") int itemNum) {
 		AdminDaoInterface dao = sqlSession.getMapper(AdminDaoInterface.class);
+
+		int cnt = 0;
+		if(page.equals("category")) {
+			cnt = dao.cateDelete(itemNum);
+		}if(page.equals("banner")) {
+			cnt = dao.bannerDelete(itemNum);
+		}
 		
-		mav.addObject("cateList", dao.cateSelectAll());
-		mav.setViewName("/admin/category");
 		
-		return mav;
+	
 	}
 	
-	@RequestMapping(value="/cateSubmit", method=RequestMethod.POST)
-	public ModelAndView cateUpdate(HttpServletRequest req, CategoryVO vo,
-									@RequestParam("cateImgFile") MultipartFile cateImgFile) {
-		//이미지파일이 저장될 절대경로
-		folder = req.getSession().getServletContext().getRealPath("/img/category");
-		//파일업로드 + 업로드된 파일명세팅
-		vo.setCateImg(fileUpload(cateImgFile, folder));
-		
-		//데이터 추가
-		AdminDaoInterface dao = sqlSession.getMapper(AdminDaoInterface.class);
-		dao.cateInsert(vo);
-		
-		//카테고리 관리페이지 이동
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:adminCategory");
-		
-		return mav;
-	}
 	
 	
 }
