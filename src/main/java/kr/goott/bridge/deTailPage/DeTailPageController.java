@@ -177,7 +177,7 @@ public class DeTailPageController {
 	public String likeDown(HttpServletRequest req) {
 		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);
 		HttpSession sion = req.getSession();
-		dao.likeDown((String)sion.getAttribute("proCode"));
+		dao.likeDown((String)sion.getAttribute("proCode"), (String)sion.getAttribute("userMail"));
 		dao.likeDelete((String)sion.getAttribute("proCode") , (String)sion.getAttribute("userMail"));
 		
 		return "ajax/deTailAtm";

@@ -45,13 +45,13 @@ public interface DeTailPageDAOInterface {
 	public int likeUp(@Param("proCode") String proCode);
 	
 	//좋아요 -1
-	public int likeDown(@Param("proCode") String proCode);
+	public int likeDown(@Param("proCode") String proCode, @Param("userName") String userName);
 	
 	//좋아요테이블 추가
 	public void likeInsert(@Param("proCode") String proCode, @Param("userMail") String userMail);
 	
 	//좋아요테이블 삭제
-	public void likeDelete(@Param("porCode") String proCode, @Param("userMail") String userMail);
+	public void likeDelete(@Param("proCode") String proCode, @Param("userMail") String userMail);
 	
 	//좋아요 했는지 검색
 	public String likeSelect(@Param("proCode") String proCode, @Param("userMail") String userMail);
