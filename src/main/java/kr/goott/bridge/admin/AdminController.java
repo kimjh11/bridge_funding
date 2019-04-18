@@ -1,6 +1,7 @@
 package kr.goott.bridge.admin;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -40,8 +41,33 @@ public class AdminController {
 		return "/admin/main";
 	}
 	
-	///////////////////////////// 배너 관리 //////////////////////////////////////
+
 	
+
+	/////////////////////////////////////////
+	//리워드관리 페이지
+	@RequestMapping("/adminReward")
+	public ModelAndView adminReward(Project2VO vo) {
+		System.out.println("들어오나");
+		ModelAndView mav = new ModelAndView();
+		AdminDaoInterface dao = sqlSession.getMapper(AdminDaoInterface.class);
+		
+		System.out.println("어드민 리워드="+toString());
+		
+		ArrayList<Project2VO> list = dao.selectReward(vo);
+		
+		System.out.println("어드민 리워드="+toString());
+		
+		mav.addObject("list", list);
+		mav.setViewName("/admin/reward");
+		
+		return mav;
+	}
+	/////////////////////////////////////////
+
+	
+	///////////////////////////// 배너 관리 //////////////////////////////////////
+		
 	//배너관리 페이지
 	@RequestMapping(value="/adminBanner")
 	public ModelAndView adminBanner() {

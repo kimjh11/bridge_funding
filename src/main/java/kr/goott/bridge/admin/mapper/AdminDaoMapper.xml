@@ -38,5 +38,7 @@
 	<delete id="cateDelete" parameterType="int">
 		delete from category where cateNum = #{itemNum}
 	</delete>
-	
+	<select id="selectReward" resultType="kr.goott.bridge.admin.Project2VO">
+		select * from project2 order by proNum desc
+	</select>
 </mapper>

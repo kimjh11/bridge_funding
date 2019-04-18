@@ -1,5 +1,5 @@
 package kr.goott.bridge.member;
- 
+  
 public class MemberVO {
 	private int userNum;
 	private String userMail;
