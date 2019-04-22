@@ -44,7 +44,7 @@
 		insert into likeyou values(#{proCode} , 1 , #{userMail} , sysdate)
 	</insert>
 	<delete id="likeDelete" parameterType="kr.goott.bridge.project.ProjectVO">
-		delete from likeyou where useremail=#{userMail}
+		delete from likeyou where usermail=#{userMail}
 	</delete>
 	<select id="likeSelect" resultType="String">
 		select userMail from likeyou where userMail=#{userMail} and proCode=#{proCode}

@@ -21,12 +21,19 @@
 			<div id="button">
 				<a href="/bridge/profileFormUpdate?userMail=${userMail}"><button id="mypage-profile-edit">프로필 편집</button></a>
 				
-				<c:if test="${cardName == null || cardName == ''}">
-					<button id="mypage-card-ok" >간편결제등록</button>
-				</c:if>
-				<c:if test="${cardName != null && cardName != ''}">
-					<button id="mypage-card-delete" >간편결제삭제</button>
-				</c:if>
+			
+					<button id="mypage-card-ok"
+					<c:if test="${!(cardName == null || cardName == '')}">
+						hidden
+					</c:if>
+					>간편결제등록</button>
+				
+					<button id="mypage-card-delete" 
+					<c:if test="${!(cardName != null && cardName != '')}">
+						hidden
+					</c:if>
+					>간편결제삭제</button>
+			
 			</div>	
 			
 			<!-- 간편결제 등록 div -->
@@ -65,10 +72,7 @@
 						카드 비밀번호<br/>
 						<input type="password" name="cardPwd" id="cardPwd" maxlength="4"/>
 					</div>
-					<!-- <div class="card-div">
-						생년월일 (주민번호 앞 6자리)<br/>
-						<input type="text" name="birth" id="birth" placeholder="ex)940901"/>
-					</div> -->
+					<label id="card-warning"></label><br/>
 					<input type="submit" value="카드등록" id="card-btn"/>
 				</form>
 			</div>
@@ -76,6 +80,7 @@
 		
 		<div id="mypage-center">	
 			<!-- 이미지 -->
+
 			<img id="mypage-img" src="/bridge/upload/${img}" onerror="this.src='<%=request.getContextPath() %>/img/profile/user.png'"/>
 			<div id="mypage-username">${userName} 님</div> 	
 		</div>
@@ -121,7 +126,7 @@
 		
 		
 		<!-- 프로젝트 코드  -->
-		<input type="hidden" id="proCode"/>
+		<!-- <input type="hidden" id="proCode"/> -->
 		<!-- 좋아요 리스트 확인 -->
 		<div id="like-wrap"></div>
 		<!-- 좋아요 리스트 확인 -->

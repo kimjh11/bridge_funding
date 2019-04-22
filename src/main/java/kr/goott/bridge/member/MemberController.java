@@ -1,5 +1,6 @@
 package kr.goott.bridge.member;
   
+import javax.mail.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -79,8 +80,7 @@ public class MemberController {
 			vo2.setLogStatus("Y"); 
 			
 			session.setAttribute("userMail", vo2.getUserMail()); //아이디
-			session.setAttribute("userImg", vo2.getUserImg());
-			System.out.println("userMail = "+ session.getAttribute("userImg"));
+			session.setAttribute("userImg", vo2.getUserImg()); 
 			session.setAttribute("userName", vo2.getUserName()); //이름
 			session.setAttribute("logStatus", vo2.getLogStatus()); //로그인 여부
 			session.setAttribute("img", vo2.getUserImg() );

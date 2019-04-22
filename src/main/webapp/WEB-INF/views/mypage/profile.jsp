@@ -36,8 +36,8 @@
 					</div>
 					<div class="profile-div">
 						생년월일  <select name="birth1" id="year" class="birth-select">
-									<option value="년" >년</option>				
-								</select>
+									<option value="년">년</option>				
+							   </select>
 								<script>
 									$(function(){
 										$("#year").val('${vo.birtharr[0]}').prop('selected',true);
@@ -131,7 +131,7 @@
 					</script>
 					<!-- ==========================다음 API 연동 end ============================= -->	
 					
-					<input type="button" value="취소" id="cancel-btn"/>
+					<a href="/bridge/mypageForm"><input type="button" value="취소" id="cancel-btn"/></a>
 					<input  type="submit" value="확인" id="ok-btn"/>
 				</form>
 			</div>

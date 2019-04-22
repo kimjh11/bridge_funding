@@ -151,6 +151,7 @@ width:16px;height:16px;background:#f1ef79;}
 
 .project-view > li img{
 	width:100%;
+	height: 210px;
 }
 
 .project-view > li h4{
@@ -206,7 +207,7 @@ width:16px;height:16px;background:#f1ef79;}
 }
 
 .detail-info li strong{
-	font-size: 15pt;
+	font-size: 10pt;
 	color: #92D1E0;
 }
 
@@ -263,8 +264,6 @@ table.cr-list-table th:nth-child(5){
 	width: 130px;
     height: 100px;
     border: 1px solid gray;
-    background: gray;
-   
 }
 
 .cr-list-cat{
@@ -330,7 +329,7 @@ table.cr-list-table th:nth-child(5){
     border-radius: 5px 5px 5px 5px;
     width: 30%;
     height: 600px;
-    position: absolute;
+    position: sticky;
     background: white;
     top: 15%;
     left: 38%;
@@ -365,7 +364,7 @@ table.cr-list-table th:nth-child(5){
 #like-wrap,#funding-wrap{
 	background: #808080bd;
 	z-index: 5;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	display: none;
@@ -461,4 +460,13 @@ table.cr-list-table th:nth-child(5){
     width: 95px;
     height: 35px;
     margin-left: 110px;
+    cursor: pointer;
 }
+
+#card-warning{
+	color: #FC5959;
+    font-size: 1.5em;
+    margin-left: 7%;
+}
+
+
