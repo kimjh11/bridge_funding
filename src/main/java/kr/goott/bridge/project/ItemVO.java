@@ -1,5 +1,6 @@
 package kr.goott.bridge.project;
 
+
 public class ItemVO {
 	private String proCode;
 	private String userMail;
@@ -11,6 +12,10 @@ public class ItemVO {
 	private String itemOption;
 	private int limitCnt;
 	private int stateCnt;
+	private String selectCount;
+	private String selectRank;
+	private String proEnd;
+	private String remaininDay;
 	
 	public ItemVO() {}
 
@@ -92,6 +97,38 @@ public class ItemVO {
 
 	public void setStateCnt(int stateCnt) {
 		this.stateCnt = stateCnt;
+	}
+
+	public String getSelectCount() {
+		return selectCount;
+	}
+
+	public void setSelectCount(String selectCount) {
+		this.selectCount = selectCount;
+	}
+
+	public String getSelectRank() {
+		return selectRank;
+	}
+
+	public void setSelectRank(String selectRank) {
+		this.selectRank = selectRank;
+	}
+
+	public String getProEnd() {
+		return proEnd;
+	}
+
+	public void setProEnd(String proEnd) {
+		this.proEnd = proEnd;
+	}
+
+	public String getRemaininDay() {
+		return remaininDay;
+	}
+
+	public void setRemaininDay(String remaininDay) {
+		this.remaininDay = remaininDay;
 	}
 
 }

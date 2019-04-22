@@ -19,6 +19,8 @@
 			</p>
 			<input type="hidden" id="logStatus" value="${logStatus}"/>
 			<input type="hidden" id="chk" value="${chk }"/>
+			<input type="hidden" id="proCode" value="${proCode}"/>
+			<input type="hidden" id="cateCode" value="${cateCode}"/>
 			<div id="big">
 				<div id="punding">펀딩하기</div>
 			</div>
