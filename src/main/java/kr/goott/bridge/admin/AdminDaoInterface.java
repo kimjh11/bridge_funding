@@ -9,12 +9,13 @@ import kr.goott.bridge.project.CategoryVO;
 
 import kr.goott.bridge.project.ItemVO;
 import kr.goott.bridge.project.ProjectVO;
+
 public interface AdminDaoInterface {
 	//로그인
 	public AdminVO login(AdminVO vo);
 
 	//리워드 관리
-	public ArrayList<Project2VO> selectReward(Project2VO vo);
+	//public ArrayList<Project2VO> selectReward(Project2VO vo);
 
 	//배너
 	public List<BannerVO> bannerSelectAll();//전체선택
