@@ -26,16 +26,6 @@ $(function(){
 				$(".select:eq("+k+")").append("<option>"+opt[i]+"</option>");
 			}
 		}
-		$.ajax({
-			type : "POST",
-			url : "payment2",
-			success : function(data){
-				$("#ajax").html(data);
-			},
-			error : function(){
-				alert("에러여");
-			}
-		});
-		
+	
 	
 })

@@ -31,6 +31,7 @@ public class DeTailPageController {
 		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);
 		HttpSession sion = request.getSession();
 		sion.setAttribute("proCode", vo.getProCode());
+		sion.setAttribute("cateCode",  vo.getCateCode());
 		vo = dao.selectRecord(vo.getCateCode(), vo.getProCode());
 		List<ItemVO> list = dao.itemList(vo.getCateCode(), vo.getProCode());
 		
@@ -124,6 +125,7 @@ public class DeTailPageController {
 		mav.addObject("vo",vo);
 		mav.addObject("cnt", cnt);
 		mav.addObject("proCode",(String)sion.getAttribute("proCode"));
+		mav.addObject("cateCode",(String)sion.getAttribute("cateCode"));
 		mav.addObject("chk", chk);
 		
 		mav.setViewName("ajax/deTailAtm");
@@ -144,6 +146,7 @@ public class DeTailPageController {
 	public ModelAndView replyWrite(HttpServletRequest request, ReplyVO rvo) {
 		rvo.setUserIp(request.getRemoteAddr());
 		DeTailPageDAOInterface dao = sqlSession.getMapper(DeTailPageDAOInterface.class);
+		System.out.println("userImg = "+rvo.getUserImg());
 		int cnt = dao.replyWrite(rvo);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("proCode", rvo.getProCode());
@@ -182,10 +185,6 @@ public class DeTailPageController {
 		dao.likeDelete((String)sion.getAttribute("proCode") , (String)sion.getAttribute("userMail"));
 		
 		return "ajax/deTailAtm";
-	}
-	@RequestMapping("/payment")
-	public String payment() {
-		return "payment/payment";
 	}
 
 }

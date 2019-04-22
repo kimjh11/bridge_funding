@@ -27,7 +27,6 @@ $(function(){
 				$("#like img").toggle();
 				$("#like").toggleClass("action");
 				if($("#like").attr("Class") == "btns action"){
-					alert("좋아요+1");
 					$.ajax({
 						type : "POST",
 						url : "likeUp",
@@ -41,7 +40,6 @@ $(function(){
 						}
 					})
 				}else{
-					alert("좋아요-1");
 					$.ajax({
 						type : "POST",
 						url : "likeDown",
@@ -67,7 +65,6 @@ $(function(){
 			$("#like img").toggle();
 			$("#like").toggleClass("action");
 			if($("#like").attr("Class") == "btns action"){
-				alert("좋아요+1");
 				$.ajax({
 					type : "POST",
 					url : "likeUp",
@@ -81,7 +78,6 @@ $(function(){
 					}
 				})
 			}else{
-				alert("좋아요-1");
 				$.ajax({
 					type : "POST",
 					url : "likeDown",
@@ -99,7 +95,7 @@ $(function(){
 	}
 	$("#punding").click(function(){
 		if($("#logStatus").val() == "Y"){
-			location.href="/bridge/payment?proCode="+$("#proCode").val();		
+			location.href="/bridge/payment?proCode="+$("#proCode").val()+"&cateCode="+$("#cateCode").val();		
 		}else{
 			alert("로그인 후 가능합니다.");
 		}		

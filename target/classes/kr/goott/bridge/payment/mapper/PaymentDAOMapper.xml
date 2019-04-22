@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.goott.bridge.payment.PaymentDAOInterface">
+	<select id="selectItem" resultType="kr.goott.bridge.project.ItemVO">
+		select * from Item where proCode=#{proCode} order by itemRank asc
+	</select>
+	<select id="endDay" resultType="String">
+		select to_char(add_months(proend, 1),'YY-MM-DD') proEnd from project where proCode=#{proCode}
+	</select>
+	<select id="startDelivery" resultType="String">
+		select to_char(proEnd+1, 'YY-MM-DD') proEnd from project where proCode=#{proCode}
+	</select>
+	<select id="baseInformation" resultType="kr.goott.bridge.member.MemberVO">
+		select * from member where userMail=#{userMail}
+	</select>
+	<insert id="payConfirm" parameterType="HashMap">
+		insert into pay values(#{proCode}, #{itemNum}, #{userMail}, #{itemOption}, 
+					#{selectCount}, #{cardName},#{cardNum}, #{itemPrice}, sysdate)
+	</insert>
+	<update id="sold" parameterType="kr.goott.bridge.project.ItemVO" >
+		update item set statecnt=statecnt-#{selectCount} where itemNum=#{itemNum}
+	</update>
+	<update id="proNowUp" parameterType="kr.goott.bridge.project.ItemVO">
+		update project set proNow=proNow+#{itemPrice}*#{selectCount} where proCode=#{proCode}
+	</update>
+</mapper> 

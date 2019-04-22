@@ -89,6 +89,7 @@
 			<url-pattern>/WEB-INF/views/mypage/*</url-pattern>
 			<url-pattern>/WEB-INF/views/project/*</url-pattern>
 			<url-pattern>/WEB-INF/views/home.jsp</url-pattern>
+			<url-pattern>/WEB-INF/views/payment/*</url-pattern>
 			<include-prelude>/WEB-INF/views/inc/header.jspf</include-prelude>
 		</jsp-property-group>
 	</jsp-config>
