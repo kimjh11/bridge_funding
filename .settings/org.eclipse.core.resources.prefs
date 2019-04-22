@@ -1,0 +1,22 @@
+eclipse.preferences.version=1
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/detailPage
+=======
+encoding//src/main/java/kr/goott/bridge/list/BannerVO.java=UTF-8
+encoding//src/main/java/kr/goott/bridge/list/ListController.java=UTF-8
+encoding//src/main/java/kr/goott/bridge/list/ListDaoInterface.java=UTF-8
+>>>>>>> refs/remotes/origin/List
+encoding//src/main/webapp/txt/funding-diff.txt=UTF-8
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/guide
+=======
+=======
+encoding//src/main/webapp/WEB-INF/views/project/projectTitle.jspf=UTF-8
+>>>>>>> refs/remotes/origin/inputProject
+>>>>>>> refs/remotes/origin/join
+>>>>>>> refs/remotes/origin/detailPage

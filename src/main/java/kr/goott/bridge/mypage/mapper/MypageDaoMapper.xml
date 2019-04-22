@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.goott.bridge.mypage.MypageDaoInterface">
+	<update id="updatePro">
+		update member set 
+		<if test="userImg != null">
+			userImg=#{userImg},
+		</if>
+		 userTel=#{userTel}, birth=#{birth}, zipcode=#{zipcode},
+		 addrSearch=#{addrSearch}, addr=#{addr}, addrdetail=#{addrdetail}
+		 where userMail=#{userMail}
+	</update>
+	<select id="selectProfile" resultType="kr.goott.bridge.member.MemberVO">
+		select userImg, userTel, birth, zipcode, addrSearch, addr, addrdetail
+		from member where userMail = #{userMail}
+	</select>
+	<update id="updateCardInfo">
+		update member set cardNum=#{cardNum}, cardDate=#{cardDate}, cardName=#{cardName}, 
+						  cardPwd=#{cardPwd} where userMail = #{userMail}
+	</update>
+	<update id="cardDelete">
+		update member set cardNum = null, cardDate = null, cardName = null, cardPwd = null
+		where userMail = #{userMail}
+	</update>
+	<select id="selectMyReward" resultType="kr.goott.bridge.project.ProjectVO">
+	select p.proImg proImg, p.cateName cateName, p.proName proName, p.proGoal proGoal, 
+		   p.proNow proNow, to_char(p.proEnd,'YY-MM-DD') proEnd, p.proCode proCode
+	from project p join pay y
+	on p.proCode = y.proCode 
+	where y.userMail = #{userMail}
+	order by p.proEnd desc 
+	</select>
+	<select id="selectLike" resultType="kr.goott.bridge.project.ProjectVO">
+	select p.proImg proImg, p.cateName cateName, p.proName proName, p.proGoal proGoal,
+		   p.proNow proNow, to_char(p.proEnd,'YY-MM-DD') proEnd, p.proCode proCode
+	from project p join likeyou l
+	on p.proCode = l.proCode 
+	where l.userMail = #{userMail}
+	order by p.proEnd desc
+	</select>
+	<select id="selectStartingPro" resultType="kr.goott.bridge.project.ProjectVO">
+		select proCode, cateName, proName, proImg, proGoal, proNow, 
+			   to_char(proOpen,'YYYY-MM-DD') proOpen,
+			   to_char(proEnd,'YYYY-MM-DD') proEnd  
+		from project where userMail = #{userMail}
+	</select>
+	<select id="selectWaitingPro" resultType="kr.goott.bridge.project.ProjectVO">
+		select * from project2 where userMail = #{userMail}
+	</select>
+	<select id="selectLikeList" resultType="kr.goott.bridge.member.MemberVO">
+	select m.userImg userImg, m.userName userName
+	from member m join likeyou l
+	on m.userMail = l.userMail
+	where l.proCode = #{param1, jdbcType=VARCHAR}
+	</select>
+	<select id="selectfundingList" resultType="kr.goott.bridge.member.MemberVO">
+	select m.userImg userImg, m.userName userName
+	from member m join pay p
+	on m.userMail = p.userMail
+	where p.proCode = #{param1, jdbcType=VARCHAR}
+	</select>
+</mapper> 

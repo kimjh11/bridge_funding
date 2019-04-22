@@ -1,0 +1,472 @@
+@charset "UTF-8";
+  
+/* 스크롤바 css */
+body::-webkit-scrollbar{width: 16px;}
+body::-webkit-scrollbar-track {background-color:#f1f1f1;}
+body::-webkit-scrollbar-thumb {background-color:#f1ef79;border-radius: 10px;}
+body::-webkit-scrollbar-thumb:hover {background: #555;}
+body::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment {
+width:16px;height:16px;background:#f1ef79;} 
+
+/* 마이페이지 */
+.wrap{
+	width:80%;
+	margin: 0 auto;
+	margin-top: 115px;
+}
+
+#mypage-center{
+	text-align: center;
+    width: 400px;
+    height: 250px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#mypage{
+	font-size: 3.5em;
+}
+
+#mypage-img{
+	border: 1px solid gray;
+    width: 150px;
+    height: 150px;
+    border-radius: 95px;
+    margin: 0 auto;
+}
+
+#mypage-username{
+	font-size: 2em;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#button{
+	float: left;
+	margin-top: -50px;
+    margin-left: 81%;
+}
+
+#mypage-profile-edit{
+	width: 100px;
+    height: 38px;
+    border-radius: 5px 5px 5px 5px;
+    background: #021044;
+    color: white;
+}
+
+#mypage-card-ok,#mypage-card-delete{
+	width: 100px;
+    height: 38px;
+    border-radius: 5px 5px 5px 5px;
+    background: #021044;
+    color: white;
+    margin-left: 20px;
+}
+
+#mypage-tab{
+	float: left;
+	width: 100%;
+}
+
+#mypage-su{
+	float: left;
+    font-size: 2em;
+    border: 1px solid black;
+    border-radius: 15px 15px 0px 0px;
+    padding-left: 50px;
+    width: 105px;
+    background: #021044;
+    color: white;
+    cursor: pointer;
+}
+
+#mypage-cr{
+	float: left;
+    font-size: 2em;
+    margin-left: 15px;
+    border: 1px solid black;
+    border-radius: 15px 15px 0px 0px;
+    padding-left: 40px;
+    width: 115px;
+    cursor: pointer;
+}
+
+#mypage-reward{
+	float: left;
+    font-size: 1.5em;
+    margin-left: 45px;
+    text-decoration: underline;
+    color: #92D1E0;
+    cursor: pointer;
+}
+
+#mypage-like{
+	font-size: 1.5em;
+    margin-left: 240px;
+    cursor: pointer;
+}
+
+
+/* 서포터즈 - 나의 리워드 / 좋아요 */
+#myReward{
+    width: 100%;
+}
+
+.list-content ul li{
+	float: left;
+	font-size: 0;
+}
+
+.project-view{
+	padding-top: 15px;
+	width: 25%;
+	overflow: hidden;
+	float: left;
+}
+
+.project-view > li{
+	position: relative;
+	width: 30%;
+	margin-left: 2%;
+	margin-bottom: 5%;
+}
+
+.project-view > li:nth-child(n+1){
+	margin-left:0;
+	width: 80%;
+	/* padding-left: 4%; */
+	padding-left: 0%;
+}
+
+.project-view > li .cate-txt{
+	position: absolute;
+	right: 0;
+	padding: 3px 5px;
+	font-size: 10pt;
+	font-family: nanumB;
+	background: rgba(255, 254, 254, 0.56);
+	color: #888;
+}
+
+.project-view > li img{
+	width:100%;
+	height: 210px;
+}
+
+.project-view > li h4{
+	background-color: #0210442b;
+	font-size:15pt;
+	padding: 5px 8px;
+	height: 50px;
+	overflow: hidden;
+	color: #404040;
+}
+
+.project-view .like-btn{
+	/*background-color: pink; */
+    /* width: 30px; */
+    /* height: 30px; */
+    font-size: 0;
+    position: absolute;
+    /* top: 30px; */
+    right: 10px;
+}
+
+.detail-info{
+	overflow: hidden;
+	border:1px solid #ddd;
+}
+
+.detail-info li{
+	border-left: 1px solid #ddd;
+	height: 50px;
+	display: inline-block;
+}
+
+.detail-info li:first-child{
+	border-left:none;
+}
+
+.detail-info li > *{
+	display: block;
+	text-align: center;
+}
+
+.detail-info li.col1,
+.detail-info li.col3{
+	width: 22%;
+}
+
+.detail-info li.col2{
+	width: 52%;
+}
+
+.detail-info li span{
+	font-size: 12pt;
+}
+
+.detail-info li strong{
+	font-size: 10pt;
+	color: #92D1E0;
+}
+
+/* 크리에이터 - 리스트 확인 */
+table.cr-list-table th {
+    width: 155px;
+    height: 100px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border: 1px solid gray;
+    position: relative;
+    font-size: 1.5em;
+}
+
+table.cr-list-table th:first-child{
+	width: 380px;
+	cursor: pointer;
+}
+
+table.cr-list-table th:nth-child(2){
+	width: 200px;
+}
+
+table.cr-list-table th:nth-child(3){
+	width: 200px;
+}
+table.cr-list-table th:nth-child(4){
+	width: 110px;
+}
+table.cr-list-table th:nth-child(5){
+	width: 110px;
+}
+
+#cr-list{
+	/* width: 100%;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-left: 52px; */
+    width: 80%;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-left: 150px;
+}
+
+#cr-list-waiting{
+	width: 69%;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-left: 168px;
+}
+
+.cr-list-img{
+	width: 130px;
+    height: 100px;
+    border: 1px solid gray;
+}
+
+.cr-list-cat{
+	margin-top: -90px;
+    margin-bottom: 5px;
+}
+
+.cr-list-last{
+	margin-top: 10px;
+    font-size: 0.9em;
+    margin-right: 100px;
+}
+
+.cr-list-goal{
+    font-size: 0.7em;
+    margin-right: 65px;
+    margin-bottom: 5px;
+}
+
+.cr-list-goal-waiting{
+	font-size: 1.5em;
+    margin-right: 0px;
+    margin-top: 30px;
+}
+
+.cr-list-pro{
+	margin-top: 5px;
+    margin-right: 60px;
+    margin-bottom: 5px;
+}
+
+.cr-list-pro-waiting{
+	margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+}
+
+.cr-list-like, .cr-list-funding{
+	margin-top: 25px;
+	cursor: pointer;
+}
+
+/* 승인 대기중 /진행중  */
+#mypage-starting{
+	float: left;
+    font-size: 1.5em;
+    margin-left: 45px;
+    text-decoration: underline;
+    color: #92D1E0;
+    cursor: pointer;
+}
+
+#mypage-waiting{
+	font-size: 1.5em;
+    margin-left: 185px;
+    cursor: pointer;
+}
+
+
+/* 좋아요 리스트 확인  / 펀딩 리스트 확인  */
+.like-list-div,.funding-list-div{
+    border: 1px solid gray;
+    border-radius: 5px 5px 5px 5px;
+    width: 30%;
+    height: 600px;
+    position: sticky;
+    background: white;
+    top: 15%;
+    left: 38%;
+    overflow: scroll;
+}
+
+.like-card-x,.funding-card-x{
+	font-size: 1.5em;
+	margin-left: 1%;
+	margin-top: 1%;
+	width: 15px;
+	cursor: pointer;
+}
+
+.like-list,.funding-list{
+	border: 1px solid gray;
+	width: 60px;
+	height: 60px;
+	border-radius: 50px;
+	float: left;
+	margin-left: 15px;
+    margin-top: 10px;
+}
+
+.like-text,.funding-text{
+	margin-top: 36px;
+    margin-bottom: 40px;
+    margin-left: 100px;
+    font-size: 1.5em;
+}
+
+#like-wrap,#funding-wrap{
+	background: #808080bd;
+	z-index: 5;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+/* 간편결제 등록 div */
+.card-div{
+	font-size: 1.5em;
+	margin-bottom: 20px;
+	margin-left: 25px;	
+}
+
+.cardNum{
+	width: 65px;
+    height: 20px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid gray;
+}
+
+#card-x{
+	float: left;
+	font-size: 1.6em;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+#card-span{
+	text-align: center;
+	font-size: 1.6em;
+	margin-left: 92px;
+}
+
+#card-hr{
+	border: 0.5px solid gray;
+}
+
+#card-h2{
+	font-size: 1.6em;
+	margin-left: 25px;
+    margin-bottom: 5px;
+}
+
+#card-term{
+	float: left;
+}
+
+#cardDate{
+	width: 135px;
+    height: 25px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid gray;
+}
+
+#cardName{
+	width: 135px;
+    height: 29px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid gray;
+    margin-left: 5px;
+}
+
+#cardPwd{
+	width: 134px;
+    height: 25px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid gray;
+}
+
+#birth{
+	width: 265px;
+    height: 25px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid gray;
+}
+
+#card-submit{
+	border: 1px solid gray;
+    width: 330px;
+    height: 400px;
+    position: absolute;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 64%;
+    margin-top: -3px;
+    background: white;
+    z-index: 5;
+}
+
+#card-btn{
+	background: #021044;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 5px 5px 5px 5px;
+    width: 95px;
+    height: 35px;
+    margin-left: 110px;
+    cursor: pointer;
+}
+
+#card-warning{
+	color: #FC5959;
+    font-size: 1.5em;
+    margin-left: 7%;
+}
+
+

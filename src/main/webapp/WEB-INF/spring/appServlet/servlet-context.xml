@@ -17,7 +17,12 @@
 	<resources mapping="/img/**" location="/img/" />
 	<resources mapping="/js/**" location="/js/" />
 	<resources mapping="/video/**" location="/video/" />
-	
+	<resources mapping="/ckeditor/**" location="/ckeditor/" />
+	<resources mapping="/ckfinder/**" location="/ckfinder/" />
+	<resources mapping="/ckstorage/**" location="/ckstorage/" />
+	<resources mapping="/txt/**" location="/txt/" />
+	<resources mapping="/upload/**" location="/upload/" />
+
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
@@ -44,12 +49,50 @@
 			<beans:list>
 				<!-- classpath 쓰는곳 -->
 				<!-- <beans:value>classpath:kr/goott/web/board/mapper/*.xml</beans:value> -->
-				
+				<beans:value>classpath:kr/goott/bridge/member/mapper/*.xml</beans:value>
+				<beans:value>classpath:kr/goott/bridge/deTailPage/mapper/*.xml</beans:value>
+				<beans:value>classpath:kr/goott/bridge/list/mapper/*.xml</beans:value>
+				<beans:value>classpath:kr/goott/bridge/project/mapper/*.xml</beans:value>
+				<beans:value>classpath:kr/goott/bridge/mypage/mapper/*.xml</beans:value>
+				<beans:value>classpath:kr/goott/bridge/payment/mapper/*.xml</beans:value>
+				<beans:value>classpath:kr/goott/bridge/admin/mapper/*.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>
 	
 	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>
+	</beans:bean>
+	
+	<!-- 메일 인증 start  
+		username에  <google 계정>
+		password에  <google 비밀번호>
+		google 계정 로그인한 후 -> 보안 -> 보안 수준이 낮은 앱 액세스 허용으로 변경하기. 
+	-->
+	<beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<beans:property name="host" value="smtp.gmail.com"/>
+		<beans:property name="port" value="587"/>
+		<beans:property name="username" value="junhogg007@gmail.com"/>
+		<beans:property name="password" value="8950*qwer"/>
+		<beans:property name="defaultEncoding" value="UTF-8"/>
+		<beans:property name="javaMailProperties">
+			<beans:props>
+				<beans:prop key="mail.transport.protocol">smtp</beans:prop>
+				<beans:prop key="mail.smtp.auth">true</beans:prop>
+				<beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
+				<beans:prop key="mail.debug">true</beans:prop>
+			</beans:props>
+		</beans:property>
+	</beans:bean>
+	<!-- 메일 인증 end -->
+	
+	<!-- jdbcTemplate 객체생성 -->
+	<beans:bean name="template" class="org.springframework.jdbc.core.JdbcTemplate">
+		<beans:property name="dataSource" ref="dataSource"></beans:property>
+	</beans:bean>
+	
+	<!-- 트랜잭션 -->
+	<beans:bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<beans:constructor-arg index="0" ref="dataSource"></beans:constructor-arg>
 	</beans:bean>
 </beans:beans>
