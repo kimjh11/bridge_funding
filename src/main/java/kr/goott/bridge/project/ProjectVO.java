@@ -29,6 +29,7 @@ public class ProjectVO {
 	private String proCheck;
 	private int remainingDay;
 	private int proGoalRate;
+	private String writeFinish;
 	
 	public ProjectVO() {}
 
@@ -255,4 +256,13 @@ public class ProjectVO {
 	public void setProGoalRate(int proGoalRate) {
 		this.proGoalRate = proGoalRate;
 	}
+
+	public String getWriteFinish() {
+		return writeFinish;
+	}
+
+	public void setWriteFinish(String writeFinish) {
+		this.writeFinish = writeFinish;
+	}
+	
 }

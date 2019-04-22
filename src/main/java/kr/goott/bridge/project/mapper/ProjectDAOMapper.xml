@@ -84,4 +84,8 @@
 	<select id="selectStatus" resultType="kr.goott.bridge.project.ProjectVO">
 		select TRUNC(proEnd-sysdate) remainingDay, TRUNC((proNow/proGoal)*100) proGoalRate, proNow from project where proCode=#{proCode}
 	</select>
+	<update id="endProject">
+		update project2 set writeFinish = 'Y'
+		where userMail = #{userMail} and proCode = #{proCode}
+	</update>
 </mapper>

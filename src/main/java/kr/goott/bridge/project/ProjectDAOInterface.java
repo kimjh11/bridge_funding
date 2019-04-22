@@ -41,6 +41,8 @@ public interface ProjectDAOInterface {
 	
 	public int replyWrite(ReplyVO vo);
 	
+	public int endProject(ProjectVO vo);
+	
 	public List<ItemVO> itemList(@Param("cateCode") String cateCode, @Param("proCode") String proCode);
 	
 	public List<SptVO> selectSpt(@Param("proCode") String proCode);
