@@ -117,6 +117,7 @@ public class DeTailPageController {
 		System.out.println("usermail = "+sion.getAttribute("proCode"));
 		String chk = "";
 		if(userMail != null && !(userMail.equals(""))) {
+			System.out.println(userMail);
 			chk = dao.likeSelect((String)sion.getAttribute("proCode"), (String)sion.getAttribute("userMail"));
 		}
 		ModelAndView mav = new ModelAndView();

@@ -41,4 +41,86 @@
 	<select id="selectReward" resultType="kr.goott.bridge.admin.Project2VO">
 		select * from project2 order by proNum desc
 	</select>
+	<select id="login" resultType="kr.goott.bridge.admin.AdminVO">
+		select adminId from admin where adminId = #{adminId} and adminPwd = #{adminPwd} 
+	</select>
+	<select id="selectRecord" resultType="kr.goott.bridge.admin.Project2VO">
+		select proImg, proName, cateName, cateCode, proCode, proTitle, proDate, proWait,
+			   comImg, comName, comEmail, comTel, proContent
+		from project2 
+		where cateCode=#{param1, jdbcType=VARCHAR} and proCode=#{param2, jdbcType=VARCHAR}
+	</select>
+	<select id="SelectItemList" resultType="kr.goott.bridge.admin.Item2VO">
+		select itemPrice, itemName, itemContent, itemOption, limitCnt, stateCnt 
+		from Item2 
+		where proCode=#{param1, jdbcType=VARCHAR}
+	</select>
+	<select id="selectChangeReturn" resultType="kr.goott.bridge.admin.Project2VO">
+		select proRefund 
+		from project2 
+		where cateCode=#{param1, jdbcType=VARCHAR} and proCode=#{param2, jdbcType=VARCHAR}
+	</select>
+	<select id="selectCompanyInfo" resultType="kr.goott.bridge.admin.Project2VO">
+		select proTitle, comImg, comName, comEmail, comTel, proContent
+		from project2
+		where cateCode=#{param1, jdbcType=VARCHAR} and proCode=#{param2, jdbcType=VARCHAR}
+	</select>
+	<select id="totalRecord" resultType="int">
+		select count(proCode) from project2 
+	</select>
+	<select id="selectReward" resultType="kr.goott.bridge.admin.Project2VO">
+		select * from 
+  			(select * from
+    			(select * from project2 where writeFinish = 'Y' order by proNum desc)
+    		where 
+    			 rownum <![CDATA[ <= ]]> #{param5}  order by proNum asc)
+			where  
+			<choose>
+				<when test="param1 == param4">
+    			  rownum <![CDATA[ <= ]]> #{param3}  
+  				</when>	
+  				<when test="param1 != param4">
+  				  rownum <![CDATA[ <= ]]> #{param2} 
+  				</when>
+			</choose>
+  			order by proNum desc
+	</select>
+	<update id="updatePro2">
+		update project2 set proOk = sysdate, proOpen = sysdate + #{param2}
+							<choose>
+								<when test="param3 == 15">
+								,proEnd =  sysdate + 15 + #{ param2}
+								</when>
+								<when test="param3 != 15">
+								,proEnd =  add_months(sysdate,#{param3}) + #{ param2} 
+								</when>
+							</choose>
+							,proCheck = 'Y'
+				where proCode = #{param1}
+	</update>
+	<insert id="insertPro" parameterType="kr.goott.bridge.project.ProjectVO" >
+		insert into project ( cateCode, userMail, proNum, proCode, cateName, proName, proImg, proGoal,
+                     		  proNow, proDate, proOk, proWait, proOpen, proEnd, comName, comNum, comImg,
+                     		  comTel, comEmail, comSite, account, proTitle, proContent, proRefund, proCheck) 
+                    select c.cateCode, userMail, proNum, proCode, c.cateName, proName, proImg, proGoal,
+                      	   proNow, proDate, proOk, proWait, proOpen, proEnd, comName, comNum, comImg,
+                           comTel, comEmail, comSite, account, proTitle, proContent, proRefund, proCheck
+                   	from project2 p join category c
+                    on p.cateCode = c.cateCode 
+                    where c.cateCode = #{cateCode} and proCode= #{proCode}
+	</insert>
+	<insert id="itemInsert" parameterType="kr.goott.bridge.project.ItemVO">
+		insert into Item (proCode, userMail, itemNum, itemRank, itemName, itemContent, itemPrice, itemOption,
+		                  limitCnt,stateCnt)
+		            select proCode, userMail, itemNum, itemRank, itemName, itemContent, itemPrice, itemOption,
+		                  limitCnt,stateCnt
+		            from item2
+		            where proCode= #{proCode}
+	</insert>
+	<delete id="item2Delete">
+		delete from item2 where proCode = #{proCode}
+	</delete>
+	<delete id="pro2Delete">
+		delete from project2 where proCode = #{proCode} 
+	</delete>
 </mapper>

@@ -15,8 +15,7 @@ table.cr-list-table th {
 .cr-list-img{
 	width: 130px;
     height: 100px;
-    border: 1px solid gray;
-    background: gray;  
+    border: 1px solid gray;  
 }
 
 .cr-list-cat{
@@ -24,6 +23,8 @@ table.cr-list-table th {
     margin-bottom: 5px;
     width: 50%;
     margin-left: 40%;
+    font-size: 0.8em;
+    color: #FC5959;
 }
 
 .cr-list-proname{

@@ -165,6 +165,15 @@ form ul li select.open-select{
 	max-width:55px;
 }
 
+#pageBtn{
+	font-size: 1.8em;
+	margin-left: 50%;
+}
+
+#pageBtn > ul > li{
+	float: left;
+	margin-left: 1.5%;
+}
 
 
 

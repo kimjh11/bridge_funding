@@ -113,7 +113,7 @@
 				<h3 class="mypage-h3">개인설정</h3>
 				<hr class="mypage-hr"/>
 				<ul>
-					<li class="mypageli">1:1문의</li>
+					<!-- <li class="mypageli">1:1문의</li> -->
 					<li class="mypageli"><a href="/bridge/profileFormUpdate?userMail=${userMail}">프로필설정</a></li>
 				</ul>
 			</div>

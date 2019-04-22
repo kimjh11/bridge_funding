@@ -27,8 +27,20 @@ public class Project2VO {
 	private String proRefund;
 	private int likeCount;
 	private String proCheck;
+	private String writeFinish = "N";
 	
-	//
+	//페이징
+	private int num = 1; //현재 페이지
+	private int totalRecord = 0; //총 레코드 수
+	private int totalPage = 1; //총 페이지 수
+	private int onePageRecord = 5; //1page에 표시할 레코드 수
+	private int startPage = 1; //시작 페이지
+	private int pageNumCount = 5; //한번에 출력할 페이지 번호 수
+	
+	private int lastRecord = 0; //마지막 레코드 수 구하는 것  5,4,3,2,1
+	
+	
+	//생성자
 	public Project2VO() {
 	
 	}
@@ -68,7 +80,7 @@ public class Project2VO {
 		return "";
 	}
 	
-	//
+	//getter/setter
 	public String getCateCode() {
 		return cateCode;
 	}
@@ -276,4 +288,84 @@ public class Project2VO {
 	public void setProCheck(String proCheck) {
 		this.proCheck = proCheck;
 	}
+	
+	public String getWriteFinish() {
+		return writeFinish;
+	}
+
+	public void setWriteFinish(String writeFinish) {
+		this.writeFinish = writeFinish;
+	}
+
+	//=================페이징==================================
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+		if(num%pageNumCount==0) {
+			startPage = (num/pageNumCount-1)*pageNumCount+1;			
+		}else {
+			startPage = (num/pageNumCount)*pageNumCount+1;
+		}
+	}
+
+	public int getTotalRecord() {
+		return totalRecord;
+	}
+
+	public void setTotalRecord(int totalRecord) {
+		this.totalRecord = totalRecord;
+		//총페이지수                                      10                        5
+		totalPage = (int)Math.ceil(totalRecord / (double)onePageRecord);
+		//마지막 페이지 레코드 
+		lastRecord = (totalRecord % onePageRecord);
+		
+		//마지막 레코드 수가 0이면 한 페이지에 레코드수 
+		if(lastRecord == 0) {
+			lastRecord = onePageRecord;
+		}
+	}
+
+	public int getTotalPage() {
+		return totalPage;
+	}
+
+	public void setTotalPage(int totalPage) {
+		this.totalPage = totalPage;
+	}
+
+	public int getOnePageRecord() {
+		return onePageRecord;
+	}
+
+	public void setOnePageRecord(int onePageRecord) {
+		this.onePageRecord = onePageRecord;
+	}
+
+	public int getStartPage() {
+		return startPage;
+	}
+
+	public void setStartPage(int startPage) {
+		this.startPage = startPage;
+	}
+
+	public int getPageNumCount() {
+		return pageNumCount;
+	}
+
+	public void setPageNumCount(int pageNumCount) {
+		this.pageNumCount = pageNumCount;
+	}
+
+	public int getLastRecord() {
+		return lastRecord;
+	}
+
+	public void setLastRecord(int lastRecord) {
+		this.lastRecord = lastRecord;
+	}
+	//=================페이징==================================
 }

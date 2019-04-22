@@ -60,16 +60,19 @@ public class MypageController {
 				if(img != null) {
 					//실제 업로드 하는 부분
 					imgname.transferTo(new File(folder, img));
+					
 				}
 			}catch(Exception e) {
 				System.out.println("업로드 에러"+e.getMessage());
 			}
 			
 			MemberVO vo = new MemberVO();
-			vo.setUserImg(img);
 			
-			HttpSession session = request.getSession();
-			session.setAttribute("img", vo.getUserImg());
+			if(img == null || img.equals("")) {
+				vo.setUserImg(null);
+			}else {
+				vo.setUserImg(img);
+			}
 			
 			vo.setUserTel(userTel);
 			vo.setBirth(request.getParameter("birth1")+"/"+request.getParameter("birth2")+"/"+request.getParameter("birth3"));
@@ -83,6 +86,7 @@ public class MypageController {
 			int cnt = dao.updatePro(vo);
 			
 			if(cnt>0) {
+				mav.addObject("img", vo.getUserImg());
 				mav.setViewName("redirect:mypageForm");
 			}else {
 				mav.setViewName("redirect:profileForm");
@@ -92,12 +96,15 @@ public class MypageController {
 	
 	//프로필 폼에 저장한 정보 가져오기
 	@RequestMapping("/profileFormUpdate")
-	public ModelAndView profileFormUpdate(MemberVO vo) {
+	public ModelAndView profileFormUpdate(MemberVO vo, HttpServletRequest request) {
 		MypageDaoInterface dao = sqlSession.getMapper(MypageDaoInterface.class);
 		
 		vo = dao.selectProfile(vo.getUserMail());
 		
 		ModelAndView mav = new ModelAndView();
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("img", vo.getUserImg()); //세션 저장
 		
 		mav.addObject("vo", vo);
 		mav.setViewName("/mypage/profile");
@@ -177,7 +184,7 @@ public class MypageController {
 	}
 	
 	//좋아요 프로젝트
-	@RequestMapping(value="/selectLike", method=RequestMethod.POST)
+	@RequestMapping(value="/selectLike", method= RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<ProjectVO> selectLike(@RequestParam("userMail") String userMail, ProjectVO vo){
 		 ArrayList<ProjectVO> list  = new ArrayList<ProjectVO>();
@@ -189,7 +196,7 @@ public class MypageController {
 	}
 	
 	//진행중인 프로젝트 값 가져오기
-	@RequestMapping(value ="/selectStartingPro", method=RequestMethod.POST)
+	@RequestMapping(value ="/selectStartingPro", method= RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<ProjectVO> selectStartingPro(@RequestParam("userMail") String userMail, ProjectVO vo) {
 		ArrayList<ProjectVO> list = new ArrayList<ProjectVO>();
@@ -203,12 +210,12 @@ public class MypageController {
 	//승인 대기중 값 가져오기
 	@RequestMapping(value="/selectWaitingPro", method=RequestMethod.POST)
 	@ResponseBody
-	public ArrayList<ProjectVO> selectWAitingPro(@RequestParam("userMail") String userMail, ProjectVO vo) {
+	public ArrayList<ProjectVO> selectWAitingPro(@RequestParam("userMail") String userMail, ProjectVO vo, HttpServletRequest request) {
 		ArrayList<ProjectVO> list = new ArrayList<ProjectVO>();
 		MypageDaoInterface dao = sqlSession.getMapper(MypageDaoInterface.class);
 		
 		list = dao.selectWaitingPro(userMail);
-		
+	
 		return list;
 	}
 	
@@ -220,7 +227,10 @@ public class MypageController {
 		MypageDaoInterface dao = sqlSession.getMapper(MypageDaoInterface.class);
 		
 		ArrayList<MemberVO> list = dao.selectLikeList(proCode);
-	
+		
+		System.out.println("proCode="+proCode);
+		System.out.println("size="+list.size());
+		
 		return list;
 	}
 	
