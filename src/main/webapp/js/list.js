@@ -18,6 +18,7 @@ $(function(){
 			, slideMargin: 5
 			, pager: false
 			, infiniteLoop: true
+			, touchEnabled : false/*a태그 링크 이동 해결*/
 		});
 	});
 	

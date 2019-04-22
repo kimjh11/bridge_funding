@@ -1,5 +1,6 @@
 @charset "UTF-8";
 	#main{
+<<<<<<< HEAD
 		  /* border:1px solid; */
 		  padding: 1%;
 		  background: antiquewhite;
@@ -251,4 +252,14 @@
 	.off{
 			background:lightgray;
 			
+=======
+		  border:1px solid;
+		  
+	}
+	.leftSide{
+			  float:left;
+	}
+	.rightSide{
+			   float:right;
+>>>>>>> branch 'detailPage' of https://github.com/kimjh11/bridge_funding.git
 	}

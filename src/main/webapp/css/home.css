@@ -7,6 +7,7 @@
 .home-wrap .background{
     position: absolute;
     width: 48%;
+    text-align: center;
 }
 /* 배경분할 */
 .home-wrap #guide-back{
@@ -22,33 +23,39 @@
     right: 0;
     border-left: 80px solid transparent;
 }
-
 .home-wrap #reward-back a{
     text-shadow: 1px 1px 1px gray;
 }
 .home-wrap .background > *{
 	position: absolute;
 	z-index: 5;
-	left: 37%;
-	text-align: left;
+	left: 50%;
+	width: 50%;
+	margin-left: -25%;
 	font-size: 30pt;
 	font-family:inherit;
 	color:#fff;
-	width: auto;
 	height: auto;
 	background: none;
+	margin-top: -7%;
+	height: 150px;
+}
+.home-wrap .background > * > *{
+	vertical-align: top;
+}
+.home-wrap .background h2{
+	height:45px;
+	line-height: 45px;
 }
 .home-wrap .background span{
     font-size:10pt;
     font-family: nanumR;
 }
 .home-wrap .background img{
-    top: 6px;
-    display: block;
-    width: 75px;
-    position: absolute;
-    left: -40%;
+    display: inline-block;
+    width: auto;
+    height: 70px;
+    margin-bottom: 10px;
 }
 .home-wrap #reward-back img{
-    width:60px;
 }

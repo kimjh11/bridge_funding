@@ -17,6 +17,7 @@
 		 height: 150px;
 		 position: absolute;
 		 background: gold;
+<<<<<<< HEAD
 		 border:1px solid lightgray;
 		 transform: rotate(315deg);
 		 top: 210px;
@@ -154,6 +155,143 @@
 			border-top:0px;
 			height:35px;
 			margin-bottom:5%;
+=======
+		 transform: rotate(315deg);
+		 top: 210px;
+		 left: 19.7%;
+		 border-radius:10px;
+	}
+	#one{
+		 width: 200px;
+		 height: 200px;
+		 position: absolute;
+		 top: 180px;
+		 left: 18%;
+		 font-size: 3em;
+	     text-align: center;
+	     line-height: 47px;
+	     margin-top: 30px;
+	}
+	.two{
+		 width: 150px;
+		 height: 150px;
+		 position: absolute;
+		 border:1px solid lightgray;
+		 transform: rotate(315deg);
+		 top: 210px;
+		 left: 46.2%;
+		 border-radius:10px;
+	}
+	#two{
+		 width: 200px;
+		 height: 200px;
+		 position: absolute;
+		 top: 180px;
+		 left: 44.5%;
+		 font-size: 3em;
+	     text-align: center;
+	     line-height: 47px;
+	     margin-top: 30px;
+	}
+	.three{
+		 width: 150px;
+		 height: 150px;
+		 position: absolute;
+		 border:1px solid lightgray;
+		 transform: rotate(315deg);
+		 top: 210px;
+		 left: 71.7%;
+		 border-radius:10px;
+	}
+	#three{
+		 width: 200px;
+		 height: 200px;
+		 position: absolute;
+		 top: 180px;
+		 left: 70%;
+		 font-size: 3em;
+	     text-align: center;
+	     line-height: 47px;
+	     margin-top: 30px;
+	}
+	#arrow1{
+			border-bottom:3px solid lightgray;
+			border-right:3px solid lightgray;
+			width: 30px;
+			height: 30px;
+			position:absolute;
+			z-index: 5;
+			top: 270px;
+			transform: rotate(315deg);
+			left: 35%;
+	}
+	#arrow2{
+			border-bottom:3px solid lightgray;
+			border-right:3px solid lightgray;
+			width: 30px;
+			height: 30px;
+			position:absolute;
+			z-index: 5;
+			top: 270px;
+			transform: rotate(315deg);
+			left: 61%;
+	}
+	.tap{
+		 border:1px solid;
+		 width:30%;
+		 font-size:2em;
+		 height:45px;
+		 line-height:45px;
+		 border-top-left-radius: 15px;
+	     border-top-right-radius: 15px;
+	     border-bottom:0px;
+	}
+	.tap div{
+			 float:left;
+			 margin-left:3%;
+	}
+	#money{
+		   float:right;
+		   margin-right:3%;
+	}
+	.content{
+		 	 border:1px solid;
+		 	 padding: 2%;
+		 	 font-size:1.5em;
+	}
+	.optionTitle{
+				font-size:1.5em;
+	}
+	.opt_option{
+				   height:30px;
+	}
+	.opt_option select{
+				width:200px;
+				height:30px;
+	}
+	.txt1{
+		float: left;
+		width: 5%;
+		height: 50px;
+		font-size: 1.2em;
+		line-height: 32px;
+	}
+	.txt2{
+		  float:left;
+		  width: 25%;
+		  height:30px;
+	}
+	.txt2 input{
+		height:25px;
+	}
+	.txt_center{
+				margin-bottom:15px;
+	}
+	.bottom{
+			border:1px solid;
+			border-top:0px;
+			height:35px;
+>>>>>>> branch 'detailPage' of https://github.com/kimjh11/bridge_funding.git
 	}
 	#first{
 			margin-left:2%;

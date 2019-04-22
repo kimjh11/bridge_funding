@@ -78,6 +78,55 @@
 				</div>
 			</form>
 		</c:forEach>
+		<div id="foreach돌릴곳">
+			<div class="tap">
+				<div id="select">
+					<input type="checkbox" value="선택1"/> 선택1
+				</div>
+				<div id="money">
+					펀딩금액 ???원
+				</div>
+			</div>
+			<div class="content">
+			<div class="txt_center">
+				<span class="optionTitle">슈퍼얼리버드 더 와이즈 로봇키즈(제목)</span><br/>
+				더와이즈로봇키즈 1세트(옵션)<br/>
+				구성품 : 로봇교구1세트 + 워크북 12권 등등(설명)
+			</div>
+				<div class="opt_option">
+					<div class="txt1">
+						옵션명 
+					</div>
+					<div class="txt2">
+						<select>
+							<option>색깔들</option>
+							<option>색깔들</option>
+							<option>색깔들</option>				
+						</select>
+					</div>
+					<div class="txt1">
+						수량
+					</div>
+					<div class="txt2">
+						<input type="text" name="count"/>
+					</div>
+				</div>
+			</div>
+				<div class="bottom">
+					<div class="btm1" id="first">
+						남은수량/제한수량  
+					</div>
+					<div class="btm2">
+						500/500
+					</div>	
+					<div class="btm1">
+						발송일 : 
+					</div>	
+					<div class="btm2">
+						2019-05-30
+					</div>	
+				</div>
+		</div>
 		<div id="nextPage">다음페이지 </div>
 	</div>
 </div>

@@ -20,11 +20,27 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml,/WEB-INF/spring/appServlet/mvc-context.xml,/WEB-INF/spring/appServlet/upload-context.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-		
+	<servlet>
+	  	<servlet-name>ConnectorServlet</servlet-name>
+	  	<servlet-class>com.ckfinder.connector.ConnectorServlet</servlet-class>
+	  	<init-param>
+	  		<param-name>XMLConfig</param-name>
+	  		<param-value>/WEB-INF/config.xml</param-value>
+	  	</init-param>
+	  	<init-param>
+	  		<param-name>debug</param-name>
+	  		<param-value>false</param-value>
+	  	</init-param>
+	  	<load-on-startup>1</load-on-startup>
+  	</servlet>
+	  <servlet-mapping>
+	  	<servlet-name>ConnectorServlet</servlet-name>
+	  	<url-pattern>/ckfinder/core/connector/java/connector.java</url-pattern>
+	  </servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
@@ -61,7 +77,17 @@
 	<!-- include Start -->
 	<jsp-config>
 		<jsp-property-group>
-			<url-pattern>/WEB-INF/views/*</url-pattern>
+			<url-pattern>/WEB-INF/views/admin/*</url-pattern>
+			<include-prelude>/WEB-INF/views/inc/admin_header.jspf</include-prelude>
+		</jsp-property-group>
+		<jsp-property-group>
+			<url-pattern>/WEB-INF/views/deTail/*</url-pattern>
+			<url-pattern>/WEB-INF/views/list/*</url-pattern>
+			<url-pattern>/WEB-INF/views/member/*</url-pattern>
+			<url-pattern>/WEB-INF/views/mypage/*</url-pattern>
+			<url-pattern>/WEB-INF/views/project/*</url-pattern>
+			<url-pattern>/WEB-INF/views/home.jsp</url-pattern>
+			<url-pattern>/WEB-INF/views/payment/*</url-pattern>
 			<include-prelude>/WEB-INF/views/inc/header.jspf</include-prelude>
 		</jsp-property-group>
 	</jsp-config>
