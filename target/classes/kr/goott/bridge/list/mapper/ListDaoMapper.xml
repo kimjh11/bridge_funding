@@ -3,48 +3,198 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.goott.bridge.list.ListDaoInterface">
-	<!-- menuindex로 배너 select
-	<select id="bannerSelect" parameterType="int" resultType="kr.goott.bridge.list.BannerVO">
-		select bannerTitle, bannerSubTitle, bannerImg from banner where menuIndex = #{param1} order by bannerNum
-	</select> -->
+	<!-- 탑배너 -->
 	<select id="bannerSelect" parameterType="String" resultType="kr.goott.bridge.list.BannerVO">
-		select bannerTitle, bannerSubTitle, bannerImg, bannerLink from banner where pageName = #{pageName} and bannerOpen = 'Y' order by bannerNum
+		select 
+			bannerTitle, bannerSubTitle, bannerImg, bannerLink 
+		from 
+			banner 
+		where 
+			pageCode = #{pageCode} and 
+			bannerOpen = 'Y' 
+		order by 
+			bannerNum
 	</select>
+	<!-- 카테고리배너 -->
 	<select id="categorySelect" resultType="kr.goott.bridge.project.CategoryVO">
-		select cateCode, cateName, cateImg from category where cateOpen = 'Y' order by cateRank
+		select 
+			cateCode, cateName, cateImg 
+		from 
+			category 
+		where 
+			cateOpen = 'Y' 
+		order by 
+			cateRank
 	</select>
-	<!-- 리워드홈/카테고리홈 -->
-	<select id="rewardHomeList" resultType="kr.goott.bridge.list.ListVO">
-		select cateCode, cateName, proCode, proName, proImg, comName, proGoal, proNow, proEnd, likeCount from project 
-		where proCheck = 'Y' and cateName NOT IN('기부/후원') 
-		order by proOpen
-		<!-- select cateCode, cateName, proCode, proName, proImg, comName, proGoal, proNow, proEnd, likeCount from project 
-		where proCheck = 'Y' and proOpen <![CDATA[<]]> sysdate and proEnd <![CDATA[>]]> sysdate and cateName NOT IN('기부/후원') 
-		order by proOpen  -->
+	<!-- 리워드홈 -->
+	<select id="allRewardList" resultType="kr.goott.bridge.list.ListVO">
+		select 
+			p.cateCode, c.cateName, p.proCode, p.proName, p.proImg, p.comName, p.proGoal, p.proNow, 
+			to_char(proEnd, 'YYYY-MM-dd') proEnd, p.likeCount, 
+			CEIL(p.proEnd - sysdate) remainingDay, CEIL((p.proNow / p.proGoal) * 100) proGoalRate 
+		from 
+			project p, category c 
+		where 
+			p.cateCode = c.cateCode and 
+			p.proCheck = 'Y' and 
+			p.proOpen <![CDATA[<]]> sysdate and 
+			p.proEnd <![CDATA[>]]> sysdate
+		order by 
+			p.proOpen
 	</select>
 	<!-- 오픈예정 -->
 	<select id="commingSoonList" resultType="kr.goott.bridge.list.ListVO">
-		select cateCode, cateName, proCode, proName, proImg, comName, proGoal, proNow, proEnd, likeCount from project 
-		where proCheck = 'Y' and proOpen <![CDATA[>]]> sysdate and proEnd <![CDATA[>]]> sysdate and cateName NOT IN('기부/후원') 
-		order by proOk
+		select 
+			p.cateCode, c.cateName, p.proCode, p.proName, p.proImg, p.comName, p.proGoal, p.proNow, 
+			p.proEnd, p.likeCount, CEIL(p.proOpen - sysdate) remainingDay 
+		from 
+			project p, category c 
+		where 
+			p.cateCode = c.cateCode and 
+			p.proCheck = 'Y' and 
+			p.proOpen <![CDATA[>]]>= sysdate and 
+			p.proEnd <![CDATA[>]]>= sysdate
+		order by 
+			p.proOk
 	</select>
-	<!-- 기부와후원 -->
-	<select id="donationList" resultType="kr.goott.bridge.list.ListVO">
-		select cateCode, cateName, proCode, proName, proImg, comName, proGoal, proNow, proEnd, likeCount from project 
-		where proCheck = 'Y' and proOpen <![CDATA[<]]> sysdate and proEnd <![CDATA[>]]> sysdate and cateName = '기부/후원'  
-		order by proOpen
+	<!-- 리워드 페이지 내 정렬 -->
+	<select id="rewardListSort" parameterType="String" resultType="kr.goott.bridge.list.ListVO">
+		select 
+			p.cateCode, c.cateName, p.proCode, p.proName, p.proImg, p.comName, p.proGoal, p.proNow, 
+			to_char(proEnd, 'YYYY-MM-dd') proEnd, p.likeCount, 
+			CEIL(p.proEnd - sysdate) remainingDay, CEIL((p.proNow / p.proGoal) * 100) proGoalRate 
+		from 
+			project p, category c 
+		where 
+			p.cateCode = c.cateCode and 
+			p.proCheck = 'Y' and 
+			p.proOpen <![CDATA[<]]> sysdate and 
+			p.proEnd <![CDATA[>]]> sysdate
+		order by 
+			case
+				when #{sort} = 'like' then likeCount
+				when #{sort} = 'funding' then proNow
+			end desc
+	</select>
+	<!-- 카테고리 페이지 내 정렬 -->
+	<select id="cateListSort" parameterType="Map" resultType="kr.goott.bridge.list.ListVO">
+		select 
+			p.cateCode, c.cateName, p.proCode, p.proName, p.proImg, p.comName, p.proGoal, p.proNow, 
+			to_char(proEnd, 'YYYY-MM-dd') proEnd, p.likeCount, 
+			CEIL(p.proEnd - sysdate) remainingDay, CEIL((p.proNow / p.proGoal) * 100) proGoalRate 
+		from 
+			project p, category c 
+		where 
+			p.cateCode = c.cateCode and 
+			p.proCheck = 'Y' and 
+			p.proOpen <![CDATA[<]]> sysdate and 
+			p.proEnd <![CDATA[>]]> sysdate and
+			c.cateCode = #{cateCode}
+		order by
+			case
+				when #{sort} = 'like' then likeCount
+				when #{sort} = 'funding' then proNow
+			end desc
+	</select>
+	<!-- 카테고리홈 -->
+	<select id="allCateList" resultType="kr.goott.bridge.list.ListVO">
+		select 
+			p.cateCode, c.cateName, p.proCode, p.proName, p.proImg, p.comName, p.proGoal, p.proNow, 
+			to_char(proEnd, 'YYYY-MM-dd') proEnd, p.likeCount, 
+			CEIL(p.proEnd - sysdate) remainingDay, CEIL((p.proNow / p.proGoal) * 100) proGoalRate 
+		from 
+			project p, category c 
+		where 
+			p.cateCode = c.cateCode and 
+			p.proCheck = 'Y' and 
+			p.proOpen <![CDATA[<]]> sysdate and 
+			p.proEnd <![CDATA[>]]> sysdate and 
+			c.cateCode NOT IN('donation') 
+		order by 
+			p.proOpen
 	</select>
 	<!-- 선택한 카테고리 리스트 -->
-	<select id="cateNameList" parameterType="String" resultType="kr.goott.bridge.list.ListVO">
-		select cateCode, cateName, proCode, proName, proImg, comName, proGoal, proNow, proEnd, likeCount from project 
-		where proCheck = 'Y' and cateName = #{cateName} order by proOpen 
+	<select id="selectCateList" parameterType="String" resultType="kr.goott.bridge.list.ListVO">
+		select 
+			p.cateCode, c.cateName, c.cateCode, p.proCode, p.proName, p.proImg, p.comName, p.proGoal, p.proNow, 
+			p.proEnd, p.likeCount
+		from 
+			project p, category c 
+		where 
+			p.cateCode = c.cateCode and 
+			p.proCheck = 'Y' and 
+			c.cateCode = #{cateCode} and
+			p.proOpen <![CDATA[<]]> sysdate and 
+			p.proEnd <![CDATA[>]]>= sysdate
+		order by 
+			p.proOpen
+	</select>
+	<select id="keywordSearch" parameterType="String" resultType="kr.goott.bridge.list.ListVO">
+		select 
+			p.cateCode, c.cateName, c.cateCode, p.proCode, p.proName, p.proImg, p.comName, p.proGoal, p.proNow, 
+			p.proEnd, p.likeCount
+		from 
+			project p, category c 
+		where 
+			p.cateCode = c.cateCode and 
+			p.proCheck = 'Y' and 
+			p.proName like '%'||#{keyword}||'%' and 
+			p.proOpen <![CDATA[<]]> sysdate and 
+			p.proEnd <![CDATA[>]]>= sysdate
+		order by 
+			p.proOpen
 	</select>
 </mapper>
-	<!-- <inse"insertRecord" parameterType="kr.goott.bridge.member.MemberVO">
-		insert into member(userNum, userMail, userPwd, userName, userRegdate)
-		values (memberSq.nextVal, #{userMail}, #{userPwd}, #{userName}, sysdate)
-	</insert>
-	<select id="loginCheck" resultType="kr.goott.bridge.member.MemberVO">
-		select userImg , userName from member
-		where userMail = #{userMail} and userPwd = #{userPwd}
+<!-- <select id="likeChk" parameterType="String" resultType="String">
+		select proCode from likeyou where userMail = #{userMail}
+	</select> -->
+<!-- 기부와후원 -->
+	<!-- <select id="donationList" resultType="kr.goott.bridge.list.ListVO">
+		select 
+			p.cateCode, c.cateName, p.proCode, p.proName, p.proImg, p.comName, p.proGoal, p.proNow, 
+			p.proEnd, p.likeCount, CEIL(p.proEnd - sysdate) remainingDay, 
+			CEIL((p.proNow / p.proGoal) * 100) proGoalRate 
+		from 
+			project p, category c 
+		where 
+			p.cateCode = c.cateCode and 
+			p.proCheck = 'Y' and 
+			p.proOpen <![CDATA[<]]>= sysdate and 
+			p.proEnd <![CDATA[>]]>= sysdate and 
+			c.cateName = '기부/후원' 
+		order by 
+			p.proOpen
+	</select> -->
+	<!-- 선택한 카테고리 리스트 -->
+	<!-- <select id="cateNameList" parameterType="String" resultType="kr.goott.bridge.list.ListVO">
+		select 
+			p.cateCode, c.cateName, c.cateCode, p.proCode, p.proName, p.proImg, p.comName, p.proGoal, p.proNow, 
+			p.proEnd, p.likeCount
+		from 
+			project p, category c 
+		where 
+			p.cateCode = c.cateCode and 
+			p.proCheck = 'Y' and 
+			c.cateCode = #{cateCode} and
+			p.proOpen <![CDATA[<]]> sysdate and 
+			p.proEnd <![CDATA[>]]>= sysdate
+		order by 
+			p.proOpen 
+	</select> -->
+		<!-- 리워드홈/카테고리홈 -->
+	<!-- <select id="rewardHomeList" resultType="kr.goott.bridge.list.ListVO">
+		select 
+			p.cateCode, c.cateName, p.proCode, p.proName, p.proImg, p.comName, p.proGoal, p.proNow, 
+			to_char(proEnd, 'YYYY-MM-dd') proEnd, p.likeCount, 
+			CEIL(p.proEnd - sysdate) remainingDay, CEIL((p.proNow / p.proGoal) * 100) proGoalRate 
+		from 
+			project p, category c 
+		where 
+			p.cateCode = c.cateCode and 
+			p.proCheck = 'Y' and 
+			p.proOpen <![CDATA[<]]> sysdate and 
+			p.proEnd <![CDATA[>]]> sysdate and 
+			c.cateName NOT IN('기부/후원') 
+		order by 
+			p.proOpen
 	</select> -->

@@ -7,30 +7,30 @@ public class ListVO {
 	private String proName; 
 	private String proImg; 
 	private String comName; 
-	private int proGoal; 
-	private int proNow; 
-	private String proEnd; 
-	private int likeCount;
+	private int proGoal; //목표금액
+	private int proNow; //현재금액
+	private String proEnd; //종료일
+	private int likeCount; //좋아요수
 	
-	String likeClick = "N"; 
-	int remainingDay = 0;
+	private String likeChk; //좋아요 클릭여부
+	private int remainingDay; //남은일수
+	private int proGoalRate; //목표달성률
 	
-	public ListVO() {
-	}
+	public ListVO() {}
 	
 	public String toString() {
 		String txt = "cateCode = " + getCateCode();
-			   txt += "cateName = " + getCateName();
-			   txt += "proCode = " + getProCode();
-			   txt += "proName = " + getProName();
-			   txt += "proImg = " + getProImg();
-			   txt += "comName = " + getComName();
-			   txt += "proGoal = " + getProGoal();
-			   txt += "proNow = " + getProNow();
-			   txt += "proEnd = " + getProEnd();
-			   txt += "likeCount = " + getLikeCount();
-			   txt += "likeClick = " + getLikeClick();
-			   txt += "remainingDay = " + getRemainingDay();
+			   txt += "\ncateName = " + getCateName();
+			   txt += "\nproCode = " + getProCode();
+			   txt += "\nproName = " + getProName();
+			   txt += "\nproImg = " + getProImg();
+			   txt += "\ncomName = " + getComName();
+			   txt += "\nproGoal = " + getProGoal();
+			   txt += "\nproNow = " + getProNow();
+			   txt += "\nproEnd = " + getProEnd();
+			   txt += "\nlikeCount = " + getLikeCount();
+			   txt += "\nremainingDay = " + getRemainingDay();
+			   txt += "\nproGoalRate = " + getProGoalRate();
 		return txt;
 	}
 
@@ -114,16 +114,13 @@ public class ListVO {
 		this.likeCount = likeCount;
 	}
 	
-	/////////////////
-
-	public String getLikeClick() {
-		return likeClick;
+	public String getLikeChk() {
+		return likeChk;
 	}
 
-	public void setLikeClick(String likeClick) {
-		this.likeClick = likeClick;
+	public void setLikeChk(String likeChk) {
+		this.likeChk = likeChk;
 	}
-
 
 	public int getRemainingDay() {
 		return remainingDay;
@@ -132,7 +129,45 @@ public class ListVO {
 	public void setRemainingDay(int remainingDay) {
 		this.remainingDay = remainingDay;
 	}
+
+	public int getProGoalRate() {
+		return proGoalRate;
+	}
+
+	public void setProGoalRate(int proGoalRate) {
+		this.proGoalRate = proGoalRate;
+	}
+
 	
-	
+	/////////////////
+
+	/*public void getRemainingDay() {
+		setRemainingDay();
+	}
+
+	public int setRemainingDay() {
+		remainingDay = 0;
+		try {
+			SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd"); 
+			Date endDate = format.parse(getProEnd());
+			Date nowDate = new Date();
+			
+			long diff = endDate.getTime() - nowDate.getTime();
+			remainingDay = (int)diff / (24*60*60*1000);
+			
+		}catch(Exception e) {
+			System.out.println("남은 일수 구하기 에러"+e.getMessage());
+		}
+		return remainingDay;
+	}
+
+	public void getProGoalRate() {
+		setProGoalRate();
+	}
+
+	public int setProGoalRate() {
+		 proGoalRate = ( getProNow() / getProGoal() ) * 100;
+		 return proGoalRate;
+	}*/
 
 }

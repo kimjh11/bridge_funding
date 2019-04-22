@@ -91,7 +91,8 @@
 		<div id="preview">
 			<a href="/bridge/preview?proCode=${vo.proCode }">미리보기</a><br/>
 			입력한 정보를 미리보기를 통하여 보실수 있습니다.<br/>
-			입력한 정보를 저장후에 미리보기를 눌러주세요.
+			입력한 정보를 저장후에 미리보기를 눌러주세요.<br/><br/>
+			<button class="guide-toggle">오픈 가이드</button>
 		</div>
 </body>
 </html>

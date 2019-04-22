@@ -98,7 +98,7 @@ input{font-size:1.5em}
 	position: absolute;
 	right: -60px;
 	bottom: 580px;
-	z-index: 50;
+	z-index: 5;
 	transition: 1s ease all;
 }
 #preview{
