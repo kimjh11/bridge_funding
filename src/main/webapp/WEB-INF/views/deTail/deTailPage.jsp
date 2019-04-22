@@ -14,7 +14,7 @@
 <body>
 <div class="wrap">
 <div id="border">
-	<div id="topback">${vo.proImg }</div>
+	<div id="topback"><img src="<%=request.getContextPath()%>/upload/${vo.proImg }"/></div>
 </div>
 	<div id="topTap"> <!-- 맨위 타이틀 div -->
 		<ruby>	
@@ -38,7 +38,7 @@
 		<div id="company"> <!-- 프로젝트를 발행한 회사정보 -->
 				<div id="comimg">
 					<p>회사정보</p>
-					${vo.comImg }
+					<img src="<%=request.getContextPath()%>/upload/${vo.comImg}"/>
 				</div>
 			<div id="comTitle">
 				<div id="line"> 

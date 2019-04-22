@@ -77,7 +77,7 @@ public class DeTailPageController {
 		mav.addObject("proEnd",session.getAttribute("proEnd"));
 		mav.addObject("userMail",session.getAttribute("userMail"));
 		mav.addObject("userName",session.getAttribute("userName"));
-		mav.addObject("userImg",session.getAttribute("userImg"));
+		mav.addObject("userImg",session.getAttribute("img"));
 		mav.addObject("logSataus", session.getAttribute("logStatus"));
 		mav.addObject("ProCode",vo.getProCode());
 		mav.addObject("CateCode",vo.getCateCode());

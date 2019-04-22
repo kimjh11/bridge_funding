@@ -39,7 +39,7 @@
 		<c:forEach var="list" items="${list}">
 			<div class="oneReply">
 				<div class="userImg">
-					${list.userImg }
+					<img src="<%=request.getContextPath()%>/upload/${list.userImg}"/>
 				</div>
 				<div class="userInfo"> 
 					<span class="userID">${list.userMail}</span><br/>
