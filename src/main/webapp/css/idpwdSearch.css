@@ -1,0 +1,152 @@
+.wrap{
+	width:80%; 
+	margin: 0 auto;
+	margin-top: 115px;
+}
+
+.idpwd-center{
+	margin: 0 auto;
+	width: 61%;
+} 
+
+#id-title-div{
+	font-size: 2em;
+    border: 1px solid black;
+    border-radius: 5px 5px;
+    width: 215px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    float: left;
+    background: #021044;
+    color: white;
+}
+
+#idpwd-h2{
+	font-size: 4em;
+	text-align: center;
+}
+
+#id-div{
+	font-size: 2em;
+	border: 1px solid black;
+	border-radius: 5px 5px;
+	width: 450px;
+	height: 205px;
+}
+
+#id-text{
+	margin-top: 30px;
+    margin-left: 30px;
+}
+
+#user-mail, #user-mail-pwd{
+	margin-left: 85px;
+    width: 57%;
+    height: 35px;
+    border: 1px solid gray;
+    border-radius: 5px 5px 5px 5px;
+    padding-left: 10px;
+}
+
+#id-btn,#id-btn-sending,#pwd-btn{
+	border: 1px solid gray;
+    border-radius: 5px 5px 5px 5px;
+    width: 250px;
+    height: 40px;
+    margin-left: 140px;
+    margin-top: 10px;
+    background: #021044;
+    color: white;
+}
+
+#joinStart{
+	border: 1px solid gray;
+    border-radius: 5px 5px 5px 5px;
+    width: 250px;
+    height: 40px;
+    background: #021044;
+    color: white;
+    margin-left: 134px;
+}
+
+#pwd-title-div{
+	margin-left: 235px;
+    font-size: 2em;
+    border: 1px solid black;
+    border-radius: 5px 5px;
+    width: 215px;
+    height: 40px;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 10px;
+}
+
+#pwd-div{
+	font-size: 2em;
+	border: 1px solid black;
+	border-radius: 5px 5px;
+	width: 450px;
+	height: 440px;
+	margin-bottom: 30px;
+}
+
+#pwd-text{
+	margin-top: 30px;
+    margin-left: 30px;
+}
+
+#text-div{
+    margin-left: 138px;
+    margin-top: 10px;
+    font-size: 0.5em;
+}
+
+#ok-number{
+    margin-left: 134px;
+    margin-top: 20px;
+    width: 57%;
+    height: 35px;
+    border: 1px solid gray;
+    border-radius: 5px 5px 5px 5px;
+    padding-left: 10px;
+}
+
+#user-pwd{
+	margin-left: 54px;
+    margin-top: 20px;
+    width: 57%;
+    height: 35px;
+    border: 1px solid gray;
+    border-radius: 5px 5px 5px 5px;
+    padding-left: 10px;
+}
+
+#user-pwdchk{
+	margin-left: 20px;
+    margin-top: 20px;
+    width: 57%;
+    height: 35px;
+    border: 1px solid gray;
+    border-radius: 5px 5px 5px 5px;
+    padding-left: 10px;
+}
+
+#id-search{
+	font-size: 0.7em;
+    margin-bottom: 15px;
+    margin-left: -5px;
+}
+
+#id-search-color{
+	color: red;
+}
+
+#warning{
+	font-size: 0.7em;
+    margin-left: 137px;
+    color: red;
+}
+
+
+

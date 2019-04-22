@@ -1,0 +1,103 @@
+#login-div{
+	border: 1px solid gray;	
+	border-radius: 20px 20px 20px 20px;
+	width: 265px;
+    height: 335px;
+    padding: 20px;
+    position: absolute;
+    right: 15px;
+    margin-top: -50px;
+    background: white;
+    z-index: 8;
+}
+
+#login-h2{
+	font-size: 4em;
+} 
+
+#login-user-mail, #login-user-pwd{
+	width: 95%;
+    height: 30px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid gray;
+    margin-top: 20px;
+    padding-left: 5px;
+}
+
+#login-btn{
+	width: 120px;
+    height: 40px;
+	border-radius: 5px 5px 5px 5px;	
+	border: 1px solid gray;
+	margin-top: 20px;
+    margin-bottom: 15px;
+    background: #021044;
+    color: white;
+    margin-left: 75px;
+}
+
+#login-text{
+	text-align: center;
+	font-size: 1.2em;
+}
+
+#login-warning{
+	color: red;
+	font-size: 1.2em;
+}
+
+#adminlogin{
+	color: white;
+	cursor: pointer;
+}
+
+#adminlogin-div{
+	width: 25%;
+    height: 500px;
+    border: 1px solid;
+    border-radius: 5px 5px 5px 5px;
+    margin: 0 auto;
+    margin-top: 7%;
+}
+#admin-div{
+	text-align: center;
+    padding: 5%;
+}
+#adminlogin-h2{
+	font-size: 4em;
+	margin-top: 15%;
+    margin-bottom: 15px;
+}
+#adminlogin-user-mail{
+	width: 70%;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 5px 5px 5px 5px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+#adminlogin-user-pwd{
+	width: 70%;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 5px 5px 5px 5px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+#adminlogin-btn{
+	width: 75%;
+    height: 45px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid gray;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    background: #021044;
+    color: white;
+}
+#adminIdsession{
+	color: white;
+}
+
+.admin-header{
+	color:white;
+}

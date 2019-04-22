@@ -1,0 +1,33 @@
+@charset "UTF-8";
+	
+	
+	#title{
+	       font-size:2em;
+	       margin-bottom:5%
+	}
+	.OneSpter{
+			  border-bottom:1px solid  lightgray;
+			  width:90%;
+			  height:110px;
+			  margin-bottom:0px;
+			  font-size:1.5em
+	}
+	.Img{
+		 width:80px;
+		 float:left;
+		 margin-left:10%; 
+		 padding-top:2%;
+		 margin-right:5%
+		 
+	}
+	.Img img{
+			 width:100%;
+		 	 border-radius:60px;
+		 	 border:1px solid lightgray;
+	}	
+	.Time{
+		  font-size:0.8em;
+	}
+	.Spter{
+		   padding-top:5%
+	}
