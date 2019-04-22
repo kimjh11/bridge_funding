@@ -60,7 +60,8 @@
 						function check(){
 							var agree = document.getElementById('agree').checked;
 							if(agree == true){
-								
+								document.getElementById("frm").action = "/bridge/endProject";
+								document.getElementById('frm').submit();
 							}else{
 								alert("수수료안내 문구를 동의하시지 않앗습니다.");
 							}

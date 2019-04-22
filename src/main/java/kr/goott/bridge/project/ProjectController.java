@@ -358,5 +358,20 @@ public class ProjectController {
 		mav.setViewName("deTail/previewBack");
 		return mav;
 	}
+	@RequestMapping("/endProject")
+	public ModelAndView endProject(ProjectVO vo) {
+		ModelAndView mav = new ModelAndView();
+		ProjectDAOInterface dao = sqlSession.getMapper(ProjectDAOInterface.class);
+
+		System.out.println("프로젝트 작성완료 ======================================");
+		System.out.println("메일:"+vo.getUserMail());
+		System.out.println("프로젝트코드:"+vo.getProCode());
+		System.out.println("프로젝트번호:"+vo.getProNum());
+		
+		dao.endProject(vo);
+		
+		mav.setViewName("home");
+		return mav;
+	}
 	
 }
