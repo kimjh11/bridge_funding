@@ -332,10 +332,24 @@ public class AdminController {
 		ModelAndView mav = new ModelAndView();
 		//파일이 저장될 절대경로
 		folder = req.getSession().getServletContext().getRealPath("/img/banner");
-	
+		
+		File newFolder = new File(folder);
+		
+		if (!newFolder.exists()) {
+			try{
+				newFolder.mkdir(); //폴더 생성합니다.
+			    System.out.println("폴더가 생성되었습니다.");
+		        } 
+		        catch(Exception e){
+			    e.getStackTrace();
+			}        
+	         }else {
+			System.out.println("이미 폴더가 생성되어 있습니다.");
+		}
+		
 		//파일업로드 + 업로드된 파일명세팅
 		vo.setBannerImg(fileUpload(bannerImgFile, folder));
-		
+
 		//데이터 추가
 		AdminDaoInterface dao = sqlSession.getMapper(AdminDaoInterface.class);
 		dao.bannerInsert(vo);

@@ -30,8 +30,6 @@
 					<li><input type="button" value="서포터즈란" name="supporter-intro"></li>
 					<li><input type="button" value="프로젝트 참여하기(서포터즈)" name="surpporter-guide"></li>
 					<li><input type="button" value="프로젝트 개설하기(메이커)" name="maker-guide"></li>
-					<li><input type="button" value="주문/결제/배송관련" name="order-payment"></li>
-					<li><input type="button" value="교환/반품/AS관련" name="after-service"></li>
 				</ul>
 				<div class="guide-content"></div>
 			</div>
