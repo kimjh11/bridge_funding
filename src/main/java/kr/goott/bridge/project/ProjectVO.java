@@ -25,10 +25,13 @@ public class ProjectVO {
 	private String proTitle;
 	private String proContent;
 	private String proRefund;
+	
 	private int likeCount;
+	
 	private String proCheck;
 	private int remainingDay;
 	private int proGoalRate;
+	
 	
 	public ProjectVO() {}
 

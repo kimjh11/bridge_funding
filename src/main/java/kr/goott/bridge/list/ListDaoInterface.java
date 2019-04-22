@@ -1,14 +1,13 @@
 package kr.goott.bridge.list;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.goott.bridge.project.CategoryVO;
 
 public interface ListDaoInterface {
-	//배너
-	//public List<BannerVO> bannerSelect(int menuIndex);
-	public List<BannerVO> bannerSelect(String pageName);
-	
+	//이벤트 배너
+	public List<BannerVO> bannerSelect(String page);
 	//카테고리 배너 리스트
 	public List<CategoryVO> categorySelect();
 	
@@ -25,5 +24,21 @@ public interface ListDaoInterface {
 	//검색 리스트
 	public ListVO searchSelect(String searchKeyWord);
 	//목록 정렬(좋아요/펀딩액)
-	public ListVO sortingSelect(String sortKeyWord);
+	public List<ListVO> rewardListSort(String sort); //리워드홈
+	public List<ListVO> cateListSort(Map<String, String> map); //카테고리,기부후원
+
+	/////////////////////////////////
+	//리스트전체출력
+	public List<ListVO> allRewardList();
+	
+	public List<ListVO> allCateList();
+	
+	public List<ListVO> selectCateList(String cateCode);
+	
+	public List<String> likeChk(String userMail);
+	
+	public List<ListVO> keywordSearch(String keyword);
+	
+	
+	
 }

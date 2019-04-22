@@ -6,7 +6,8 @@ public class BannerVO {
 	private String bannerImg;//배너이미지
 	private String bannerTitle;//배너타이틀
 	private String bannerSubTitle;//배너 설명
-	private String pageName;//해당페이지이름
+	private String pageCode;//해당페이지코드(영문)
+	private String pageName;//해당페이지이름	
 	private String bannerOpen;//오픈여부 초기값:'N'
 	private String bannerLink;//링크
 	private String bannerRegDate;//등록일
@@ -18,6 +19,7 @@ public class BannerVO {
 			   txt += "\nbannerImg = " + getBannerImg();
 			   txt += "\nbannerTitle = " + getBannerTitle();
 		       txt += "\nbannerSubTitle = " + getBannerSubTitle();
+		       txt += "\npageCode = " + getPageCode();
 		       txt += "\npageName = " + getPageName();
 		       txt += "\nbannerOpen = " + getBannerOpen();
 		       txt += "\nbannerRegDate = " + getBannerRegDate();	  
@@ -56,6 +58,15 @@ public class BannerVO {
 
 	public void setBannerSubTitle(String bannerSubTitle) {
 		this.bannerSubTitle = bannerSubTitle;
+	}
+
+
+	public String getPageCode() {
+		return pageCode;
+	}
+
+	public void setPageCode(String pageCode) {
+		this.pageCode = pageCode;
 	}
 
 	public String getPageName() {

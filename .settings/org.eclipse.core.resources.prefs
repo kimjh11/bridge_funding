@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/java/kr/goott/bridge/list/BannerVO.java=UTF-8
+encoding//src/main/java/kr/goott/bridge/list/ListController.java=UTF-8
+encoding//src/main/java/kr/goott/bridge/list/ListDaoInterface.java=UTF-8
 encoding//src/main/webapp/txt/funding-diff.txt=UTF-8

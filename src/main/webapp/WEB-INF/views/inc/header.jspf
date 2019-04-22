@@ -16,6 +16,7 @@
 <!-- 상단 마이페이지 -->
 <script src="<%=request.getContextPath() %>/js/myInfo.js"></script>
 <header> 
+	
 	<div class="wrap">
 		<!-- 이용안내 -->
 		<div class="top-guide">
@@ -43,10 +44,10 @@
 		<!-- 상단메뉴 -->
 		<nav class="top-menubar">
 			<ul> <!-- 배너/카테고리/정렬여부 값 전달 -->
-				<li><a href="<%=request.getContextPath()%>/list?pageName=리워드홈&cate=Y&sort=Y">리워드홈</a></li>
-				<li><a href="<%=request.getContextPath()%>/category?cateName=">카테고리</a></li>
-				<li><a href="<%=request.getContextPath()%>/list?pageName=오픈예정&cate=&sort=">오픈예정</a></li>
-				<li><a href="<%=request.getContextPath()%>/list?pageName=기부와후원&cate=&sort=Y">기부와후원</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?page=reward&cateCode=">리워드홈</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?page=category&cateCode=all">카테고리</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?page=commingSoon&cateCode=">오픈예정</a></li>
+				<li><a href="<%=request.getContextPath()%>/list?page=donation&cateCode=donation">기부와후원</a></li>
 			</ul>
 		</nav>
 		<!-- 로그인/로그아웃/내정보 -->
@@ -68,9 +69,10 @@
 					<li class="funding-open-btn"><a href="<%=request.getContextPath()%>/inputProject?userMail=${userMail}">내 펀딩 오픈하기</a></li>
 				</c:if>
 			</ul>
-			<form class="project-search">
+			<!-- 검색 -->
+			<form class="project-search" method="get" action="/bridge/search">
+				<input type="text" name="keyword" placeholder="프로젝트명 검색하기"/>
 				<input type="button" class="search-toggle txt-none" value="검색">
-				<input type="text" name="serach" placeholder="프로젝트명 검색하기"/>
 			</form>
 		</div>
 		<!-- 로그인 페이지 Div -->

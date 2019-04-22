@@ -10,19 +10,20 @@
 </head>
 <body>
 <div class="wrap width-auto">
-	<div class="admin-update-wrap">
+	<div class="admin-update-wrap banner">
 		<h3>배너관리</h3>
 		<div class="admin-content">
 			<form action="<%=request.getContextPath() %>/bannerSubmit" method="post" id="bannerSubmitFrm" enctype="multipart/form-data">
 				<ul>
 					<li>
 						<span class="bold">페이지선택</span>
-						<select name="pageName">
+						<select name="pageCode">
 							<option value="">선택하세요</option>
-							<option value="리워드홈">리워드홈</option>
-							<option value="오픈예정">오픈예정</option>
-							<option value="기부와후원">기부와후원</option>
+							<option value="reward">리워드홈</option>
+							<option value="commingSoon">오픈예정</option>
+							<option value="donation">기부와후원</option>
 						</select>
+						<input type="hidden" name="pageName" value=""/>
 					</li>
 					<li>
 						<span class="bold">배너 타이틀</span>
@@ -124,31 +125,35 @@
 </div>
 <script>
 $(function(){
-	//수정폼 열기/닫기
-	$(".update-modal-open,.modal-close").click(function () {
-		//$(".list-content.update,.modal-backgroud").toggle();
-	});
 	//수정폼열기
 	$(".update-modal-open").click(function () {
 		var form = $(this).parent().parent().siblings('form');
 		$(form).css('display','block');
 		$(".modal-backgroud").toggle();
 	});
+	
 	//수정취소
 	$(".modal-close").click(function () {
 		var form = $(this).parent().parent().css('display','none');
 		$(".modal-backgroud").toggle();
 	});
+	
 	//수정확인 눌렀을때
 	$('.list-content.update').submit(function(){
 		var li = $(this).children().children();
-		//하나라도 값이 없을경우 false
+		var file = $('input[name="bannerLink"]').val();
+		
+		//수정한 값이 없을경우 false
 		if($(li).children('input[name="bannerTitle"]').val()=="" 
 			&& $(li).children('input[name="bannerSubTitle"]').val()==""
-			&& $(li).children('input[name="bannerLink"]').val()==""){
+			&& $(li).children('input[type="file"]').val()==""){
 			alert('변경사항이 없을 경우 취소를 눌러주세요');
 			return false;
-		}
+		}else{//초기값(null)에서 수정이 없을경우 : 링크없음
+			if(file==null||file==""){
+				$(li).children('input[name="bannerLink"]').val("링크없음");
+			}
+		}		
 	});
 	
 	//삭제버튼 클릭시
@@ -171,6 +176,11 @@ $(function(){
 				}
 			});
 		}
+	});
+	
+	$('select').change(function(){
+		var pageName = $('select option:selected').text();
+		$('input[name="pageName"]').val(pageName);
 	});
 	//등록하기 버튼 클릭시 값 체크
 	$('#bannerSubmitFrm').submit(function(){
