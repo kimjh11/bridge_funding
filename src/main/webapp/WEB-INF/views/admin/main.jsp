@@ -7,7 +7,6 @@
 <meta charset="UTF-8">
 <title>Bridge 관리자 페이지</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="styleSheet" href="<%=request.getContextPath()%>/css/login.css" />
 </head>
 <body>
 	<!-- 로그인 페이지 Div -->

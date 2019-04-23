@@ -9,6 +9,9 @@
 .reward-wrap .bx-controls-direction{
 	display: block;
 }
+.reward-wrap .bx-controls-direction a{
+	z-index: 5;
+}
 .reward-wrap .bx-wrapper .bx-pager{
 	padding-top: 0;
 	bottom: 7px;
@@ -30,7 +33,7 @@
 /* banner */
 .top-banner .main-banner img{
 	width: 100%;
-	max-height: 350px;
+	max-height: 320px;
 }
 .top-banner .main-banner .txt{
 	position: absolute;
@@ -66,6 +69,12 @@
 	text-align: center;
 	border-radius: 8px;
 	font-size: 15pt;
+}
+.cate-nav ul li a{
+	border-radius: 8px;
+	width: 100%;
+	display: inline-block;
+	background: #4444445c;
 	color: #fff;
 }
 .cate-nav ul li:first-child {
@@ -215,3 +224,17 @@ input[name="likeCount"].logout{
 	background: #92D1E0;
 }
 
+/* 오픈예정배너 */
+.commingsoon-banner a{
+	border:1px solid lime;
+	position: absolute;
+	top: 155px;
+	right: 100px;
+	width: 180px;
+	height: 180px;
+	line-height: 180px;
+	border-radius: 90px;
+	text-align: center;
+	z-index: 1;
+	background: #ddd;
+}

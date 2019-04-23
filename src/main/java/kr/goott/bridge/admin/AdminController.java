@@ -406,6 +406,22 @@ public class AdminController {
 									@RequestParam("cateImgFile") MultipartFile cateImgFile) {
 		//이미지파일이 저장될 절대경로
 		folder = req.getSession().getServletContext().getRealPath("/img/category");
+		
+		File newFolder = new File(folder);
+				
+		if (!newFolder.exists()) {
+			try{
+				newFolder.mkdir(); //폴더 생성합니다.
+			    System.out.println("폴더가 생성되었습니다.");
+		        } 
+		        catch(Exception e){
+			    e.getStackTrace();
+			}        
+	    }else {
+			System.out.println("이미 폴더가 생성되어 있습니다.");
+		}
+
+		
 		//파일업로드 + 업로드된 파일명세팅
 		vo.setCateImg(fileUpload(cateImgFile, folder));
 		

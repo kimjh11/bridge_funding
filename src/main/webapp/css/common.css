@@ -589,8 +589,18 @@ header .admin-header-wrap .top-menubar li a{
 header .admin-header-wrap .top-menubar li:hover a{
 	color:#2f407e;
 }
-
-
+.admin-header-wrap .top-login{
+	padding: 0;
+	position: static;
+}
+.admin-header-wrap #top-etc .top-login li{
+	float: none;
+	display: inline-block;
+	width: 20%;
+}
+.admin-header-wrap #top-etc .top-login li a{
+	line-height: 70px;
+}
 
 
 
