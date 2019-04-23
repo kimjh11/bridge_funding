@@ -144,6 +144,24 @@
 		order by 
 			p.proOpen
 	</select>
+	<select id="keywordSort" parameterType="Map" resultType="kr.goott.bridge.list.ListVO">
+		select 
+			p.cateCode, c.cateName, c.cateCode, p.proCode, p.proName, p.proImg, p.comName, p.proGoal, p.proNow, 
+			p.proEnd, p.likeCount
+		from 
+			project p, category c 
+		where 
+			p.cateCode = c.cateCode and 
+			p.proCheck = 'Y' and 
+			p.proName like '%'||#{keyword}||'%' and 
+			p.proOpen <![CDATA[<]]> sysdate and 
+			p.proEnd <![CDATA[>]]>= sysdate
+		order by 
+			case
+				when #{sort} = 'like' then likeCount
+				when #{sort} = 'funding' then proNow
+			end desc
+	</select>
 </mapper>
 <!-- <select id="likeChk" parameterType="String" resultType="String">
 		select proCode from likeyou where userMail = #{userMail}

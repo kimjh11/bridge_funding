@@ -22,10 +22,13 @@ import kr.goott.bridge.project.CategoryVO;
 public class ListController {
 	@Autowired
 	SqlSession sqlSession;
-	//리워드홈/카테고리홈/오픈예정/기부와후원 리스트출력
+	//리워드홈/카테고리홈/오픈예정/기부와후원 /검색리스트출력
 	@RequestMapping(value="/list")
 	public ModelAndView listPage(HttpServletRequest req,
-								@RequestParam("page") String page, @RequestParam("cateCode") String cateCode){
+								@RequestParam("page") String page, 
+								@RequestParam("cateCode") String cateCode,
+								@RequestParam("keyword") String keyword
+		){
 		//로그인여부
 		String logStatus = (String)req.getSession().getAttribute("logStatus");
 		ListDaoInterface dao = sqlSession.getMapper(ListDaoInterface.class);
@@ -54,6 +57,8 @@ public class ListController {
 			}
 		}else if(page.equals("commingSoon")){//오픈예정 (승인여부:Y, 시작일>=오늘날짜, 마감일>=오늘날짜, 승인일순정렬)
 			itemList = dao.commingSoonList();
+		}else if(page.equals("search")) {
+			itemList = dao.keywordSearch(keyword);
 		}
 
 		ModelAndView mav = new ModelAndView();
@@ -64,7 +69,7 @@ public class ListController {
 		
 		mav.addObject("page", page);//해당페이지명
 		mav.addObject("cateCode", cateCode);//카테고리명 : 페이지 정렬할때
-		
+		mav.addObject("keyword", keyword);
 		mav.setViewName("/list/list");
 		
 		return mav;
@@ -75,8 +80,7 @@ public class ListController {
 	@RequestMapping(value="/listSort", method=RequestMethod.GET)
 	@ResponseBody
 	public List<ListVO> listSort(String sort, String page, String cateCode) {
-		
-		
+
 		ListDaoInterface dao = sqlSession.getMapper(ListDaoInterface.class);
 		List<ListVO> itemList;
 		Map<String, String> map = new HashMap<String, String>();
@@ -120,6 +124,7 @@ public class ListController {
 		return bannerList;
 	}
 	
+	//카테고리 페이지 내 카테고리 배너클릭시
 	@RequestMapping(value="/selectCate", method=RequestMethod.GET)
 	@ResponseBody
 	public List<ListVO> selectCate(String cateCode) {
@@ -136,7 +141,7 @@ public class ListController {
 		}
 		return itemList;
 	}
-	
+/*	//검색리스트 출력
 	@RequestMapping(value="/search")
 	public ModelAndView keywordSearch(@RequestParam("keyword") String keyword){
 		ListDaoInterface dao = sqlSession.getMapper(ListDaoInterface.class);
@@ -148,8 +153,26 @@ public class ListController {
 		mav.setViewName("/list/searchList");
 		
 		return mav;
+	}*/
+	//검색리스트 정렬
+	@RequestMapping(value="/searchListSort")
+	@ResponseBody
+	public List<ListVO> searchListSort(String sort, String keyword){
+		ListDaoInterface dao = sqlSession.getMapper(ListDaoInterface.class);
+		List<ListVO> itemList;
+		
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("sort", sort);
+		map.put("keyword", keyword);
+		
+		if(sort.equals("date")) {
+			itemList = dao.keywordSearch(keyword);
+		}else {
+			itemList = dao.keywordSort(map);
+		}
+		
+		return itemList;
 	}
-	
 	
 	
 /*

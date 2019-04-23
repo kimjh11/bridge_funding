@@ -17,7 +17,7 @@
 		</button>
 	</div>
 	<div class="background" id="reward-back">
-		<a href="<%=request.getContextPath()%>/">
+		<a href="<%=request.getContextPath()%>/list?page=reward&cateCode=&keyword=">
 			<img alt="리워드 이미지" src="<%=request.getContextPath()%>/img/home/home-in-icon.png"/>
 			<h2>리워드 이동하기</h2>
 			<span>모든 서포터즈와 메이커를 위한 리워드 홈</span>

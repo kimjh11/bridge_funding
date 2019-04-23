@@ -12,33 +12,33 @@ public interface ListDaoInterface {
 	public List<CategoryVO> categorySelect();
 	
 	//리워드&카테고리 홈 리스트
-	public List<ListVO> rewardHomeList();
+	//public List<ListVO> rewardHomeList();
 	//오픈예정 홈 리스트
 	public List<ListVO> commingSoonList();
 	//기부후원  홈 리스트
-	public List<ListVO> donationList();
+	//public List<ListVO> donationList();
 
 	
 	//카테고리별 아이템 리스트
-	public List<ListVO> cateNameList(String cateName);
+	//public List<ListVO> cateNameList(String cateName);
 	//검색 리스트
-	public ListVO searchSelect(String searchKeyWord);
+	//public ListVO searchSelect(String searchKeyWord);
 	//목록 정렬(좋아요/펀딩액)
 	public List<ListVO> rewardListSort(String sort); //리워드홈
 	public List<ListVO> cateListSort(Map<String, String> map); //카테고리,기부후원
 
 	/////////////////////////////////
-	//리스트전체출력
+	//리스트홈
 	public List<ListVO> allRewardList();
-	
+	//카테고리홈
 	public List<ListVO> allCateList();
-	
+	//카테고리별 페이지
 	public List<ListVO> selectCateList(String cateCode);
 	
 	public List<String> likeChk(String userMail);
-	
+	//검색리스트
 	public List<ListVO> keywordSearch(String keyword);
-	
-	
+	//검색리스트 정렬
+	public List<ListVO> keywordSort(Map<String, String> map);
 	
 }
