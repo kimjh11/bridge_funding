@@ -30,8 +30,6 @@
 					<li><input type="button" value="서포터즈란" name="supporter-intro"></li>
 					<li><input type="button" value="프로젝트 참여하기(서포터즈)" name="surpporter-guide"></li>
 					<li><input type="button" value="프로젝트 개설하기(메이커)" name="maker-guide"></li>
-					<li><input type="button" value="주문/결제/배송관련" name="order-payment"></li>
-					<li><input type="button" value="교환/반품/AS관련" name="after-service"></li>
 				</ul>
 				<div class="guide-content"></div>
 			</div>
@@ -62,7 +60,7 @@
 				<!-- 로그인 후 -->
 				<c:if test="${logStatus == 'Y' }">
 					<li ><a href="">알림</a></li>
-					<li ><a href="/bridge/mypageForm">마이페이지</a></li>
+					<li ><a href="/bridge/mypageForm?menu=my">마이페이지</a></li>
 					<li ><a href="/bridge/logout">로그아웃</a></li>
 					<!-- 이미지 -->
 					<img id="header-img" src="/bridge/upload/${img}" onerror="this.src='<%=request.getContextPath() %>/img/profile/user.png'"/>
@@ -100,15 +98,15 @@
 				<h3 class="mypage-h3">서포터즈 활동</h3>
 				<hr class="mypage-hr"/>
 				<ul>
-					<li class="mypageli"><a href="/bridge/mypageForm">나의 리워드</a></li>
-					<li class="mypageli"><a href="/bridge/mypageForm">좋아요</a></li>
+					<li class="mypageli"><a href="/bridge/mypageForm?menu=my">나의 리워드</a></li>
+					<li class="mypageli"><a href="/bridge/mypageForm?menu=like">좋아요</a></li>
 				</ul>
 				<hr class="mypage-hr"/>
 				
 				<h3 class="mypage-h3">크리에이터 활동</h3>
 				<hr class="mypage-hr"/>
 				<ul>
-					<li class="mypageli"><a href="/bridge/mypageForm">만든 프로젝트</a></li>
+					<li class="mypageli"><a href="/bridge/mypageForm?menu=make">만든 프로젝트</a></li>
 				</ul>
 				<hr class="mypage-hr"/>
 				

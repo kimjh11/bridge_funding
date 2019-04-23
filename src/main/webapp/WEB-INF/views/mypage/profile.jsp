@@ -15,10 +15,10 @@
 	<div class="wrap">
 		<div id="profile-center">
 			<h2 id="profile-h2">프로필 설정</h2>
-			<form method="post" action="/bridge/updateProfile" enctype="multipart/form-data">
+			<form method="post" action="/bridge/updateProfile?menu=${menu}" enctype="multipart/form-data">
 				<div>
 					<!-- ================ 이미지 ==================== -->
-					<img id="profile-img" src="/bridge/upload/${vo.userImg}" onerror="this.src='<%=request.getContextPath() %>/img/profile/user.png'"/>
+					<img id="profile-img" src="/bridge/upload/${img}" onerror="this.src='<%=request.getContextPath() %>/img/profile/user.png'"/>
 					<div id="file-btn">
 						<input type="button" value="이미지 등록" id="file-img-btn"/>
 						<input type="file" id="pro-img" name="userImg" title="이미지" accept='image/*' onchange='openFile(event)'/>

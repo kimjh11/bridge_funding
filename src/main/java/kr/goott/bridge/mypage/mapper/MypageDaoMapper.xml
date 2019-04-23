@@ -26,7 +26,7 @@
 	</update>
 	<select id="selectMyReward" resultType="kr.goott.bridge.project.ProjectVO">
 	select p.proImg proImg, p.cateName cateName, p.proName proName, p.proGoal proGoal, 
-		   p.proNow proNow, to_char(p.proEnd,'YY-MM-DD') proEnd, p.proCode proCode
+		   p.proNow proNow, to_char(p.proEnd,'YY-MM-DD') proEnd, p.proCode proCode, p.cateCode cateCode
 	from project p join pay y
 	on p.proCode = y.proCode 
 	where y.userMail = #{userMail}
@@ -34,14 +34,14 @@
 	</select>
 	<select id="selectLike" resultType="kr.goott.bridge.project.ProjectVO">
 	select p.proImg proImg, p.cateName cateName, p.proName proName, p.proGoal proGoal,
-		   p.proNow proNow, to_char(p.proEnd,'YY-MM-DD') proEnd, p.proCode proCode
+		   p.proNow proNow, to_char(p.proEnd,'YY-MM-DD') proEnd, p.proCode proCode, p.cateCode cateCode
 	from project p join likeyou l
 	on p.proCode = l.proCode 
 	where l.userMail = #{userMail}
 	order by p.proEnd desc
 	</select>
 	<select id="selectStartingPro" resultType="kr.goott.bridge.project.ProjectVO">
-		select proCode, cateName, proName, proImg, proGoal, proNow, 
+		select proCode, cateName, proName, proImg, proGoal, proNow, cateCode, 
 			   to_char(proOpen,'YYYY-MM-DD') proOpen,
 			   to_char(proEnd,'YYYY-MM-DD') proEnd  
 		from project where userMail = #{userMail}

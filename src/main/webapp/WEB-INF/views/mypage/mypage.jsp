@@ -11,6 +11,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- join.js -->
 <script src="<%=request.getContextPath() %>/js/mypage.js"></script>
+<script>
+ var menu = '${menu}';//my,like,make
+</script>
 </head>
 <body>
 	<div class="wrap">
@@ -19,21 +22,10 @@
 			</div>
 			<!-- 프로필 편집, 간편결제등록 버튼 -->
 			<div id="button">
-				<a href="/bridge/profileFormUpdate?userMail=${userMail}"><button id="mypage-profile-edit">프로필 편집</button></a>
+				<a href="/bridge/profileFormUpdate?userMail=${userMail}&menu=${menu}"><button id="mypage-profile-edit">프로필 편집</button></a>
 				
-			
-					<button id="mypage-card-ok"
-					<c:if test="${!(cardName == null || cardName == '')}">
-						hidden
-					</c:if>
-					>간편결제등록</button>
-				
-					<button id="mypage-card-delete" 
-					<c:if test="${!(cardName != null && cardName != '')}">
-						hidden
-					</c:if>
-					>간편결제삭제</button>
-			
+				<button id="mypage-card-ok" <c:if test="${!(cardName == null || cardName == '')}"> hidden </c:if>>간편결제등록</button>
+				<button id="mypage-card-delete" <c:if test="${!(cardName != null && cardName != '')}"> hidden </c:if>>간편결제삭제</button>
 			</div>	
 			
 			<!-- 간편결제 등록 div -->
@@ -80,7 +72,6 @@
 		
 		<div id="mypage-center">	
 			<!-- 이미지 -->
-
 			<img id="mypage-img" src="/bridge/upload/${img}" onerror="this.src='<%=request.getContextPath() %>/img/profile/user.png'"/>
 			<div id="mypage-username">${userName} 님</div> 	
 		</div>

@@ -65,11 +65,11 @@
 						<c:if test="${vo.cateRank==0 }">미정</c:if>
 						<c:if test="${vo.cateRank!=0 }">${vo.cateRank }</c:if>
 						</li>
-						<c:if test="${vo.cateCode!='all' }">
+						<%-- <c:if test="${vo.cateCode!='all' }"> --%>
 							<li class="col2">
 								<span class="open-toggle">${vo.cateOpen }</span>
 							</li>
-						</c:if>
+						<%-- </c:if> --%>
 					</ul>
 					<ul class="list-content update-all">
 						<li class="col1">${vo.cateNum }</li>

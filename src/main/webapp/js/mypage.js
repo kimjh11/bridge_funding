@@ -1,7 +1,6 @@
 $(function(){	
 	//간편결제 버튼 클릭시 
 	$("#mypage-card-ok").click(function(){
-		alert("aaaa");
 		$("#card-submit").show();
 	}); 
 	//간편결제 x버튼 클릭시 
@@ -100,7 +99,7 @@ $(function(){
 	});
 	
 	//ajax - 간편결제 삭제 (update)
-	$("#mypage-card-delete").click(function(){
+	/*$("#mypage-card-delete").click(function(){
 		
 		var uri = "/bridge/cardDelete"
 		var param = "userMail="+$("#userMail").val();
@@ -111,8 +110,87 @@ $(function(){
 			data:param,
 			success:function(result){
 				alert("카드 정보가 삭제되었습니다.");
+				
 				$("#mypage-card-delete").css("display","none");
 				$("#mypage-card-ok").css("display","block");
+				
+			},
+			error:function(error){
+						
+			}
+		});
+	});*/
+	
+	//ajax - 간편결제 삭제 (update)
+	$("#mypage-card-delete").click(function() {
+		if (confirm("카드 정보를 삭제하시겠습니까?") == true) { // 확인
+			// ajax - 간편결제 삭제 (update)
+
+			var uri = "/bridge/cardDelete"
+			var param = "userMail=" + $("#userMail").val();
+
+			$.ajax({
+				type : "POST",
+				url : uri,
+				data : param,
+				success : function(result) {
+					/*$("#mypage-card-delete").css("display", "none");
+					$("#mypage-card-ok").css("display", "block");*/
+					$("#mypage-card-delete").hide();
+					$("#mypage-card-ok").show();
+
+				},
+				error : function(error) {
+
+				}
+			});
+
+		} else { // 취소
+			return;
+		}
+	});
+	
+	
+	$("#mypage-reward").click(function(){
+		menu = "my";
+		//ajax - 나의 리워드
+		var uri = "/bridge/selectMyReward"
+		var param = "userMail="+$("#userMail").val();
+		
+		$.ajax({
+			type:"POST",
+			url:uri,
+			data:param,
+			success:function(result){
+				var $result = $(result);
+				txt = "<div class='list-content'>";
+				$result.each(function(idx,data){
+					txt += "<ul class='project-view'>";
+					txt += "<li>";
+					txt += "<span class='cate-txt'>"+data.cateName+"</span>";
+					/*txt += "<img alt='상품이미지' src='/bridge/ckstorage/"+data.proImg+"' onerror='this.src=\"/bridge/img/profile/noImg.png\"'>";*/
+					txt += "<a href='/bridge/deTailPage?cateCode="+data.cateCode+"&proCode="+data.proCode+"'><img alt='상품이미지' src='/bridge/ckstorage/"+data.proImg+"' onerror='this.src=\"/bridge/img/profile/noImg.png\"'></a>";
+					txt += "<h4>"+data.proName+"</h4>";
+					txt += "<button class='like-btn'>좋아요</button>";
+					txt += "<ul class='detail-info'>" +
+								"<li class='col1'>" +
+									"<span>목표달성</span>" +
+									"<strong>"+data.proGoal+"</strong>" +
+								"</li>" +
+								"<li class='col2'>" +
+									"<span>판매금액</span>" +
+									"<strong>"+data.proNow+"</strong>" +
+								"</li>" +
+								"<li class='col3'>" +
+									"<span>종료일</span>" +
+									"<strong>"+data.proEnd+"</strong>" +
+								"</li>" +
+							"</ul>";
+					txt += "</li>";
+					txt += "</ul>";
+				});
+				txt += "</div>";
+				$("#myReward").html(txt);
 			},
 			error:function(error){
 						
@@ -120,52 +198,13 @@ $(function(){
 		});
 	});
 	
-	//ajax - 나의 리워드
-	var uri = "/bridge/selectMyReward"
-	var param = "userMail="+$("#userMail").val();
-	
-	$.ajax({
-		type:"POST",
-		url:uri,
-		data:param,
-		success:function(result){
-			var $result = $(result);
-			txt = "<div class='list-content'>";
-			$result.each(function(idx,data){
-				txt += "<ul class='project-view'>";
-				txt += "<li>";
-				txt += "<span class='cate-txt'>"+data.cateName+"</span>";
-				txt += "<img alt='상품이미지' src='/bridge/ckstorage/"+data.proImg+"' onerror='this.src=\"/bridge/img/profile/noImg.png\"'>";
-				txt += "<h4>"+data.proName+"</h4>";
-				txt += "<button class='like-btn'>좋아요</button>";
-				txt += "<ul class='detail-info'>" +
-							"<li class='col1'>" +
-								"<span>목표달성</span>" +
-								"<strong>"+data.proGoal+"</strong>" +
-							"</li>" +
-							"<li class='col2'>" +
-								"<span>판매금액</span>" +
-								"<strong>"+data.proNow+"</strong>" +
-							"</li>" +
-							"<li class='col3'>" +
-								"<span>종료일</span>" +
-								"<strong>"+data.proEnd+"</strong>" +
-							"</li>" +
-						"</ul>";
-				txt += "</li>";
-				txt += "</ul>";
-			});
-			txt += "</div>";
-			$("#myReward").html(txt);
-		},
-		error:function(error){
-					
-		}
+	$("mypage-su").click(function(){
+		$("#mypage-reward").trigger("click");
 	});
-	
 	
 	//ajax - 좋아요 프로젝트
 	$("#mypage-like").click(function(){
+		menu = "like";
 		var uri = "/bridge/selectLike"
 		var param = "userMail="+$("#userMail").val();
 				
@@ -180,7 +219,8 @@ $(function(){
 						txt += "<ul class='project-view'>";
 						txt += "<li>";
 						txt += "<span class='cate-txt'>"+data.cateName+"</span>";
-						txt += "<img alt='상품이미지' src='/bridge/ckstorage/"+data.proImg+"' onerror='this.src=\"/bridge/img/profile/noImg.png\"'>";
+						/*txt += "<img alt='상품이미지' src='/bridge/ckstorage/"+data.proImg+"' onerror='this.src=\"/bridge/img/profile/noImg.png\"'>";*/
+						txt += "<a href='/bridge/deTailPage?cateCode="+data.cateCode+"&proCode="+data.proCode+"'><img alt='상품이미지' src='/bridge/ckstorage/"+data.proImg+"' onerror='this.src=\"/bridge/img/profile/noImg.png\"'></a>";
 						txt += "<h4>"+data.proName+"</h4>";
 						txt += "<button class='like-btn'>좋아요</button>";
 						txt += "<ul class='detail-info'>" +
@@ -210,7 +250,8 @@ $(function(){
 		});
 		
 	
-	
+	$("#mypage-starting").click(function(){
+		menu = "make";
 	//ajax - 진행중인 프로젝트
 		var uri = "/bridge/selectStartingPro"
 		var param = "userMail="+$("#userMail").val();
@@ -227,9 +268,9 @@ $(function(){
 					txt += "<tbody>";
 					txt += "<tr>";
 					txt += "<th>";
-					txt += "<div class='cr-list-img'><img class='cr-list-img' src='/bridge/ckstorage/"+data.proImg+"' onerror='this.src=\"/bridge/img/profile/noImg.png\"'/></div>" +
-							"<div class='cr-list-cat'>"+data.cateName+"</div>" +
-							"<div>"+data.proName+"</div>";
+					txt += "<a href='/bridge/deTailPage?cateCode="+data.cateCode+"&proCode="+data.proCode+"'>"+
+					       "<div class='cr-list-img'><img class='cr-list-img' src='/bridge/ckstorage/"+data.proImg+"' onerror='this.src=\"/bridge/img/profile/noImg.png\"'/></div>" +
+						   "<div class='cr-list-cat'>"+data.cateName+"<br/>"+data.proName+"</div></a>";
 					txt += "</th>"; 	
 					txt += "<th>";
 					txt += "<div class='cr-list-last'>최종펀딩금액</div>";
@@ -259,7 +300,12 @@ $(function(){
 				$("#warning-text").html("진행중 ERROR :(");
 			}
 		});
-		
+	});
+	
+	$("#mypage-cr").click(function(){
+		$("#mypage-starting").trigger("click");
+	});
+	
 	//ajax - 승인대기중
 	$("#mypage-waiting").click(function(){
 		var uri = "/bridge/selectWaitingPro"
@@ -283,11 +329,25 @@ $(function(){
 					txt += "<div class='cr-list-goal-waiting'>목표금액"+data.proGoal+"원</div>";
 					txt += "</th>";
 					txt += "<th>";	
-					txt += "<div class='cr-list-pro-waiting'>프로젝트기간</div>" +
-							"<div>"+data.proDate+"개월</div>";
-					txt += "</th>";		
+					txt += "<div class='cr-list-pro-waiting'>프로젝트기간</div>";
+					if(data.proDate == 15){
+						txt += "<div>"+data.proDate+"일</div>";
+					}else{
+						txt += "<div>"+data.proDate+"개월</div>";
+					}
+					txt += "</th>";
+					txt += "<th>";
+					txt += "<div class='cr-list-like'>";
+					txt += "<a href='/bridge/preview?userMail="+data.userMail+"&proNum="+data.proNum+"&proCode="+data.proCode+"'>미리보기</a>";
+					txt += "</div>";
+					txt +=	"</th>";
+					txt += "<th>";
+					txt += "<div class='cr-list-like'>";
+					txt += "<a href='/bridge/inputProject2?userMail="+data.userMail+"&proNum="+data.proNum+"&proCode="+data.proCode+"'>수정하기</a>";
+					txt += "</div>";
+					txt +=	"</th>";
 					txt += "</tr>";	
-					txt += "</tbody>";	
+					txt += "</tbody>";
 				});
 				txt +="<table>";
 				$("#cr-list-waiting").html(txt);
@@ -297,6 +357,21 @@ $(function(){
 			}
 		});
 	});
+	
+	//메뉴 구분
+	if(menu == "my"){
+	
+		$("#mypage-reward").trigger("click");
+		
+	}else if(menu =="like"){
+		
+		$("#mypage-like").trigger("click");
+		
+	}else if(menu == "make"){
+		
+		$("#mypage-starting").trigger("click");
+		
+	}
 	
 });
 
@@ -311,7 +386,6 @@ function likeList(proCode){
 		//ajax
 		var uri = "/bridge/likeList"
 		var param = "userMail="+$("#userMail").val()+"&proCode="+proCode;
-		console.log("aaa="+proCode);
 		
 		$.ajax({
 			type:"POST",
@@ -322,7 +396,6 @@ function likeList(proCode){
 				var txt = "<div class='like-list-div'>";
 					txt += "<div class='like-card-x'><a href='javascript:closeX()'>&Chi;</a></div>";
 				$result.each(function(idx,data){
-					console.log("bbb="+data.userImg);
 					
 					txt += "<hr/>";
 					txt += "<img class='like-list' src='/bridge/upload/"+data.userImg+"' onerror='this.src=\"/bridge/img/profile/user.png\"'/>";
