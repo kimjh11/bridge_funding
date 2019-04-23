@@ -1,152 +1,111 @@
 .wrap{
-	width:80%; 
-	margin: 0 auto;
-	margin-top: 115px;
+	width:80%;
+	margin: 100px auto;
 }
-
 .idpwd-center{
 	margin: 0 auto;
 	width: 61%;
 } 
-
-#id-title-div{
-	font-size: 2em;
-    border: 1px solid black;
-    border-radius: 5px 5px;
-    width: 215px;
-    height: 40px;
-    text-align: center;
-    padding-top: 10px;
-    float: left;
-    background: #021044;
-    color: white;
+#idpwd-div{
+	width:50%;
+	margin: 50px auto;
+	min-width: 404px;
 }
-
+.idpwd-title{
+	overflow: hidden;
+	margin-bottom: -1px;
+}
+.idpwd-title li{
+	border: 1px solid gray;
+	font-size: 2em;
+	width: 49.5%;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 10px 10px 0 0;
+	text-align: center;
+	
+	float: left;
+	color: #021044;
+}
+.idpwd-title li.on{
+	background: #021044;
+	color: white;
+}
+.idpwd-title li:last-child{
+}
 #idpwd-h2{
 	font-size: 4em;
 	text-align: center;
 }
-
-#id-div{
+.idpwd-content{
 	font-size: 2em;
-	border: 1px solid black;
-	border-radius: 5px 5px;
-	width: 450px;
-	height: 205px;
-}
-
-#id-text{
-	margin-top: 30px;
-    margin-left: 30px;
-}
-
-#user-mail, #user-mail-pwd{
-	margin-left: 85px;
-    width: 57%;
-    height: 35px;
-    border: 1px solid gray;
-    border-radius: 5px 5px 5px 5px;
-    padding-left: 10px;
-}
-
-#id-btn,#id-btn-sending,#pwd-btn{
 	border: 1px solid gray;
-    border-radius: 5px 5px 5px 5px;
-    width: 250px;
-    height: 40px;
-    margin-left: 140px;
-    margin-top: 10px;
-    background: #021044;
-    color: white;
+	border-radius: 0 0 5px 5px;
 }
-
-#joinStart{
+.idpwd-content div form{
+	padding: 5%;
+	margin: 20px 0;
+}
+.idpwd-content div form .text{
+	width:70%;
+}
+.idpwd-content div form input[type="button"],
+.idpwd-content div form input[type="submit"]{
 	border: 1px solid gray;
-    border-radius: 5px 5px 5px 5px;
-    width: 250px;
-    height: 40px;
-    background: #021044;
-    color: white;
-    margin-left: 134px;
+	border-radius: 5px;
+	width: 63%;
+	height: 40px;
+	background: #021044;
+	color: white;
+	margin-left: 36%;
+	margin-bottom: 40px;
+	margin-top: 15px;
+	display: inherit;
+	font-family: 'yaReg';
+	font-size: 12pt;
 }
-
-#pwd-title-div{
-	margin-left: 235px;
-    font-size: 2em;
-    border: 1px solid black;
-    border-radius: 5px 5px;
-    width: 215px;
-    height: 40px;
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 10px;
-}
-
-#pwd-div{
-	font-size: 2em;
-	border: 1px solid black;
-	border-radius: 5px 5px;
-	width: 450px;
-	height: 440px;
+.idpwd-content div form .col.blank{
+	margin-left: 36%;
 	margin-bottom: 30px;
 }
-
-#pwd-text{
-	margin-top: 30px;
-    margin-left: 30px;
+.idpwd-content div form .col.blank input{
+	width:100%;
+	padding: 0;
 }
-
-#text-div{
-    margin-left: 138px;
-    margin-top: 10px;
-    font-size: 0.5em;
+.idpwd-content div form .col.blank input:first-child{
+	padding-left: 5%;
+	width: 94%;
 }
-
-#ok-number{
-    margin-left: 134px;
-    margin-top: 20px;
-    width: 57%;
-    height: 35px;
-    border: 1px solid gray;
-    border-radius: 5px 5px 5px 5px;
-    padding-left: 10px;
+.idpwd-content div form .col span{
+	margin-right: 3%;
+	width: 32%;
+	display: inline-block;
+	font-size: 16pt;
+	line-height: 35px;
 }
-
-#user-pwd{
-	margin-left: 54px;
-    margin-top: 20px;
-    width: 57%;
-    height: 35px;
-    border: 1px solid gray;
-    border-radius: 5px 5px 5px 5px;
-    padding-left: 10px;
+.idpwd-content div form .col input{
+	width: 57%;
+	height: 40px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding-left: 5%;
+	margin: 5px 0;
 }
-
-#user-pwdchk{
-	margin-left: 20px;
-    margin-top: 20px;
-    width: 57%;
-    height: 35px;
-    border: 1px solid gray;
-    border-radius: 5px 5px 5px 5px;
-    padding-left: 10px;
+.idpwd-content div form .col p{
+	font-size: 12pt;
+	margin-left: 40%;
 }
-
 #id-search{
 	font-size: 0.7em;
-    margin-bottom: 15px;
-    margin-left: -5px;
+	text-align: center;
 }
-
-#id-search-color{
-	color: red;
-}
-
 #warning{
-	font-size: 0.7em;
-    margin-left: 137px;
-    color: red;
+	color: red;
+	margin-top:15px;
 }
+
+
+
 
 
 
