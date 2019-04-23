@@ -8,7 +8,7 @@
 		<div id="company"> <!-- 프로젝트를 발행한 회사정보 -->
 				<div id="comimg">
 					<p>회사정보</p>
-					${vo.comImg }
+					<img src="<%=request.getContextPath() %>/upload/${vo.comImg }"/>
 				</div>
 			<div id="comTitle">
 				<div id="line"> 

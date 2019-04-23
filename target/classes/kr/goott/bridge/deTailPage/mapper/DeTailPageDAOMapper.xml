@@ -47,7 +47,7 @@
 		update project set likecount=likecount-1 where proCode=#{proCode}
 	</update>
 	<insert id="likeInsert" parameterType="kr.goott.bridge.project.ProjectVO">
-		insert into likeyou values(#{proCode} , 1 , #{userMail} , sysdate)
+		insert into likeyou values(#{proCode} , likeyouSq.nextVal , #{userMail} , sysdate)
 	</insert>
 	<delete id="likeDelete" parameterType="kr.goott.bridge.project.ProjectVO">
 		delete from likeyou where usermail=#{userMail} and proCode= #{proCode}

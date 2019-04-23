@@ -95,14 +95,34 @@ $(function(){
 		$("#simpleNum").attr("disabled", true);
 
 	})
-	if($("#enroll1 input[type=hidden]").val() != null || $("#enroll1 input[type=hidden]").val().equals("")){
-		$("#enroll1").text($("#enroll1 input[type=hidden]").val());
+	if($("#cardhidden").val() != null && $("#cardhidden").val() != "" ){
+		$("#enroll1").text($("#cardhidden").val());
 	}else{
 		$("#enroll1").text("등록된 카드가 없습니다.");
 	}
 	$("#enter").click(function(){
+		var o = 0;
+		for(i =0;i<=$(".input").length-2;i++){
+			if($(".input:eq("+i+")").val() == "" || $(".input:eq("+i+")").val() == null){
+				o += i;
+			}
+		}
+		for(i =0;i<=$(".off").length-1;i++){
+			if($(".off:eq("+i+")").val() == "" || $(".off:eq("+i+")").val() == null){
+				o += i;
+			}
+		}
+		if(o>0){
+			alert("빈칸을 입력해주세요.");
+		}else{
+			alert("info all")
+		}
+		
 		$("#writeNum").val($("#tel1").val()+"-"+$("#tel2").val()+"-"+$("#tel3").val()+"-"+$("#tel4").val());
-		$(".complete").submit();
+		
+		if(o==0){
+			$(".complete").submit();
+		}
 		
 	});
 	$("#prv").click(function(){

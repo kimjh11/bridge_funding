@@ -27,7 +27,7 @@
 		</div>
 	</div>
 	<div id="result">
-		최종결제액은 ${vo.itemPrice}원입니다.
+		최종결제액은 ${vo.itemPrice * vo.selectCount}원입니다.
 	</div>
 	
 	<input type="hidden" value="${vo.itemNum}" name="itemNum"/>
@@ -101,8 +101,7 @@
 				결제카드
 			</div>
 			<div id="CardEnroll">
-				<div id="enroll1"><input type="hidden" value="${membervo.cardName} ${membervo.cardNum}"/></div>
-				<div id="enroll2">간편결제 등록하기</div>
+				<div id="enroll1"><input type="hidden" id="cardhidden" value="${membervo.cardName}${membervo.cardNum}"/></div>
 	
 				<input type="hidden" value="${membervo.cardName}" name="cardName" id="simpleName"/>
 				<input type="hidden" value="${membervo.cardNum}" name="cardNum" id="simpleNum"/>
@@ -121,10 +120,10 @@
 		<div id="payCard">
 			<div class="left10">신용(체크)카드 번호</div>
 			<div class="left10" id="card_num">
-				<div><input type="text" class="tel off" id="tel1"/></div>			
-				<div><input type="text" class="tel off" id="tel2"/></div>			
-				<div><input type="text" class="tel off" id="tel3"/></div>			
-				<div><input type="text" class="tel off" id="tel4"/></div>
+				<div><input type="text" maxlength="4" class="tel off" id="tel1"/></div>			
+				<div><input type="text" maxlength="4" class="tel off" id="tel2"/></div>			
+				<div><input type="text" maxlength="4" class="tel off" id="tel3"/></div>			
+				<div><input type="text" maxlength="4" class="tel off" id="tel4"/></div>
 			</div>
 			<div class="left10">
 				<div class="card_content">유효기간</div>						
@@ -134,7 +133,7 @@
 				<div class="card_year"><input type="text" class="off" /></div>						
 				<div class="card_year">	
 					<input type="hidden" id="writeNum" name="cardNum"/>		
-					<select class="off" name="cardName" id="writeName">
+					<select  name="cardName" id="writeName">
 						<option>신한카드</option>
 						<option>우리카드</option>
 						<option>삼성카드</option>
@@ -154,21 +153,4 @@
 		<div id="enter">결제확인</div>
 	</div>
 </form>
-<link rel="stylesheet" href="/bridge/css/payment3.css">
-<div>
-	<div id="main">
-		<div class="leftSide"> 선택 ?</div>
-		<div class="rightSide">제목</div><br/>
-		<div>
-			옵션설명
-			ㅁㄴㅇㅁㅇㅁㄴㅇ
-			ㅁㄴㅇㅁㄴㅇㄴㅁ
-		</div>
-		<div class="leftSide">옵션명</div>
-		<div class="rightSide">영유아용</div><br/>
-		<div class="leftSide">수량</div>
-		<div class="rightSide">1개</div><br/>
-		<div class="leftSide">발송시작잉ㄹ</div>
-		<div class="rightSide">몰라</div>
-	</div>
 </div>	
