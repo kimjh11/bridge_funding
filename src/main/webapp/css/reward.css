@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+table.cr-list-table th {
+    width: 1%;
+    height: 100px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border: 1px solid gray;
+    position: relative;
+    font-size: 1.5em;
+}
+
+
+.cr-list-img{
+	width: 130px;
+    height: 100px;
+    border: 1px solid gray;  
+}
+
+.cr-list-cat{
+    margin-top: -90px;
+    margin-bottom: 5px;
+    width: 50%;
+    margin-left: 40%;
+    font-size: 0.8em;
+    color: #FC5959;
+}
+
+.cr-list-proname{
+	width: 50%;
+    margin-left: 40%;
+    margin-top: 15px;
+}
+
+.cr-list-last{
+	margin-top: 20px;
+    font-size: 0.9em;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.cr-list-pro{
+	margin-top: 5px;
+    margin-right: 60px;
+    margin-bottom: 5px;
+}
+
+.cr-list-review{
+	margin-top: 38px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}

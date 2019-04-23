@@ -18,7 +18,7 @@
 }
 #proMid{
 	
-	width:60%
+	width:79.5%
 }
 #proTitle li{
 	font-size:2em;
@@ -80,7 +80,6 @@
 	border-right:none;
 	border-bottom:2px solid #e8e8e8;
 }
-
 .inputImg label {
 	width:75%;
 	height:10%;
@@ -123,7 +122,19 @@
 
 input{font-size:1.5em}
 
-
-
+#preview a{font-size:2em}
+#preview a:hover{color:#4dffc3}
+#preview{
+	position: absolute;
+	right: -60px;
+	bottom: 580px;
+	z-index: 5;
+	transition: 1s ease all;
+}
+#preview{
+	right: 70px;
+	transition: 1s ease all;
+	font-size:1.5em;
+}
 
 

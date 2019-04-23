@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<nav class="cate-nav">
+<ul>
+<c:forEach var="vo1" items="${cateList }">
+	<c:if test="${page=='reward' }">
+		<li class="${page } cate-select" style="background:url('./img/category/${vo1.cateImg}')">
+			<a href="./list?page=category&cateCode=${vo1.cateCode }&keyword=">${vo1.cateName }</a>
+		</li>
+	</c:if>
+	<c:if test="${page=='category' }">
+		<li class="${page } cate-select" style="background:url('./img/category/${vo1.cateImg}')">
+			<input type="hidden" name="page" value=${page }/>
+			<input type="hidden" name="cateCode" value=${vo1.cateCode }/>
+			<span>${vo1.cateName }</span>
+		</li>
+	</c:if>
+</c:forEach>
+</ul>
+</nav>

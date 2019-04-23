@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.goott.bridge.admin.AdminDaoInterface">
+	<select id="bannerSelectAll" resultType="kr.goott.bridge.list.BannerVO">
+		select bannerNum, bannerTitle, bannerSubTitle, bannerImg, pageName, bannerOpen, 
+		to_char(bannerRegDate, 'YYYY-MM-dd') bannerRegDate, bannerLink from banner order by bannerNum desc
+	</select>
+	<select id="bannerSelect" resultType="kr.goott.bridge.list.BannerVO">
+		select bannerNum, bannerTitle, bannerSubTitle, bannerImg, pageName, bannerOpen, 
+		to_char(bannerRegDate, 'YYYY-MM-dd') bannerRegDate, bannerLink from banner where bannerNum = #{bannerNum}
+	</select>
+	<insert id="bannerInsert" parameterType="kr.goott.bridge.list.BannerVO">
+		insert into banner (bannerNum, bannerTitle, bannerSubTitle, bannerImg, pageName, bannerOpen, bannerRegDate, bannerLink, pageCode) 
+		values(bannerSq.nextVal, #{bannerTitle}, #{bannerSubTitle}, #{bannerImg}, #{pageName}, 'N', sysdate, #{bannerLink}, #{pageCode})
+	</insert>
+	<update id="bannerOpenToggle">
+		update banner set bannerOpen = case when bannerOpen = 'N' then 'Y' when bannerOpen = 'Y' then 'N' end where bannerNum = #{itemNum}
+	</update>
+	<delete id="bannerDelete" parameterType="int">
+		delete from banner where bannerNum = #{itemNum}
+	</delete>
+	<update id="bannerUpdate" parameterType="kr.goott.bridge.list.BannerVO">
+		update banner set bannerTitle = #{bannerTitle}, bannerSubTitle = #{bannerSubTitle}, bannerImg = #{bannerImg}, bannerLink = #{bannerLink} 
+		where bannerNum = #{bannerNum}
+	</update>
+	<select id="cateSelectAll" resultType="kr.goott.bridge.project.CategoryVO">
+		select cateCode, cateNum, cateImg, cateName, cateRank, cateOpen from category order by cateRank
+	</select>
+	<insert id="cateInsert" parameterType="kr.goott.bridge.project.CategoryVO">
+		insert into category (cateCode, cateNum, cateImg, cateName, cateRank, cateOpen) 
+		values(#{cateCode}, categorySq.nextVal, #{cateImg}, #{cateName}, #{cateRank}, 'N')
+	</insert>
+	<update id="cateOpenToggle">
+		update category set cateOpen = case when cateOpen = 'N' then 'Y' when cateOpen = 'Y' then 'N' end where cateNum = #{itemNum}
+	</update>
+	<delete id="cateDelete" parameterType="int">
+		delete from category where cateNum = #{itemNum}
+	</delete>
+	<select id="login" resultType="kr.goott.bridge.admin.AdminVO">
+		select adminId from admin where adminId = #{adminId} and adminPwd = #{adminPwd} 
+	</select>
+	<select id="selectRecord" resultType="kr.goott.bridge.admin.Project2VO">
+		select proImg, proName, cateName, cateCode, proCode, proTitle, proDate, proWait,
+			   comImg, comName, comEmail, comTel, proContent
+		from project2 
+		where cateCode=#{param1, jdbcType=VARCHAR} and proCode=#{param2, jdbcType=VARCHAR}
+	</select>
+	<select id="SelectItemList" resultType="kr.goott.bridge.admin.Item2VO">
+		select itemPrice, itemName, itemContent, itemOption, limitCnt, stateCnt 
+		from Item2 
+		where proCode=#{param1, jdbcType=VARCHAR}
+	</select>
+	<select id="selectChangeReturn" resultType="kr.goott.bridge.admin.Project2VO">
+		select proRefund 
+		from project2 
+		where cateCode=#{param1, jdbcType=VARCHAR} and proCode=#{param2, jdbcType=VARCHAR}
+	</select>
+	<select id="selectCompanyInfo" resultType="kr.goott.bridge.admin.Project2VO">
+		select proTitle, comImg, comName, comEmail, comTel, proContent
+		from project2
+		where cateCode=#{param1, jdbcType=VARCHAR} and proCode=#{param2, jdbcType=VARCHAR}
+	</select>
+	<select id="totalRecord" resultType="int">
+		select count(proCode) from project2 
+	</select>
+	<select id="selectReward" resultType="kr.goott.bridge.admin.Project2VO">
+		select * from 
+  			(select * from
+    			(select * from project2 where writeFinish = 'Y' order by proNum desc)
+    		where 
+    			 rownum <![CDATA[ <= ]]> #{param5}  order by proNum asc)
+			where  
+			<choose>
+				<when test="param1 == param4">
+    			  rownum <![CDATA[ <= ]]> #{param3}  
+  				</when>	
+  				<when test="param1 != param4">
+  				  rownum <![CDATA[ <= ]]> #{param2} 
+  				</when>
+			</choose>
+  			order by proNum desc
+	</select>
+	<update id="updatePro2">
+		update project2 set proOk = sysdate, proOpen = sysdate + #{param2}
+							<choose>
+								<when test="param3 == 15">
+								,proEnd =  sysdate + 15 + #{ param2}
+								</when>
+								<when test="param3 != 15">
+								,proEnd =  add_months(sysdate,#{param3}) + #{ param2} 
+								</when>
+							</choose>
+							,proCheck = 'Y'
+				where proCode = #{param1}
+	</update>
+	<insert id="insertPro" parameterType="kr.goott.bridge.project.ProjectVO" >
+		insert into project ( cateCode, userMail, proNum, proCode, cateName, proName, proImg, proGoal,
+                     		  proNow, proDate, proOk, proWait, proOpen, proEnd, comName, comNum, comImg,
+                     		  comTel, comEmail, comSite, account, proTitle, proContent, proRefund, proCheck) 
+                    select c.cateCode, userMail, proNum, proCode, c.cateName, proName, proImg, proGoal,
+                      	   proNow, proDate, proOk, proWait, proOpen, proEnd, comName, comNum, comImg,
+                           comTel, comEmail, comSite, account, proTitle, proContent, proRefund, proCheck
+                   	from project2 p join category c
+                    on p.cateCode = c.cateCode 
+                    where c.cateCode = #{cateCode} and proCode= #{proCode}
+	</insert>
+	<insert id="itemInsert" parameterType="kr.goott.bridge.project.ItemVO">
+		insert into Item (proCode, userMail, itemNum, itemRank, itemName, itemContent, itemPrice, itemOption,
+		                  limitCnt,stateCnt)
+		            select proCode, userMail, itemNum, itemRank, itemName, itemContent, itemPrice, itemOption,
+		                  limitCnt,stateCnt
+		            from item2
+		            where proCode= #{proCode}
+	</insert>
+	<delete id="item2Delete">
+		delete from item2 where proCode = #{proCode}
+	</delete>
+	<delete id="pro2Delete">
+		delete from project2 where proCode = #{proCode} 
+	</delete>
+</mapper>

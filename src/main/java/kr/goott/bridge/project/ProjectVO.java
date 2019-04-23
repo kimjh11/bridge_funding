@@ -10,9 +10,9 @@ public class ProjectVO {
 	private String proImg;
 	private int proGoal;
 	private int proNow;
-	private String proDate;
+	private int proDate;
 	private String proOk;
-	private String proWait;
+	private int proWait;
 	private String proOpen;
 	private String proEnd;
 	private String comName;
@@ -25,8 +25,14 @@ public class ProjectVO {
 	private String proTitle;
 	private String proContent;
 	private String proRefund;
+	
 	private int likeCount;
+	
 	private String proCheck;
+	private int remainingDay;
+	private int proGoalRate;
+	private String writeFinish;
+	
 	
 	public ProjectVO() {}
 
@@ -102,11 +108,11 @@ public class ProjectVO {
 		this.proNow = proNow;
 	}
 
-	public String getProDate() {
+	public int getProDate() {
 		return proDate;
 	}
 
-	public void setProDate(String proDate) {
+	public void setProDate(int proDate) {
 		this.proDate = proDate;
 	}
 
@@ -118,11 +124,11 @@ public class ProjectVO {
 		this.proOk = proOk;
 	}
 
-	public String getProWait() {
+	public int getProWait() {
 		return proWait;
 	}
 
-	public void setProWait(String proWait) {
+	public void setProWait(int proWait) {
 		this.proWait = proWait;
 	}
 
@@ -238,4 +244,28 @@ public class ProjectVO {
 		this.proCheck = proCheck;
 	}
 
+	public int getRemainingDay() {
+		return remainingDay;
+	}
+
+	public void setRemainingDay(int remainingDay) {
+		this.remainingDay = remainingDay;
+	}
+
+	public int getProGoalRate() {
+		return proGoalRate;
+	}
+
+	public void setProGoalRate(int proGoalRate) {
+		this.proGoalRate = proGoalRate;
+	}
+
+	public String getWriteFinish() {
+		return writeFinish;
+	}
+
+	public void setWriteFinish(String writeFinish) {
+		this.writeFinish = writeFinish;
+	}
+	
 }

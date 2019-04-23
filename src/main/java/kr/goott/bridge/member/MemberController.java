@@ -1,5 +1,6 @@
 package kr.goott.bridge.member;
-
+  
+import javax.mail.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -74,14 +75,16 @@ public class MemberController {
 		MemberVO vo2 = dao.loginCheck(vo);
 		
 		ModelAndView mav = new ModelAndView();
-		
 		if(vo2 != null) {//로그인 성공
 			HttpSession session = request.getSession();
 			vo2.setLogStatus("Y"); 
 			
 			session.setAttribute("userMail", vo2.getUserMail()); //아이디
+			session.setAttribute("userImg", vo2.getUserImg()); 
 			session.setAttribute("userName", vo2.getUserName()); //이름
 			session.setAttribute("logStatus", vo2.getLogStatus()); //로그인 여부
+			session.setAttribute("img", vo2.getUserImg() );
+			session.setAttribute("cardName", vo2.getCardName());//카드이름
 			
 			mav.setViewName("redirect:/");
 		}else {

@@ -1,23 +1,4 @@
-$(function(){
-	/* 검색버튼 클릭이벤트 */
-	$('.search-toggle').click(function(){
-		var searchTxt = $('.project-search input[type="text"]').val();
-		console.log($(this).siblings('input'));
-		if(searchTxt==null || searchTxt==''){
-			//검색어없이 검색버튼 클릭시 창 숨기기
-			if($(this).siblings('input[type="text"]').css('display')=='block'){
-				$(this).siblings('input[type="text"]').css('display','none');
-				$(this).parent().removeClass('show');
-			}else{
-				//검색창 보이기
-				$(this).siblings('input[type="text"]').css('display','block');
-				$(this).parent().addClass('show');
-			}
-		}else{//검색어가 있을경우
-			$(this).parent().submit();
-		}
-	});
-	
+$(function(){	
 	//토글버튼 클릭시 함수호출
 	$('.guide-toggle').click(function(){
 		guideShow();
@@ -60,8 +41,8 @@ $(function(){
 	
 	//스크롤 이벤트 
 	$(window).scroll(function(){
-		console.log($(this).scrollTop());
-		console.log($(document).height());
+		//console.log($(this).scrollTop());
+		//console.log($(document).height());
 		if($(this).scrollTop()>=900){
 			$('header .top-controller').addClass('show');
 		}else{
@@ -72,8 +53,6 @@ $(function(){
 	//맨위로 이동
 	$('header .top-controller').click(function(){
 		$('html, body').scrollTop(0);
-	});
-	
-	
+	});	
 });
 

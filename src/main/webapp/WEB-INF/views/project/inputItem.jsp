@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/inputItem.css"/>
 </head>
 <body>
-		
+		 
 		<%@include file="projectTitle.jspf"%>
 		<div id="proBody">
 			<div id="proLeft">
@@ -21,13 +21,15 @@
 				</ul>
 			</div>
 			<div id="proMid">	
-				<form>				
+				<form action="/bridge/saveItem" id="frm" method="get">
+					<input type="hidden" name="userMail" value="${userMail }"/>
+					<input type="hidden" name="proCode" value="${proCode }"/>	
 					<div class="row1 inputData">
 						<ul style="margin-top:10px">
 							<li class="row" >
 								<div class="row1_1">리워드명</div>
 								<div class="row1_2">
-									<input type="text" class="data" placeholder="ex)&nbsp;&nbsp;슈퍼얼리버드 로봇키즈"/>
+									<input type="text" name="itemName" class="data" placeholder="ex)&nbsp;&nbsp;슈퍼얼리버드 로봇키즈"/>
 								</div>
 							</li>
 							<li class="row li2">
@@ -40,23 +42,24 @@
 							</li>
 							<li class="row">
 								<div class="row3_1">세부옵션</div>
-								<div class="row3_2"><input type="text" class="data" placeholder="ex)&nbsp;&nbsp;색상:빨강/주황/노랑"/></div>
+								<div class="row3_2"><input type="text" name="itemOption" class="data" placeholder="ex)&nbsp;&nbsp;색상:빨강/주황/노랑"/></div>
 							</li>
 							<li class="row">
 								<div class="row4_1">상품 순위</div>
-								<div class="row4_2"><input type="text" class="data data2" placeholder="ex)&nbsp;&nbsp;1"/></div>
+								<div class="row4_2"><input type="text" name="itemRank" class="data data2" placeholder="ex)&nbsp;&nbsp;1"/></div>
 							</li>
 							<li class="row">
 								<div class="row5_1">금액</div>
-								<div class="row5_2"><input type="text" class="data data2" placeholder="ex)&nbsp;&nbsp;26500"/><span class="ex2">원</span></div>
+								<div class="row5_2"><input type="text" name="itemPrice" class="data data2" placeholder="ex)&nbsp;&nbsp;26500"/><span class="ex2">원</span></div>
 							</li>
 							<li class="row">
 								<div class="row6_1">제한수량</div>
-								<div class="row6_2"><input type="text" class="data data2" placeholder="ex)&nbsp;&nbsp;300"/><span class="ex2">개</span></div>
+								<div class="row6_2"><input type="text" name="limitCnt" class="data data2" placeholder="ex)&nbsp;&nbsp;300"/><span class="ex2">개</span></div>
 							</li>
-							<div class="saveNext itemSave"><a href="#">상품 임시저장</a></div>
+							<div class="saveNext itemSave"><a href="#" onclick="document.getElementById('frm').submit();">상품 임시저장</a></div>
 						</ul>
 					</div>
+				</form>	
 					<div class="tableDiv row2">
 						<table>
 							<thead>
@@ -71,26 +74,28 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td class="td1"></td>
-									<td class="td2"></td>
-									<td class="td3"></td>
-									<td class="td4"></td>
-									<td class="td5"></td>
-									<td class="td6"></td>
-									<td class="td7"><a href="#"></a></td>
-								</tr>
+								<c:forEach var="vo" items="${list }">
+									<tr>
+										<td class="td1">${vo.itemRank}</td>
+										<td class="td2">${vo.itemName }</td>
+										<td class="td3">${vo.itemContent }</td>
+										<td class="td4">${vo.itemOption }</td>
+										<td class="td5">${vo.itemPrice }</td>
+										<td class="td6">${vo.limitCnt }</td>
+										<td class="td7"><a href="/bridge/delItem?userMail=${vo.userMail }&proCode=${vo.proCode }&itemRank=${vo.itemRank }">x</a></td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
 					<div class="inputData" id="saveDiv">
 						<!-- 저장하기 and 다음단계로 -->
 						<div class="saveNext"><a href="#">저장하기</a></div>
-						<div class="saveNext" style="border-bottom:1px solid #666"><a href="#">다음단계로 ></a></div>
+						
 					</div>
-				</form>	
+				
 			</div>
-			<div id="proRight">
+			<!-- <div id="proRight">
 				<ul>
 					<li>
 						
@@ -111,7 +116,13 @@
 						<span class="ex">입력하신 정보를 저장하기 누르지 않고 다음으로 넘어가면 정보가 저장되지 않습니다.</span>
 					</li>
 				</ul>
-			</div>
+			</div> -->
+		</div>
+		<div id="preview">
+			<a href="/bridge/preview?proCode=${vo.proCode }">미리보기</a><br/>
+			입력한 정보를 미리보기를 통하여 보실수 있습니다.<br/>
+			입력한 정보를 저장후에 미리보기를 눌러주세요.<br/><br/>
+			<button class="guide-toggle">오픈 가이드</button>
 		</div>
 </body>
 </html>

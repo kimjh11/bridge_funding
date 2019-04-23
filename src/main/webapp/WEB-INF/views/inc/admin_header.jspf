@@ -1,0 +1,75 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="styleSheet" href="<%=request.getContextPath() %>/css/common.css"/>
+<!-- 로그인 커스텀 CSS -->
+<link rel="styleSheet" href="<%=request.getContextPath() %>/css/login.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="<%=request.getContextPath() %>/js/common.js"></script>
+<!-- 로그인  -->
+<script src="<%=request.getContextPath() %>/js/login.js"></script>
+<header>
+	<div class="admin-header-wrap">
+		<!-- 이용안내 -->
+		<div class="top-guide">
+			<button class="guide-toggle" title="사이트 이용안내" style="display:none">
+				<span class="toggle-bar txt-none" >사이트이용안내</span>
+			</button>
+			<div class="guide-wrap">
+				<ul class="guide-menu">
+					<li><input type="button" value="리워드 펀딩이란" name="reward-info"></li>
+					<li><input type="button" value="펀딩과 쇼핑의 차이" name="funding-diff"></li>
+					<li><input type="button" value="서포터즈란" name="supporter-intro"></li>
+					<li><input type="button" value="프로젝트 참여하기(서포터즈)" name="surpporter-guide"></li>
+					<li><input type="button" value="프로젝트 개설하기(메이커)" name="maker-guide"></li>
+					<li><input type="button" value="주문/결제/배송관련" name="order-payment"></li>
+					<li><input type="button" value="교환/반품/AS관련" name="after-service"></li>
+				</ul>
+				<div class="guide-content"></div>
+			</div>
+		</div>
+		<!-- 회사로고 -->
+		<div class="top-logo">
+			<c:if test="${adminloginCheck != 'Y' }">
+				<span>우리는 모든 창작활동을 응원합니다</span>
+				<h1 class="admin-header">BRIDGE</h1>
+			</c:if>
+			<c:if test="${adminloginCheck == 'Y' }">
+				<span>우리는 모든 창작활동을 응원합니다</span>
+				<h1><a href="<%=request.getContextPath()%>/adminReward" title="어드민 첫페이지 이동">BRIDGE</a></h1>
+			</c:if>
+		</div>
+		<!-- 상단메뉴 -->
+		<nav class="top-menubar">
+			<ul> <!-- 배너/카테고리/정렬여부 값 전달 -->
+				<c:if test="${adminloginCheck != 'Y' }">
+					<li class="admin-header">리워드관리</li>
+					<li class="admin-header">배너관리</li>
+					<li class="admin-header">카테고리관리</li>
+				</c:if>
+				<c:if test="${adminloginCheck == 'Y' }">
+					<li><a href="<%=request.getContextPath()%>/adminReward">리워드관리</a></li>
+					<li><a href="<%=request.getContextPath()%>/adminBanner">배너관리</a></li>
+					<li><a href="<%=request.getContextPath()%>/adminCategory">카테고리관리</a></li>
+				</c:if>
+			</ul>
+		</nav>
+
+		<!-- 로그인/로그아웃 -->
+		<div id="top-etc">
+			<ul class="top-login">
+				<!-- 로그인 후 -->
+				<c:if test="${adminloginCheck == 'Y' }">
+					<li id="adminIdsession" >${adminId}</li>
+					<li ><a href="/bridge/adminlogout">로그아웃</a></li>
+				</c:if>
+			</ul>
+		</div>
+		
+		<!-- 스크롤 컨트롤러 -->
+		<button class="top-controller">맨위로</button>
+	</div>
+</header>

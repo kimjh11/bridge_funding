@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+.mypageli{
+	float: none;
+	font-size: 1.3em;
+	margin-left: 40px;
+}
+
+.mypage-h3{ 
+	font-size: 1.5em;
+	margin-left: 20px;
+}
+
+.mypage-hr{
+	border: 0.5px solid black;
+}
+
+#mypage-Div{
+	border: 1px solid gray;
+	border-radius: 10px 10px 10px 10px;
+    width: 270px;
+    height: 300px;
+    margin-left: 80%;
+    margin-top: -5px;
+    position: absolute;
+    z-index: 8;
+    background: white;
+}
+
+#mypage-h2{
+	font-size: 2.5em;
+	margin-left: 15px;
+}
+
+#header-img{
+	border: 1px solid gray;
+    width: 45px;
+    height: 45px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+
+

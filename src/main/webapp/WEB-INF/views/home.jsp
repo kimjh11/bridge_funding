@@ -4,6 +4,7 @@
 <head>
 <title>브릿지 펀딩</title>
 <link rel="stylesheet" href="css/home.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/home.js"></script>
 </head>
 <body>
@@ -16,7 +17,7 @@
 		</button>
 	</div>
 	<div class="background" id="reward-back">
-		<a href="<%=request.getContextPath()%>/">
+		<a href="<%=request.getContextPath()%>/list?page=reward&cateCode=&keyword=">
 			<img alt="리워드 이미지" src="<%=request.getContextPath()%>/img/home/home-in-icon.png"/>
 			<h2>리워드 이동하기</h2>
 			<span>모든 서포터즈와 메이커를 위한 리워드 홈</span>
@@ -25,4 +26,5 @@
 </div>
 </body>
 </html>
+
 

@@ -7,7 +7,7 @@
 	margin-bottom: 0;
 }
 .reward-wrap .bx-controls-direction{
-	display: none;
+	display: block;
 }
 .reward-wrap .bx-wrapper .bx-pager{
 	padding-top: 0;
@@ -24,10 +24,13 @@
 .reward-wrap .bx-wrapper .bx-pager.bx-default-pager a.active{
 	background: #EFD435;
 }
-
+.cate-page-wrap{
+	margin-top: 50px;
+}
 /* banner */
 .top-banner .main-banner img{
 	width: 100%;
+	max-height: 350px;
 }
 .top-banner .main-banner .txt{
 	position: absolute;
@@ -49,27 +52,30 @@
 /* category */
 .cate-nav{
 	width: 70%;
-	margin: 0 auto;
+	margin: 50px auto 0;
 }
 .cate-nav ul{
 	width: 70%;
 	margin: 0 auto;
 	overflow: hidden;
 }
-.cate-nav ul li a{
+.cate-nav ul li {
 	display: inline-block;
-	width: 100%;
+	width: 20%;
 	line-height: 55px;
-	background: pink;
 	text-align: center;
 	border-radius: 8px;
 	font-size: 15pt;
+	color: #fff;
 }
 .cate-nav ul li:first-child {
 	margin-left: 0;
 }
 
 /* list */
+.list-wrap{
+	margin: 50px auto;
+}
 .list-wrap .list-header {
 	border-bottom: 1px solid #ccc;
 	overflow: hidden;
@@ -83,11 +89,7 @@
 	float: left;
 	font-size: 20pt;
 }
-.list-wrap .list-header form {
-	position: absolute;
-	right: 135px;
-	top: 12px;
-}
+.list-wrap .list-header form {padding: 8px 5px 0 0;}
 .list-wrap .list-header select {
 	float: right;
 	width: 120px;
@@ -156,10 +158,12 @@
 	background-color: pink;
 	width: 30px;
 	height: 30px;
-	font-size: 0;
 	position: absolute;
 	top: 30px;
 	right: 10px;
+	font-size: 14pt;
+	text-align: center;
+	line-height: 30px;
 }
 .detail-info{
 	overflow: hidden;
@@ -191,10 +195,23 @@
 	color: #92D1E0;
 }
 
-.reward-wrap > *{
-	margin-bottom: 50px;
+/* 좋아요 */
+input[name="likeCount"]{
+	background: yellow;
 }
-
-
-
+input[name="likeCount"].on{
+	background: red;
+}
+input[name="likeCount"].logout{
+	background: #ddd;
+}
+.bar-wrap{
+	font-size : 0;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+.goal-rate-bar{
+	height:10px;
+	background: #92D1E0;
+}
 
