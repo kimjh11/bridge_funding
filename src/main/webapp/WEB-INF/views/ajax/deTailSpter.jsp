@@ -10,7 +10,7 @@
 <c:forEach var="list" items="${list}">	
 	<div class="OneSpter">
 		<div class="Img">
-			${list.userImg }
+			<img src="<%=request.getContextPath() %>/upload/${list.userImg }"/>
 		</div>
 		<div class="Spter">
 			${list.userMail}님이 ${list.totalPrice}원 펀딩으로 참여하셨습니다.<br/>

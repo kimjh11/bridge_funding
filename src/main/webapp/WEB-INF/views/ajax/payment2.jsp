@@ -6,19 +6,19 @@
 <link rel="stylesheet" href="/bridge/css/payment2.css">
 <div>
 	<div class="checkBox">
-		<div class="sel1"><input type="radio" name="pick"/> 이름/금액 공개</div>
-		<div>예시*) <img src=""/> <span>???</span>님이 <span>?????원 펀딩</span>으로 참여하셨습니다.</div>
+		<div class="sel1"> 이름/금액 공개</div><br/>
+		<div><span id="ex">예시*)</span> <%-- <img src="<%=request.getContextPath()%>/upload/${img}"/> <span>${userMail}</span>님이 <span>${vo.itemPrice} , ${vo.selectCount}원 펀딩</span>으로 참여하셨습니다. --%>
+				<div class="OneSpter">
+					<div class="Img">
+						<img src="<%=request.getContextPath() %>/upload/${img}"/>
+					</div>
+					<div class="Spter">
+						${userMail}님이 ${vo.itemPrice * vo.selectCount}원 펀딩으로 참여하셨습니다.<br/>
+						<div class="Time">${list.payDate }</div>
+					</div>
+				</div>
+		</div>
 	</div>
-	<div class="checkBox">
-		<div class="sel1"><input type="radio" name="pick"/> 이름 공개/금액 미공개</div>
-		<div>예시*) <img src=""/> <span>익명의 서포터즈</span> 님이 <span>?????원 펀딩</span>으로 참여하셨습니다.</div>
-	</div>
-	<div class="checkBox" id="last">
-		<div class="sel1"><input type="radio" name="pick"/> 미공개</div>
-		<div>예시*) <img src=""/> <span>???</span>님이<span>펀딩</span>으로 참여하셨습니다.</div>
-	</div>
-	<div>
 		<div id="pev">이전페이지</div>
 		<div id="next">다음페이지</div>
-	</div>
 </div>

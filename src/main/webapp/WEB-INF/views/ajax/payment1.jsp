@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <script type="text/javascript" src="/bridge/js/payment.js"></script>
 		<c:forEach var="list" items="${list}"> 
+		<form method="post" action="/bridge/payment2" name="frm${list.itemRank}" id="frm${list.itemRank}">
 			<div class="tap">
 				<div id="select">
 					<input type="checkbox" value="선택${list.itemRank }"/> 선택${list.itemRank }
@@ -50,6 +51,7 @@
 						~ ${proEnd}까지
 					</div>	
 				</div>
+				</form>
 			</c:forEach>
 			<div id="nextPage">다음페이지 </div>
 		

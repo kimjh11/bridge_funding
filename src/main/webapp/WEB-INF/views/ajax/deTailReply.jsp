@@ -31,7 +31,6 @@
 			<textarea id="textarea" name="replyContent"></textarea>
 			<input type="submit" style="cursor: pointer;" value="댓글등록"/>
 		</form>
-	<div id="question">문의하기</div>
 		<div>
 		<p class="title">댓글 ${count}개</p>
 			배송 및 리워드, 기타 관련하상은 메이커에게 직접 문의하세요.
@@ -39,7 +38,7 @@
 		<c:forEach var="list" items="${list}">
 			<div class="oneReply">
 				<div class="userImg">
-					${list.userImg }
+					<img src="<%=request.getContextPath() %>/upload/${list.userImg }"/>
 				</div>
 				<div class="userInfo"> 
 					<span class="userID">${list.userMail}</span><br/>

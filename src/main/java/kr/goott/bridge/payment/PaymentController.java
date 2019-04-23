@@ -54,18 +54,19 @@ public class PaymentController {
 		return mav;
 	}
 	@RequestMapping("/payment2")
-	public String payment2(ItemVO vo, HttpServletRequest req) {
-	/*	System.out.println("Rank = "+req.getParameter("selectRank"));
+	public ModelAndView payment2(ItemVO vo, HttpServletRequest req) {
+		System.out.println("Rank = "+req.getParameter("selectRank"));
 		System.out.println("itemNum = "+req.getParameter("itemNum"));
 		System.out.println("select = "+req.getParameter("itemOption"));
 		System.out.println("Cnt = "+req.getParameter("selectCount"));
 		System.out.println("Name = "+req.getParameter("itemName"));
 		System.out.println("Content = "+req.getParameter("itemContent"));
-		System.out.println("Price = "+req.getParameter("itemPrice"));*/
+		System.out.println("Price = "+req.getParameter("itemPrice"));
 		HttpSession sion = req.getSession();
 		System.out.println("page2 = "+sion.getAttribute("cateCode"));
+		int itemPrice = 0;
 		try {
-			int itemPrice = Integer.valueOf((String)req.getParameter("itemPrice"));			
+			itemPrice = Integer.valueOf((String)req.getParameter("itemPrice"));			
 			vo.setItemPrice(itemPrice);
 			vo.setItemOption(req.getParameter("itemOption"));
 			vo.setSelectCount(req.getParameter("selectCount"));
@@ -75,14 +76,16 @@ public class PaymentController {
 			vo.setProCode((String)sion.getAttribute("proCode"));
 			
 		}catch(NumberFormatException e){
-			
-		}catch(Exception e) {
-			
-		}
+		}catch(Exception e) {}
 		
 		sion.setAttribute("vo", vo);
-		
-		return "ajax/payment2";
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("itemPrice", itemPrice);
+		mav.addObject("selectCount", req.getParameter("selectCount"));
+		System.out.println("流立 itmePrice= "+itemPrice);
+		System.out.println("流立 = "+req.getParameter("selectCount"));
+		mav.setViewName("ajax/payment2");
+		return mav;
 	}
 	@RequestMapping("/payment3")
 	public ModelAndView payment3(HttpServletRequest req, ItemVO vo) {

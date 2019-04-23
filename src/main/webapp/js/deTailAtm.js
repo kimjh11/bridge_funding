@@ -36,7 +36,7 @@ $(function(){
 						success : function(){
 							var like= $("#like div").text();
 							like = Number(like);
-							$("#like div").html(like+1);			
+							$("#num").html(like+1);			
 						}
 					})
 				}else{
@@ -49,7 +49,7 @@ $(function(){
 						success : function(data){
 							var like= $("#like div").text();
 							like = Number(like);
-							$("#like div").html(like-1);			
+							$("#num").html(like-1);			
 						}
 					})
 				}
@@ -74,7 +74,7 @@ $(function(){
 					success : function(){
 						var like= $("#like div").text();
 						like = Number(like);
-						$("#like div").html(like+1);			
+						$("#num").html(like+1);			
 					}
 				})
 			}else{
@@ -87,7 +87,7 @@ $(function(){
 					success : function(data){
 						var like= $("#like div").text();
 						like = Number(like);
-						$("#like div").html(like-1);			
+						$("#num").html(like-1);			
 					}
 				})
 			}

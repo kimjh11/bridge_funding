@@ -10,6 +10,10 @@
 				}
 	.wrap{margin:0 10%}
 	.selectTap{border-bottom:5px solid #92D1E0}
+	ruby{
+			text-shadow: 1px 0 black;
+    		color: white;
+	}
 	#left{
 		  width: 63%;
 		  float: left;
@@ -107,6 +111,9 @@ cursor: pointer;
 			   font-size:0.8em;
 	}
 	#detail{font-size: 2em;}
+	#thumbnail iframe{
+			width:100%;
+	}
 	#goal{
 		  background:#eee;
 		  }
@@ -163,7 +170,7 @@ cursor: pointer;
 			 cursor:pointer;
 			 }
 	#like{
-		  width:30%;
+		  width:65%;
 		  float:left;
 		  margin-left:20%;
 		  border:1px solid lightgray;
@@ -175,10 +182,15 @@ cursor: pointer;
 			  margin-left:20px;
 			  }
 	#like div{
-			float:right;
-			line-height:1.8;
-			margin-right:35px;
-			}
+			float: left;
+		    line-height: 1.8;
+		    margin-right: 35px;
+		    margin-top: 5px;
+		    margin-bottom: 0;
+		}
+	#sideBtn{
+			margin-left:60px;
+	}	
 	#full{
 		  display:none;
 		  }		  

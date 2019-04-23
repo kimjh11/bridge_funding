@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <script type="text/javascript" src="/bridge/js/deTailAtm.js"></script>	
 			<p> 
-				${vo.remainingDay}456456일 남음 
+				${vo.remainingDay}일 남음 
 			</p>
 			<div id="goal">
 				<div id="ok"></div>
@@ -25,10 +25,12 @@
 				<div id="punding">펀딩하기</div>
 			</div>
 			<div id="likes">
-				<div class="btns" id="like"><img src="/bridge/img/detail/unlike.png" id="bin"/> 
-											<img src="/bridge/img/detail/like.png" id="full"/>											
-											<div>${vo.likeCount}</div>
+				<div class="btns" id="like">
+					<div id="sideBtn">
+						<img src="/bridge/img/detail/unlike.png" id="bin"/> 
+						<img src="/bridge/img/detail/like.png" id="full"/>											
+					</div>
+					<div id="num">${vo.likeCount}</div>
 				</div>
-				<div class="btns" id="ask">문의하기</div>
 			</div>
 			
