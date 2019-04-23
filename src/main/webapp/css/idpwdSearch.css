@@ -20,6 +20,7 @@
     float: left;
     background: #021044;
     color: white;
+    cursor: pointer;
 }
 
 #idpwd-h2{
@@ -80,6 +81,7 @@
     text-align: center;
     margin-top: 40px;
     padding-top: 10px;
+    cursor: pointer;
 }
 
 #pwd-div{

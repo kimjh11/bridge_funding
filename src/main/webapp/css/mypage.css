@@ -267,8 +267,11 @@ table.cr-list-table th:nth-child(5){
 }
 
 .cr-list-cat{
-	margin-top: -90px;
+	margin-top: -100px;
     margin-bottom: 5px;
+    width: 60%;
+    height: 96px;
+    margin-left: auto;
 }
 
 .cr-list-last{
