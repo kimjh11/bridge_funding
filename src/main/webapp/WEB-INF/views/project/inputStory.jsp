@@ -1,70 +1,87 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Bridge</title>
- 
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/common.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/inputStory.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/inputProject.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
 <script>
-	$(function(){
-		$("#titleBtn").click(function(){
-			var url = $("#proTitle").val();
-			alert("정상적인 url 주소인지 체크 합니다.\n"+url);
-			
-			$("#myFrame").attr("src",url);
-		});
+$(function(){
+	$("#titleBtn").click(function(){
+		var url = $("#proTitle").val();
+		alert("정상적인 url 주소인지 체크 합니다.\n"+url);
+		$("#myFrame").attr("src",url);
 	});
+	$(document).ready(function(){
+		$('#proCategory div a').removeClass('on');
+		$('#proCat2 a').addClass('on');
+	});
+	
+});
+	
 </script>
 </head>
 <body>
-		
-		<%@include file="projectTitle.jspf"%>
-		<div id="proBody">
-			<div id="proLeft">
-				<ul id="proTitle2">
-					<li class="row1">소개영상 등록<br/><br/><br/><span class="ex2">url 입력후 Check 버튼 클릭시 정상적인 url주소면 영상이 나옵니다.</span></li>
-					<li class="row2">프로젝트 스토리 <br/><br/><span class="ex2">리워드 클릭시 노출되는 내용으로 필수항목이 누락 되거나 부족할시 오픈 승인이 안될수 있습니다.</span></li>
-					<li class="row3">교환/환불 정책 </li>
-				</ul>
-			</div>
-			<div id="proMid">		
-				<form action="/bridge/saveStory" id="frm" method="get">
-					<input type="hidden" name="userMail" value="${userMail }"/>
-					<input type="hidden" name="proCode" value="${proCode }"/>
-					<input type="hidden" name="proNum" value="${vo.proNum }"/>		
-					<div class="inputData row1">
-						<!-- 소개영상 및 사진등록 -->
+<div class="wrap project">
+	<!-- 상단 네비 -->
+	<%@include file="projectTitle.jspf"%>
+	<!-- 미리보기 이용탭 -->
+	<%@ include file="preview_nav.jspf" %>
+	<div id="proBody" class="story">
+		<form action="/bridge/saveStory" id="frm" method="get">
+			<input type="hidden" name="userMail" value="${userMail }"/>
+			<input type="hidden" name="proCode" value="${proCode }"/>
+			<input type="hidden" name="proNum" value="${vo.proNum }"/>
+			<ul id="proTitle" >
+				<li>
+					<div>
+						<strong>소개영상 등록</strong>
+						<span class="ex2">url 입력후 Check 버튼 클릭시 정상적인 url주소면 영상이 나옵니다.</span>
+						<span class="guide-toggle hover-pointer">동영상 업로드팁!</span>
+					</div>
+					<div>
 						<input type="text" name="proTitle" id="proTitle" value="${vo.proTitle }" placeholder="url을 입력해 주세요"/><input type="button" value="urlCheck" id="titleBtn"/>
 						<iframe id="myFrame" width="100%" height="80%" src="${vo.proTitle }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
-		
-					<div class="inputData row2">
-					<!-- 스토리 -->
-					<textarea id="content" name="proContent">${vo.proContent}
-					</textarea>
+				</li>
+				<li class="row-block">
+					<div>
+						<strong>프로젝트 스토리</strong>
+						<span class="ex2">리워드 클릭시 노출되는 내용으로 필수항목이 누락 되거나 부족할시 오픈 승인이 안될수 있습니다.</span>
+					</div>
+					<div>
+						<textarea id="content" name="proContent">${vo.proContent}</textarea>
 						<script>
 							CKEDITOR.replace('proContent',
 											{height:555
 											});
 						</script>
 					</div>
-					<div class="inputData row3">
-						<!-- 교환환불 정책 -->
+				</li>
+				<li>
+					<div>
+						<strong>교환/환불 정책</strong>
+					</div>
+					<div>
 						<textarea style="resize:none" name="proRefund" id="proRefund">${vo.proRefund }
 						</textarea>
 					</div>
-					<!-- 저장하기 and 다음단계로 -->
-					<div class="saveNext"><a href="#"onclick="document.getElementById('frm').submit();">저장하기</a></div>
-					
-				</form>	
+				</li>
+			</ul>
+			<div class="saveNext">
+				<a href="#"onclick="document.getElementById('frm').submit();">저장하기</a>
 			</div>
+		</form>
+	</div>
+</div>				
+</body>
+</html>							
+
 			<!-- <div id="proRight">
 				<ul>
 					<li>
@@ -87,15 +104,9 @@
 					</li>
 				</ul>
 			</div> -->
-		</div>
-		<div id="preview">
-			<a href="/bridge/preview?proCode=${vo.proCode }">미리보기</a><br/>
-			입력한 정보를 미리보기를 통하여 보실수 있습니다.<br/>
-			입력한 정보를 저장후에 미리보기를 눌러주세요.<br/><br/>
-			<button class="guide-toggle">오픈 가이드</button>
-		</div>
-</body>
-</html>
+		
+
+
 
 <!-- Q. 배송은 언제 되나요?
 A. 소셜커머스, 오픈마켓과 달리 *월 *일까지 펀딩이 진행되고 프로젝트 성공하면 결제 기간을 거쳐 리워드 제작이 진행됩니다. 프로젝트 성공 시, *월 *일부터 *월 *일까지 17시마다 결제가 실행됩니다. (주말/공휴일 제외, 총 4영업일) 잔고 부족, 한도 초과, 분실/정지카드 등의 사유로 결제 실패하실 수 있으며 결제 실패하신 경우, 최종 결제일인 *월 *일 오후 4시 30분 전까지 마이페이지에서 다른 카드로 변경하실 수 있습니다.

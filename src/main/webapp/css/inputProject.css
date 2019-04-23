@@ -1,28 +1,49 @@
 @charset "UTF-8";
-#proBody{
-	width:60%;
-	/* border:1px solid gray; */
-	margin:50px auto;
+
+.wrap.project{
+	width: 60%;
+	margin: 50px auto;
+}
+#proNav h1{
+	margin-left: 15px;
+}
+/* 상단 네비 */
+#proCategory{
+	width:100%;
+	margin:30px auto;
 	overflow: hidden;
-	}
-#proBody div{
-	float:left
 }
-#proLeft{
-	width:20%;
-	
+#proCategory div{
+	float:left;
+	width:24.8%;
+	text-align:center;
 }
-#proRight{
-	width:20%;
-	
+#proCategory div a{
+	display: inline-block;
+	width:100%;
+	height:50px;
+	line-height:50px;
+	text-decoration:none;
+	background: white;
 }
-#proMid{
-	
-	width:79.5%
+#proCategory div a.on{
+	color:white;
+	background:#000066
+}
+#proCat1,#proCat2,#proCat3{
+	border-left:1px solid gray;
+	border-top:1px solid gray ;
+	border-bottom:1px solid gray
+}
+#proCat4{
+	border:1px solid gray
+}
+
+#proBody{
+	margin-top: 80px;
+	overflow: hidden;
 }
 #proTitle li{
-	font-size:2em;
-	text-align:left;
 }
 #proRight li{
 	font-size:1.6em;
@@ -31,36 +52,12 @@
 	margin-bottom:60px;
 	color:#000066;
 }
-.ex{font-size:0.8em;color:#4dffc3}
-.ex2{font-size:1.5em;color:gray}
-.ex3{font-size:0.8em;color:gray}
-.inputData{
-	width:100%;
-	/* height:50px; */
-	/* border:1px solid #ccc; */
-	/* background:#eee; */
-	text-align:center;
-	margin-bottom:35px;
-	/* box-shadow:0px 1px 5px lightgray; */
-}
-#selectOpt1{}
-.row1,.row2,.row3,.row4,
-.row5,.row6,.row7,.row8,.row9,
-.row10,.row11,.row12{
-	height:70px;margin-bottom:35px;color:#000066
-}
-.row2,.row6{height:250px}
-#proLeft li{margin-top:0px}
-
 .saveNext{
 	width:100%;
 	height:60px;
 	background:#000066;
 	color:white;
 	text-align:center;
-	border-top:1px solid #666;
-	border-left:1px solid #666;
-	border-right:1px solid #666;
 }
 .saveNext a{
 	font-size:2em;
@@ -68,33 +65,22 @@
 	color:white;
 }
 
-#proCat1{background:#000066}
-#proCat1 a{color:white}
-.data{
-	/* border-radius:5px 5px 5px 5px; */
-	width:80%;
-	height:50%;
-	margin-top:15px;
-	border-left:none;
-	border-top:none;
-	border-right:none;
-	border-bottom:2px solid #e8e8e8;
+#proCat1{}
+#proCat1 a{}
+/* 이미지 업로드 */
+.inputImg{
 }
 .inputImg label {
-	width:75%;
-	height:10%;
-  	display: inline-block;
-  	font-size:1.5em;
-  	color: #fff;
-  	
-  	
-  	vertical-align: middle;
-  	background-color: #e8e8e8;
- 	cursor: pointer;
-  	
-  	
-  	-webkit-transition: background-color 0.2s;
-  	transition: background-color 0.2s;
+	text-align: center;
+	width: 340px;
+	height: 35px;
+	line-height: 35px;
+	background-color: #ddd;
+	font-weight: bold;
+	letter-spacing: 6px;
+	cursor: pointer;
+	transition: background-color 0.2s;
+	margin: 0 auto 10px;
 }
 
 .inputImg label:hover {
@@ -116,25 +102,221 @@
   border: 0;
 }
 #loadImg,#loadImg2{
-	width:75%;
-	height:90%;
+	width: 350px;
+	height: 250px;
 }
-
 input{font-size:1.5em}
 
-#preview a{font-size:2em}
-#preview a:hover{color:#4dffc3}
 #preview{
-	position: absolute;
-	right: -60px;
-	bottom: 580px;
+	position: fixed;
 	z-index: 5;
-	transition: 1s ease all;
-}
-#preview{
+	top: 230px;
 	right: 70px;
+	padding: 20px;
+	border-radius: 45px;
+	width: 150px;
+	background: #fff9f2f5;
 	transition: 1s ease all;
 	font-size:1.5em;
 }
+#preview a{
+	display: inline-block;
+	font-size: 1.4em;
+	padding-bottom: 10px;
+	text-align: center;
+	width: 100%;
+}
+#preview a:hover{
+	color:red
+}
+#preview span{
+	font-family: 'nanumR';
+	font-size: 11pt;
+	color: #232323;
+}
+#preview strong{
+	color:red;
+	font-weight: bold;
+}
+
+#proTitle li{
+	border-bottom: 1px solid #ddd;
+	overflow: hidden;
+	padding: 0px 1% 20px;
+	margin-bottom: 20px;
+}
+#proTitle li div{
+	display: inline-block;
+	vertical-align: top;
+}
+#proTitle li div:first-child{
+	width: 25%;
+}
+#proTitle li div:first-child > *{
+	display: block;
+}
+#proTitle li div:first-child strong{
+	font-size: 21pt;
+	color: #021044d9;
+	margin-bottom: 5px;
+}
+#proTitle li div:first-child span{
+	font-size: 10pt;
+	font-family: 'nanumR';
+	font-weight: bold;
+}
+#proTitle li div:last-child{
+	width: 57%;
+	/* margin: 10px 0 10px 5%; */
+}
+#proTitle li div:last-child > *{
+	border: 1px solid #ddd;
+	display: inline-block;
+	padding: 0 5px;
+	font-family: 'nanumR';
+	font-size: 12pt;
+	color:#666;
+	border-radius: 5px;
+}
+#proTitle li div:last-child img{
+	padding: 0;
+}
+#proTitle li div:last-child input[type="text"]{
+	width: 100%;
+	height: 40px;
+	font-weight: bold;
+}
+#proTitle li div:last-child select{
+	border: 1px solid gray;
+	width: 50%;
+	height: 35px;
+	font-weight: bold;
+}
+#proTitle li div:last-child input[name="proGoal"]{
+	width: 50%;/*판매금액*/
+}
+div.won::after{
+	font-size: 17pt;
+	padding-left: 5px;
+	color: #4a4a4a;
+}
 
 
+/*    스토리        */
+.guide-toggle{
+	color:red;
+	padding-top:10px;
+}
+.story #proTitle li div:last-child{
+	width: 67%;
+}
+#proTitle li div:last-child input[name="proTitle"]{
+	width: 73%;
+	padding: 0 2%;
+}
+#proTitle li div:last-child #titleBtn{
+	width: 20%;
+	margin-left: 2%;
+	height: 40px;
+	font-weight: bold;
+}
+#proTitle li div iframe {
+	margin-top:10px;
+	height: 300px;
+}
+#proTitle li.row-block div:first-child,
+#proTitle li.row-block div:last-child{
+	display: block;
+	width:100%;
+}
+#proTitle li.row-block div:first-child{
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+#proTitle li.row-block div:first-child > *{
+	/* float: left; */
+}
+#proTitle li.row-block div strong{
+	
+width: 25%;
+}
+#proTitle li.row-block div:first-child span{
+	
+line-height: 40px;
+}
+#proTitle li.row-block div #cke_content *{
+	margin:0
+}
+#proTitle li.row-block div:last-child{
+	margin:0;
+	border:none;
+}
+#proTitle li.row-block div:last-child #cke_content{
+	border:none;
+}
+#proTitle li.row-block div:last-child #cke_content #cke_1_contents{
+	width: 98%;
+}
+#proTitle li div:last-child textarea {
+	width: 100%;
+	height: 300px;
+}
+
+
+/*  inputItem   */
+#proTitle .input-item div:last-child,
+#proTitle div:last-child .tableDiv{
+	
+width: 67%;
+	
+margin-left: 5%;
+}
+#proTitle .input-item div:last-child ul{
+	width: 100%;
+	padding: 0;
+}
+#proTitle .input-item div:last-child ul li{
+	border-bottom: 1px solid #ddd;
+	padding: 15px 10px;
+	margin-bottom:15px;
+}
+#proTitle .input-item div:last-child div:first-child {
+	
+padding-left: 2%;
+	
+width: 15%;
+	
+line-height: 40px;
+	
+font-weight: bold;
+}
+#proTitle .input-item div:last-child input[name="itemPrice"],
+#proTitle .input-item div:last-child input[name="limitCnt"]{
+	width: 50%;
+}
+#proTitle .input-item div:last-child .cnt-txt::after,
+#proTitle .input-item div:last-child .won::after{
+	font-size: 14pt;
+	padding-left: 5px;
+	font-weight: bold;
+	color: #4a4a4a;
+}
+#proTitle .input-item div:last-child ul li.itemSave{
+	border:1px solid red;
+	padding: 0;
+}
+{
+	
+}
+#proTitle table{
+	width: 100%;
+}
+table tr td{
+	border:1px solid red;
+}
+
+
+
+
+
+ 	

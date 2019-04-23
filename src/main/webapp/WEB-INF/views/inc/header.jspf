@@ -117,6 +117,6 @@
 	</c:if>
 	<!-- 마이페이지 Div -->
 	<!-- 스크롤 컨트롤러 -->
-	<button class="top-controller">맨위로</button>
+	<button class="top-controller"><span>맨위로</span></button>
 </div>
 </header>

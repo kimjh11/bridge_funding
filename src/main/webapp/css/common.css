@@ -355,16 +355,29 @@ header .top-login li.log-ok{
 
 header .top-controller{
 	position: fixed;
-	right: -60px;
+	right: -100px;
 	bottom: 50px;
 	z-index: 50;
 	transition: 1s ease all;
+	transform: rotate(180deg);
+	background: url('../img/common/arrow.png') no-repeat;
+	background-position-y: bottom;
+	background-position-x: center;
+	background-size: 60%;
+	border: 1px solid pink;
+	background-color: white;
+	width: 70px;
+	height: 70px;
 }
 header .top-controller.show{
 	right: 50px;
 	transition: 1s ease all;
 }
-
+header .top-controller span{
+	transform: rotate(180deg);
+	display: inline-block;
+	padding-top: 30px;
+}
 /* 로그인 & 로그아웃 */
 #top-etc .top-login li{
 	margin: 0 15px 0 0;
@@ -379,6 +392,7 @@ header .top-controller.show{
 	vertical-align: top;
 	font-size: 13pt;
 	width: 100%;
+	border-radius: 6px;
 }
 
 /* 로그인 전 버튼 (로그인/회원가입) */
@@ -387,9 +401,8 @@ header .top-controller.show{
 }
 
 /* 내펀딩오픈하기 */
-#top-etc .top-login li.funding-open-btn{
-	border: 1px solid #ddd;
-	margin-left: 0;
+#top-etc .top-login li.funding-open-btn a{
+	transition: 0.5s ease all;
 	border-radius: 6px;
 	background-color: #021044;
 	position: absolute;
@@ -398,14 +411,13 @@ header .top-controller.show{
 	width: 50%;
 	min-width: 140px;
 	height: 30px;
-}
-#top-etc .top-login li.funding-open-btn a{
-	transition: 0.5s ease all;
+	margin-right: 7%;
 }
 #top-etc .top-login li.funding-open-btn a:hover{
 	background-color: #fff;
 	font-weight: normal;
-	color:#666
+	color:#666;
+	border:1px solid #ddd;
 }
 header .top-login li.funding-open-btn a{
 	color:white;
@@ -589,8 +601,18 @@ header .admin-header-wrap .top-menubar li a{
 header .admin-header-wrap .top-menubar li:hover a{
 	color:#2f407e;
 }
-
-
+.admin-header-wrap .top-login{
+	padding: 0;
+	position: static;
+}
+.admin-header-wrap #top-etc .top-login li{
+	float: none;
+	display: inline-block;
+	width: 20%;
+}
+.admin-header-wrap #top-etc .top-login li a{
+	line-height: 70px;
+}
 
 
 

@@ -1,0 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<div id="preview">
+	<a href="/bridge/preview?proCode=${vo.proCode }">미리보기</a><br/>
+	<span>입력한 정보를 미리보기를 통하여 보실수 있습니다.<br/>입력한 정보를 <strong>저장 후</strong>에 미리보기를 눌러주세요.</span>
+</div>

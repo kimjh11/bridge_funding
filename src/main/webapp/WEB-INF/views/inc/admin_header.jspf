@@ -5,8 +5,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="styleSheet" href="<%=request.getContextPath() %>/css/common.css"/>
-<!-- 로그인 커스텀 CSS -->
-<link rel="styleSheet" href="<%=request.getContextPath() %>/css/login.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="<%=request.getContextPath() %>/js/common.js"></script>
 <!-- 로그인  -->
@@ -54,21 +52,19 @@
 					<li><a href="<%=request.getContextPath()%>/adminReward">리워드관리</a></li>
 					<li><a href="<%=request.getContextPath()%>/adminBanner">배너관리</a></li>
 					<li><a href="<%=request.getContextPath()%>/adminCategory">카테고리관리</a></li>
+					<!-- 로그인/로그아웃 -->
+					<li id="top-etc">
+						<ul class="top-login">
+							<!-- 로그인 후 -->
+							<c:if test="${adminloginCheck == 'Y' }">
+								<li id="adminIdsession" >${adminId}</li>
+								<li ><a href="/bridge/adminlogout">로그아웃</a></li>
+							</c:if>
+						</ul>
+					</li>
 				</c:if>
 			</ul>
 		</nav>
-
-		<!-- 로그인/로그아웃 -->
-		<div id="top-etc">
-			<ul class="top-login">
-				<!-- 로그인 후 -->
-				<c:if test="${adminloginCheck == 'Y' }">
-					<li id="adminIdsession" >${adminId}</li>
-					<li ><a href="/bridge/adminlogout">로그아웃</a></li>
-				</c:if>
-			</ul>
-		</div>
-		
 		<!-- 스크롤 컨트롤러 -->
 		<button class="top-controller">맨위로</button>
 	</div>
