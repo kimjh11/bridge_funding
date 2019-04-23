@@ -1,72 +1,37 @@
-
+@charset "UTF-8";
 .wrap{
-	width:80%; 
-	margin: 0 auto;
-	margin-top: 115px;
+	width:80%;
+	margin: 100px auto;
 }
-
-.join-text{
-	width: 62%;
-    height: 40px;
-	border-radius: 5px 5px 5px 5px;	
-	border: 1px solid gray;
-	padding-left: 5px;
-} 
-
-.join-btn{
-	width: 345px;
-	height: 40px;
-	border-radius: 5px 5px 5px 5px;	
-	margin-left: 125px;
-    border: 1px solid;
-    background: #021044;
-    color: white;
+#join-center input.join-btn{
+	background: #021044;
+	color: white;
+	width: 69%;
+	font-family: 'yaReg';
+	font-size: 15pt;
 }
-
 .join-div{
 	margin-bottom: 25px;
-	font-size: 1.5em;
 }
-
 #warning-id, #email-ok-label{
-	margin-left: 128px;
-    font-size: 1.2em;
-    color: red;
+	color: red;
 }
 
 #join-h1{
-	margin-left: 130px; 
 	margin-bottom: 35px;
 	font-size: 4em;
+	width: 100%;
+	text-align: center;
 }
-
-#text-div{
-	margin-left: 127px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-size: 1.3em;
+.join-div label{
+	font-size: 1.4em;
+	margin: 10px 0 10px 35%;
+	display: inherit;
 }
-
 #user-email{
 	margin-left: 85px;
 	padding-left: 5px;
 }
-
-#user-name{
-	margin-left: 100px;
-	padding-left: 5px;
-}
-
-#user-pwd{
-	margin-left: 79px;
-	padding-left: 5px;
-}
-
-#user-pwdchk{
-	margin-left: 53px;
-	padding-left: 5px;
-}
-
 #ok-number{
 	width: 62%;
     height: 40px;
@@ -76,9 +41,27 @@
     margin-bottom: 10px;
     padding-left: 5px;
 }
-
 #join-center{
 	margin: 0 auto;
-	width: 45%;
+	width: 40%;
 }
-
+#join-center input{
+	width: 64%;
+	padding: 0 2%;
+	margin: 0;
+	height: 40px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	float: right;
+}
+#join-center .join-div span{
+	display: inline-block;
+	width: 25%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18pt;
+	text-align: left;
+}
+#join-center .join-div{
+	overflow: hidden;
+}

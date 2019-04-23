@@ -61,7 +61,8 @@ button{
 	color:#555;
 }
 button:hover,
-input[type=button]:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
 .hover-pointer{
 	cursor: pointer;
 }
@@ -292,24 +293,24 @@ header .top-logo h1 a{
 }
 header .top-menubar{
 	display: inline-block;
-	width: 65%;
+	width: 75%;
 	position: absolute;
 }
 header .top-menubar ul li{
-	width: 25%;
+	width: 18%;
 	font-size: 18pt;
 	text-align: center;
 	line-height: 70px;
 	margin-top: 10px;
 }
-header .top-menubar ul li:hover a{
+header .top-menubar ul li:last-child{
+}
+header .top-menubar .menu-title:hover a{
     color:#021044;
     font-weight: bold;
 }
 header #top-etc{
-	position:absolute;
-	top: 5px;
-	right: 5%;
+    width: 25%;
 }
 .project-search{
 	width:20px;
@@ -340,8 +341,8 @@ header #top-etc{
 	border:none;
 }
 header .top-login{
-	font-size: 13pt;
-	float: right;
+	position: relative;
+	padding-right: 55px;
 }
 header .top-login li{
 	float:left;
@@ -351,19 +352,7 @@ header .top-login li{
 header .top-login li.log-ok{
 	display: none;
 }
-header .top-login li.funding-open-btn{
-	position: absolute;
-	top: 30px;
-	right: 70px;/* 준호 수정한 부분 */
-	border: 1px solid #ddd;
-	padding: 3px 10px;
-	margin-left: 0;
-	border-radius: 6px;
-	background-color: #021044;
-}
-header .top-login li.funding-open-btn a{
-	color:white;
-}
+
 header .top-controller{
 	position: fixed;
 	right: -60px;
@@ -375,6 +364,217 @@ header .top-controller.show{
 	right: 50px;
 	transition: 1s ease all;
 }
+
+/* 로그인 & 로그아웃 */
+#top-etc .top-login li{
+	margin: 0 15px 0 0;
+	height: 70px;
+	float: right;
+	width: fit-content;
+}
+#top-etc .top-login li a{
+	line-height: 30px;
+	height: 30px;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 13pt;
+	width: 100%;
+}
+
+/* 로그인 전 버튼 (로그인/회원가입) */
+#top-etc .top-login li a.non-log{
+	line-height: 60px;
+}
+
+/* 내펀딩오픈하기 */
+#top-etc .top-login li.funding-open-btn{
+	border: 1px solid #ddd;
+	margin-left: 0;
+	border-radius: 6px;
+	background-color: #021044;
+	position: absolute;
+	top: 30px;
+	right: 40px;
+	width: 50%;
+	min-width: 140px;
+	height: 30px;
+}
+#top-etc .top-login li.funding-open-btn a{
+	transition: 0.5s ease all;
+}
+#top-etc .top-login li.funding-open-btn a:hover{
+	background-color: #fff;
+	font-weight: normal;
+	color:#666
+}
+header .top-login li.funding-open-btn a{
+	color:white;
+}
+
+/* 로그인 상자 */
+#login-div{
+	border: 1px solid gray;
+	border-radius: 20px;
+	width: 265px;
+	height: 335px;
+	padding: 20px;
+	position: absolute;
+	right: 15px;
+	margin-top: -20px;
+	background: white;
+	z-index: 8;
+}
+
+#login-h2{
+	font-size: 4em;
+} 
+
+#login-user-mail, #login-user-pwd{
+	width: 95%;
+    height: 30px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid gray;
+    margin-top: 20px;
+    padding-left: 5px;
+}
+
+#login-btn{
+	width: 120px;
+    height: 40px;
+	border-radius: 5px 5px 5px 5px;	
+	border: 1px solid gray;
+	margin-top: 20px;
+    margin-bottom: 15px;
+    background: #021044;
+    color: white;
+    margin-left: 75px;
+}
+
+#login-text{
+	text-align: center;
+	font-size: 1.2em;
+}
+#login-text a:hover{
+	font-weight: normal;
+	text-decoration: underline;
+	color: orange;
+}
+#login-warning{
+	color: red;
+	font-size: 1.2em;
+}
+
+#adminlogin{
+	color: white;
+	cursor: pointer;
+}
+
+#adminlogin-div{
+	width: 25%;
+    height: 500px;
+    border: 1px solid;
+    border-radius: 5px 5px 5px 5px;
+    margin: 0 auto;
+    margin-top: 7%;
+}
+#admin-div{
+	text-align: center;
+    padding: 5%;
+}
+#adminlogin-h2{
+	font-size: 4em;
+	margin-top: 15%;
+    margin-bottom: 15px;
+}
+#adminlogin-user-mail{
+	width: 70%;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 5px 5px 5px 5px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+#adminlogin-user-pwd{
+	width: 70%;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 5px 5px 5px 5px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+#adminlogin-btn{
+	width: 75%;
+    height: 45px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid gray;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    background: #021044;
+    color: white;
+}
+#adminIdsession{
+	color: white;
+}
+
+.admin-header{
+	color:white;
+}
+
+
+
+/* 마이페이지 myinfo */
+#mypage-Div{
+	border: 1px solid #999;
+	border-radius: 10px;
+	width: 260px;
+	height: 270px;
+	position: absolute;
+	top: 75px;
+	right: 3%;
+	z-index: 8;
+	background: white;
+}
+#mypage-Div h2{
+	font-size: 2.3em;
+	margin: 5px 30px;
+	font-weight: 100;
+}
+#mypage-Div ul li{
+	float: none;
+}
+#mypage-Div ul li h3{
+	font-size: 1.5em;
+	padding: 5px 30px;
+	border-top: 1px solid #d0d0d0;
+	border-bottom: 1px solid #d0d0d0;
+	font-weight: normal;
+	background: #f1e5e0;
+}
+#mypage-Div ul li a{
+	font-size: 1.3em;
+	padding-left: 20%;
+	width: 80%;
+	padding-bottom: 5px;
+	display: inline-block;
+}
+#mypage-Div ul li a:first-child{
+	padding-top:5px;
+}
+#mypage-Div ul li a:hover{
+	background: #ddd;
+	font-weight: normal;
+}
+#header-img{
+	width: 40px;
+	height: 40px;
+	border-radius: 100px;
+	cursor: pointer;
+	position: absolute;
+	top: 10px;
+	right: 0;
+}
+
+
 
 
 /*////////// admin-header //////////*/

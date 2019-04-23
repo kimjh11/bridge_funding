@@ -64,7 +64,7 @@ $(function(){
 			data:param,
 			success:function(result){
 				if(result == 'success'){
-					$("#warning").html("인증이 완료 되었습니다.새 비밀번호로 변경해 주세요 :)");
+					$("#warning").html("인증이 완료 되었습니다.<br/>새 비밀번호로 변경해 주세요 :)");
 					$("#user-pwd").attr('disabled',false);
 					$("#user-pwdchk").attr('disabled',false);
 					$("#ok-number").attr('type','hidden');
@@ -84,7 +84,7 @@ $(function(){
 	
 	//비밀번호 변경 모든 값 입력시 넘어가게, 비밀번호 확인 검사
 	$("#pwd-btn").click(function(){
-		alert("////");
+		//alert("////");
 		var usermail = $("#user-mail-pwd").val();
 		var userpwd = $("#user-pwd").val();
 		var userpwdchk = $("#user-pwdchk").val();

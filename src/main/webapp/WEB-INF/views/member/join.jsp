@@ -19,8 +19,9 @@
 			<!-- =================이메일 인증======================== -->
 			<form method="post" action="/bridge/insertMember" id="frm">
 				<div class="join-div">
-					이메일  <input type="text" id="user-email" name="userMail" class="join-text" placeholder="ex)aaaa@naver.com"/> 		
-					<div id="text-div"> 위 이메일로 인증번호가 발송됩니다. </div>
+					<span>이메일</span>
+					<input type="text" id="user-email" name="userMail" class="join-text" placeholder="ex)aaaa@naver.com"/> 		
+					<label id="text-div"> 위 이메일로 인증번호가 발송됩니다. </label>
 					<label id="warning-id"></label>
 				</div>
 				<div>
@@ -42,13 +43,16 @@
 			<!-- ===================이름, 비밀번호======================  -->
 			
 				<div class="join-div">
-					이름  <input type="text" id="user-name" name="userName"  class="join-text" placeholder="ex)홍길동" disabled/>
+					<span>이름</span>
+					<input type="text" id="user-name" name="userName"  class="join-text" placeholder="ex)홍길동" disabled/>
 				</div>
 				<div class="join-div">
-					비밀번호  <input type="password" id="user-pwd" name="userPwd"  class="join-text" disabled/>
+					<span>비밀번호</span>
+					<input type="password" id="user-pwd" name="userPwd"  class="join-text" disabled/>
 				</div>
 				<div class="join-div">
-					비밀번호 확인  <input type="password" id="user-pwdchk" name="userPwdChk"  class="join-text" disabled/>
+					<span>비밀번호 확인</span>
+					<input type="password" id="user-pwdchk" name="userPwdChk"  class="join-text" disabled/>
 				</div>
 				<div class="join-div">
 					<input type="submit" value="가입하기" id="join" class="join-btn"/>
