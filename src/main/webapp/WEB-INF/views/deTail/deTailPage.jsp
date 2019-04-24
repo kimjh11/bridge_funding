@@ -15,7 +15,7 @@
 <div class="wrap">
 <div id="border">
 	<div id="topback">
-		<img src="<%=request.getContextPath() %>/upload/${vo.proImg }"/>
+		<img src="<%=request.getContextPath() %>/ckstorage/${vo.proImg }"/>
 	</div>
 </div>
 	<div id="topTap"> <!-- 맨위 타이틀 div -->
@@ -35,12 +35,12 @@
 
 	<div id="left" class="marginleft">
 		<div id="thumbnail"> <!-- 타이틀로 걸어 놓은 이미지나 동영상 -->
-			${vo.proTitle }
+			<iframe id="myFrame" width="100%" height="100%" src="${vo.proTitle }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 		<div id="company"> <!-- 프로젝트를 발행한 회사정보 -->
 				<div id="comimg">
 					<p>회사정보</p>
-					<img src="<%=request.getContextPath() %>/upload/${vo.comImg}"/>
+					<img src="<%=request.getContextPath() %>/ckstorage/${vo.comImg}"/>
 				</div>
 			<div id="comTitle">
 				<div id="line"> 

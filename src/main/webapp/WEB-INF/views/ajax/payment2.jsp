@@ -10,7 +10,7 @@
 		<div><span id="ex">예시*)</span> <%-- <img src="<%=request.getContextPath()%>/upload/${img}"/> <span>${userMail}</span>님이 <span>${vo.itemPrice} , ${vo.selectCount}원 펀딩</span>으로 참여하셨습니다. --%>
 				<div class="OneSpter">
 					<div class="Img">
-						<img src="<%=request.getContextPath() %>/upload/${img}"/>
+						<img src="<%=request.getContextPath() %>/upload/${img}" onerror="this.src='<%=request.getContextPath() %>/img/profile/user.png'"/>
 					</div>
 					<div class="Spter">
 						${userMail}님이 ${vo.itemPrice * vo.selectCount}원 펀딩으로 참여하셨습니다.<br/>

@@ -65,7 +65,7 @@
 					<!-- 로그인 후 -->
 					<c:if test="${logStatus == 'Y' }">
 						<li><a href="/bridge/logout">로그아웃</a></li>
-						<li><a href="/bridge/mypageForm">마이페이지</a></li>
+						<li><a href="/bridge/mypageForm?menu=my">마이페이지</a></li>
 						<!-- 이미지 -->
 						<li><img id="header-img" src="/bridge/upload/${img}"
 							onerror="this.src='<%=request.getContextPath() %>/img/profile/user.png'" /></li>

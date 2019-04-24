@@ -113,9 +113,9 @@ public class MypageController {
 		
 		ModelAndView mav = new ModelAndView();
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("img", vo.getUserImg()); //技记 历厘
-		System.out.println("img="+vo.getUserImg());
+		//HttpSession session = request.getSession();
+		//session.setAttribute("img", vo.getUserImg()); //技记 历厘
+		//System.out.println("img="+vo.getUserImg());
 		
 		mav.addObject("vo", vo);
 		mav.setViewName("/mypage/profile");
