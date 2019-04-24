@@ -367,7 +367,7 @@ public class ProjectController {
 		System.out.println("메일:"+vo.getUserMail());
 		System.out.println("프로젝트코드:"+vo.getProCode());
 		System.out.println("프로젝트번호:"+vo.getProNum());
-		
+		int cnt = dao.saveProOk(vo);
 		dao.endProject(vo);
 		
 		mav.setViewName("home");

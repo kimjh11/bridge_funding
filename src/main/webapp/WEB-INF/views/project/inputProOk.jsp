@@ -5,11 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<<title>Bridge</title>
-
+<title>Bridge</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/common.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/inputProject.css"/>
-<%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/inputProOk.css"/> --%>
 <script>
 $(function(){
 	$(document).ready(function(){
@@ -25,7 +23,7 @@ $(function(){
 	<%@include file="projectTitle.jspf"%>
 	<!-- 미리보기 이용탭 -->
 	<%@ include file="preview_nav.jspf" %>
-	<div id="proBody">
+	<div id="proBody" class="pro-ok">
 		<form action="/bridge/saveProOk" id="frm" method="get">
 			<input type="hidden" name="userMail" value="${userMail }"/>
 			<input type="hidden" name="proCode" value="${proCode }"/>
@@ -38,8 +36,9 @@ $(function(){
 					</div>
 					<div>
 						<input type="radio" name="proWait" value="0" <c:if test="${vo.proWait == 0 }">checked</c:if>/>
-						<span class="ex2">오픈예정 미신청<br/>
-							<span class="ex3">오픈예정 미신청 시 검토요청 승인이후 1일 지나 바로 해당 카테고리에 노출 됩니다.</span>
+						<span class="ex2">
+							<strong>오픈예정 미신청</strong><br/>
+							오픈예정 미신청 시 검토요청 승인이후 1일 지나 바로 해당 카테고리에 노출 됩니다.
 						</span>
 					</div>
 				</li>
@@ -51,23 +50,21 @@ $(function(){
 					<div>
 						<input type="radio" name="proWait" value="7" <c:if test="${vo.proWait == 7 }">checked</c:if>/>
 						<span class="ex2">
-							오픈예정 신청<br/>
-							<span class="ex3">검토승인일 부터 7일간 오픈예정 카테고리에 상품이 노출 됩니다.<br/>
-							ex) 승인일 1/1일 경우 1/2일부터 1/8일까지 오픈예정 카테고리에 노출 1/9일 해당 카테고리 페이지에 노출.</span>
+							<strong>오픈예정 신청</strong><br/>
+							검토승인일 부터 7일간 오픈예정 카테고리에 상품이 노출 됩니다.<br/>
+							ex) 승인일 1/1일 경우 1/2일부터 1/8일까지 오픈예정 카테고리에 노출 1/9일 해당 카테고리 페이지에 노출.
 						</span>
 					</div>
 				</li>
 			</ul>
-			<div class="row2_1">
-				<span class="ex2">
-					펀딩 오픈 수수료는 10%(VAT별도)입니다.<br/>
-					<input type="checkbox"id="agree"/>
-					<span class="ex3">
-						브릿지(BRIDGE)의 수수료 정책을 확인 했으며, 이에 동의 합니다.
-					</span>
-				</span>
+			<div class="last-check">
+				<input type="checkbox"id="agree"/>
+				<div>
+					<strong>펀딩 오픈 수수료는 10%(VAT별도)입니다.</strong><br/>
+					<span class="ex3">브릿지(BRIDGE)의 수수료 정책을 확인 했으며, 이에 동의 합니다.</span>
+				</div>
+
 			</div>
-			<div class="saveNext"><a href="#"onclick="document.getElementById('frm').submit();">저장하기</a></div>
 			<div class="saveNext" style="border-bottom:1px solid #666"><a href="javascript:check();">검토요청</a></div>
 		</form>		
 	</div>			

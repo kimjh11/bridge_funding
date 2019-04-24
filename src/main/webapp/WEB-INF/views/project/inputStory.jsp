@@ -12,14 +12,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
 <script>
 $(function(){
-	$("#titleBtn").click(function(){
-		var url = $("#proTitle").val();
-		alert("정상적인 url 주소인지 체크 합니다.\n"+url);
-		$("#myFrame").attr("src",url);
-	});
 	$(document).ready(function(){
 		$('#proCategory div a').removeClass('on');
 		$('#proCat2 a').addClass('on');
+		
+		$("#titleBtn").click(function(){
+			var url = $("#proUrl").val();
+			console.log($("#proTitle"));
+			alert("정상적인 url 주소인지 체크 합니다.\n"+url);
+			$("#myFrame").attr("src",url);
+		});
 	});
 	
 });
@@ -45,7 +47,7 @@ $(function(){
 						<span class="guide-toggle hover-pointer">동영상 업로드팁!</span>
 					</div>
 					<div>
-						<input type="text" name="proTitle" id="proTitle" value="${vo.proTitle }" placeholder="url을 입력해 주세요"/><input type="button" value="urlCheck" id="titleBtn"/>
+						<input type="text" name="proTitle" id="proUrl" value="${vo.proTitle }" placeholder="url을 입력해 주세요"/><input type="button" value="urlCheck" id="titleBtn"/>
 						<iframe id="myFrame" width="100%" height="80%" src="${vo.proTitle }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 				</li>

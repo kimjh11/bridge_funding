@@ -368,9 +368,10 @@ header .top-controller{
 	background-color: white;
 	width: 70px;
 	height: 70px;
+	font-weight: bold;
 }
 header .top-controller.show{
-	right: 50px;
+	right: 120px;
 	transition: 1s ease all;
 }
 header .top-controller span{

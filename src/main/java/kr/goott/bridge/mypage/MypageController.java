@@ -40,9 +40,13 @@ public class MypageController {
 										  @RequestParam("addr") String addr,
 										  @RequestParam("addrdetail") String addrdetail,
 										  @RequestParam("userMail") String userMail,
+										  @RequestParam("menu") String menu,
 										  HttpServletRequest request) {
 			
 			ModelAndView mav = new ModelAndView();
+			
+			//
+			HttpSession session = request.getSession();
 			
 			//업로드할 절대 경로
 			folder = request.getSession().getServletContext().getRealPath("/upload");
@@ -69,9 +73,10 @@ public class MypageController {
 			MemberVO vo = new MemberVO();
 			
 			if(img == null || img.equals("")) {
-				vo.setUserImg(null);
+				//vo.setUserImg(null);
+				vo.setUserImg((String)session.getAttribute("img"));//원래 이미지 출력
 			}else {
-				vo.setUserImg(img);
+				vo.setUserImg(img);//변경 이미지 출력
 			}
 			
 			System.out.println("img1="+vo.getUserImg());
@@ -88,8 +93,10 @@ public class MypageController {
 			int cnt = dao.updatePro(vo);
 			
 			if(cnt>0) {
-				//mav.addObject("img", vo.getUserImg());
 				
+				session.setAttribute("img", vo.getUserImg());//
+				mav.addObject("menu", menu);
+				//mav.addObject("img", vo.getUserImg());
 				mav.setViewName("redirect:mypageForm");
 			}else {
 				mav.setViewName("redirect:profileForm");
@@ -122,6 +129,7 @@ public class MypageController {
 								 @RequestParam("cardName") String cardName,
 								 @RequestParam("cardPwd") String cardPwd,
 								 @RequestParam("userMail") String userMail,
+								 @RequestParam("menu") String menu,
 								 HttpServletRequest request){
 		
 		ModelAndView mav = new ModelAndView();
@@ -141,6 +149,7 @@ public class MypageController {
 		int cnt = dao.updateCardInfo(vo);
 		
 		if(cnt>0) {
+			mav.addObject("menu", menu);
 			mav.setViewName("redirect:mypageForm");
 		}else {
 			mav.setViewName("redirect:mypageForm");

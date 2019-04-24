@@ -369,8 +369,8 @@ $(function(){
 		
 	}else if(menu == "make"){
 		
-		$("#mypage-starting").trigger("click");
-		
+		//$("#mypage-starting").trigger("click");
+		$("#mypage-cr").trigger("click");
 	}
 	
 });

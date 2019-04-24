@@ -131,7 +131,7 @@
 					</script>
 					<!-- ==========================다음 API 연동 end ============================= -->	
 					
-					<a href="/bridge/mypageForm"><input type="button" value="취소" id="cancel-btn"/></a>
+					<a href="/bridge/mypageForm?menu=${menu}"><input type="button" value="취소" id="cancel-btn"/></a>
 					<input  type="submit" value="확인" id="ok-btn"/>
 				</form>
 			</div>

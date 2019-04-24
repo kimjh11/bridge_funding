@@ -23,7 +23,7 @@ $(function(){
 	<%@include file="projectTitle.jspf"%>
 	<!-- 미리보기 이용탭 -->
 	<%@ include file="preview_nav.jspf" %>
-	<div id="proBody">
+	<div id="proBody" class="pro-item">
 		<form action="/bridge/saveItem" id="frm" method="get">
 			<input type="hidden" name="userMail" value="${userMail }"/>
 			<input type="hidden" name="proCode" value="${proCode }"/>	
@@ -44,9 +44,8 @@ $(function(){
 							<li>
 								<div>상세설명</div>
 								<div>
-									<textarea style="resize:none" name="itemContent" id="itemContent"  placeholder="제공하는 리워드가 무엇인지 간략하게 써주세요.
-									ex) 1.구성품(백팩+레인커버+파우치)
-									ex) 2.트래블 백팩 2개"></textarea>
+									<textarea style="resize:none" name="itemContent" id="itemContent"  
+									placeholder="제공하는 리워드가 무엇인지 간략하게 써주세요.&#13;&#10;&#13;&#10;ex) 1.구성품(백팩+레인커버+파우치)&#13;&#10;ex) 2.트래블 백팩 2개"></textarea>
 								</div>
 							</li>
 							<li>
@@ -63,13 +62,13 @@ $(function(){
 									<input type="text" name="itemPrice" class="data data2" placeholder="ex)&nbsp;&nbsp;26500"/>
 								</div>
 							</li>
-							<li>
+							<li class="bottom-none">
 								<div>제한수량</div>
 								<div class="cnt-txt">
 									<input type="text" name="limitCnt" class="data data2" placeholder="ex)&nbsp;&nbsp;300"/>
 								</div>
 							</li>
-							<li class="saveNext itemSave">
+							<li class="saveNext itemSave battom-none">
 								<a href="#" onclick="document.getElementById('frm').submit();">상품 임시저장</a>
 							</li>
 						</ul>
@@ -78,31 +77,31 @@ $(function(){
 				<li>
 					<div>
 						<strong>등록상품 미리보기</strong>
-						<span class="ex3">입력한 리워드(상품)정보 입니다. 삭제버튼 클릭시 저장한 정보가 지워집니다.</span>
+						<span class="ex3">입력한 리워드(상품)정보 입니다.<br/>삭제버튼 클릭시 저장한 정보가 지워집니다.</span>
 					</div>
-					<div class="tableDiv">
+					<div class="tableDiv" id="rewardList">
 						<table>
 							<thead>
 								<tr>
-									<td class="td1">상품순위</td>
-									<td class="td2">상품명</td>
-									<td class="td3">상세설명</td>
-									<td class="td4">세부옵션</td>
-									<td class="td5">상품금액</td>
-									<td class="td6">제한수량</td>
-									<td class="td7">삭제</td>
+									<td class="col1">NO</td><!-- 0.5 -->
+									<td class="col3">상품명</td><!-- 2.5  -->
+									<td class="col2">상세설명</td><!-- 2 -->
+									<td class="col2">세부옵션</td><!-- 2 -->
+									<td class="col2">상품금액</td><!-- 2 -->
+									<td class="col1">수량</td><!-- 0.5 -->
+									<td class="col1">삭제</td><!-- 0.5 -->
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="vo" items="${list }">
 									<tr>
-										<td class="td1">${vo.itemRank}</td>
-										<td class="td2">${vo.itemName }</td>
-										<td class="td3">${vo.itemContent }</td>
-										<td class="td4">${vo.itemOption }</td>
-										<td class="td5">${vo.itemPrice }</td>
-										<td class="td6">${vo.limitCnt }</td>
-										<td class="td7"><a href="/bridge/delItem?userMail=${vo.userMail }&proCode=${vo.proCode }&itemRank=${vo.itemRank }">x</a></td>
+										<td class="col1">${vo.itemRank}</td>
+										<td class="col3">${vo.itemName }</td>
+										<td class="col2">${vo.itemContent }</td>
+										<td class="col2">${vo.itemOption }</td>
+										<td class="col2">${vo.itemPrice }</td>
+										<td class="col1">${vo.limitCnt }</td>
+										<td class="col1"><a href="/bridge/delItem?userMail=${vo.userMail }&proCode=${vo.proCode }&itemRank=${vo.itemRank }">X</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>

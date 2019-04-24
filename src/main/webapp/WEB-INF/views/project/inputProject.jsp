@@ -25,7 +25,7 @@ $(function(){
 	<%@include file="projectTitle.jspf"%>
 	<!-- 미리보기 이용탭 -->
 	<%@ include file="preview_nav.jspf" %>
-	<div id="proBody">
+	<div id="proBody" class="project">
 		<form action="/bridge/savePro" name="frm" id="frm" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="userMail" value="${userMail }"/>
 			<input type="hidden" name="proCode" value="${vo.proCode }"/>
