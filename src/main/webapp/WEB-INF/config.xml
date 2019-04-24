@@ -17,7 +17,7 @@
 	Configure the location of uploaded files. See the following article for more details:
 	http://docs.cksource.com/CKFinder_2.x/Developers_Guide/Java/Configuration/baseURL_and_baseDir
 	-->
-	<baseDir>D:/workspaceSpring/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/Bridge/ckstorage</baseDir>
+	<baseDir>E:/workspaceSpring/.metadata/.plugins/org.eclipse.wst.server.core/tmp2/wtpwebapps/bridge_funding/ckstorage</baseDir>
 	<baseURL>/bridge/ckstorage/</baseURL>
 	<licenseKey></licenseKey>
 	<licenseName></licenseName>

@@ -4,7 +4,7 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.goott.bridge.project.ProjectDAOInterface">
 	<select id="selectCate" resultType="kr.goott.bridge.project.ProjectVO">
-		select * from category
+		select * from category where cateRank=0 or cateRank>1 order by cateRank 
 	</select>
 	<select id="selectItem" resultType="kr.goott.bridge.project.ItemVO">
 		select * from Item2 where userMail = #{param1} and proCode = #{param2}

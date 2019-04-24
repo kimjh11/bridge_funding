@@ -24,7 +24,7 @@
 					<label id="text-div"> 위 이메일로 인증번호가 발송됩니다. </label>
 					<label id="warning-id"></label>
 				</div>
-				<div>
+				<div class="join-div">
 					<!-- 작성한 인증번호 비교 -->
 					<input type="hidden" id="ok-number" placeholder="인증번호를 입력해 주세요 :)" />
 				</div>
