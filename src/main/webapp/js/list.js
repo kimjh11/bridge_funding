@@ -108,11 +108,13 @@ $(function(){
 					tag +=		'<!--리스트하단 -->';
 					tag +=		'<div class="list-content-bottom">';
 					tag +=		'<!--달성률그래프 -->';
+					tag +=		'${vo2.proGoalRate}';
 					tag +=		'<div class="bar-wrap ${page}">';
-					tag +=			'<c:if test="${vo2.proGoalRate >= 100}">';
-					tag +=				'<div class="goal-rate-bar" style="width:100%"></div></c:if>';
-					tag +=			'<c:if test="${vo2.proGoalRate < 100}">';
-					tag +=				'<div class="goal-rate-bar" style="width:${vo2.proGoalRate }%"></div></c:if>';
+					if(this['proGoalRate']>=100){
+						tag +='<div class="goal-rate-bar" style="width:100%"></div>';	
+					}else{
+						tag +='<div class="goal-rate-bar" style="width:'+this["proGoalRate"]+'%"></div>';
+					}
 					tag +=		'</div>';
 					tag +=		'<!-- 세부설명 -->';
 					tag +=		'<ul class="detail-info">';

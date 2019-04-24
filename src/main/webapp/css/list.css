@@ -165,7 +165,8 @@
 	color: #404040;
 }
 .project-view .like-btn{
-	background-color: pink;
+	background: url('../img/detail/like.png') no-repeat;
+	background-size:100%;
 	width: 30px;
 	height: 30px;
 	position: absolute;
@@ -174,6 +175,7 @@
 	font-size: 14pt;
 	text-align: center;
 	line-height: 30px;
+	color:#fff
 }
 .detail-info{
 	overflow: hidden;
@@ -227,7 +229,6 @@ input[name="likeCount"].logout{
 
 /* 오픈예정배너 */
 .commingsoon-banner a{
-	border:1px solid lime;
 	position: absolute;
 	top: 155px;
 	right: 100px;
@@ -237,5 +238,9 @@ input[name="likeCount"].logout{
 	border-radius: 90px;
 	text-align: center;
 	z-index: 1;
-	background: #ddd;
+	background: url('../img/reward/commingsoon.png') no-repeat;
+	background-size: 133%;
+	background-position-y: center;
+	background-position-x: center;
+	background-color: #ffdb61;
 }

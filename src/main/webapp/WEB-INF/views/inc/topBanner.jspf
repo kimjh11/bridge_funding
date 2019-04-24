@@ -18,7 +18,7 @@
 	<c:if test="${page!='commingSoon'&&page!='search' }">
 	<!-- 오픈예정 이동 배너 -->
 	<div class="commingsoon-banner">
-		<a href="<%=request.getContextPath()%>/list?page=commingSoon&cateCode=">오픈예정 프로젝트 보러가기</a>
+		<a href="<%=request.getContextPath()%>/list?page=commingSoon&cateCode=&keyword="></a>
 	</div>
 	</c:if>
 </div>

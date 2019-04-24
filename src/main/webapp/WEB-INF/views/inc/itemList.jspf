@@ -32,16 +32,16 @@
 				<!-- 상세설명 -->
 				<ul class="detail-info">
 					<li class="col1">
-						<span>목표달성</span>
-						<strong>${vo2.proGoalRate }</strong>
+						<span>달성률</span>
+						<strong class="percent">${vo2.proGoalRate }</strong>
 					</li>
 					<li class="col2">
-						<span>판매금액</span>
-						<strong>${vo2.proNow }</strong>
+						<span>펀딩 금액</span>
+						<strong class="won">${vo2.proNow }</strong>
 					</li>
 					<li class="col3">
-						<span>일정</span>
-						<strong>${vo2.remainingDay }</strong>
+						<span>남은일정</span>
+						<strong class="date">${vo2.remainingDay }</strong>
 					</li>
 				</ul>
 			</div>

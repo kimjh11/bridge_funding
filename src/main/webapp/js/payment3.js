@@ -102,25 +102,33 @@ $(function(){
 	}
 	$("#enter").click(function(){
 		var o = 0;
+		var p = 0;
 		for(i =0;i<=$(".input").length-2;i++){
 			if($(".input:eq("+i+")").val() == "" || $(".input:eq("+i+")").val() == null){
 				o += i;
 			}
 		}
-		for(i =0;i<=$(".off").length-1;i++){
-			if($(".off:eq("+i+")").val() == "" || $(".off:eq("+i+")").val() == null){
-				o += i;
+		if(!($(".off").is(":disabled"))){
+			for(i =0;i<=$(".off").length-1;i++){
+				if($(".off:eq("+i+")").val() == "" || $(".off:eq("+i+")").val() == null){
+					o += i;
+				}
+			}			
+		}else{
+			if($("#cardhidden").val() != null && $("#cardhidden").val() != "" ){
+				alert("등록된 카드가 없습니다.");
+				p+=1;
 			}
 		}
 		if(o>0){
 			alert("빈칸을 입력해주세요.");
 		}else{
-			alert("info all")
+			alert("결제가 완료되었습니다.");
 		}
 		
 		$("#writeNum").val($("#tel1").val()+"-"+$("#tel2").val()+"-"+$("#tel3").val()+"-"+$("#tel4").val());
 		
-		if(o==0){
+		if(o==0 && p == 0){
 			$(".complete").submit();
 		}
 		

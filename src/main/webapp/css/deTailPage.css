@@ -9,10 +9,22 @@
 				margin-left:1%;
 				}
 	.wrap{margin:0 10%}
-	.selectTap{border-bottom:5px solid #92D1E0}
+	.selectTap{border-bottom: 5px solid #92D1E0;}
 	ruby{
 			text-shadow: 1px 0 black;
-    		color: white;
+			color: white;
+			position: absolute;
+			top: 70px;
+			width: 80%;
+			margin-left: -40%;
+	}
+	ruby span{
+		
+font-size: 30pt;
+	}
+	ruby rt{
+	
+font-size: 20pt;
 	}
 	#left{
 		  width: 63%;
@@ -25,42 +37,46 @@
 		   }
 	#topback img{
 				 width:100%;
-				 margin-top:-50%
+				 position: absolute;
+				 top: -50%;
+				 left: 0;
 	}
 	#topback{
 			filter:blur(5px);
-			height:100px
+			height: 190px;
 			}
 	#topTap{
 			width: 100%;
-			height:100px;
+			height: 190px;
 			text-align: center;
-			line-height: 86px;
 			color:black;
 			font-size:2.5em;
-			position:absolute;
-			top:95px;
+			position: relative;
+			top: 0;
 			left:0px;
 			z-index:2;
 			}
-	#border{overflow:hidden}
+	#border{overflow:hidden;height: 190px;}
 	#tap td{
 			
 width: 8%;
 			
-font-size: 1em;
+font-size: 16pt;
 			
-height: 35px;
+height: 50px;
 			
 text-align: center;
 			
 cursor: pointer;
+			
+letter-spacing: 5px;
 			}		
-	#tap {margin: 0 auto;}
+	#tap {width: 60%;margin: 0 auto;}
 	#thumbnail{
-			   width: 100%;
-			   height:400px;
-			   /* margin-left:11%; */
+			   width: 80%;
+			   height: 300px;
+			   margin: 0 auto;
+			   margin-bottom: 50px;
 			   }
 	#slider{width: 230px;
 			overflow: hidden;
@@ -115,7 +131,9 @@ cursor: pointer;
 			width:100%;
 	}
 	#goal{
-		  background:#eee;
+		  background: #dcdcdc;
+		  width: 80%;
+		  margin: 0 auto;
 		  }
 	#firstblk p{line-height: 48px;}
 	#firstblk input[type=button]{
@@ -161,35 +179,34 @@ cursor: pointer;
 		  text-align:left;font-size: 1.5em;
 		  }
 	#punding{
-			 width:65%;
-			 margin-left:20%;
+			 text-shadow: -1px 1px grey;
+			 width: 80%;
+			 margin: 0 auto;
 			 background:#92D1E0;
 			 color:white;
-			 line-height:1.8;
-			 height:43px;
+			 line-height: 45px;
+			 height: 45px;
 			 cursor:pointer;
+			 letter-spacing: 2px;
 			 }
 	#like{
-		  width:65%;
-		  float:left;
-		  margin-left:20%;
+		  height: 45px;
+		  line-height: 45px;
+		  width: 40%;
+		  margin: 0 auto;
 		  border:1px solid lightgray;
 		  cursor:pointer;
 		  }
 	#like img{
-			  width:30px;
-			  margin-top:5px;
-			  margin-left:20px;
+			  width: 100%;
+			  vertical-align: middle;
 			  }
 	#like div{
-			float: left;
-		    line-height: 1.8;
-		    margin-right: 35px;
-		    margin-top: 5px;
-		    margin-bottom: 0;
+			display: inline-block;
+			vertical-align: middle;
 		}
 	#sideBtn{
-			margin-left:60px;
+	width: 30px;
 	}	
 	#full{
 		  display:none;
@@ -204,4 +221,11 @@ cursor: pointer;
 		 cursor:pointer;
 		 }
 	#deTail{font-size:2em}
+	.wrap .detail-content{
+		width:80%;
+		margin: 0 auto;
+	}
 
+	#likes #num{
+	margin-left: 5%;
+	}

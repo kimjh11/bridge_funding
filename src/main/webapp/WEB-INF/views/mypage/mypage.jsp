@@ -32,7 +32,6 @@
 			<div id="card-submit" hidden="hidden">
 				<div id="card-x">&Chi;</div>
 				<span id="card-span">간편결제 정보 등록</span>
-				<hr id="card-hr"/>
 				<h2 id="card-h2">결제 정보 입력</h2>
 				<form method="post" action="/bridge/cardInfo?userMail=${userMail}&menu=${menu}">
 					<div class="card-div">

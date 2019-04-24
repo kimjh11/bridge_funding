@@ -81,6 +81,10 @@ input[type="submit"]:hover,
 	content:"원";
 	margin-left:2px;
 }
+.date::after{
+	content:"일";
+	margin-left:2px;
+}
 .cnt-txt::after{
 	content:"개";
 	margin-left:2px;
