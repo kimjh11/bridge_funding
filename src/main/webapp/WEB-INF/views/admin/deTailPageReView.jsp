@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>프로젝트 미리보기</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" href="/bridge/css/admindeTailReView.css">
+<link rel="stylesheet" href="/bridge/css/deTailPage.css"/>
 <script type="text/javascript" src="/bridge/js/admindeTailReView.js"></script>
 </head> 
 <body>
@@ -18,19 +18,33 @@
 		<div hidden="hidden">${vo2.proWait}</div>
 		<div hidden="hidden">${vo2.cateCode}</div>
 		<!-- 컨트롤러로 가져가기  -->
-		<div id="border">
+		<%-- <div id="border">
 			<div id="topback">${vo2.proImg }</div>
-		</div>
+		</div> --%>
 		<div>
 			<a href="/bridge/projectOk?proCode=${vo2.proCode}&proDate=${vo2.proDate}&proWait=${vo2.proWait}
 					 &cateCode=${vo2.cateCode}"><button id="ReViewOk">승인하기</button></a>
 		</div>
 		<!-- 맨위 타이틀 div -->
-		<div id="topTap"> 
+		<%-- <div id="topTap"> 
 		<ruby>	
 			<span>${vo2.proName }</span>
 			<rt>${vo2.cateName }</rt>
-		</ruby>
+		</ruby> --%>
+		<div id="topTap"> <!-- 맨위 타이틀 div -->
+			<div id="border">
+				<div id="topback">
+					<img src="<%=request.getContextPath() %>/ckstorage/${vo2.proImg }"/>
+				</div>
+				<ruby>	
+					<span>${vo2.proName }</span>
+					<rt>${vo2.cateName }</rt>
+				</ruby>
+			</div>	
+		</div>
+		
+		
+		
 		<!-- 나중에 ajax를 이용한 탭 만들기 -->	
 		<table id="tap"> 
 			<tr>
@@ -38,7 +52,7 @@
 				<td data-tab="deTailGuideReView?cateCode=${vo2.cateCode}&proCode=${vo2.proCode}" class="taps">펀딩안내</td>
 			</tr>
 		</table>
-	</div>
+
 
 	<div id="left" class="marginleft">
 		<div id="thumbnail"> <!-- 타이틀로 걸어 놓은 이미지나 동영상 -->

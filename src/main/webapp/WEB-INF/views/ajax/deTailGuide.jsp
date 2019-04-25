@@ -16,7 +16,7 @@
 			 환불 신청한 서포에 한하여 펀딩금액의 100%를 환불해드립니다.</li>
 	</ul>
 <span class="title">프로젝트의 교환 /반품/AS정책은 다음과 같습니다.</span>
-	<div>
+	<div class="guide-input-txt">
 		${refund}
 	</div>
 </div>

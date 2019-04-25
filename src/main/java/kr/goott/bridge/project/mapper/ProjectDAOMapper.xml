@@ -30,7 +30,7 @@
 		select * from project2 where proCode = #{param1}
 	</select>
 	<update id="savePro">
-		update project2 set cateCode = #{cateCode},proCode = #{userMail}||'/'||#{cateCode}||'/'||to_char(sysdate,'MMDDHH'),
+		update project2 set cateCode = #{cateCode},proCode = #{proNum}||'/'||#{userMail}||'/'||#{cateCode}||'/'||to_char(sysdate,'MMDDHH'),
 		proImg = #{proImg}, proName = #{proName}, proGoal = #{proGoal}, proDate = #{proDate},
 		comImg = #{comImg}, comName = #{comName}, comNum = #{comNum}, account = #{account},
 		comTel = #{comTel}, comEmail = #{comEmail}, comSite = #{comSite}
@@ -42,9 +42,9 @@
 	</update>
 	<insert id="saveItem">
 		insert into item2 (proCode,userMail,itemNum,itemRank,itemName,itemContent,itemPrice,itemOption,
-		limitCnt) 
+		limitCnt,stateCnt) 
 		values (#{proCode},#{userMail},item2_sq.nextVal,#{itemRank},#{itemName},#{itemContent},#{itemPrice},#{itemOption},
-		#{limitCnt}) 
+		#{limitCnt},#{limitCnt}) 
 	</insert>
 	<delete id="delItem">
 		delete from item2 where userMail = #{userMail} and proCode = #{proCode} and itemRank = #{itemRank}

@@ -40,7 +40,7 @@
 			p.proOpen <![CDATA[<]]> sysdate and 
 			p.proEnd <![CDATA[>]]> sysdate
 		order by 
-			p.proOpen
+			p.proOpen desc
 	</select>
 	<!-- 오픈예정 -->
 	<select id="commingSoonList" resultType="kr.goott.bridge.list.ListVO">
@@ -111,13 +111,14 @@
 			p.proEnd <![CDATA[>]]> sysdate and 
 			c.cateCode NOT IN('donation') 
 		order by 
-			p.proOpen
+			p.proOpen desc
 	</select>
 	<!-- 선택한 카테고리 리스트 -->
 	<select id="selectCateList" parameterType="String" resultType="kr.goott.bridge.list.ListVO">
 		select 
-			p.cateCode, c.cateName, c.cateCode, p.proCode, p.proName, p.proImg, p.comName, p.proGoal, p.proNow, 
-			p.proEnd, p.likeCount
+			p.cateCode, c.cateName, p.proCode, p.proName, p.proImg, p.comName, p.proGoal, p.proNow, 
+			to_char(proEnd, 'YYYY-MM-dd') proEnd, p.likeCount, 
+			CEIL(p.proEnd - sysdate) remainingDay, CEIL((p.proNow / p.proGoal) * 100) proGoalRate
 		from 
 			project p, category c 
 		where 
@@ -127,7 +128,7 @@
 			p.proOpen <![CDATA[<]]> sysdate and 
 			p.proEnd <![CDATA[>]]>= sysdate
 		order by 
-			p.proOpen
+			p.proOpen desc
 	</select>
 	<select id="keywordSearch" parameterType="String" resultType="kr.goott.bridge.list.ListVO">
 		select 

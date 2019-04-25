@@ -53,5 +53,5 @@
 				</div>
 				</form>
 			</c:forEach>
-			<div id="nextPage">다음페이지 </div>
+			<button id="nextPage">다음페이지 </button>
 		

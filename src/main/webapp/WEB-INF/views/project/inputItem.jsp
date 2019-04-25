@@ -18,7 +18,7 @@ $(function(){
 </script>
 </head>
 <body>
-<div class="wrap project"> 
+<div class="wrap project "> 
 	<!-- 상단 네비 -->
 	<%@include file="projectTitle.jspf"%>
 	<!-- 미리보기 이용탭 -->

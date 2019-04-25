@@ -5,15 +5,43 @@
 <html> 
 <head>
 <meta charset="UTF-8">
-<title>프로젝트 상세 페이지</title>
+<title>프로젝트 미리보기</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="/bridge/css/deTailPage.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/common.css"/>
 <script type="text/javascript" src="/bridge/js/previewPage.js"></script>
 </head> 
 <body>
-<div class="wrap">
-<div id="border">
+<div class="wrap project-preview">
+<a href="/bridge/previewBack" style="font-size:2em" id="back">이전으로</a>
+
+<div id="topTap"> <!-- 맨위 타이틀 div -->
+	<div id="border">
+		<div id="topback">
+			<img src="<%=request.getContextPath() %>/ckstorage/${vo.proImg }"/>
+		</div>
+		<ruby>
+			<c:if test="${vo.proName == null || vo.proName.equals('') }">
+				<span>제목이 들어갈 자리 입니다.</span>
+			</c:if>
+			<c:if test="${vo.proName != null || !vo.proName.equals('') }">
+				<span>${vo.proName }</span>
+			</c:if>
+			<rt>${vo.cateName }선택한카테고리.</rt>
+		</ruby>
+		<table id="tap"> <!-- 나중에 ajax를 이용한 탭 만들기 -->
+			<tr>
+				<td data-tab="previewOpen?cateCode=${vo.cateCode}&proCode=${vo.proCode}" class="selectTap taps">스토리</td>
+				<td data-tab="previewGuide?cateCode=${vo.cateCode}&proCode=${vo.proCode}" class="taps">펀딩안내</td>
+				<td>댓글</td>
+				<td>서포터</td>
+			</tr>
+		</table>
+	</div>	
+</div>
+
+
+<%-- <div id="border">
 	<div id="topback">
 		<img src="${pageContext.request.contextPath }/ckstorage/${vo.proImg }" onerror="this.src='${pageContext.request.contextPath }/img/inputImg.png'"/>
 	</div>
@@ -36,8 +64,8 @@
 				<td>서포터</td>
 			</tr>
 		</table>
-	</div>
-
+	</div> --%>
+<div class="detail-content">
 	<div id="left" class="marginleft">
 		<div id="thumbnail"> <!-- 타이틀로 걸어 놓은 이미지나 동영상 -->
 			<iframe id="myFrame" width="100%" height="100%" src="${vo.proTitle }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -50,11 +78,11 @@
 			<div id="comTitle">
 				<div id="line">
 				<c:if test="${vo.comName == null || vo.comName.equals('') }">
-					회사이름<br/>
+					회사이름
 				</c:if>
 				<c:if test="${vo.comName != null || !vo.comName.equals('') }">
-					${vo.comName}<br/>
-				</c:if>
+					${vo.comName}
+				</c:if><br/>
 				<span>
 					<c:if test="${vo.comEmail == null || vo.comEmail.equals('') }">
 						이메일 : 회사메일
@@ -141,19 +169,28 @@
 				<div id="punding">펀딩하기</div>
 			</div>
 			<div id="likes">
-				<div class="btns" id="like"><img src="/bridge/img/detail/unlike.png" id="bin"/> 
-											<img src="/bridge/img/detail/like.png" id="full"/>											
-											<div>00</div>
-				</div>
-				<div class="btns" id="ask">문의하기</div>
+				<div class="btns" id="like">
+					<div id="sideBtn">
+						<img src="/bridge/img/detail/unlike.png" id="bin"/> 
+						<img src="/bridge/img/detail/like.png" id="full"/>
+					</div>
+					<div id="num">0</div>
+				</div>											
 			</div>
-		</div>
-		<style>
-			#back:hover{color:#4dffc3}
-		</style>
-		<div class="camgo topMargin" id="second">
-			<h5><a href="/bridge/previewBack" style="font-size:2em" id="back">돌아가기</a></h5>
+				<!-- <div class="btns" id="ask">문의하기</div> -->
 			
+		</div>
+		
+		<div class="camgo topMargin" id="second">
+			<h5>참고사항!</h5>
+			<ul>
+				<li>지금 펀딩하기 고민된다면 좋아요를 눌러보세요.<br/>
+					마이페이지에서 쉽게 확인할 수 있습니다.
+				</li>
+				<li>100% 이상이 모여야 성공되는 프로젝트 마감일까지 
+					목표금액을 달성하지 못하면 결제가 진행되지 않습니다.
+				</li>
+			</ul>
 		</div>
 		<c:if test="${list != null }">
 		<c:forEach var="item" items="${list}">
@@ -192,6 +229,8 @@
 				</div>
 		</c:if>
 	</div>
+</div>
+
 </div>
 </body>
 </html>

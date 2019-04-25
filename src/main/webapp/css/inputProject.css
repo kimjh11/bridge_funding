@@ -338,25 +338,41 @@ font-weight: bold;
 	width: 100%;
 	padding: 0;
 }
-table thead tr td{
-	font-weight: bold;
-	border-bottom: 1px solid #c7c7c7;
+table thead{
 }
-table tr td{
+.tableDiv table thead,
+.tableDiv table tbody{
+	
+display: inline-block;
+	
+width: 100%;
+}
+.tableDiv table thead tr,
+.tableDiv table tbody tr{
+	width: 100%;
+	border-bottom: 1px solid #c7c7c7;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+}
+.tableDiv table thead tr td{
+	font-weight: bold;
+}
+.tableDiv table tr td{
+	display: inline-block;
 	text-align: center;
-	padding: 3px;
 	font-size: 10pt;
 }
-table tr td.col1{
-	width:5%;
+.tableDiv table tr td.col1{
+	width: 4%;
 }
-table tr td.col2{
-	width:20%;
+.tableDiv table tr td.col2{
+	width: 19%;
 }
-table tr td.col3{
+.tableDiv table tr td.col3{
 	width:25%;
 }
-table tr td a{
+.tableDiv table tr td a{
 	color:#fb6969;
 	font-weight: bold;
 }

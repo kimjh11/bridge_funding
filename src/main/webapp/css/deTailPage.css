@@ -3,7 +3,9 @@
 				margin-top: 10%;
 				margin-right: 5%;
 				}
-	.marginleft div, .marginright div{margin-bottom:2%;}
+	.marginleft div, .marginright div{
+    margin-bottom: 2%;
+}
 	.marginright{
 				margin-top: 10%;
 				margin-left:1%;
@@ -84,15 +86,20 @@ letter-spacing: 5px;
 	#thumbnail img{width:230px}	
 	#hidden{width: 800px;}	   
 	#company{
-			 width: 100%;
-			 height:150px;
+			 width: 70%;
+			 height: 95px;
 			 border-style:solid;
 			 border-color:#92D1E0;
 			 border-radius:10px;
 			 font-size: 2em;
+			 overflow: hidden;
+			 margin: 0 auto;
+			 padding: 10px 10%;
 			 }
 	#comTitle{
-			  margin-top: 35px;
+			  width: 70%;
+			  float: left;
+			  margin: 0 0 0 10%;
 			  }
 	.real{
 		  width:100%;
@@ -102,26 +109,22 @@ letter-spacing: 5px;
 		  }		 
 	.camgo{
 		  width:100%;
-		  height:150px;
-		
 		  font-size: 2em;
 		  }			  
 	#comimg{
-			width: 16.5%;
+			min-width: 70px;
 			float:left;
-			margin-left: 10%;
-			margin-right: 2%;
-			text-align: center;
-			line-height:30px;
+			margin: 0;
+			width: 20%;
 			}
 	#comimg img{
-				width: 100px;
-				height: 100px;
-				border-radius:75px;
+				width: 70px;
+				height: 70px;
+				border-radius: 35px;
+				overflow: hidden;
 				}
 	#right #big input[type="button"]:first-child{width:205px}
 	#line{
-		  line-height: 23px;
 		  }
 	#line span{
 			   font-size:0.8em;
@@ -220,7 +223,9 @@ letter-spacing: 5px;
 		 line-height:1.8;
 		 cursor:pointer;
 		 }
-	#deTail{font-size:2em}
+	#deTail{
+    margin-top: 20px;
+}
 	.wrap .detail-content{
 		width:80%;
 		margin: 0 auto;
@@ -228,4 +233,44 @@ letter-spacing: 5px;
 
 	#likes #num{
 	margin-left: 5%;
+	}
+	.project-preview #topTap{
+		background: gray;
+	}
+	.project-preview #back,
+	#ReViewOk{
+		font-family:'yaReg';
+		font-size:18pt;
+		position: fixed;
+			
+		top: 250px;
+			
+		left: 150px;
+			
+		z-index: 10;
+			
+		display: inline-block;
+			
+		width: 100px;
+			
+		height: 100px;
+			
+		line-height: 100px;
+			
+		border-radius: 50px;
+			
+		background: #edb4f7;
+			
+		text-align: center;
+	}
+	.project-preview #back:hover{
+		color: black;
+	}
+	#deTail img,
+	#deTail iframe{
+		max-width: 100%;
+		display: block;
+	}
+	.guide-input-txt{
+		font-size: 12pt;
 	}

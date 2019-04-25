@@ -16,7 +16,7 @@
 </script>
 </head>
 <body>
-	<div class="wrap">
+	<div class="wrap mypage-wrap">
 			<div> 
 				<h2 id="mypage">마이페이지</h2>
 			</div>

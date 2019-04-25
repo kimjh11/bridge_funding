@@ -31,14 +31,15 @@
 			<textarea id="textarea" name="replyContent"></textarea>
 			<input type="submit" style="cursor: pointer;" value="댓글등록"/>
 		</form>
-		<div>
+		<div class="reply-view">
 		<p class="title">댓글 ${count}개</p>
 			배송 및 리워드, 기타 관련하상은 메이커에게 직접 문의하세요.
 		</div>
 		<c:forEach var="list" items="${list}">
 			<div class="oneReply">
 				<div class="userImg">
-					<img src="<%=request.getContextPath() %>/upload/${img }"/>
+					<img src="<%=request.getContextPath() %>/upload/${list.userImg}" 
+					onerror="this.src='<%=request.getContextPath() %>/img/profile/user.png'"/>
 				</div>
 				<div class="userInfo"> 
 					<span class="userID">${list.userMail}</span><br/>

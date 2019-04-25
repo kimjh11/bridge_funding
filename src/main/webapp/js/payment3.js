@@ -115,20 +115,19 @@ $(function(){
 				}
 			}			
 		}else{
-			if($("#cardhidden").val() != null && $("#cardhidden").val() != "" ){
+			if($("#cardhidden").val()==null || $("#cardhidden").val().equals("") ){
 				alert("등록된 카드가 없습니다.");
 				p+=1;
 			}
 		}
 		if(o>0){
 			alert("빈칸을 입력해주세요.");
-		}else{
-			alert("결제가 완료되었습니다.");
 		}
 		
 		$("#writeNum").val($("#tel1").val()+"-"+$("#tel2").val()+"-"+$("#tel3").val()+"-"+$("#tel4").val());
 		
 		if(o==0 && p == 0){
+			alert("결제가 완료되었습니다.");
 			$(".complete").submit();
 		}
 		

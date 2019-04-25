@@ -47,7 +47,7 @@
 		from project where userMail = #{userMail}
 	</select>
 	<select id="selectWaitingPro" resultType="kr.goott.bridge.project.ProjectVO">
-		select * from project2 where userMail = #{userMail}
+		select * from project2 where userMail = #{userMail} and cateCode <![CDATA[ <> ]]> 'none'
 	</select>
 	<select id="selectLikeList" resultType="kr.goott.bridge.member.MemberVO">
 	select m.userImg userImg, m.userName userName

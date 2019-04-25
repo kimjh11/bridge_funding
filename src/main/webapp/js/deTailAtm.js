@@ -31,7 +31,7 @@ $(function(){
 						type : "POST",
 						url : "likeUp",
 						error : function(){
-							alert("실패");
+							
 						},
 						success : function(){
 							var like= $("#like div").text();
@@ -44,7 +44,7 @@ $(function(){
 						type : "POST",
 						url : "likeDown",
 						error : function(){
-							alert("실패");
+						
 						},
 						success : function(data){
 							var like= $("#like div").text();
@@ -69,7 +69,7 @@ $(function(){
 					type : "POST",
 					url : "likeUp",
 					error : function(){
-						alert("실패");
+					
 					},
 					success : function(){
 						var like= $("#like div").text();
@@ -82,7 +82,7 @@ $(function(){
 					type : "POST",
 					url : "likeDown",
 					error : function(){
-						alert("실패");
+						
 					},
 					success : function(data){
 						var like= $("#like div").text();

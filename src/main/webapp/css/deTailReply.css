@@ -10,23 +10,25 @@
 			  cursor: pointer;
 			  text-align:center;
 			  }
-	#textarea{width:80%;
+	#textarea{
+			  width: 75%;
 			  float:left;
-			  height:100px;
+			  height: 40px;
 			  padding:10px;
 			  resize:none;
-			  font-size:1.3em;
+			  font-size: 10pt;
 			  }
 	input[type=submit]{
-					  width: 16%;
+					  width: 15%;
 					  background:#92D1E0;
-					  height: 120px;
+					  height: 60px;
 					  border:none;
 					  margin-left:1%;
 					  color:white;
 					  border-radius:10px;
-					  font-size:1em;
-					  margin-bottom:3%;
+					  float: left;
+					  font-family: 'yaReg';
+					  font-size: 15pt;
 					  }
 	.oneReply{
 			  border-bottom:1px solid lightgray;
@@ -45,4 +47,10 @@
 	.userImg{
 			 witdh:100px;
 	
+	}
+	#replyFrm{
+		overflow: hidden;
+	}
+	.reply-view{
+		margin-top:20px;
 	}
